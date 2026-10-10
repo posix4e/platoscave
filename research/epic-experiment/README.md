@@ -103,6 +103,16 @@ action's cached features. `synthetic_check.json` tests recovery of a known
 synthetic correspondence at smaller settings. These establish limited
 implementation checks; they are not evidence of successful EPIC alignment.
 
+`text_preflight.py` runs the frozen text extractor over all 9,392 selected
+captions without reading images or fitting an alignment. The recorded
+`text-preflight-summary.json` shows that every text vector is finite and
+nonzero; GloVe covers 28,844 of 28,902 token occurrences (99.8%). There are
+4,277 distinct text vectors, with 6,332 clips belonging to groups that share a
+vector. This supports the protocol's treatment of repeated captions and exact
+ties; it does not establish alignment or absence of pretraining contamination.
+The summary omits full extractor metadata and per-group UID listings and
+records the complete report's hash. Rerun the script to reproduce those details.
+
 `benchmark_http_seek.py` and `http-seek-benchmark.json` compare transport
 settings on eight frame requests. Connection reuse preserved their timestamps
 and bytes and reduced elapsed time in that bounded check. The acquisition
@@ -123,3 +133,11 @@ script's `--help` documents its explicit paths. Keep the original model weights
 from the adjacent provenance audit and the pinned DINO source; do not replace
 them with model-library defaults. Full videos, extracted frames and large
 feature arrays are not stored in Git.
+
+`publish_results.py` prepares the eventual report and CSV tables from a complete
+result set. It requires the frozen runner and verifier, all 17 fits, and a
+successful verification record, then reruns independent verification and
+checks that input and result files stayed unchanged. It writes a new local
+report directory with file hashes. It does not upload or deploy anything.
+This script is preparation for reporting; no full benchmark result has yet
+passed its publication checks.
