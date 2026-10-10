@@ -8,6 +8,12 @@ requirements. Training from scratch is one way to control those histories; it is
 not a requirement in itself. None of the candidates below has yet passed the
 checks needed to be called an uncontaminated COCO/SPC control.
 
+A subsequent [search for a different benchmark](../clean-example/README.md)
+found a concrete alternative: original DINOv1 and GloVe on EPIC-KITCHENS-55.
+Its 2017 recordings postdate both documented training corpora. That admits a
+bounded control against direct exposure to those episodes; it does not change
+the COCO/SPC decisions recorded here.
+
 ## A documented problem with the current language encoder
 
 The original implementation's `mpnet` name resolves to

@@ -1,0 +1,108 @@
+{
+  "dataset": "EPIC-KITCHENS-55",
+  "repository": "epic-kitchens/epic-kitchens-55-annotations",
+  "commit": "63fa7d78eba41a8d2280374061a6b1bab3e7e41d",
+  "files": {
+    "EPIC_descriptions.csv": {
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-kitchens-55-annotations/63fa7d78eba41a8d2280374061a6b1bab3e7e41d/EPIC_descriptions.csv",
+      "sha256": "b73ad13c8546e65413fd0923b9c37a02b90510733b547830f6ba283306dcb507",
+      "bytes": 27678,
+      "rows": 432,
+      "columns": [
+        "video_id",
+        "date",
+        "time",
+        "description"
+      ]
+    },
+    "EPIC_train_action_narrations.csv": {
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-kitchens-55-annotations/63fa7d78eba41a8d2280374061a6b1bab3e7e41d/EPIC_train_action_narrations.csv",
+      "sha256": "806159089bad092e6f9a963ed0b14dc3e895d6b76b6ad0f7e02cec2448ef86e4",
+      "bytes": 1505685,
+      "rows": 28587,
+      "columns": [
+        "participant_id",
+        "video_id",
+        "start_timestamp",
+        "stop_timestamp",
+        "narration"
+      ]
+    },
+    "EPIC_train_action_labels.csv": {
+      "url": "https://raw.githubusercontent.com/epic-kitchens/epic-kitchens-55-annotations/63fa7d78eba41a8d2280374061a6b1bab3e7e41d/EPIC_train_action_labels.csv",
+      "sha256": "faef8ad29b163b28ec8ca32b4222f137aba8f8b07eca0ae004652937ffaf811e",
+      "bytes": 2973977,
+      "rows": 28472,
+      "columns": [
+        "uid",
+        "participant_id",
+        "video_id",
+        "narration",
+        "start_timestamp",
+        "stop_timestamp",
+        "start_frame",
+        "stop_frame",
+        "verb",
+        "verb_class",
+        "noun",
+        "noun_class",
+        "all_nouns",
+        "all_noun_classes"
+      ]
+    }
+  },
+  "audit_scope": "Recording-date metadata, annotation references, exact string repetition, and source-byte hashes only.",
+  "limits": [
+    "Recording dates are publisher-provided metadata, not independently authenticated capture times.",
+    "This script does not inspect any model weights or pretraining corpus.",
+    "It does not show that ordinary narration strings never occurred in earlier text.",
+    "Temporal exclusion from pretraining requires a separate argument using documented model training sources."
+  ],
+  "annotation_reference_checks": {
+    "EPIC_train_action_narrations.csv": {
+      "distinct_video_ids": 272,
+      "missing_recording_dates": []
+    },
+    "EPIC_train_action_labels.csv": {
+      "distinct_video_ids": 272,
+      "missing_recording_dates": []
+    }
+  },
+  "observations": {
+    "recording_date_min": "2017-04-30",
+    "recording_date_max": "2017-11-21",
+    "all_432_dates_parsed": true,
+    "date_years": [
+      "2017"
+    ],
+    "train_action_rows": 28472,
+    "train_video_count": 272,
+    "train_participant_count": 28,
+    "train_video_ids_missing_recording_dates": [],
+    "distinct_exact_narrations": 8793,
+    "rows_with_repeated_exact_narrations": 22765,
+    "max_exact_narration_multiplicity": 448,
+    "most_common_narrations": [
+      [
+        "open drawer",
+        448
+      ],
+      [
+        "open cupboard",
+        381
+      ],
+      [
+        "open fridge",
+        324
+      ],
+      [
+        "open tap",
+        311
+      ],
+      [
+        "close fridge",
+        256
+      ]
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "recorded_on": "2026-10-10",
+  "vision": "original DINOv1 ViT-B/16 ImageNet backbone",
+  "text": "original GloVe 6B 300d with fixed mean pooling",
+  "benchmark": "EPIC-KITCHENS-55",
+  "decision": "admitted_for_temporal_exclusion_control_under_documented_provenance",
+  "scope": "Direct exposure to the particular 2017 recorded episodes and subsequently created annotations as benchmark artifacts is excluded by chronology of the documented training corpora.",
+  "basis": [
+    {
+      "source": "https://arxiv.org/html/2104.14294",
+      "claim": "Original DINO image self-supervision on ImageNet; no external multimodal teacher in the selected recipe."
+    },
+    {
+      "source": "https://www.image-net.org/challenges/LSVRC/2012/",
+      "claim": "The selected ImageNet-1K release predates the EPIC recordings."
+    },
+    {
+      "source": "https://nlp.stanford.edu/projects/glove/",
+      "claim": "Original GloVe 6B uses Wikipedia2014 and Gigaword5."
+    },
+    {
+      "source": "https://catalog.ldc.upenn.edu/LDC2011T07",
+      "claim": "Gigaword5 newswire ends in2010."
+    },
+    {
+      "source": "https://arxiv.org/html/2005.00343",
+      "claim": "Participants captured EPIC in2017, then narrated; transcripts/translations were human-produced."
+    }
+  ],
+  "evidence_files": [
+    "epic55-provenance-audit.json",
+    "encoder-source-audit.json",
+    "artifact-lock.json",
+    "validation.json"
+  ],
+  "not_established": [
+    "Independent authentication of the original training execution or camera timestamps.",
+    "Absence of shared concepts, ordinary text phrases, similar scenes, or all cross-corpus overlap.",
+    "Any alignment performance, model-family robustness, or causal contamination effect on the original COCO/SPC result.",
+    "That weak GloVe or static image features preserve all information needed for action retrieval.",
+    "A fully frozen evaluation protocol or completed competence checks."
+  ],
+  "alignment_run": false,
+  "encoder_training_run": false,
+  "other_benchmarks_cleared": []
+}

@@ -1,0 +1,33 @@
+{
+  "recorded_at_utc": "2026-10-10T17:29:12.141459+00:00",
+  "checks": {
+    "metadata_audit_completed_on_local_and_vm": true,
+    "local_and_vm_metadata_reports_identical": true,
+    "independent_root_date_parse_count": 432,
+    "independent_root_date_parse_years": [
+      2017
+    ],
+    "three_model_artifact_hashes_verified_on_second_pass": true,
+    "glove_300d_archive_member_hash_verified_on_second_pass": true,
+    "deliberately_wrong_expected_dino_hash_rejected": true,
+    "published_fetch_script_matches_executed_script_hash": true,
+    "python_script_syntax_valid": true,
+    "independent_read_only_review_blocking_findings": []
+  },
+  "scripts": {
+    "audit_epic55.py": "4b39d99338016b0a59711c3f81ae64d1ba2bf360eb2ae8e1d40995b75ae95ff3",
+    "fetch_models.py": "3a810eaafa861f5434127fa5bfcc88ddea7a69c1413b77e0b02b5f14fcc30236"
+  },
+  "not_run": [
+    "image or clip decoding",
+    "encoder inference",
+    "GPU execution test",
+    "paired positive control",
+    "unpaired alignment",
+    "encoder training"
+  ],
+  "limitations": [
+    "Second hash pass verifies existing downloaded bytes, not an independent download or training history.",
+    "The metadata dates are publisher-provided; an independent parse checks interpretation, not authenticity."
+  ]
+}

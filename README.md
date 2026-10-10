@@ -52,3 +52,8 @@ the screened checkpoints has yet been admitted as an uncontaminated COCO/SPC
 control. It includes a reproducible audit of the released COCO caption component
 listed in MPNet's fine-tuning configuration. Research files outside `dist/` are
 stored in GitHub and are not automatically published to the website.
+
+The [search for a cleaner example](research/clean-example/README.md) identifies
+original DINOv1 and GloVe on EPIC-KITCHENS-55 as a control against direct exposure
+to its 2017 recordings. It includes reproducible metadata checks, original model
+artifact hashes, and the limitations that must guide the next experiment.

@@ -1,0 +1,28 @@
+{
+  "recorded_at_utc": "2026-10-10T17:28:39.990070+00:00",
+  "artifacts": {
+    "dino_vitbase16_pretrain.pth": {
+      "url": "https://dl.fbaipublicfiles.com/dino/dino_vitbase16_pretrain/dino_vitbase16_pretrain.pth",
+      "sha256": "bf34ad0f424b9029b593e8dc3ed553bf26e88bcba0d32bf3e62a6209cb64c85e",
+      "bytes": 343242485
+    },
+    "dino_vitbase16_args.json": {
+      "url": "https://dl.fbaipublicfiles.com/dino/dino_vitbase16_pretrain/args.txt",
+      "sha256": "e5e487f7a2549d24bb3bf0681099f54a3b544772bc43daaf1529aa8ed6e67ef3",
+      "bytes": 634
+    },
+    "glove.6B.zip": {
+      "url": "https://nlp.stanford.edu/data/wordvecs/glove.6B.zip",
+      "sha256": "6471382cdd837544bf3ac72497a38715e845897d265b2b424b4761832009c837",
+      "bytes": 862182753
+    }
+  },
+  "glove_300d_member": {
+    "name": "glove.6B.300d.txt",
+    "sha256": "a12599d41e3589c7160be27fffe5b0080eccd0f0c75f46666c59f90188093c40",
+    "bytes": 1037965801
+  },
+  "executed_script_sha256": "3a810eaafa861f5434127fa5bfcc88ddea7a69c1413b77e0b02b5f14fcc30236",
+  "verified_against_manifest": true,
+  "scope": "Artifact-byte identity only; no inference, training, or independent authentication of training provenance."
+}
