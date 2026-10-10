@@ -1,0 +1,12 @@
+{
+  "scope": "Software tests only, before the five-photo model run",
+  "extractor_tests_passed": 23,
+  "solver_tests_passed": 10,
+  "total_tests_passed": 33,
+  "test_source_sha256": {
+    "test_extract_five.py": "74f734ea0dc2f4fb225b86b3189938672862ee0c789d20e66249320631dcd15a",
+    "test_solve.py": "bdae24c3260da6db952ce6994cfc7aeb1e9effa1b8b98bd2897ed6e42145443b"
+  },
+  "release_lock_sha256": "28bf4082cc710aeced85b2e59911b9e8c44b8728469592c0d9423b44f3daf333",
+  "photograph_features_computed": false
+}

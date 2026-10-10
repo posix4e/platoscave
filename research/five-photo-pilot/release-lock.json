@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-10T21:01:24.691405+00:00",
+  "files": {
+    "protocol.json": "fcc1c4252ae268e7dcf645419eaea07e1196c09e939a7066e55cf084afddf603",
+    "extract_five.py": "37665c8dbb0d2479bfc162854ad0508d6e1b89a6dc8ee51f75bb4d095c14a823",
+    "solve.py": "6819921cecd461dc841b1ea89dddb18fab53fc0c36c07b631d7f755346ce5dfc"
+  },
+  "scope": "Exploratory protocol fixed after viewing the five inputs and before their feature extraction or scores. Original model hashes were fixed before the collector reports capturing all five photographs."
+}
