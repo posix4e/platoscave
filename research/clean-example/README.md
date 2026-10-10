@@ -3,6 +3,10 @@
 Recorded 10 October 2026. This is a provenance finding and preparation for an
 experiment. No alignment score has been measured for this pair.
 
+The [continued search](further-search/README.md) adds original ELMo, ImageNet
+MoCo-v2 and MAE, and later recorded datasets. It separates source evidence from
+weight verification and leaves the first experiment's protocol unchanged.
+
 **Original DINOv1 ViT-B/16, original GloVe 6B, and EPIC-KITCHENS-55 pass our
 screen against direct pretraining exposure to the recorded episodes.** This
 decision rests on the publishers' training and collection records. It is not a

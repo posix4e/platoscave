@@ -1,0 +1,24 @@
+{
+  "checked_at_utc": "2026-10-10T18:03:20.264509+00:00",
+  "scope": "HEAD availability only; full weights not downloaded or hashed in this audit.",
+  "models": {
+    "moco_v2_800ep_pretrain.pth.tar": {
+      "url": "https://dl.fbaipublicfiles.com/moco/moco_checkpoints/moco_v2_800ep/moco_v2_800ep_pretrain.pth.tar",
+      "resolved_url": "https://dl.fbaipublicfiles.com/moco/moco_checkpoints/moco_v2_800ep/moco_v2_800ep_pretrain.pth.tar",
+      "status": 200,
+      "content_length": "112133139",
+      "last_modified": "Sat, 21 Mar 2020 20:15:20 GMT",
+      "etag": "\"a04e12f8b0e44fdcac1fb4e06f33727b\"",
+      "bytes_downloaded": false
+    },
+    "mae_pretrain_vit_base.pth": {
+      "url": "https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_base.pth",
+      "resolved_url": "https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_base.pth",
+      "status": 200,
+      "content_length": "343249461",
+      "last_modified": "Wed, 29 Dec 2021 01:01:14 GMT",
+      "etag": "\"b1188ed1d4b0fa9ab3f127034254f608-41\"",
+      "bytes_downloaded": false
+    }
+  }
+}

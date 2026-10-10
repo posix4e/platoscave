@@ -1,0 +1,77 @@
+{
+  "facebookresearch/moco": {
+    "repository": "facebookresearch/moco",
+    "commit": "8976944da9c6b94cbd9158d7ebe50912aef807ef",
+    "files": {
+      "README.md": {
+        "url": "https://raw.githubusercontent.com/facebookresearch/moco/8976944da9c6b94cbd9158d7ebe50912aef807ef/README.md",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "main_moco.py": {
+        "url": "https://raw.githubusercontent.com/facebookresearch/moco/8976944da9c6b94cbd9158d7ebe50912aef807ef/main_moco.py",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "main_lincls.py": {
+        "url": "https://raw.githubusercontent.com/facebookresearch/moco/8976944da9c6b94cbd9158d7ebe50912aef807ef/main_lincls.py",
+        "error": "HTTP Error 404: Not Found"
+      },
+      "moco/builder.py": {
+        "url": "https://raw.githubusercontent.com/facebookresearch/moco/8976944da9c6b94cbd9158d7ebe50912aef807ef/moco/builder.py",
+        "error": "HTTP Error 404: Not Found"
+      }
+    }
+  },
+  "facebookresearch/mae": {
+    "repository": "facebookresearch/mae",
+    "commit": "efb2a8062c206524e35e47d04501ed4f544c0ae8",
+    "files": {
+      "README.md": {
+        "url": "https://raw.githubusercontent.com/facebookresearch/mae/efb2a8062c206524e35e47d04501ed4f544c0ae8/README.md",
+        "sha256": "edda3ecd28d6cb32559e638c56c7d28d59d6e2f9ada2dd084292c8706764bea6",
+        "bytes": 5716
+      },
+      "PRETRAIN.md": {
+        "url": "https://raw.githubusercontent.com/facebookresearch/mae/efb2a8062c206524e35e47d04501ed4f544c0ae8/PRETRAIN.md",
+        "sha256": "6f589d189508e402a6c21e6b39fad8562e789d9b72e6a1b67780e0f7cdab9049",
+        "bytes": 1639
+      },
+      "main_pretrain.py": {
+        "url": "https://raw.githubusercontent.com/facebookresearch/mae/efb2a8062c206524e35e47d04501ed4f544c0ae8/main_pretrain.py",
+        "sha256": "19339bb66015e1df56ec3ccfa4b4d5df872039fe84ec233009c6e03f58fc7e7e",
+        "bytes": 8860
+      },
+      "models_mae.py": {
+        "url": "https://raw.githubusercontent.com/facebookresearch/mae/efb2a8062c206524e35e47d04501ed4f544c0ae8/models_mae.py",
+        "sha256": "973c01f31fdf15febb5976baecd639b83a5cc011161af852e54ca68c6c2bafb4",
+        "bytes": 9742
+      }
+    }
+  },
+  "facebookresearch/moco_2020": {
+    "repository": "facebookresearch/moco",
+    "commit": "78b69cafae80bc74cd1a89ac3fb365dc20d157d3",
+    "reason": "Pinned last inspected 2020 source; current main deletes implementation.",
+    "files": {
+      "README.md": {
+        "url": "https://raw.githubusercontent.com/facebookresearch/moco/78b69cafae80bc74cd1a89ac3fb365dc20d157d3/README.md",
+        "sha256": "80b8be385e481d4b691bc7986be343058c049956d719fc9b6a9d1b44914d2048",
+        "bytes": 5596
+      },
+      "main_moco.py": {
+        "url": "https://raw.githubusercontent.com/facebookresearch/moco/78b69cafae80bc74cd1a89ac3fb365dc20d157d3/main_moco.py",
+        "sha256": "f231ad27305f588784546f0741da714e6430d58cf03a4acc17c7cb561edc9a39",
+        "bytes": 16269
+      },
+      "main_lincls.py": {
+        "url": "https://raw.githubusercontent.com/facebookresearch/moco/78b69cafae80bc74cd1a89ac3fb365dc20d157d3/main_lincls.py",
+        "sha256": "c3fae8e33de5fac9a589ef4f5464184604f1d6e55081c4406576f54c98558b47",
+        "bytes": 19571
+      },
+      "moco/builder.py": {
+        "url": "https://raw.githubusercontent.com/facebookresearch/moco/78b69cafae80bc74cd1a89ac3fb365dc20d157d3/moco/builder.py",
+        "sha256": "349f418a8502e3a4fe5428535b375e5517f4df8591614d17168f91b4900ff1b2",
+        "bytes": 5712
+      }
+    }
+  }
+}

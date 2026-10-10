@@ -1,0 +1,101 @@
+{
+  "recorded_at_utc": "2026-10-10T18:03:48.462987+00:00",
+  "candidate": "original ELMo 1 Billion Word Benchmark model",
+  "status": "documented_corpus_chronology_passes_for_2017_EPIC; full_weight_bytes_not_downloaded_or_hashed; no_inference_run",
+  "sources": {
+    "original_model_catalog_2018": {
+      "url": "https://raw.githubusercontent.com/allenai/allennlp-website/40d800e5e6365520e8ae52f9d0302549fc11f1d5/elmo.html",
+      "bytes": 9885,
+      "sha256": "6850b9143f3bb874eabf8876e9f113f867806316912c6f50a308011a9654bc79"
+    },
+    "bilm_readme": {
+      "url": "https://raw.githubusercontent.com/allenai/bilm-tf/7cffee2b0986be51f5e2a747244836e1047657f4/README.md",
+      "bytes": 14724,
+      "sha256": "e975274ec7430e69236484d2d32ed71e5403f61cb31354d042354403a71f5d24"
+    },
+    "inference_model": {
+      "url": "https://raw.githubusercontent.com/allenai/bilm-tf/7cffee2b0986be51f5e2a747244836e1047657f4/bilm/model.py",
+      "bytes": 26702,
+      "sha256": "b6bb9158c2e3c3897e62748784165c5126eb42dc36293a540689d5a8b2cea5e0"
+    },
+    "layer_mixing": {
+      "url": "https://raw.githubusercontent.com/allenai/bilm-tf/7cffee2b0986be51f5e2a747244836e1047657f4/bilm/elmo.py",
+      "bytes": 4179,
+      "sha256": "80dfb939bc515c629b278d36260d7108e7421c2ea79fb9b4f905f36949b63a58"
+    },
+    "training_recipe": {
+      "url": "https://raw.githubusercontent.com/allenai/bilm-tf/7cffee2b0986be51f5e2a747244836e1047657f4/bin/train_elmo.py",
+      "bytes": 1804,
+      "sha256": "89439c7f6a33b2bca64a823a4124d6a716c1aae620364c4c4475a0a57f39572d"
+    },
+    "benchmark_source": {
+      "url": "https://www.statmt.org/lm-benchmark/",
+      "bytes": 1385,
+      "sha256": "411dfd092c2a5b6fe1dfdffe260a4bc6c8f39111bc69e454e90c488b2fc64a35"
+    },
+    "options": {
+      "url": "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_options.json",
+      "bytes": 336,
+      "sha256": "86cb4c1a7e2f25e3867d06810e33ae27fbbd511ac77ca377be5fb7405a7085b1"
+    }
+  },
+  "options": {
+    "lstm": {
+      "use_skip_connections": true,
+      "projection_dim": 512,
+      "cell_clip": 3,
+      "proj_clip": 3,
+      "dim": 4096,
+      "n_layers": 2
+    },
+    "char_cnn": {
+      "activation": "relu",
+      "filters": [
+        [
+          1,
+          32
+        ],
+        [
+          2,
+          32
+        ],
+        [
+          3,
+          64
+        ],
+        [
+          4,
+          128
+        ],
+        [
+          5,
+          256
+        ],
+        [
+          6,
+          512
+        ],
+        [
+          7,
+          1024
+        ]
+      ],
+      "n_highway": 2,
+      "embedding": {
+        "dim": 16
+      },
+      "n_characters": 262,
+      "max_characters_per_token": 50
+    }
+  },
+  "weight_artifact": {
+    "url": "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5",
+    "http_status": 200,
+    "bytes_reported": 374434792,
+    "etag": "\"677ff2647400878939d1f56c382c5d91-45\"",
+    "last_modified_header": "Wed, 01 Nov 2017 23:07:05 GMT",
+    "sha256": null,
+    "full_bytes_read": false,
+    "caveat": "HTTP headers are current server metadata, not independent historical provenance or a complete artifact digest."
+  }
+}
