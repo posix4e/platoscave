@@ -5,7 +5,9 @@ The page presents a metadata audit, five experimental conditions, and all 15
 completed reduced pilot runs. These runs check the procedure; they do not settle
 the model-choice question or estimate the planned full-data exclusion effects.
 
-Source: GitHub. Hosting: Cloudflare Pages. Intended custom domain: `platoscave.si`.
+Source: [posix4e/platoscave](https://github.com/posix4e/platoscave).
+Hosted on [Cloudflare Pages](https://platoscave.pages.dev/).
+Custom domain: [platoscave.si](https://platoscave.si/).
 
 ## Preview
 
@@ -21,19 +23,20 @@ No build step or application dependencies are required. Scientific records are i
 Authenticate Wrangler with a Cloudflare account that can manage Pages, then:
 
 ```sh
-npx wrangler@4 pages project create platoscave --production-branch main
-npx wrangler@4 pages deploy dist --project-name platoscave --branch main
+npx wrangler@4 pages deploy dist --project-name platoscave --branch main --commit-hash "$(git rev-parse HEAD)"
 ```
 
-Create the project only once. If it already exists, reuse it. Deploy the committed
-source and record the Git revision alongside the Cloudflare deployment ID.
+The `platoscave` Pages project already exists. Deploy the committed source and
+record the Git revision alongside the Cloudflare deployment ID.
 Source is stored in GitHub; hosting is not GitHub Pages. Deployment is direct
 upload, not an automatic Git integration.
 
-Attach `platoscave.si` in the Pages project's custom-domain settings. An apex
-domain requires its DNS zone in the same Cloudflare account and the domain's
-nameservers set to that zone's assigned Cloudflare nameservers. Record the actual
-deployment and DNS state before claiming the domain is live.
+`platoscave.si` is attached to the Pages project, with a proxied CNAME pointing
+to `platoscave.pages.dev`. Namecheap has the Cloudflare nameservers saved:
+`dayana.ns.cloudflare.com` and `thomas.ns.cloudflare.com`.
+At setup on 10 October 2026, delegation and certificate validation were pending;
+the Pages address was serving the site. Check current DNS and HTTPS status before
+claiming the custom domain is live.
 
 ## Scientific scope
 
