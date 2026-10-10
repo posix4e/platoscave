@@ -4,6 +4,53 @@ The user asked to compare models on the same five photographs first. This
 follow-up crosses three image encoders with two language encoders. It preserves
 the original DINO/GloVe result and reports every pairing.
 
+## Completed comparison
+
+Every prescribed cell ran successfully. Each has a unique best assignment.
+The rank is the human correspondence's position among the 120 possible
+assignments, ordered by the frozen distance cost; rank 1 would be best.
+
+| Image model | GloVe: correct; human rank | ELMo: correct; human rank |
+| --- | --- | --- |
+| DINO | 1/5; 94/120 | 0/5; 26/120 |
+| MoCo-v2 | 1/5; 91/120 | 0/5; 40/120 |
+| MAE | 1/5; 99/120 | 0/5; 24/120 |
+
+DINO and MoCo select the same correspondence for each language model. MAE
+selects different correspondences despite the same correct counts. Replacing
+GloVe with ELMo changes the selected matches for all three image encoders.
+Thus model choice changes the answer, but none of these six choices recovers
+the five human correspondences under this rule. That is the observed result,
+not evidence that all pretrained models fail or that Rosetta fails.
+
+One correct match is the expectation for a uniformly random bijection of five
+items. It is not a significance test or an assertion of equivalence to chance.
+The six comparisons reuse five photographs from one outing; they are not six
+independent datasets. The 120 assignments per cell are an exhaustive search,
+not 120 observations. Short labels also leave meaning ambiguous: for example,
+“Basketball” names a photographed scene as well as a possible object or sport.
+The labels were preserved verbatim rather than rewritten after scoring.
+
+MAE's CLS distances range from 0.0054 to 0.0397, compared with 0.4923–0.9231
+for DINO and 0.3655–0.8125 for MoCo. No feature rows are exact duplicates and
+all distance matrices have nonzero edge variance. These checks describe the
+geometry; they do not select a different readout or scoring rule. Raw minimum
+costs across model pairs are not a model-quality ranking.
+Uniform positive rescaling or shifting of a graph's edge distances would not
+change the ordering of complete assignments under this objective. Distance
+concentration alone therefore does not explain MAE's chosen correspondence.
+Four labels have one token and one has two; this is also a narrow test of a
+contextual language model. Low scores establish neither clean pretraining nor
+contamination. Those claims require separate evidence about training and time.
+
+The complete [evaluation](results/evaluation.json),
+[720 assignment records](results/assignments.json),
+[public distance matrices](results/blind-panel.json) and
+[run evidence](results/run-evidence.json) retain every result. The original
+DINO/GloVe features and numerical result are unchanged.
+
+## Design
+
 | Image features | GloVe 6B, 300d | Original ELMo, top contextual layer |
 | --- | --- | --- |
 | Original DINOv1 ViT-B/16, CLS | Original reference | Language replacement |
@@ -75,10 +122,11 @@ distinguishes these checkpoints.
   check repeatability, order, batching, state reset, output shape and invalid
   input guards. These checks are not research outcomes.
 
-The final `protocol.json` and `release-lock.json` must be published before any
-additional features of the five study items are computed. No checkpoint weights
-are stored in GitHub. Acquisition receipts identify the official URLs and exact
-bytes needed to recreate the runtime.
+The final `protocol.json` and `release-lock.json` were published in commit
+[`7fcbc370`](https://github.com/posix4e/platoscave/commit/7fcbc370de6c4e7ca486a9d20cb47e7ec9568157)
+before any additional features of the five study items were computed. No
+checkpoint weights are stored in GitHub. Acquisition receipts identify the
+official URLs and exact bytes needed to recreate the runtime.
 
 Run each stage in order, with explicit local paths (`--help` lists them):
 
@@ -96,3 +144,30 @@ All outputs require unused destinations. Preserve a failed run and its evidence;
 do not silently overwrite it. The frozen plan reports every prescribed cell,
 including failures and ties. It adds no models, views, label variants or scoring
 rules in response to the results.
+
+## Verification and public replay
+
+The [independent audit](results/independent-audit.json) passed 3,023 checks.
+Its separate implementation recomputes the five distance matrices from saved
+features and all 720 assignment costs, correlations and selections. It verifies
+the original result, fixed labels, model/source receipts and provenance hashes.
+[Five altered-copy checks](results/independent-audit-validation.json) were
+rejected. This audit was written after the results: it does not preregister the
+experiment, independently rerun the encoders, authenticate capture times or
+audit the pretraining corpora.
+
+Anyone can reproduce the matching calculation without the private photos.
+From the repository root, choose an output directory that does not exist:
+
+```sh
+python3 research/model-choice-controls/panel.py solve \
+  --input research/model-choice-controls/results/blind-panel.json \
+  --core research/five-photo-pilot/solve.py \
+  --out /tmp/model-choice-replay
+```
+
+This uses Python's standard library. Our [public replay check](results/public-replay-check.json)
+reproduced the assignment file byte for byte and every selected result,
+excluding its new recording timestamp. The independent feature audit also
+requires NumPy and access to the private artifacts; public replay cannot
+verify photo-to-feature extraction.

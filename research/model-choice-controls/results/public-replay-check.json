@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "recorded_at_utc": "2026-10-10T22:32:29.881672+00:00",
+  "command": "python3 research/model-choice-controls/panel.py solve --input research/model-choice-controls/results/blind-panel.json --core research/five-photo-pilot/solve.py --out REPLAY_OUTPUT",
+  "scope": "Matching-stage replay from public distance matrices only; no private photograph or raw feature input.",
+  "all_720_assignment_records_byte_identical": true,
+  "all_six_selected_results_identical_except_new_recording_timestamp": true,
+  "blind_panel_sha256": "537a186903eb7a8949efbb4cef5ba9d051aef3cc28747c7a0f2eabcac9d39413",
+  "assignments_sha256": "429b16fbe85425048533612f15419d747042b2fd5be37fce7e57c219ff47ef17",
+  "frozen_panel_source_sha256": "a006b01f35414ad38fadc5c298af2b184b7192dc797cfa64973ccf0cfc6e4299",
+  "frozen_numerical_core_sha256": "6819921cecd461dc841b1ea89dddb18fab53fc0c36c07b631d7f755346ce5dfc"
+}

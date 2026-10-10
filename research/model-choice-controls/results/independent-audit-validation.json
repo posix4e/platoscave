@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "recorded_at_utc": "2026-10-10T22:31:49.714383+00:00",
+  "audit_source_sha256": "ccf84bdb68e1cebfa9c47cde743f8ce245760b9a068c4da3ffc1a5d3c89533dd",
+  "tests": [
+    {
+      "test": "distance",
+      "status": "rejected_as_expected",
+      "reason": "Audit failed: moco feature-to-distance replay"
+    },
+    {
+      "test": "assignment_cost",
+      "status": "rejected_as_expected",
+      "reason": "Audit failed: mae__elmo assignment 0 cost"
+    },
+    {
+      "test": "tokens",
+      "status": "rejected_as_expected",
+      "reason": "Audit failed: ELMo exact human caption hash/token order"
+    },
+    {
+      "test": "human_mapping",
+      "status": "rejected_as_expected",
+      "reason": "Audit failed: human correspondence from manifest and declared shuffles"
+    },
+    {
+      "test": "primary_bytes",
+      "status": "rejected_as_expected",
+      "reason": "Audit failed: original_features hash"
+    }
+  ],
+  "original_inputs_unchanged": true,
+  "temporary_copies_removed": true,
+  "scope": "Audit rejection tests on deliberately altered private temporary copies of completed result artifacts. No new model inference or experiment result; originals were not modified."
+}

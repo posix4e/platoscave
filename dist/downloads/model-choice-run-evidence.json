@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "protocol_id": "five-photo-model-choice-v1",
+  "status": "complete",
+  "pre_inference_source_commit": "7fcbc370de6c4e7ca486a9d20cb47e7ec9568157",
+  "pre_inference_source_commit_recorded_at": "2026-10-10T18:27:05-04:00",
+  "publication_order": "The release commit was successfully pushed to GitHub before extracting the additional photograph features. All six assignments were saved before the separate evaluation process read human correspondence.",
+  "chronology_limit": "The original DINO/GloVe checkpoint files were fixed before the collector reports taking the five photographs. The additional three checkpoint files were downloaded after the photographs and after the original result; their earlier training histories are documented by their publishers, not established by a pre-capture commitment to these exact bytes.",
+  "scope": "Exploratory model comparison on the same five items. No Rosetta algorithm, learned mapping, held-out test, significance claim, training-corpus audit or isolated causal attribution.",
+  "protocol_sha256": "852b8b021dbaed43cdbc54ca44b577c13906f37edb1f6dd4706661b507fbef9a",
+  "release_lock_sha256": "ff8ba482770a1e62d1fceed3a8fa5f4f8e411cbfaba1f70330798f8450dd819a",
+  "frozen_source_hashes": {
+    "check_vision_readiness.py": "44cf2936d9c07c7eab8894c7db468aa8705724fc388908b13682389693e933ef",
+    "elmo-artifacts.json": "4f90865834f953a7741762ac7cd8f68fea225918e7755ecfac455fb2e5e6bbfc",
+    "elmo-environment.json": "d74fa50cd856a8eff7dce6f336988b3a2c18edc9fc4cff833b2295d7b4834d6d",
+    "elmo-readiness.json": "5c11a5f8bc3e87586b4a1023f2bc310a120c96b087ca62c0f279f18ccf18c8df",
+    "elmo_features.py": "0fff41c3740a7ece2f89a4b9ba4b50d2d370606357f2ff57cce310a12e3d09ce",
+    "panel-tests.json": "fa3045e3f9303d469af7d6260da4df8e27aad4fc5315008aae56bfa6ab3b7452",
+    "panel.py": "a006b01f35414ad38fadc5c298af2b184b7192dc797cfa64973ccf0cfc6e4299",
+    "protocol.json": "852b8b021dbaed43cdbc54ca44b577c13906f37edb1f6dd4706661b507fbef9a",
+    "test_panel.py": "1434c3a155d7ff6614c7cd01146b744d63abfce54b9e6ae3c600a2e468c1fed8",
+    "test_vision_features.py": "8d9de62e78248b306e85cd08946090ac2a3bef32879b1340423ea6c08bcb60fa",
+    "vendor/mae/LICENSE": "ffe3b1e0b58c1f1250ce48f84d8c37328f9a1ff59bb77b63bc97480cf2778b64",
+    "vendor/mae/main_linprobe.py": "bc4eab531eb32538cb8cc572c2a7431ddb587ff8be848e8b4b2e4bd73788b7a2",
+    "vendor/mae/models_vit.py": "6770ed2226d46ab8ba2b1ebc6662cc353dabf759679569acd004f6b3ac868154",
+    "vendor/timm-0.3.2-py3-none-any.whl": "c1598ef61c246e38835a6b834811dcb8d62ae56b644cd54dc3ef9565c8387875",
+    "vision-artifacts.json": "84d0a32f8678e4d3e5fbce173b54262b0c74ccb19a637e22de35c00210cf9bfb",
+    "vision-readiness.json": "589d95dc80b7ec31beb41910a20c0d39fc9d693706225a3b63c830bf7c27b395",
+    "vision-vendor-lock.json": "dea029b7f933a2acb9b8f6f0930bed63813c6bd0499e2ccde5ac14732ceea12b",
+    "vision_features.py": "68278d4d0827acf748dc1a254b18ff39bb918c878311ef6caabcb1453eedc1a6"
+  },
+  "reused_primary_features_sha256": "d9924e021e2b4233493930454ca7d32be2cde55617d1ed8aaca83bf11b528515",
+  "primary_result_unchanged": true,
+  "artifact_sha256_by_role": {
+    "original_features": "d9924e021e2b4233493930454ca7d32be2cde55617d1ed8aaca83bf11b528515",
+    "manifest": "252eab59d902fcb3a772a73782d46156d6f53c9bf67bc3f79010b52e95287ece",
+    "moco_features": "26b1aefa77c84e7a0e0faf25936ec1e5a5a76197ce312d23669ecd2379273954",
+    "moco_metadata": "6d5041c151be4b20d90fbc41958ba44ab8dc9c7f8779e410f499d95f552354a2",
+    "mae_features": "5eadeeeb25f103d20ac380e8ac9e5cbdaa5181d39b94cd6d9c4e4ef518bd88af",
+    "mae_metadata": "122a9276f3fe89ba40ef893f58fb19659d27577f80bde1997481dc4a1f92f1ad",
+    "elmo_features": "8efe4558cb459037f966a375d5e5ae76af9f342b8524ad72bb010190416332e4",
+    "elmo_metadata": "181de4ab616dd1fa205a36d68b1297bbafc22bffc01491f5d9c4e146acf8a6a1"
+  },
+  "sample_count": 5,
+  "feature_shapes": {
+    "dino": [
+      5,
+      768
+    ],
+    "glove": [
+      5,
+      300
+    ],
+    "moco": [
+      5,
+      2048
+    ],
+    "mae": [
+      5,
+      768
+    ],
+    "elmo": [
+      5,
+      1024
+    ]
+  },
+  "additional_encoder_records": {
+    "moco": {
+      "protocol_id": "five-photo-model-choice-v1",
+      "protocol_sha256": "852b8b021dbaed43cdbc54ca44b577c13906f37edb1f6dd4706661b507fbef9a",
+      "release_lock_sha256": "ff8ba482770a1e62d1fceed3a8fa5f4f8e411cbfaba1f70330798f8450dd819a",
+      "source_hashes": {
+        "check_vision_readiness.py": "44cf2936d9c07c7eab8894c7db468aa8705724fc388908b13682389693e933ef",
+        "elmo-artifacts.json": "4f90865834f953a7741762ac7cd8f68fea225918e7755ecfac455fb2e5e6bbfc",
+        "elmo-environment.json": "d74fa50cd856a8eff7dce6f336988b3a2c18edc9fc4cff833b2295d7b4834d6d",
+        "elmo-readiness.json": "5c11a5f8bc3e87586b4a1023f2bc310a120c96b087ca62c0f279f18ccf18c8df",
+        "elmo_features.py": "0fff41c3740a7ece2f89a4b9ba4b50d2d370606357f2ff57cce310a12e3d09ce",
+        "panel-tests.json": "fa3045e3f9303d469af7d6260da4df8e27aad4fc5315008aae56bfa6ab3b7452",
+        "panel.py": "a006b01f35414ad38fadc5c298af2b184b7192dc797cfa64973ccf0cfc6e4299",
+        "protocol.json": "852b8b021dbaed43cdbc54ca44b577c13906f37edb1f6dd4706661b507fbef9a",
+        "test_panel.py": "1434c3a155d7ff6614c7cd01146b744d63abfce54b9e6ae3c600a2e468c1fed8",
+        "test_vision_features.py": "8d9de62e78248b306e85cd08946090ac2a3bef32879b1340423ea6c08bcb60fa",
+        "vendor/mae/LICENSE": "ffe3b1e0b58c1f1250ce48f84d8c37328f9a1ff59bb77b63bc97480cf2778b64",
+        "vendor/mae/main_linprobe.py": "bc4eab531eb32538cb8cc572c2a7431ddb587ff8be848e8b4b2e4bd73788b7a2",
+        "vendor/mae/models_vit.py": "6770ed2226d46ab8ba2b1ebc6662cc353dabf759679569acd004f6b3ac868154",
+        "vendor/timm-0.3.2-py3-none-any.whl": "c1598ef61c246e38835a6b834811dcb8d62ae56b644cd54dc3ef9565c8387875",
+        "vision-artifacts.json": "84d0a32f8678e4d3e5fbce173b54262b0c74ccb19a637e22de35c00210cf9bfb",
+        "vision-readiness.json": "589d95dc80b7ec31beb41910a20c0d39fc9d693706225a3b63c830bf7c27b395",
+        "vision-vendor-lock.json": "dea029b7f933a2acb9b8f6f0930bed63813c6bd0499e2ccde5ac14732ceea12b",
+        "vision_features.py": "68278d4d0827acf748dc1a254b18ff39bb918c878311ef6caabcb1453eedc1a6"
+      },
+      "encoder": "moco",
+      "status": "complete",
+      "feature_sha256": "26b1aefa77c84e7a0e0faf25936ec1e5a5a76197ce312d23669ecd2379273954",
+      "sample_count": 5,
+      "weights_sha256": "5e4a3fd7178a95837c0ad71c265ed5f477d271e753ba505b6b6a5e86829eeb7e",
+      "helper_sha256": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+      "shape": [
+        5,
+        2048
+      ],
+      "dtype": "float32",
+      "batch_size": 1,
+      "model_loading": {
+        "model": "moco_v2_r50_800ep",
+        "checkpoint_sha256": "5e4a3fd7178a95837c0ad71c265ed5f477d271e753ba505b6b6a5e86829eeb7e",
+        "training_source_commit": "78b69cafae80bc74cd1a89ac3fb365dc20d157d3",
+        "runtime": {
+          "torch": "2.7.1+cu128",
+          "torchvision": "0.22.1+cu128",
+          "numpy": "2.5.3"
+        },
+        "resnet_source_sha256": "7499a5059ad7b1a1f8f7543c04b4a13795140fad837c38530b48ff5d9610bf6e",
+        "dimension": 2048,
+        "pooling": "final adaptive average pool before projection head",
+        "loaded_state_keys": 318,
+        "discarded_keys": [
+          "module.encoder_q.fc.0.bias",
+          "module.encoder_q.fc.0.weight",
+          "module.encoder_q.fc.2.bias",
+          "module.encoder_q.fc.2.weight"
+        ],
+        "preprocessing": "unchanged frozen fresh-pilot helper; common bicubic resize256 center224"
+      },
+      "completed_at_utc": "2026-10-10T22:27:47.707206+00:00",
+      "runtime": {
+        "torch": "2.7.1+cu128",
+        "numpy": "2.5.3",
+        "pillow": "12.3.0",
+        "cuda": "12.8",
+        "device": "NVIDIA H100 NVL"
+      }
+    },
+    "mae": {
+      "protocol_id": "five-photo-model-choice-v1",
+      "protocol_sha256": "852b8b021dbaed43cdbc54ca44b577c13906f37edb1f6dd4706661b507fbef9a",
+      "release_lock_sha256": "ff8ba482770a1e62d1fceed3a8fa5f4f8e411cbfaba1f70330798f8450dd819a",
+      "source_hashes": {
+        "check_vision_readiness.py": "44cf2936d9c07c7eab8894c7db468aa8705724fc388908b13682389693e933ef",
+        "elmo-artifacts.json": "4f90865834f953a7741762ac7cd8f68fea225918e7755ecfac455fb2e5e6bbfc",
+        "elmo-environment.json": "d74fa50cd856a8eff7dce6f336988b3a2c18edc9fc4cff833b2295d7b4834d6d",
+        "elmo-readiness.json": "5c11a5f8bc3e87586b4a1023f2bc310a120c96b087ca62c0f279f18ccf18c8df",
+        "elmo_features.py": "0fff41c3740a7ece2f89a4b9ba4b50d2d370606357f2ff57cce310a12e3d09ce",
+        "panel-tests.json": "fa3045e3f9303d469af7d6260da4df8e27aad4fc5315008aae56bfa6ab3b7452",
+        "panel.py": "a006b01f35414ad38fadc5c298af2b184b7192dc797cfa64973ccf0cfc6e4299",
+        "protocol.json": "852b8b021dbaed43cdbc54ca44b577c13906f37edb1f6dd4706661b507fbef9a",
+        "test_panel.py": "1434c3a155d7ff6614c7cd01146b744d63abfce54b9e6ae3c600a2e468c1fed8",
+        "test_vision_features.py": "8d9de62e78248b306e85cd08946090ac2a3bef32879b1340423ea6c08bcb60fa",
+        "vendor/mae/LICENSE": "ffe3b1e0b58c1f1250ce48f84d8c37328f9a1ff59bb77b63bc97480cf2778b64",
+        "vendor/mae/main_linprobe.py": "bc4eab531eb32538cb8cc572c2a7431ddb587ff8be848e8b4b2e4bd73788b7a2",
+        "vendor/mae/models_vit.py": "6770ed2226d46ab8ba2b1ebc6662cc353dabf759679569acd004f6b3ac868154",
+        "vendor/timm-0.3.2-py3-none-any.whl": "c1598ef61c246e38835a6b834811dcb8d62ae56b644cd54dc3ef9565c8387875",
+        "vision-artifacts.json": "84d0a32f8678e4d3e5fbce173b54262b0c74ccb19a637e22de35c00210cf9bfb",
+        "vision-readiness.json": "589d95dc80b7ec31beb41910a20c0d39fc9d693706225a3b63c830bf7c27b395",
+        "vision-vendor-lock.json": "dea029b7f933a2acb9b8f6f0930bed63813c6bd0499e2ccde5ac14732ceea12b",
+        "vision_features.py": "68278d4d0827acf748dc1a254b18ff39bb918c878311ef6caabcb1453eedc1a6"
+      },
+      "encoder": "mae",
+      "status": "complete",
+      "feature_sha256": "5eadeeeb25f103d20ac380e8ac9e5cbdaa5181d39b94cd6d9c4e4ef518bd88af",
+      "sample_count": 5,
+      "weights_sha256": "aec5f0b68e5f3193a00b07bc65a37440db549c15b36b8bea242606cc40c4bc5d",
+      "helper_sha256": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+      "shape": [
+        5,
+        768
+      ],
+      "dtype": "float32",
+      "batch_size": 1,
+      "model_loading": {
+        "model": "mae_vit_b16",
+        "checkpoint_sha256": "aec5f0b68e5f3193a00b07bc65a37440db549c15b36b8bea242606cc40c4bc5d",
+        "source_commit": "efb2a8062c206524e35e47d04501ed4f544c0ae8",
+        "vendor_sha256": {
+          "mae/models_vit.py": "6770ed2226d46ab8ba2b1ebc6662cc353dabf759679569acd004f6b3ac868154",
+          "mae/LICENSE": "ffe3b1e0b58c1f1250ce48f84d8c37328f9a1ff59bb77b63bc97480cf2778b64",
+          "timm-0.3.2-py3-none-any.whl": "c1598ef61c246e38835a6b834811dcb8d62ae56b644cd54dc3ef9565c8387875"
+        },
+        "runtime": {
+          "torch": "2.7.1+cu128",
+          "torchvision": "0.22.1+cu128",
+          "numpy": "2.5.3"
+        },
+        "dimension": 768,
+        "pooling": "final encoder LayerNorm CLS; global_pool=False",
+        "patch_order": "fixed raster order; all 196 patches; no masking or shuffling",
+        "loaded_state_keys": 150,
+        "discarded_keys": [],
+        "compatibility_change": "temporary torch._six.container_abcs alias to collections.abc during timm import only",
+        "preprocessing": "unchanged frozen fresh-pilot helper; common bicubic resize256 center224"
+      },
+      "completed_at_utc": "2026-10-10T22:27:52.778459+00:00",
+      "runtime": {
+        "torch": "2.7.1+cu128",
+        "numpy": "2.5.3",
+        "pillow": "12.3.0",
+        "cuda": "12.8",
+        "device": "NVIDIA H100 NVL"
+      }
+    },
+    "elmo": {
+      "schema_version": 1,
+      "status": "complete",
+      "created_at_utc": "2026-10-10T22:27:49.891871+00:00",
+      "source_sha256": "0fff41c3740a7ece2f89a4b9ba4b50d2d370606357f2ff57cce310a12e3d09ce",
+      "weights_sha256": "a6b92b9ccbb13fe489faacd2221c795d4bebe84b75f8aded9d85ea464fa5c994",
+      "options_sha256": "86cb4c1a7e2f25e3867d06810e33ae27fbbd511ac77ca377be5fb7405a7085b1",
+      "backend_source_sha256": {
+        "modules/elmo.py": "a02b3ce51773fa125ae889affc21a65201bd8451bee997b3e956d9cb9f0d5c90",
+        "modules/elmo_lstm.py": "aec79417f2d60d722847bb861475edafee07bc163a1aeee2f70764d5d5290056",
+        "modules/encoder_base.py": "373b14173415ba1180c9f1544ea7762e3b263c698b30bd486d8cb175c529b9d0",
+        "modules/lstm_cell_with_projection.py": "66f84517e5fe4ba3b78a955580bc4e206fdb470b2c6d0a05039af5d9c89f03cf",
+        "modules/highway.py": "47d270ab4f478426121c476922b1948f995228f171955b270031a5fd3c90daf7",
+        "modules/scalar_mix.py": "9efb83375d4ef2d9f56ba464e8db2a13d3e529fd33115096bdf14fd345dc96eb",
+        "nn/util.py": "ace9269f2b80170358abb9006ef4c9b3bc7886828c49c24b9e33b1e41397345e",
+        "data/token_indexers/elmo_indexer.py": "28e3ef2ff9a9e564c07e574ef63a28f25fe2d9757518971c604ae2b8d7440ae7"
+      },
+      "backend_reference": "https://github.com/allenai/allennlp/tree/v2.10.1",
+      "runtime": {
+        "allennlp": "2.10.1",
+        "torch": "1.12.1+cpu",
+        "numpy": "1.23.5",
+        "h5py": "3.8.0",
+        "python": "3.10.19",
+        "system": "Linux",
+        "machine": "x86_64",
+        "device": "cpu",
+        "threads": 4,
+        "interop_threads": 1,
+        "deterministic_algorithms": true
+      },
+      "output_dtype": "float32",
+      "feature_dimensions": 1024,
+      "frozen_model": true,
+      "all_finite": true,
+      "l2_normalized": true,
+      "tokenization": "Unicode NFKC, lowercase, regex [a-z]+(?:'[a-z]+)?|[0-9]+; original token order retained",
+      "representation": "Final contextual layer, mean of real tokens excluding BOS/EOS/padding, then L2",
+      "recurrent_state": "reset_states before every independent sentence; production batch size one",
+      "dropout": 0.0,
+      "scalar_mix": "none; _ElmoBiLm activations[-1] used directly",
+      "character_truncation": "Rejected when a token exceeds 48 UTF-8 bytes",
+      "sample_count": 5,
+      "sample_ids": [
+        "candidate-001",
+        "candidate-002",
+        "candidate-003",
+        "candidate-004",
+        "candidate-005"
+      ],
+      "captions_sha256": "3ff646ea28adfe1b16597ff0f1e5440536e670c2576f84e4b5dc29a35ee8b6f1",
+      "tokens": [
+        {
+          "sample_id": "candidate-001",
+          "tokens": [
+            "slide"
+          ],
+          "count": 1
+        },
+        {
+          "sample_id": "candidate-002",
+          "tokens": [
+            "trashcan"
+          ],
+          "count": 1
+        },
+        {
+          "sample_id": "candidate-003",
+          "tokens": [
+            "tree"
+          ],
+          "count": 1
+        },
+        {
+          "sample_id": "candidate-004",
+          "tokens": [
+            "basketball"
+          ],
+          "count": 1
+        },
+        {
+          "sample_id": "candidate-005",
+          "tokens": [
+            "water",
+            "fountain"
+          ],
+          "count": 2
+        }
+      ],
+      "feature_sha256": "8efe4558cb459037f966a375d5e5ae76af9f342b8524ad72bb010190416332e4"
+    }
+  },
+  "preflight_times": {
+    "moco": "2026-10-10T22:27:45.195333+00:00",
+    "mae": "2026-10-10T22:27:49.905125+00:00"
+  },
+  "all_selections_saved_at_utc": "2026-10-10T22:28:07.324923+00:00",
+  "evaluation_recorded_at_utc": "2026-10-10T22:28:24.692413+00:00",
+  "feature_diagnostics": {
+    "dino": {
+      "off_diagonal_min": 0.4923309216918871,
+      "off_diagonal_max": 0.923141331672052,
+      "off_diagonal_mean": 0.7554576185663195,
+      "off_diagonal_population_std": 0.12755333925420462,
+      "nonconstant_off_diagonal": true,
+      "exact_duplicate_feature_pairs": [],
+      "all_features_finite": true
+    },
+    "moco": {
+      "off_diagonal_min": 0.36551856333755206,
+      "off_diagonal_max": 0.8124546561835996,
+      "off_diagonal_mean": 0.6184481848380864,
+      "off_diagonal_population_std": 0.12841197593473275,
+      "nonconstant_off_diagonal": true,
+      "exact_duplicate_feature_pairs": [],
+      "all_features_finite": true
+    },
+    "mae": {
+      "off_diagonal_min": 0.00541541689563374,
+      "off_diagonal_max": 0.03965679455699522,
+      "off_diagonal_mean": 0.019431544183010185,
+      "off_diagonal_population_std": 0.011579387786931268,
+      "nonconstant_off_diagonal": true,
+      "exact_duplicate_feature_pairs": [],
+      "all_features_finite": true
+    },
+    "glove": {
+      "off_diagonal_min": 0.698469774414069,
+      "off_diagonal_max": 1.0934910847932398,
+      "off_diagonal_mean": 0.9400900174821079,
+      "off_diagonal_population_std": 0.1148283351710425,
+      "nonconstant_off_diagonal": true,
+      "exact_duplicate_feature_pairs": [],
+      "all_features_finite": true
+    },
+    "elmo": {
+      "off_diagonal_min": 0.36654506083037275,
+      "off_diagonal_max": 0.6715391328023534,
+      "off_diagonal_mean": 0.5266339138816468,
+      "off_diagonal_population_std": 0.09949034657064107,
+      "nonconstant_off_diagonal": true,
+      "exact_duplicate_feature_pairs": [],
+      "all_features_finite": true
+    }
+  },
+  "diagnostic_interpretation": "All vectors and distance edges are finite; no exact duplicate vectors or constant off-diagonal matrices. MAE CLS distances are much more concentrated than the other image features. Raw minimum costs across model pairs are not a model-quality ranking. These descriptive checks do not choose a new rule or readout.",
+  "text_coverage": {
+    "glove": "All six input tokens are present in the original vocabulary; none omitted.",
+    "elmo": "Same six tokens in original order. No character truncation; independent recurrent state per label."
+  },
+  "privacy": "Images, raw feature arrays, manifest rows, capture metadata and private filesystem paths are omitted. Generic user labels, opaque IDs, distances, model/source hashes and numerical outcomes are public.",
+  "independent_audit_sha256": "5b422b4b1856eaf601dd394931f48288fd9158ee9bd247ca4c1982819fdc9976",
+  "independent_audit_scope": "Post-result independent numerical implementation checks saved feature-to-distance conversion and all 720 assignments. Does not repeat encoder inference or authenticate training history/capture chronology."
+}

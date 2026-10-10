@@ -1,0 +1,411 @@
+{
+  "protocol_id": "five-photo-model-choice-v1",
+  "protocol_sha256": "852b8b021dbaed43cdbc54ca44b577c13906f37edb1f6dd4706661b507fbef9a",
+  "release_lock_sha256": "ff8ba482770a1e62d1fceed3a8fa5f4f8e411cbfaba1f70330798f8450dd819a",
+  "source_hashes": {
+    "check_vision_readiness.py": "44cf2936d9c07c7eab8894c7db468aa8705724fc388908b13682389693e933ef",
+    "elmo-artifacts.json": "4f90865834f953a7741762ac7cd8f68fea225918e7755ecfac455fb2e5e6bbfc",
+    "elmo-environment.json": "d74fa50cd856a8eff7dce6f336988b3a2c18edc9fc4cff833b2295d7b4834d6d",
+    "elmo-readiness.json": "5c11a5f8bc3e87586b4a1023f2bc310a120c96b087ca62c0f279f18ccf18c8df",
+    "elmo_features.py": "0fff41c3740a7ece2f89a4b9ba4b50d2d370606357f2ff57cce310a12e3d09ce",
+    "panel-tests.json": "fa3045e3f9303d469af7d6260da4df8e27aad4fc5315008aae56bfa6ab3b7452",
+    "panel.py": "a006b01f35414ad38fadc5c298af2b184b7192dc797cfa64973ccf0cfc6e4299",
+    "protocol.json": "852b8b021dbaed43cdbc54ca44b577c13906f37edb1f6dd4706661b507fbef9a",
+    "test_panel.py": "1434c3a155d7ff6614c7cd01146b744d63abfce54b9e6ae3c600a2e468c1fed8",
+    "test_vision_features.py": "8d9de62e78248b306e85cd08946090ac2a3bef32879b1340423ea6c08bcb60fa",
+    "vendor/mae/LICENSE": "ffe3b1e0b58c1f1250ce48f84d8c37328f9a1ff59bb77b63bc97480cf2778b64",
+    "vendor/mae/main_linprobe.py": "bc4eab531eb32538cb8cc572c2a7431ddb587ff8be848e8b4b2e4bd73788b7a2",
+    "vendor/mae/models_vit.py": "6770ed2226d46ab8ba2b1ebc6662cc353dabf759679569acd004f6b3ac868154",
+    "vendor/timm-0.3.2-py3-none-any.whl": "c1598ef61c246e38835a6b834811dcb8d62ae56b644cd54dc3ef9565c8387875",
+    "vision-artifacts.json": "84d0a32f8678e4d3e5fbce173b54262b0c74ccb19a637e22de35c00210cf9bfb",
+    "vision-readiness.json": "589d95dc80b7ec31beb41910a20c0d39fc9d693706225a3b63c830bf7c27b395",
+    "vision-vendor-lock.json": "dea029b7f933a2acb9b8f6f0930bed63813c6bd0499e2ccde5ac14732ceea12b",
+    "vision_features.py": "68278d4d0827acf748dc1a254b18ff39bb918c878311ef6caabcb1453eedc1a6"
+  },
+  "status": "complete",
+  "pairs": {
+    "dino__glove": {
+      "best_assignments": [
+        {
+          "text_indices": [
+            0,
+            4,
+            1,
+            3,
+            2
+          ],
+          "mapping": {
+            "I00": "T00",
+            "I01": "T04",
+            "I02": "T01",
+            "I03": "T03",
+            "I04": "T02"
+          },
+          "cost": 0.03781860020010573,
+          "distance_correlation": 0.8782134342420858,
+          "optimal": true
+        }
+      ],
+      "minimum_cost": 0.03781860020010573,
+      "tied_count": 1,
+      "gap_to_first_distinct_cost": 0.00028064526353802077,
+      "best_assignments_evaluated": [
+        {
+          "text_indices": [
+            0,
+            4,
+            1,
+            3,
+            2
+          ],
+          "mapping": {
+            "I00": "T00",
+            "I01": "T04",
+            "I02": "T01",
+            "I03": "T03",
+            "I04": "T02"
+          },
+          "cost": 0.03781860020010573,
+          "distance_correlation": 0.8782134342420858,
+          "optimal": true,
+          "correct_out_of_5": 1
+        }
+      ],
+      "mean_correct_out_of_5": 1.0,
+      "correct_out_of_5_range": [
+        1,
+        1
+      ],
+      "true_cost": 0.07347346776688789,
+      "true_assignment_rank_interval": [
+        94,
+        94
+      ],
+      "true_mapping_is_optimal": false
+    },
+    "dino__elmo": {
+      "best_assignments": [
+        {
+          "text_indices": [
+            0,
+            3,
+            2,
+            1,
+            4
+          ],
+          "mapping": {
+            "I00": "T00",
+            "I01": "T03",
+            "I02": "T02",
+            "I03": "T01",
+            "I04": "T04"
+          },
+          "cost": 0.05845679179500731,
+          "distance_correlation": 0.7908260023862598,
+          "optimal": true
+        }
+      ],
+      "minimum_cost": 0.05845679179500731,
+      "tied_count": 1,
+      "gap_to_first_distinct_cost": 0.0008442081363958173,
+      "best_assignments_evaluated": [
+        {
+          "text_indices": [
+            0,
+            3,
+            2,
+            1,
+            4
+          ],
+          "mapping": {
+            "I00": "T00",
+            "I01": "T03",
+            "I02": "T02",
+            "I03": "T01",
+            "I04": "T04"
+          },
+          "cost": 0.05845679179500731,
+          "distance_correlation": 0.7908260023862598,
+          "optimal": true,
+          "correct_out_of_5": 0
+        }
+      ],
+      "mean_correct_out_of_5": 0.0,
+      "correct_out_of_5_range": [
+        0,
+        0
+      ],
+      "true_cost": 0.06875814163853247,
+      "true_assignment_rank_interval": [
+        26,
+        26
+      ],
+      "true_mapping_is_optimal": false
+    },
+    "moco__glove": {
+      "best_assignments": [
+        {
+          "text_indices": [
+            0,
+            4,
+            1,
+            3,
+            2
+          ],
+          "mapping": {
+            "I00": "T00",
+            "I01": "T04",
+            "I02": "T01",
+            "I03": "T03",
+            "I04": "T02"
+          },
+          "cost": 0.10917171944191909,
+          "distance_correlation": 0.8123563745874569,
+          "optimal": true
+        }
+      ],
+      "minimum_cost": 0.10917171944191909,
+      "tied_count": 1,
+      "gap_to_first_distinct_cost": 0.0003325746311826361,
+      "best_assignments_evaluated": [
+        {
+          "text_indices": [
+            0,
+            4,
+            1,
+            3,
+            2
+          ],
+          "mapping": {
+            "I00": "T00",
+            "I01": "T04",
+            "I02": "T01",
+            "I03": "T03",
+            "I04": "T02"
+          },
+          "cost": 0.10917171944191909,
+          "distance_correlation": 0.8123563745874569,
+          "optimal": true,
+          "correct_out_of_5": 1
+        }
+      ],
+      "mean_correct_out_of_5": 1.0,
+      "correct_out_of_5_range": [
+        1,
+        1
+      ],
+      "true_cost": 0.14114128977127022,
+      "true_assignment_rank_interval": [
+        91,
+        91
+      ],
+      "true_mapping_is_optimal": false
+    },
+    "moco__elmo": {
+      "best_assignments": [
+        {
+          "text_indices": [
+            0,
+            3,
+            2,
+            1,
+            4
+          ],
+          "mapping": {
+            "I00": "T00",
+            "I01": "T03",
+            "I02": "T02",
+            "I03": "T01",
+            "I04": "T04"
+          },
+          "cost": 0.017956823587809135,
+          "distance_correlation": 0.6598829329745377,
+          "optimal": true
+        }
+      ],
+      "minimum_cost": 0.017956823587809135,
+      "tied_count": 1,
+      "gap_to_first_distinct_cost": 0.0008974255092053518,
+      "best_assignments_evaluated": [
+        {
+          "text_indices": [
+            0,
+            3,
+            2,
+            1,
+            4
+          ],
+          "mapping": {
+            "I00": "T00",
+            "I01": "T03",
+            "I02": "T02",
+            "I03": "T01",
+            "I04": "T04"
+          },
+          "cost": 0.017956823587809135,
+          "distance_correlation": 0.6598829329745377,
+          "optimal": true,
+          "correct_out_of_5": 0
+        }
+      ],
+      "mean_correct_out_of_5": 0.0,
+      "correct_out_of_5_range": [
+        0,
+        0
+      ],
+      "true_cost": 0.029801589727540257,
+      "true_assignment_rank_interval": [
+        40,
+        40
+      ],
+      "true_mapping_is_optimal": false
+    },
+    "mae__glove": {
+      "best_assignments": [
+        {
+          "text_indices": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "mapping": {
+            "I00": "T00",
+            "I01": "T02",
+            "I02": "T01",
+            "I03": "T03",
+            "I04": "T04"
+          },
+          "cost": 0.8585332017476448,
+          "distance_correlation": 0.9019163845473763,
+          "optimal": true
+        }
+      ],
+      "minimum_cost": 0.8585332017476448,
+      "tied_count": 1,
+      "gap_to_first_distinct_cost": 3.05228130027535e-05,
+      "best_assignments_evaluated": [
+        {
+          "text_indices": [
+            0,
+            2,
+            1,
+            3,
+            4
+          ],
+          "mapping": {
+            "I00": "T00",
+            "I01": "T02",
+            "I02": "T01",
+            "I03": "T03",
+            "I04": "T04"
+          },
+          "cost": 0.8585332017476448,
+          "distance_correlation": 0.9019163845473763,
+          "optimal": true,
+          "correct_out_of_5": 1
+        }
+      ],
+      "mean_correct_out_of_5": 1.0,
+      "correct_out_of_5_range": [
+        1,
+        1
+      ],
+      "true_cost": 0.8618373631799827,
+      "true_assignment_rank_interval": [
+        99,
+        99
+      ],
+      "true_mapping_is_optimal": false
+    },
+    "mae__elmo": {
+      "best_assignments": [
+        {
+          "text_indices": [
+            2,
+            4,
+            3,
+            1,
+            0
+          ],
+          "mapping": {
+            "I00": "T02",
+            "I01": "T04",
+            "I02": "T03",
+            "I03": "T01",
+            "I04": "T00"
+          },
+          "cost": 0.2656540319720685,
+          "distance_correlation": 0.7085808473584421,
+          "optimal": true
+        }
+      ],
+      "minimum_cost": 0.2656540319720685,
+      "tied_count": 1,
+      "gap_to_first_distinct_cost": 6.666303841412757e-05,
+      "best_assignments_evaluated": [
+        {
+          "text_indices": [
+            2,
+            4,
+            3,
+            1,
+            0
+          ],
+          "mapping": {
+            "I00": "T02",
+            "I01": "T04",
+            "I02": "T03",
+            "I03": "T01",
+            "I04": "T00"
+          },
+          "cost": 0.2656540319720685,
+          "distance_correlation": 0.7085808473584421,
+          "optimal": true,
+          "correct_out_of_5": 0
+        }
+      ],
+      "mean_correct_out_of_5": 0.0,
+      "correct_out_of_5_range": [
+        0,
+        0
+      ],
+      "true_cost": 0.2662753533311385,
+      "true_assignment_rank_interval": [
+        24,
+        24
+      ],
+      "true_mapping_is_optimal": false
+    }
+  },
+  "mapping": {
+    "I00": "T04",
+    "I01": "T00",
+    "I02": "T01",
+    "I03": "T02",
+    "I04": "T03"
+  },
+  "image_labels": {
+    "I00": "Basketball",
+    "I01": "Slide",
+    "I02": "Water fountain",
+    "I03": "Trashcan",
+    "I04": "Tree"
+  },
+  "labels": {
+    "T00": "Slide",
+    "T01": "Water fountain",
+    "T02": "Trashcan",
+    "T03": "Tree",
+    "T04": "Basketball"
+  },
+  "selected_sha256": "cb940658140e40016ae395cb8ecc7d430f82351337b93ba8bc7568bc77ceef1e",
+  "assignments_sha256": "429b16fbe85425048533612f15419d747042b2fd5be37fce7e57c219ff47ef17",
+  "ground_truth_sha256": "4177d15ac6e1f74ea59e24720be235bf5597febf7d905efd3e1a909b9b55601d",
+  "primary_evaluation_sha256": "6561389d21da6a9450205cf9fc158b291ea17af8ca1253c2ec129b13606cfe01",
+  "primary_result_unchanged": true,
+  "random_expected_correct_out_of_5": 1.0,
+  "recorded_at_utc": "2026-10-10T22:28:24.692413+00:00",
+  "scope": "All six prespecified model pairs on the same five items. Exploratory model sensitivity of distance-graph matching; no Rosetta run, held-out accuracy, significance claim, winner selection, or isolated causal effect of architecture/training objective."
+}
