@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-published-coco-baseline-v1",
+  "status": "running",
+  "observed_at_utc": "2026-10-10T23:38:35.634127+00:00",
+  "started_at_utc": "2026-10-10T23:37:36.306739+00:00",
+  "source_release_commit": "e064d49158ae244bf5c2d4ab38e38140798e24c9",
+  "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+  "release_lock_sha256": "3d52418723d5da4b3a208f5f2078656b35e508a322c555d07d7aacc822da9c36",
+  "preflight_sha256": "1f78606a1b6aa91ea81cbad30e0f036430abd65e920e4ebba522dc5ef296ad9a",
+  "expected_seeds": [
+    734796314,
+    576165995,
+    2197670066,
+    839703249,
+    2584932063
+  ],
+  "completed_seeds": [],
+  "completed_runs": 0,
+  "expected_runs": 5,
+  "complete_reproduction_result_available": false,
+  "upstream_tests_passed": 42,
+  "verified_original_source_files": 228,
+  "verified_input_files": 13,
+  "preflight_status": "passed",
+  "configuration": {
+    "dataset": "coco_train2014",
+    "model_x": "dinov2_vit-b14@224_mean",
+    "model_y": "mpnet",
+    "method": "ours",
+    "modality_x": "vision",
+    "modality_y": "language",
+    "dataset_y": null,
+    "num_pairs": 0,
+    "pairs_dataset": null,
+    "validation": "coco_val2014",
+    "holdout": 0,
+    "train_size": null,
+    "validation_size": null,
+    "classification": [
+      "CIFAR-10",
+      "CIFAR-100",
+      "ImageNet-100"
+    ],
+    "labels": null
+  },
+  "sample_counts": {
+    "train_corpus": 82783,
+    "fit_x": 41391,
+    "fit_y": 41392,
+    "validation": 40504,
+    "CIFAR-10": 50000,
+    "CIFAR-100": 50000,
+    "ImageNet-100": 5000
+  },
+  "algorithm_defaults": {
+    "num_clusters": 30,
+    "num_restarts": 30,
+    "batch_size": 10000,
+    "num_iterations": 100
+  },
+  "scope": "One complete original five-seed configuration; not the whole paper. Released embeddings test alignment, not pretraining history or feature extraction.",
+  "snapshot_note": "A checked process snapshot at the time shown, not a live feed. No verdict before all five complete results and the frozen comparison."
+}

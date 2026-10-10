@@ -107,21 +107,30 @@ to `platoscave.pages.dev`. Namecheap has the Cloudflare nameservers saved:
 Delegation and certificate validation completed on 10 October 2026. Deployment
 records should still include a current HTTPS check for the custom domain.
 
-## Proposed next steps
+## Full reproduction in progress
 
-The five-photo distance-matching trial neither replicates nor disproves Rosetta.
-The next task is to reproduce one documented result with the authors' actual
-alignment procedure, full settings, fixed seeds and original evaluation. Released
-embeddings can establish an alignment baseline; they cannot independently verify
-encoder training or feature extraction. The earlier reduced pipeline runs do not
-complete this step.
+The [full reproduction protocol](research/rosetta-replication/) was published at
+[`e064d49`](https://github.com/posix4e/platoscave/commit/e064d49158ae244bf5c2d4ab38e38140798e24c9)
+before fitting. It runs the original DINOv2 B/14 mean × MPNet COCO configuration:
+all five original seeds, disjoint training halves, full settings, 40,504 retrieval
+items and the three classification evaluations. The unchanged authors' software
+passed all 42 method/evaluation tests; all 13 input hashes and 228 source files
+passed preflight.
 
-After that baseline, vary one encoder at a time with data and alignment settings
-fixed, adding paired and shuffled controls. Study source overlap separately with
-unchanged encoders and size-matched random removal. A later collection should
-follow a complete model and protocol lock, include human descriptions and enough
-fitting examples, and keep final evaluation scenes apart. No new run or frozen
-protocol is claimed by this proposed sequence.
+The first full run has started. The [status snapshot](dist/downloads/rosetta-replication-status.json)
+records its observation time; it is not a live feed or a result. All five outputs
+and the frozen comparison are required before a reproduction verdict. Report
+paper-rounded agreement separately from available full-precision agreement.
+Released embeddings test alignment, not encoder pretraining or feature extraction.
+
+After that baseline, compare fixed encoder pipelines with paired and shuffled
+controls. The paired controls need extra training counterparts because the
+unpaired banks are disjoint; their advantage cannot be attributed solely to
+revealing pair identities. Study source overlap separately with unchanged
+encoders and size-matched random removal. A later fresh collection requires a
+complete model/protocol lock and separate fitting and final evaluation scenes.
+These later phases are still being prepared; they are not completed by the
+baseline. Earlier frozen protocols and all six five-photo results are preserved.
 
 ## Scientific scope
 

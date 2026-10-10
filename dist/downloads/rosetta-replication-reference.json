@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "retrieved_utc": "2026-10-10T23:20:26.384659+00:00",
+  "source_repo_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+  "author_website_manifest_commit": "c99de989f86a23acdf7fc794c90dfbe028cc93ee",
+  "sources": [
+    {
+      "file": "author-site-manifest.json",
+      "url": "https://raw.githubusercontent.com/dominik-schnaus/dominik-schnaus.github.io/c99de989f86a23acdf7fc794c90dfbe028cc93ee/unpaired-rosetta/data/manifest.json",
+      "sha256": "19fe892f32079cfbae9d83df1a44a3c88c1a0b79fca46ba3217ad2b019ee2f26",
+      "bytes": 70049
+    },
+    {
+      "file": "arxiv-figure3a.svg",
+      "url": "https://arxiv.org/html/2610.09411v1/unpaired-unpaired_main2_foscttm.svg",
+      "sha256": "0672938a552e1276f29ff3bd89633fed1dd126676af8512cf6d1a7f8492510a8",
+      "bytes": 174876
+    },
+    {
+      "file": "arxiv-figure9.svg",
+      "url": "https://arxiv.org/html/2610.09411v1/unpaired-panel_coco_train2014.svg",
+      "sha256": "82e4aac5411fe08d17924b6f3c57e437241d71fe902da461cd7a9d51c0205258",
+      "bytes": 222821
+    }
+  ],
+  "configuration_except_seed": {
+    "dataset": "coco_train2014",
+    "model_x": "dinov2_vit-b14@224_mean",
+    "model_y": "mpnet",
+    "method": "ours",
+    "modality_x": "vision",
+    "modality_y": "language",
+    "dataset_y": null,
+    "num_pairs": 0,
+    "pairs_dataset": null,
+    "validation": "coco_val2014",
+    "holdout": 0,
+    "train_size": null,
+    "validation_size": null,
+    "classification": [
+      "CIFAR-10",
+      "CIFAR-100",
+      "ImageNet-100"
+    ],
+    "labels": null
+  },
+  "seeds": [
+    734796314,
+    576165995,
+    2197670066,
+    839703249,
+    2584932063
+  ],
+  "sample_counts": {
+    "train_corpus": 82783,
+    "fit_x": 41391,
+    "fit_y": 41392,
+    "validation": 40504,
+    "CIFAR-10": 50000,
+    "CIFAR-100": 50000,
+    "ImageNet-100": 5000
+  },
+  "hyperparameters": {
+    "num_clusters": 30,
+    "num_restarts": 30,
+    "batch_size": 10000,
+    "num_iterations": 100,
+    "fit_torch_threads": 4,
+    "kmeans_threads": 1
+  },
+  "retrieval_reference": {
+    "id": 30,
+    "dataset": "coco_train2014",
+    "vision": "dinov2_vit-b14@224_mean",
+    "language": "mpnet",
+    "seed": 734796314,
+    "foscttm": 0.042989911199083145,
+    "foscttm_std": 0.0480892962510061,
+    "foscttm_seed": 0.016328599083198735,
+    "cka": 0.6640377939834344
+  },
+  "paper_foscttm_display": {
+    "mean": "0.04",
+    "std": "\u00b10.05"
+  },
+  "classification_reference": {
+    "CIFAR-10_top1": {
+      "mean_percent_display": "70",
+      "sample_std_percent_display": "\u00b110",
+      "figure": "arxiv-figure9.svg",
+      "row": "DINOv2 B/14",
+      "column": "MPNet",
+      "glyph_region": {
+        "x": [
+          66,
+          78
+        ],
+        "mean_y": [
+          224,
+          225
+        ],
+        "std_y": [
+          229,
+          230
+        ]
+      },
+      "unrounded_reference_available": false
+    },
+    "CIFAR-100_top5": {
+      "mean_percent_display": "46",
+      "sample_std_percent_display": "\u00b114",
+      "figure": "arxiv-figure9.svg",
+      "row": "DINOv2 B/14",
+      "column": "MPNet",
+      "glyph_region": {
+        "x": [
+          176,
+          188
+        ],
+        "mean_y": [
+          224,
+          225
+        ],
+        "std_y": [
+          229,
+          230
+        ]
+      },
+      "unrounded_reference_available": false
+    },
+    "ImageNet-100_top5": {
+      "mean_percent_display": "45",
+      "sample_std_percent_display": "\u00b111",
+      "figure": "arxiv-figure9.svg",
+      "row": "DINOv2 B/14",
+      "column": "MPNet",
+      "glyph_region": {
+        "x": [
+          286,
+          298
+        ],
+        "mean_y": [
+          224,
+          225
+        ],
+        "std_y": [
+          229,
+          230
+        ]
+      },
+      "unrounded_reference_available": false
+    }
+  },
+  "all_five_author_seed_scores_available": false,
+  "availability_note": "Official code repository tree, official website tree and official Hugging Face dataset tree were inspected. Found five-seed aggregate and one named median-seed FOSCTTM, but no public per-seed result files or unrounded classification aggregates. This is a bounded search, not proof they do not exist elsewhere.",
+  "comparison_plan": {
+    "primary_metrics": [
+      "foscttm",
+      "CIFAR-10_top1",
+      "CIFAR-100_top5",
+      "ImageNet-100_top5"
+    ],
+    "summary": "Report every predetermined seed, five-seed mean, sample standard deviation (ddof=1), and differences from available references. Do not discard a seed or select the best.",
+    "paper_display_check": "Format FOSCTTM mean and sample SD with two decimal places; format 100 times classification mean and sample SD with zero decimal places. Compare these strings to figure labels. Agreement only establishes reproduction to the displayed precision.",
+    "high_precision_retrieval_check": "Report signed and absolute differences in the five-seed mean and SD against manifest fields foscttm and foscttm_std, plus seed 734796314 against foscttm_seed. These are descriptive differences; no author-supplied numerical tolerance exists. If root chooses a strict numerical tolerance, it must be frozen before fitting and separately identified as our criterion.",
+    "limits": "Matching aggregates cannot establish exact reproduction of the four unavailable individual seed scores. A mismatch prompts environment, precision, preprocessing, seeds and solver investigation, not a claim that the scientific result is disproven. The median seed was chosen by authors for display and is used only as a known seed reference, never as our selected run."
+  },
+  "upstream_code_sha256": {
+    "experiments/unpaired.py": "23e95cfe1f4fd7fbd36ee4608feef919d92f190d1879325ed9b4e1f79f952d4e",
+    "experiments/alignment.py": "c4b752adb39c79f869ea5d15bd4aff88da40e0c86d4c1b0c2e747a54f6ea35ca",
+    "experiments/plotting.py": "50480be1a453990738d0d90f22d711b57f9ee37693187067b249369b5d296428",
+    "experiments/runner.py": "cbd6509e8d693dda5bc3c6ae8d0c4076c8b9f50ad9c547784d62603799a82b4d",
+    "experiments/methods.py": "b7c581ff7f2c98076e834a3064f6e98b58e56f4c4d90da435f8e8bf9b4f046f5",
+    "unpaired_rosetta/randomness.py": "37acc3e14e63862f8b776c82d2273b2b1516ce5578496b15eb87f180173b2cb2",
+    "unpaired_rosetta/evaluation.py": "8f5289092b13229c74ed0f312ec1ff79149b1cdeb4e13295d52df62e3939eed7",
+    "unpaired_rosetta/embeddings.py": "bf42ba1612551678d531a8da3f4c2c7e9226df6f2b59df95fa8d24b127e2f662",
+    "unpaired_rosetta/wasserstein_procrustes.py": "367c658848be43d0c48fa95e519a7e917a527d14c69fa10d78dee944249747d3",
+    "unpaired_rosetta/geometric_initialization.py": "d587087a23af0c0da83aed8e6c9e00f9a6d2785a7d3cc39323a41400fc48e2ad",
+    "unpaired_rosetta/qap.py": "3e5485550dc0548650e2d8d37f1db848d1ad3e95635a6dabc7dd540fd46fa07b",
+    "unpaired_rosetta/determinism.py": "8f6f0b878aaee225cf5e73617af16270dc1d3c07d8caec47311428534c1d4e60",
+    "modalities/image_captions/__init__.py": "e0c4111cba6e7c3fa5e231813a5b3f72686c327760416bf00ac29817784f0838",
+    "modalities/image_captions/encoders.py": "54cc1ec028a35138edf2bb06a76b484db3c7bdbc6ed49b31e8eeb538db01c48a"
+  },
+  "inspection_checkout_head": "263ad1d85e86e28f8eee22ad758f0bb1de7c6dab",
+  "local_tracked_files_differing_from_upstream_in_inspection_set": [],
+  "source_hash_note": "Hashes are of git show at the pinned authors commit, independently compared with files read from the local checkout. Every inspected source file matched the pinned authors bytes, although the local checkout contains additional commits."
+}
