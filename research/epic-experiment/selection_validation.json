@@ -1,0 +1,23 @@
+{
+  "passed": true,
+  "scope": "Metadata selection only; no acquired frame, encoder, alignment or score is verified here",
+  "manifest_sha256": "d1a34b2ad47a1456a011c6e4f2d6308bae34ebf6aed0c6fb335794ac3dc648be",
+  "protocol_sha256": "656a4fad35609bb753fb5045268e3448e4c71a36bce70a4b20050fd16a547370",
+  "selector_sha256": "f8433f2a3be1e872641c7e640fbef9c43f31832130058cbb0081dfcd61bf50a4",
+  "verification_script_sha256": "b3b205c4048ce5d0dd91c463fb541966e50f3c192296af74319b90728727ce97",
+  "source_sha256": "faef8ad29b163b28ec8ca32b4222f137aba8f8b07eca0ae004652937ffaf811e",
+  "rows": 9392,
+  "frame_requests": 37568,
+  "verified": [
+    "Pinned source/protocol/code hashes",
+    "Exact frozen sample counts and caps",
+    "Unique source UIDs and output frame paths",
+    "Participant-disjoint partitions",
+    "Video-disjoint primary fitting marginals",
+    "Retained metadata matches source annotations",
+    "Requested frames lie inside their action windows",
+    "Exact class-blind hash membership",
+    "Invariance to source row order",
+    "Invariance of selection to narration and class-label changes"
+  ]
+}

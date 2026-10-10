@@ -57,3 +57,7 @@ The [search for a cleaner example](research/clean-example/README.md) identifies
 original DINOv1 and GloVe on EPIC-KITCHENS-55 as a control against direct exposure
 to its 2017 recordings. It includes reproducible metadata checks, original model
 artifact hashes, and the limitations that must guide the next experiment.
+
+The [EPIC experiment](research/epic-experiment/README.md) records its frozen
+protocol and 9,392 selected clips. Acquisition has started; the initial protocol
+record contains no benchmark alignment results.
