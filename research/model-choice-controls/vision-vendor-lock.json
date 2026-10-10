@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "mae_commit": "efb2a8062c206524e35e47d04501ed4f544c0ae8",
+  "timm_version": "0.3.2",
+  "files": {
+    "mae/models_vit.py": {
+      "url": "https://raw.githubusercontent.com/facebookresearch/mae/efb2a8062c206524e35e47d04501ed4f544c0ae8/models_vit.py",
+      "bytes": 2383,
+      "sha256": "6770ed2226d46ab8ba2b1ebc6662cc353dabf759679569acd004f6b3ac868154"
+    },
+    "mae/LICENSE": {
+      "url": "https://raw.githubusercontent.com/facebookresearch/mae/efb2a8062c206524e35e47d04501ed4f544c0ae8/LICENSE",
+      "bytes": 19337,
+      "sha256": "ffe3b1e0b58c1f1250ce48f84d8c37328f9a1ff59bb77b63bc97480cf2778b64"
+    },
+    "timm-0.3.2-py3-none-any.whl": {
+      "url": "https://files.pythonhosted.org/packages/51/2d/39ecc56fbb202e1891c317e8e44667299bc3b0762ea2ed6aaaa2c2f6613c/timm-0.3.2-py3-none-any.whl",
+      "metadata_url": "https://pypi.org/pypi/timm/0.3.2/json",
+      "bytes": 244229,
+      "sha256": "c1598ef61c246e38835a6b834811dcb8d62ae56b644cd54dc3ef9565c8387875",
+      "pypi_sha256_matches": true
+    }
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "recorded_at_utc": "2026-10-10T22:26:46.286916+00:00",
+  "tests": 24,
+  "test_names": [
+    "test_panel.PanelTests.test_additional_feature_hash_mismatch_rejected",
+    "test_panel.PanelTests.test_additional_id_order_rejected_even_with_updated_file_hash",
+    "test_panel.PanelTests.test_all_six_cells_replay_all_120_assignments_and_primary",
+    "test_panel.PanelTests.test_all_tied_graphs_report_every_optimum_without_favorable_tie_break",
+    "test_panel.PanelTests.test_altered_selected_optimum_rejected_even_with_fresh_checksums",
+    "test_panel.PanelTests.test_changed_frozen_source_rejected",
+    "test_panel.PanelTests.test_changed_manifest_rejected_before_output",
+    "test_panel.PanelTests.test_changed_original_archive_rejected_before_output",
+    "test_panel.PanelTests.test_changed_selection_rejected_before_ground_truth_is_opened",
+    "test_panel.PanelTests.test_duplicate_keys_nonfinite_json_and_existing_outputs_rejected",
+    "test_panel.PanelTests.test_elmo_caption_hash_ids_and_tokens_bound_to_locked_labels",
+    "test_panel.PanelTests.test_forged_assignment_with_fresh_checksums_fails_numerical_replay",
+    "test_panel.PanelTests.test_incomplete_metadata_and_wrong_model_bytes_rejected",
+    "test_panel.PanelTests.test_invalid_feature_values_shapes_and_dtypes_rejected",
+    "test_panel.PanelTests.test_malformed_distances_rejected_by_core",
+    "test_panel.PanelTests.test_missing_extra_reordered_axes_and_answer_field_rejected",
+    "test_panel.PanelTests.test_opaque_id_names_do_not_change_any_cost_or_selected_permutation",
+    "test_panel.PanelTests.test_primary_evaluation_modified_bytes_rejected",
+    "test_panel.PanelTests.test_primary_result_must_replay_even_when_fixture_pin_is_updated",
+    "test_panel.PanelTests.test_selected_blind_core_and_pair_bindings_rejected",
+    "test_panel.PanelTests.test_separate_shuffles_and_scalar_cosine_preserve_item_identity",
+    "test_panel.PanelTests.test_source_provenance_and_elmo_options_rejected",
+    "test_panel.PanelTests.test_truth_label_and_mapping_changes_rejected_against_original",
+    "test_panel.PanelTests.test_vision_encoder_preprocessing_batch_and_pillow_recipe_rejected"
+  ],
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "source_sha256": {
+    "panel.py": "a006b01f35414ad38fadc5c298af2b184b7192dc797cfa64973ccf0cfc6e4299",
+    "test_panel.py": "1434c3a155d7ff6614c7cd01146b744d63abfce54b9e6ae3c600a2e468c1fed8"
+  },
+  "primary_numerical_core_sha256": "6819921cecd461dc841b1ea89dddb18fab53fc0c36c07b631d7f755346ce5dfc",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "only_synthetic_fixtures": true,
+  "research_photographs_used": false,
+  "research_features_used": false,
+  "model_inference_performed": false,
+  "coverage": [
+    "All six model pairings and 720 exhaustive assignment costs independently replayed",
+    "Independent scalar cosine distances and NumPy correlation reference",
+    "Separate image/text shuffles and opaque-ID invariance",
+    "All 120 tied assignments retained, unbiased tie counts and human-rank intervals",
+    "Original synthetic feature bytes and primary evaluation values preserved",
+    "Changed feature/source/manifest/ID/metadata/caption/label/selection/evaluation rejection",
+    "Unchanged frozen public primary numerical core used as the calculator"
+  ],
+  "scope": "Implementation validation only. All feature arrays, labels, manifests, model receipts and primary comparison records are artificial temporary fixtures. This is not a model-competence result.",
+  "test_output": "test_additional_feature_hash_mismatch_rejected (test_panel.PanelTests.test_additional_feature_hash_mismatch_rejected) ... ok\ntest_additional_id_order_rejected_even_with_updated_file_hash (test_panel.PanelTests.test_additional_id_order_rejected_even_with_updated_file_hash) ... ok\ntest_all_six_cells_replay_all_120_assignments_and_primary (test_panel.PanelTests.test_all_six_cells_replay_all_120_assignments_and_primary) ... ok\ntest_all_tied_graphs_report_every_optimum_without_favorable_tie_break (test_panel.PanelTests.test_all_tied_graphs_report_every_optimum_without_favorable_tie_break) ... ok\ntest_altered_selected_optimum_rejected_even_with_fresh_checksums (test_panel.PanelTests.test_altered_selected_optimum_rejected_even_with_fresh_checksums) ... ok\ntest_changed_frozen_source_rejected (test_panel.PanelTests.test_changed_frozen_source_rejected) ... ok\ntest_changed_manifest_rejected_before_output (test_panel.PanelTests.test_changed_manifest_rejected_before_output) ... ok\ntest_changed_original_archive_rejected_before_output (test_panel.PanelTests.test_changed_original_archive_rejected_before_output) ... ok\ntest_changed_selection_rejected_before_ground_truth_is_opened (test_panel.PanelTests.test_changed_selection_rejected_before_ground_truth_is_opened) ... ok\ntest_duplicate_keys_nonfinite_json_and_existing_outputs_rejected (test_panel.PanelTests.test_duplicate_keys_nonfinite_json_and_existing_outputs_rejected) ... ok\ntest_elmo_caption_hash_ids_and_tokens_bound_to_locked_labels (test_panel.PanelTests.test_elmo_caption_hash_ids_and_tokens_bound_to_locked_labels) ... ok\ntest_forged_assignment_with_fresh_checksums_fails_numerical_replay (test_panel.PanelTests.test_forged_assignment_with_fresh_checksums_fails_numerical_replay) ... ok\ntest_incomplete_metadata_and_wrong_model_bytes_rejected (test_panel.PanelTests.test_incomplete_metadata_and_wrong_model_bytes_rejected) ... ok\ntest_invalid_feature_values_shapes_and_dtypes_rejected (test_panel.PanelTests.test_invalid_feature_values_shapes_and_dtypes_rejected) ... ok\ntest_malformed_distances_rejected_by_core (test_panel.PanelTests.test_malformed_distances_rejected_by_core) ... ok\ntest_missing_extra_reordered_axes_and_answer_field_rejected (test_panel.PanelTests.test_missing_extra_reordered_axes_and_answer_field_rejected) ... ok\ntest_opaque_id_names_do_not_change_any_cost_or_selected_permutation (test_panel.PanelTests.test_opaque_id_names_do_not_change_any_cost_or_selected_permutation) ... ok\ntest_primary_evaluation_modified_bytes_rejected (test_panel.PanelTests.test_primary_evaluation_modified_bytes_rejected) ... ok\ntest_primary_result_must_replay_even_when_fixture_pin_is_updated (test_panel.PanelTests.test_primary_result_must_replay_even_when_fixture_pin_is_updated) ... ok\ntest_selected_blind_core_and_pair_bindings_rejected (test_panel.PanelTests.test_selected_blind_core_and_pair_bindings_rejected) ... ok\ntest_separate_shuffles_and_scalar_cosine_preserve_item_identity (test_panel.PanelTests.test_separate_shuffles_and_scalar_cosine_preserve_item_identity) ... ok\ntest_source_provenance_and_elmo_options_rejected (test_panel.PanelTests.test_source_provenance_and_elmo_options_rejected) ... ok\ntest_truth_label_and_mapping_changes_rejected_against_original (test_panel.PanelTests.test_truth_label_and_mapping_changes_rejected_against_original) ... ok\ntest_vision_encoder_preprocessing_batch_and_pillow_recipe_rejected (test_panel.PanelTests.test_vision_encoder_preprocessing_batch_and_pillow_recipe_rejected) ... ok\n\n----------------------------------------------------------------------\nRan 24 tests in 0.365s\n\nOK\n"
+}

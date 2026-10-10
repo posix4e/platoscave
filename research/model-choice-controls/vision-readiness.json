@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-10T22:16:16.795526+00:00",
+  "scope": "Software readiness on five generated RGB PNG fixtures only. No human photographs, text, labels, alignment, or evaluation metrics.",
+  "python": "3.12.3",
+  "runtime": {
+    "torch": "2.7.1+cu128",
+    "torchvision": "0.22.1+cu128",
+    "numpy": "2.5.3"
+  },
+  "pillow": "12.3.0",
+  "device": "cuda",
+  "gpu_name": "NVIDIA H100 NVL",
+  "source_sha256": {
+    "vision_features.py": "68278d4d0827acf748dc1a254b18ff39bb918c878311ef6caabcb1453eedc1a6",
+    "check_vision_readiness.py": "44cf2936d9c07c7eab8894c7db468aa8705724fc388908b13682389693e933ef",
+    "preprocess_helper": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624"
+  },
+  "fixtures": [
+    {
+      "fixture_id": "synthetic-00",
+      "width": 224,
+      "height": 224,
+      "png_sha256": "44cde5764f627209e721fe008650d7e96ca7bdc2dc408b655347d6fb3a6efd7c"
+    },
+    {
+      "fixture_id": "synthetic-01",
+      "width": 351,
+      "height": 229,
+      "png_sha256": "f01d78a586184da93a4bde64b04cbffa0ec04a3703b2b96db70342c343783260"
+    },
+    {
+      "fixture_id": "synthetic-02",
+      "width": 231,
+      "height": 349,
+      "png_sha256": "34323cde1eee94298e6baecb46c6df20070d51cea7b2f020a6031b9f4ba6dd3a"
+    },
+    {
+      "fixture_id": "synthetic-03",
+      "width": 397,
+      "height": 257,
+      "png_sha256": "3f0f04b92f3ed794278d502ea1ae2095b9ab26a0fc2455f11069be539fe46a61"
+    },
+    {
+      "fixture_id": "synthetic-04",
+      "width": 257,
+      "height": 397,
+      "png_sha256": "c4b6dffcd8285cfb5e12fb159c550fdfaf6fe64e97d38681631385b11a7d1f89"
+    }
+  ],
+  "input_tensor_sha256": "a1298b816a1f23dca51c7c822aea76b5bdfc214e1ffcc694cc31a5c68c698d4c",
+  "encoders": {
+    "moco_v2_r50_800ep": {
+      "provenance": {
+        "model": "moco_v2_r50_800ep",
+        "checkpoint_sha256": "5e4a3fd7178a95837c0ad71c265ed5f477d271e753ba505b6b6a5e86829eeb7e",
+        "training_source_commit": "78b69cafae80bc74cd1a89ac3fb365dc20d157d3",
+        "runtime": {
+          "torch": "2.7.1+cu128",
+          "torchvision": "0.22.1+cu128",
+          "numpy": "2.5.3"
+        },
+        "resnet_source_sha256": "7499a5059ad7b1a1f8f7543c04b4a13795140fad837c38530b48ff5d9610bf6e",
+        "dimension": 2048,
+        "pooling": "final adaptive average pool before projection head",
+        "loaded_state_keys": 318,
+        "discarded_keys": [
+          "module.encoder_q.fc.0.bias",
+          "module.encoder_q.fc.0.weight",
+          "module.encoder_q.fc.2.bias",
+          "module.encoder_q.fc.2.weight"
+        ],
+        "preprocessing": "unchanged frozen fresh-pilot helper; common bicubic resize256 center224"
+      },
+      "shape": [
+        5,
+        2048
+      ],
+      "dtype": "float32",
+      "normalized_feature_sha256": "70486f9f2dcb7ae1e35ebbaff9e5108d2e86100190e121ac510cb453debfc4ab",
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 0,
+      "max_absolute_errors": {
+        "repeat": 0.0,
+        "reordered": 0.0,
+        "batch_size_1": 8.940696716308594e-08,
+        "batch_size_2": 8.940696716308594e-08
+      },
+      "checks": {
+        "repeat_bitwise_equal": true,
+        "reordered_within_tolerance": true,
+        "batch_size_1_within_tolerance": true,
+        "batch_size_2_within_tolerance": true,
+        "finite_unit_vectors": true,
+        "all_buffers_unchanged": true,
+        "cpu_rng_unchanged": true,
+        "cuda_rng_unchanged": true
+      },
+      "passed": true,
+      "elapsed_seconds": 0.469
+    },
+    "mae_vit_b16": {
+      "provenance": {
+        "model": "mae_vit_b16",
+        "checkpoint_sha256": "aec5f0b68e5f3193a00b07bc65a37440db549c15b36b8bea242606cc40c4bc5d",
+        "source_commit": "efb2a8062c206524e35e47d04501ed4f544c0ae8",
+        "vendor_sha256": {
+          "mae/models_vit.py": "6770ed2226d46ab8ba2b1ebc6662cc353dabf759679569acd004f6b3ac868154",
+          "mae/LICENSE": "ffe3b1e0b58c1f1250ce48f84d8c37328f9a1ff59bb77b63bc97480cf2778b64",
+          "timm-0.3.2-py3-none-any.whl": "c1598ef61c246e38835a6b834811dcb8d62ae56b644cd54dc3ef9565c8387875"
+        },
+        "runtime": {
+          "torch": "2.7.1+cu128",
+          "torchvision": "0.22.1+cu128",
+          "numpy": "2.5.3"
+        },
+        "dimension": 768,
+        "pooling": "final encoder LayerNorm CLS; global_pool=False",
+        "patch_order": "fixed raster order; all 196 patches; no masking or shuffling",
+        "loaded_state_keys": 150,
+        "discarded_keys": [],
+        "compatibility_change": "temporary torch._six.container_abcs alias to collections.abc during timm import only",
+        "preprocessing": "unchanged frozen fresh-pilot helper; common bicubic resize256 center224"
+      },
+      "shape": [
+        5,
+        768
+      ],
+      "dtype": "float32",
+      "normalized_feature_sha256": "5233f9b659fd8fd5386faa59585e44808b9ebba93f2a630bc6312a041ceec552",
+      "absolute_tolerance": 2e-06,
+      "relative_tolerance": 0,
+      "max_absolute_errors": {
+        "repeat": 0.0,
+        "reordered": 0.0,
+        "batch_size_1": 4.470348358154297e-07,
+        "batch_size_2": 2.682209014892578e-07
+      },
+      "checks": {
+        "repeat_bitwise_equal": true,
+        "reordered_within_tolerance": true,
+        "batch_size_1_within_tolerance": true,
+        "batch_size_2_within_tolerance": true,
+        "finite_unit_vectors": true,
+        "all_buffers_unchanged": true,
+        "cpu_rng_unchanged": true,
+        "cuda_rng_unchanged": true
+      },
+      "passed": true,
+      "elapsed_seconds": 0.146
+    }
+  },
+  "passed": true
+}

@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "protocol_id": "five-photo-model-choice-v1",
+  "written_on": "2026-10-10",
+  "status": "draft_nonexecutable_pending_artifact_receipts_runtime_checks_and_final_review",
+  "executable": false,
+  "question": "How sensitive is the five-item distance-graph assignment to the selected independently pretrained image and text encoders?",
+  "scope": "A proposed full three-by-two exploratory model-choice comparison using the same exhaustive graph objective. It is not Unpaired Rosetta, a learned cross-modal map, or an out-of-sample accuracy estimate.",
+  "design_timing": "Specified after viewing the five photographs and after seeing the original DINO/GloVe outcome. New pair outcomes must remain unseen until a separate complete protocol and source/model/runtime lock are published. The earlier result remains part of the record.",
+  "execution_gates": {
+    "data_route": "same_five_existing_photographs",
+    "user_choice": "The user explicitly requested comparing models on these five photographs first. No new collection is required for this extension.",
+    "common_preparation": "Audit, acquire and hash the exact proposed model/source files; define and check inference on explicitly artificial fixtures without reading the private photographs or evaluating their labels.",
+    "required_before_any_new_photo_inference": [
+      "Publish the exact binding to the original five-photo manifest and feature/result hashes.",
+      "Replace every pending artifact/source/runtime/code hash slot with a verified receipt; publish a final lock covering all five encoders and the common solver.",
+      "Complete and retain the fixed synthetic implementation gates for every new encoder. Tests verify computation, never choose a representation by correspondence accuracy.",
+      "Freeze all representations, preprocessing, numerical tolerances, pair order, reporting and failure rules before looking at any new pair outcome.",
+      "Create a separately named executable protocol. This draft itself never authorizes an experiment or substitutes for a final lock."
+    ],
+    "current_completion": "No alternative model outcome is asserted by this document. Null hash slots are missing requirements, not wildcard matches."
+  },
+  "relationship_to_primary": {
+    "protocol_id": "five-photo-geometry-v1",
+    "source_commit": "feead1da4d77bb0dc674fcf0f5f38979fac9a90c",
+    "protocol_sha256": "fcc1c4252ae268e7dcf645419eaea07e1196c09e939a7066e55cf084afddf603",
+    "extractor_sha256": "37665c8dbb0d2479bfc162854ad0508d6e1b89a6dc8ee51f75bb4d095c14a823",
+    "solver_sha256": "6819921cecd461dc841b1ea89dddb18fab53fc0c36c07b631d7f755346ce5dfc",
+    "feature_helper_sha256": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+    "same_five_policy": "Reuse the verified existing DINO and GloVe feature rows and their published DINO/GloVe result unchanged. Check the original feature and input hashes and row identities. Do not rerun, recrop, recenter or reinterpret that primary analysis to improve its outcome.",
+    "other_work": "The paused EPIC experiment and the earlier 48-photograph competence protocol remain unchanged and are not resumed by this draft."
+  },
+  "data": {
+    "same_five_existing_photographs": {
+      "items": 5,
+      "candidate_ids": ["candidate-001", "candidate-002", "candidate-003", "candidate-004", "candidate-005"],
+      "human_labels_verbatim": ["Slide", "Trashcan", "Tree", "Basketball", "Water fountain"],
+      "selection": "Every photograph and exact human label from the original private manifest, including ambiguous object/activity labels. No new exclusion, crop, label rewrite, prompt expansion, synonym substitution or additional view.",
+      "attachment_byte_identity": "Require equality with the original private image hashes and manifest before extracting any alternative model. These are supplied attachment bytes; they are not an independently authenticated camera-original archive.",
+      "private_manifest_sha256": null,
+      "original_feature_npz_sha256": null,
+      "original_feature_metadata_sha256": null,
+      "original_selected_result_sha256": null,
+      "original_evaluation_sha256": null,
+      "binding_status": "Pending original-artifact receipts; no private paths or photographs belong in this public draft."
+    },
+    "use_of_all_items": "There is no fitting/test split in this graph comparison. All five image embeddings and the complete five-label candidate set determine each assignment. The comparison is transductive and closed-set.",
+    "privacy": "Photographs, identifying capture metadata, private manifests and raw features remain private. Public output may contain generic labels, opaque identifiers, distance matrices, assignments, numerical summaries and hashes."
+  },
+  "chronology": {
+    "original_pair": "The original DINO/GloVe files were hash-locked before the collector reports taking the existing photographs. The capture chronology is a human attestation, not an independently authenticated event timeline.",
+    "added_models_on_existing_photos": "MoCo, MAE and ELMo were shortlisted by provenance before the primary result, but their full weight bytes were not locked before these photographs. Newly downloaded alternative files cannot inherit the original pair's pre-capture byte-lock claim. Interpret their chronology through separately documented release/training evidence, with that weaker basis disclosed.",
+    "added_models_on_future_photos": "A published complete panel lock can precede future human capture. It supports exclusion of those later photographed events from the already fixed encoders, conditional on honest capture records and use of the locked bytes.",
+    "not_excluded": ["shared familiar concepts", "ordinary label words and phrases", "similar scenes or physical object types", "human ImageNet curation", "researcher choice of models and tasks", "the observed original result influencing this extension's design"]
+  },
+  "shared_image_preprocessing": {
+    "helper_sha256": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+    "recipe": "Apply EXIF orientation; convert RGB; resize short side to 256 using Pillow bicubic with integer-floor long side; center crop 224 with round((dimension-224)/2); scale to [0,1]; normalize with ImageNet mean [0.485,0.456,0.406] and std [0.229,0.224,0.225].",
+    "control": "Feed exactly the same preprocessed tensor bytes to every image encoder. No model-specific crop, augmentation, test-time ensemble or adaptive view selection.",
+    "arithmetic": "FP32 evaluation, no gradients or model training, batch size one, deterministic algorithms, TF32 disabled; record the exact runtime and device."
+  },
+  "vision_models": [
+    {
+      "id": "dino_v1_vit_b16",
+      "name": "Original DINOv1 ViT-B/16",
+      "documented_pretraining": "ImageNet-1K; self-distillation without class-label targets",
+      "checkpoint_sha256": "bf34ad0f424b9029b593e8dc3ed553bf26e88bcba0d32bf3e62a6209cb64c85e",
+      "source_commit": "7c446df5b9f45747937fb0d72314eb9f7b66930a",
+      "source_sha256": {
+        "vision_transformer.py": "b1f998d5f49ab43666b9fc6d007c5f6540c3ead2e8645e144f74045f63ff44d7",
+        "utils.py": "962a97e1acda1c986dfd921275325e4083f9016dddadcf018f1ccf03fa600eab"
+      },
+      "dimensions": 768,
+      "representation": "Final-block layer-normalized CLS, followed by row L2 normalization, exactly as the original five-photo helper.",
+      "same_five_status": "Reuse existing verified feature bytes; no new representation choice."
+    },
+    {
+      "id": "moco_v2_resnet50_800ep",
+      "name": "Original MoCo-v2 ImageNet ResNet-50, 800 epochs",
+      "documented_pretraining": "ImageNet-1K; contrastive training of augmented image views",
+      "checkpoint_url": "https://dl.fbaipublicfiles.com/moco/moco_checkpoints/moco_v2_800ep/moco_v2_800ep_pretrain.pth.tar",
+      "checkpoint_sha256": null,
+      "checkpoint_receipt": null,
+      "source_commit": "78b69cafae80bc74cd1a89ac3fb365dc20d157d3",
+      "known_source_sha256": {
+        "main_lincls.py": "c3fae8e33de5fac9a589ef4f5464184604f1d6e55081c4406576f54c98558b47",
+        "moco/builder.py": "349f418a8502e3a4fe5428535b375e5517f4df8591614d17168f91b4900ff1b2"
+      },
+      "architecture_implementation_lock": null,
+      "dimensions": 2048,
+      "representation": "Query encoder's ResNet-50 backbone after global average pooling and before the projection/classification head; row L2 normalization. Use frozen running batch-normalization statistics in evaluation mode.",
+      "load_rule": "Load all query-backbone parameters and buffers with exact expected key coverage. Exclude the momentum key encoder, queue, contrastive projection head and downstream classifier. Enumerate any intentionally excluded keys; no silent missing backbone weights.",
+      "excluded_alternatives": ["MoCo v1", "200-epoch MoCo-v2 checkpoint", "Instagram-trained checkpoint", "downstream fine-tuned or classifier feature weights"]
+    },
+    {
+      "id": "mae_vit_b16_pretrain_cls",
+      "name": "Original MAE ViT-B/16 pretrained encoder, CLS readout",
+      "documented_pretraining": "ImageNet-1K; masked pixel reconstruction",
+      "checkpoint_url": "https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_base.pth",
+      "checkpoint_sha256": null,
+      "checkpoint_receipt": null,
+      "source_commit": "efb2a8062c206524e35e47d04501ed4f544c0ae8",
+      "known_source_sha256": {
+        "models_mae.py": "973c01f31fdf15febb5976baecd639b83a5cc011161af852e54ca68c6c2bafb4"
+      },
+      "models_vit_source_sha256": null,
+      "main_linprobe_source_sha256": null,
+      "timm_or_equivalent_implementation_lock": null,
+      "dimensions": 768,
+      "representation": "All 196 original-order patch tokens plus CLS, no masking or patch shuffle; original positional embeddings and all encoder blocks; final encoder layer norm; CLS token only; row L2 normalization. No learned head or head batch-normalization transform.",
+      "readout_rationale": "The official linear-probe entry point sets global_pool=False, and its models_vit.forward_features applies the encoder norm then returns the CLS token. This is a source-based fixed choice, not a choice between CLS and pooled patches made from these photographs' results.",
+      "load_rule": "Use the original pretrained encoder, without supervised fine-tuning. Check every encoder parameter and buffer against the checkpoint; explicitly account for unused decoder/mask tokens and excluded classifier keys. Preserve original positional embeddings at 224 pixels; no interpolation is needed.",
+      "masking_trap": "The original models_mae.forward_encoder calls random_masking even when mask_ratio=0. Do not use that path as deterministic unmasked extraction. Use the official unmasked models_vit CLS path or an explicitly verified equivalent in original patch order.",
+      "source_evidence": [
+        "https://raw.githubusercontent.com/facebookresearch/mae/efb2a8062c206524e35e47d04501ed4f544c0ae8/main_linprobe.py",
+        "https://raw.githubusercontent.com/facebookresearch/mae/efb2a8062c206524e35e47d04501ed4f544c0ae8/models_vit.py",
+        "https://raw.githubusercontent.com/facebookresearch/mae/efb2a8062c206524e35e47d04501ed4f544c0ae8/models_mae.py"
+      ]
+    }
+  ],
+  "shared_text_input": {
+    "labels": "Use the five exact human label strings without prompts, expansions or semantic rewriting.",
+    "tokenizer": {"unicode_normalization": "NFKC", "case": "lower", "regex": "[a-z]+(?:'[a-z]+)?|[0-9]+"},
+    "tokens": "Retain repetitions and stopwords. The input token sequence is the same for both text models; GloVe sorts occurrences only for averaging arithmetic, whereas ELMo retains their original sequence order.",
+    "empty_rule": "Stop on an empty token sequence or invalid feature; do not drop or relabel an item."
+  },
+  "text_models": [
+    {
+      "id": "glove_original_6b_300d",
+      "name": "Original GloVe 6B, 300 dimensions",
+      "documented_pretraining": "Wikipedia 2014 and Gigaword 5",
+      "archive_sha256": "6471382cdd837544bf3ac72497a38715e845897d265b2b424b4761832009c837",
+      "member": "glove.6B.300d.txt",
+      "member_sha256": "a12599d41e3589c7160be27fffe5b0080eccd0f0c75f46666c59f90188093c40",
+      "dimensions": 300,
+      "representation": "Unweighted float32 mean of sorted known token occurrences, retaining repeats and stopwords, followed by L2 normalization. Omit and report unknown tokens; fail when no known tokens remain or the vector is zero/nonfinite.",
+      "same_five_status": "Reuse existing verified feature bytes, token report and original tokenizer/pooling."
+    },
+    {
+      "id": "elmo_original_1b_top_context",
+      "name": "Original ELMo 1 Billion Word Benchmark model, top contextual layer",
+      "documented_pretraining": "1 Billion Word Benchmark derived from WMT 2011 News Crawl",
+      "artifact_name": "2x4096_512_2048cnn_2xhighway",
+      "weights_url": "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5",
+      "weights_sha256": null,
+      "weights_receipt": null,
+      "options_url": "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_options.json",
+      "options_sha256": "86cb4c1a7e2f25e3867d06810e33ae27fbbd511ac77ca377be5fb7405a7085b1",
+      "reference_source_commit": "7cffee2b0986be51f5e2a747244836e1047657f4",
+      "known_source_sha256": {
+        "bilm/model.py": "b6bb9158c2e3c3897e62748784165c5126eb42dc36293a540689d5a8b2cea5e0",
+        "bilm/elmo.py": "80dfb939bc515c629b278d36260d7108e7421c2ea79fb9b4f905f36949b63a58"
+      },
+      "character_mapping_source_lock": null,
+      "executable_implementation_lock": null,
+      "dimensions": 1024,
+      "representation": "Character-input original bidirectional language model; top (second) contextual LSTM layer only, concatenated 512-dimensional directional outputs. Mean in original token order over real input token positions only, excluding padding and boundary markers; FP32 arithmetic; row L2 normalization.",
+      "state_rule": "Start each independent label with zero recurrent hidden and cell states in both directions. No state persists across items, batches, models or repetitions. Disable dropout and training updates. Keep the label's original token order.",
+      "boundary_rule": "Use the pinned reference model's normal sentence boundary tokens for context, but never include boundary or padding positions in the pooled representation.",
+      "truncation_rule": "Record character mapping and any token truncation under the pinned implementation. Stop rather than silently truncate or replace a supplied label token. Character input does not eliminate the need to report mapping limitations.",
+      "excluded_alternatives": ["Original ELMo 5.5B", "task-fine-tuned ELMo or SNLI models", "learned or task-borrowed scalar layer mixture", "top-performing layer selection", "state carried over from earlier labels"]
+    }
+  ],
+  "full_factorial": {
+    "vision_order": ["dino_v1_vit_b16", "moco_v2_resnet50_800ep", "mae_vit_b16_pretrain_cls"],
+    "text_order": ["glove_original_6b_300d", "elmo_original_1b_top_context"],
+    "required_cells": [
+      {"vision": "dino_v1_vit_b16", "text": "glove_original_6b_300d", "question": "Preserved original reference on the same five inputs; no re-selection."},
+      {"vision": "dino_v1_vit_b16", "text": "elmo_original_1b_top_context", "question": "Does replacing the language encoder change the selected correspondence while the image representation is fixed?"},
+      {"vision": "moco_v2_resnet50_800ep", "text": "glove_original_6b_300d", "question": "Does replacing DINO with MoCo change correspondence while GloVe is fixed?"},
+      {"vision": "moco_v2_resnet50_800ep", "text": "elmo_original_1b_top_context", "question": "Does the language-encoder contrast also appear with the MoCo image representation?"},
+      {"vision": "mae_vit_b16_pretrain_cls", "text": "glove_original_6b_300d", "question": "Does replacing DINO with MAE change correspondence within the ViT-B/16 backbone family while GloVe is fixed?"},
+      {"vision": "mae_vit_b16_pretrain_cls", "text": "elmo_original_1b_top_context", "question": "Does the language-encoder contrast also appear with the MAE image representation?"}
+    ],
+    "hypothesis_status": "All six are descriptive sensitivity questions. No directional improvement prediction, significance test, winner-selection rule or claim of six independent datasets.",
+    "contrasts": "Show the language replacement within each image model and image replacements within each language model. Report changes in assignments, correctness, human-assignment rank and tie structure. Do not choose a subset of cells after results.",
+    "causal_limit": "Model replacements jointly change multiple properties. DINO versus MoCo changes architecture and objective; DINO versus MAE also changes positional embeddings and training recipe despite sharing a backbone family; GloVe versus ELMo changes corpus, objective, dimensionality and representation. These are not isolated causal effects of architecture, loss function or word order."
+  },
+  "matching_analysis": {
+    "feature_arithmetic": "Keep frozen model outputs as FP32; convert each row to float64 and L2 normalize again only for distance arithmetic. No centering, whitening, PCA, learned metric, layer sweep or additional normalization.",
+    "distance": "For each modality compute d(i,j)=1-dot(unit_i,unit_j); symmetrize and set the diagonal to zero. Preserve unrounded float64 values.",
+    "image_shuffle": {"implementation": "Python random.Random(seed).shuffle of manifest indices 0 through 4", "seed": 20261010},
+    "text_shuffle": {"implementation": "Python random.Random(seed).shuffle of manifest indices 0 through 4", "seed": 20261011},
+    "shared_order": "Use the same private manifest order and the same two shuffled index lists for all six cells. Opaque IDs I00..I04 and T00..T04 must refer to the same underlying items across models.",
+    "solver_input": "Only the two 5-by-5 distance matrices, opaque IDs and protocol/feature provenance. No labels, photographs or correct pairings.",
+    "permutations_per_cell": 120,
+    "objective": "Mean, over the ten unordered image pairs i<j, of (image_distance[i,j]-text_distance[pi(i),pi(j)]) squared, for each complete bijection pi. Use the original Python binary64/math.fsum objective implementation or a separately verified byte-equivalent wrapper.",
+    "selection": "Choose every assignment within the fixed tolerance of the global minimum, without consulting human correctness.",
+    "tie_tolerance_absolute": 1e-12,
+    "human_rank": "Rank interval [1 + count(cost < human_cost - tolerance), count(cost <= human_cost + tolerance)].",
+    "cost_gap": "Minimum cost outside the optimum tolerance set minus the global minimum; null if all 120 assignments tie.",
+    "correlation": "Pearson correlation of the ten corresponding distance pairs for every assignment; null for either zero-variance distance list. Selection-induced high correlation is not independent evidence of correct semantics.",
+    "evaluation_order": "Finalize the blind selection for every executable cell before opening the shared ground-truth mapping for the extension report. Overall design remains unblinded because the investigator already knows the photographs, labels and original result.",
+    "random_reference": "A uniformly random bijection has one correct match out of five in expectation, or 20 percent per row. Row-correctness indicators are dependent. This is a descriptive reference only.",
+    "across_model_cost_caution": "Raw distance spreads differ across encoders. Do not rank model quality by minimum MSE alone. Positive global rescaling/centering of distance lists leaves within-cell permutation order unchanged in exact arithmetic; it does not turn cost magnitudes into comparable semantic accuracy.",
+    "degenerate_geometry": "Retain identical vectors, repeated distances and all resulting ties. Report them; do not perturb features, break ties by correctness, drop items or select a different layer to repair the graph.",
+    "no_inference_claim": "No p-values, confidence intervals, power claim or statistical equivalence-to-chance claim. The same five items are reused throughout; 720 enumerated assignments are not 720 independent observations."
+  },
+  "synthetic_readiness_gates": {
+    "data_boundary": "Use only clearly artificial images and token sequences unrelated to the user's photographs. No actual-item feature extraction, nearest-label inspection or correspondence scoring is allowed during readiness checks.",
+    "artifact_loading": "Verify complete weight, options, source and wrapper hashes before execution. Check all intended parameters and buffers were loaded; preserve explicit ignored-key lists. Do not replace an incompatible checkpoint with a more convenient one.",
+    "image_preprocessing": "Verify tensor equality across vision wrappers for the same artificial JPEG/PNG, including EXIF orientation, crop and normalization. No alternative preprocessing is selected by scores.",
+    "moco": "Verify query-backbone selection, exclusion of projection/key/queue modules, frozen batch-normalization statistics, correct 2048-dimensional output, finite nonzero norm and repeat/order/batch behavior.",
+    "mae": "Verify the specified CLS-after-final-norm path against the official unmasked reference on artificial inputs. Confirm all patches remain in original order, no random masking/shuffle is called, no decoder or trained head participates, and the output is 768-dimensional.",
+    "elmo": "Verify the original options and character mapping, top contextual layer, real-token masking and zero initial recurrent state for every independent item. Compare the same artificial label alone, after unrelated labels, in reordered batches and with changed padding. Check that appending unrelated items does not change its representation within the frozen numerical tolerance. A runtime workaround must preserve these rules rather than adapt them to the photographed sample.",
+    "numeric": "Require finite nonzero FP32 features and L2-normalized rows. Record repeated-output differences and compare any port to its fixed reference. Final numerical tolerances and runtime receipts must be locked before photo inference.",
+    "matcher": "Use synthetic graphs with known permutations, an all-tied graph and shuffled opaque IDs to check exhaustive coverage, tie reporting and identity invariance. These are software tests, not experimental results.",
+    "pending_receipts": {"moco": null, "mae": null, "elmo": null, "common_matcher": null, "runtime_lock": null, "wrapper_source_lock": null},
+    "failure_policy": "An unresolved implementation or runtime gate blocks that encoder's photo use and a claim that the complete factorial ran. Publish the gate failure; do not silently omit the cell, change its representation, replace its checkpoint or tune on actual-item results. Any correction or panel amendment must be published before new photo inference."
+  },
+  "reporting": {
+    "mandatory": [
+      "All six cells, including the preserved original result and every failure; no best-pair-only summary.",
+      "Every cell's 120 costs, correlations and assignments; every optimum and its correct count; mean and range across tied optima; human-assignment cost and rank interval; gap to the next distinct cost.",
+      "A common 3-by-2 table of correct-count ranges, human-rank intervals and completion state, plus per-item disagreements between encoders.",
+      "All tokenization, OOV, character-truncation, duplicate-vector and degeneracy records.",
+      "Explicit reuse of the same five photographs, original-input hash binding, model/source/runtime/code receipts and before/after input checks.",
+      "Independent numerical replay of every new distance matrix and all assignments; distinguish replay from independent encoder inference.",
+      "Plain statement that the extension was designed after the first result and that alternative-model byte locks did not precede the existing photographs."
+    ],
+    "interpretation": {
+      "different_outcomes": "Evidence that the specified graph-matching result is sensitive to the chosen encoder combination on this sample. It does not isolate a single architectural, training or corpus cause.",
+      "similar_outcomes": "Observed agreement among this selected panel on this selected sample; not proof of invariance across models or populations.",
+      "all_weak": "These prescribed representations and this objective did not recover the human matches well here; this does not refute Rosetta or all shared cross-modal structure.",
+      "one_or_more_strong": "The objective recovered some or all matches for those combinations; retain every weak cell and do not convert the winning combination into an independently validated universal claim."
+    },
+    "stopping": "No extra encoders, layers, crops, label variants, pooling rules or samples are added because the six outcomes disappoint or look promising. New questions require a separately named, prospectively specified follow-up."
+  }
+}

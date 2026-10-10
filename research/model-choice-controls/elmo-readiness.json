@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "status": "synthetic_readiness_passed",
+  "created_at_utc": "2026-10-10T22:15:54.155973+00:00",
+  "source_sha256": "0fff41c3740a7ece2f89a4b9ba4b50d2d370606357f2ff57cce310a12e3d09ce",
+  "weights_sha256": "a6b92b9ccbb13fe489faacd2221c795d4bebe84b75f8aded9d85ea464fa5c994",
+  "options_sha256": "86cb4c1a7e2f25e3867d06810e33ae27fbbd511ac77ca377be5fb7405a7085b1",
+  "backend_source_sha256": {
+    "modules/elmo.py": "a02b3ce51773fa125ae889affc21a65201bd8451bee997b3e956d9cb9f0d5c90",
+    "modules/elmo_lstm.py": "aec79417f2d60d722847bb861475edafee07bc163a1aeee2f70764d5d5290056",
+    "modules/encoder_base.py": "373b14173415ba1180c9f1544ea7762e3b263c698b30bd486d8cb175c529b9d0",
+    "modules/lstm_cell_with_projection.py": "66f84517e5fe4ba3b78a955580bc4e206fdb470b2c6d0a05039af5d9c89f03cf",
+    "modules/highway.py": "47d270ab4f478426121c476922b1948f995228f171955b270031a5fd3c90daf7",
+    "modules/scalar_mix.py": "9efb83375d4ef2d9f56ba464e8db2a13d3e529fd33115096bdf14fd345dc96eb",
+    "nn/util.py": "ace9269f2b80170358abb9006ef4c9b3bc7886828c49c24b9e33b1e41397345e",
+    "data/token_indexers/elmo_indexer.py": "28e3ef2ff9a9e564c07e574ef63a28f25fe2d9757518971c604ae2b8d7440ae7"
+  },
+  "backend_reference": "https://github.com/allenai/allennlp/tree/v2.10.1",
+  "runtime": {
+    "allennlp": "2.10.1",
+    "torch": "1.12.1+cpu",
+    "numpy": "1.23.5",
+    "h5py": "3.8.0",
+    "python": "3.10.19",
+    "system": "Linux",
+    "machine": "x86_64",
+    "device": "cpu",
+    "threads": 4,
+    "interop_threads": 1,
+    "deterministic_algorithms": true
+  },
+  "output_dtype": "float32",
+  "feature_dimensions": 1024,
+  "frozen_model": true,
+  "all_finite": true,
+  "l2_normalized": true,
+  "tokenization": "Unicode NFKC, lowercase, regex [a-z]+(?:'[a-z]+)?|[0-9]+; original token order retained",
+  "representation": "Final contextual layer, mean of real tokens excluding BOS/EOS/padding, then L2",
+  "recurrent_state": "reset_states before every independent sentence; production batch size one",
+  "dropout": 0.0,
+  "scalar_mix": "none; _ElmoBiLm activations[-1] used directly",
+  "character_truncation": "Rejected when a token exceeds 48 UTF-8 bytes",
+  "sample_count": 4,
+  "synthetic_captions": [
+    "Quiet letters turn slowly.",
+    "Readers compare two passages.",
+    "An unfinished sentence.",
+    "Brief."
+  ],
+  "actual_evaluation_text_used": false,
+  "repeat_individual_bit_identical": true,
+  "reordered_individual_bit_identical": true,
+  "batch_invariance_max_abs": {
+    "all_at_once": 4.470348358154297e-08,
+    "reverse_batch": 4.470348358154297e-08,
+    "padded_companion": 2.9802322387695312e-08
+  },
+  "batch_invariance_tolerance": 1e-05,
+  "empty_and_truncation_guards_passed": true,
+  "shape": [
+    4,
+    1024
+  ],
+  "limits": "Implementation readiness only; these artificial sentences are not evaluation data."
+}

@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-10T22:11:16.440366+00:00",
+  "candidate": "Original ELMo 1 Billion Word Benchmark, 2x4096_512_2048cnn_2xhighway",
+  "status": "original_artifacts_acquired_and_byte_locked; no_inference_run",
+  "artifacts": [
+    {
+      "role": "options",
+      "filename": "elmo_2x4096_512_2048cnn_2xhighway_options.json",
+      "url": "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_options.json",
+      "expected_bytes": 336,
+      "expected_sha256": "86cb4c1a7e2f25e3867d06810e33ae27fbbd511ac77ca377be5fb7405a7085b1",
+      "resolved_url": "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_options.json",
+      "bytes": 336,
+      "sha256": "86cb4c1a7e2f25e3867d06810e33ae27fbbd511ac77ca377be5fb7405a7085b1",
+      "md5": "35a114726de5fcfae8326b309e7ec999",
+      "http_headers": {
+        "Content-Length": "336",
+        "ETag": "\"35a114726de5fcfae8326b309e7ec999\"",
+        "Last-Modified": "Sat, 02 Dec 2017 00:59:21 GMT",
+        "Content-Type": "application/json"
+      },
+      "elapsed_seconds": 0.21772862700163387,
+      "size_verified": true,
+      "known_sha256_verified": true,
+      "post_publish_sha256_verified": true
+    },
+    {
+      "role": "weights",
+      "filename": "elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5",
+      "url": "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5",
+      "expected_bytes": 374434792,
+      "expected_sha256": null,
+      "resolved_url": "https://s3-us-west-2.amazonaws.com/allennlp/models/elmo/2x4096_512_2048cnn_2xhighway/elmo_2x4096_512_2048cnn_2xhighway_weights.hdf5",
+      "bytes": 374434792,
+      "sha256": "a6b92b9ccbb13fe489faacd2221c795d4bebe84b75f8aded9d85ea464fa5c994",
+      "md5": "5f9d3f5fcac5e6bfadc88aebf147ac02",
+      "http_headers": {
+        "Content-Length": "374434792",
+        "ETag": "\"677ff2647400878939d1f56c382c5d91-45\"",
+        "Last-Modified": "Wed, 01 Nov 2017 23:07:05 GMT",
+        "Content-Type": "binary/octet-stream"
+      },
+      "elapsed_seconds": 9.092226218002907,
+      "size_verified": true,
+      "known_sha256_verified": false,
+      "post_publish_sha256_verified": true
+    }
+  ],
+  "limits": [
+    "Options SHA-256 matches the earlier audited digest.",
+    "Weights match the audited byte count; their full SHA-256 and MD5 are newly recorded first-download locks, not independently published expected digests.",
+    "The multipart S3 ETag is not a whole-file MD5.",
+    "These records identify bytes and do not prove complete training-corpus purity."
+  ]
+}
