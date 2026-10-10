@@ -1,0 +1,16 @@
+{
+  "recorded_at_utc": "2026-10-10T20:05:01.389547+00:00",
+  "protocol_id": "fresh-objects-v1",
+  "state": "awaiting_human_collection",
+  "protocol_sha256": "17b7e9f7da4143b9dca7ff5c374fa5f93124e571669232a704df92037b64b118",
+  "release_lock_sha256": "58a13864b3aa88e3ea09fc57f6ba5736d6254a216da61dc614f86a6b45825620",
+  "human_photographs_collected": 0,
+  "human_captions_collected": 0,
+  "planned_scored_photographs": 48,
+  "planned_marker_photographs": 6,
+  "models_frozen": true,
+  "competence_analysis_run": false,
+  "unpaired_analysis_run": false,
+  "old_epic_run": "paused; not resumed",
+  "checks": "49 software tests passed locally and in the VM; synthetic fixtures only"
+}

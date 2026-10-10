@@ -1,0 +1,48 @@
+{
+  "recorded_at_utc": "2026-10-10T20:05:01.389547+00:00",
+  "scope": "Software validation only. No human collection, model inference on new photographs, or scientific result.",
+  "code_hashes": {
+    "protocol.json": "17b7e9f7da4143b9dca7ff5c374fa5f93124e571669232a704df92037b64b118",
+    "intake.py": "e1e705410febff50bb9c97b1cde471d55210af56079c10cf5999e441eb5db6bc",
+    "extract.py": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+    "analyze.py": "f64759edfa36c1698b6a46475d0afca60d0b6f71576f55c1429994534b03a242"
+  },
+  "local": {
+    "platform": "macOS",
+    "tests_passed": 49,
+    "failures": 0
+  },
+  "research_vm": {
+    "platform": "Linux",
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "pillow": "12.3.0",
+    "tests_passed": 49,
+    "failures": 0
+  },
+  "integration": {
+    "intake_to_extractor_synthetic_rows": 48,
+    "rounds": 6,
+    "checked_paths": 65,
+    "passed": true,
+    "model_inference_run": false
+  },
+  "site": {
+    "desktop_width": 1440,
+    "mobile_width": 390,
+    "pages_checked": [
+      "/",
+      "/collect/"
+    ],
+    "horizontal_overflow": false,
+    "broken_local_links": 0,
+    "javascript_errors": 0
+  },
+  "not_done": [
+    "human capture",
+    "human captions",
+    "real feature extraction",
+    "competence scoring",
+    "unpaired alignment"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "protocol_id": "fresh-objects-v1",
+  "written_on": "2026-10-10",
+  "stage": "prospective competence pilot; awaiting human collection",
+  "question": "Do the locked DINOv1 and GloVe features support object-category correspondence on newly photographed objects when fitting pairs are provided?",
+  "not_tested": ["unpaired Rosetta", "model-family robustness", "instance retrieval", "relations, actions or syntax", "effect of contamination on the original paper"],
+  "chronology": {
+    "order": ["publish model bytes, protocol and analysis source hashes", "generate a collection packet", "make new human camera photographs", "write human captions", "seal the complete packet", "extract features and run the fixed competence analysis"],
+    "model_lock": "../clean-example/artifact-lock.json",
+    "model_lock_recorded_at_utc": "2026-10-10T17:28:39.990070+00:00",
+    "claim": "Conditional on honest new capture after the published lock, these particular photographed events cannot have trained the locked model bytes. Familiar objects and ordinary phrases may have occurred in pretraining.",
+    "evidence_limits": "A round marker, retained camera originals, checksums and a capture log support the account. EXIF, local timestamps, hashes and human attestations do not independently authenticate capture time or exclude fabrication. No claim of zero contamination in every sense."
+  },
+  "classes": ["mug", "bowl", "plate", "bottle", "spoon", "fork", "book", "shoe"],
+  "class_definitions": {
+    "mug": "ordinary drinking mug with a handle",
+    "bowl": "ordinary open food bowl, without a handle",
+    "plate": "ordinary flat dinner or side plate",
+    "bottle": "ordinary narrow-necked bottle",
+    "spoon": "ordinary eating spoon",
+    "fork": "ordinary eating fork",
+    "book": "closed bound physical book",
+    "shoe": "one ordinary shoe, not a photograph of footwear"
+  },
+  "collection": {
+    "photographs": 48,
+    "rounds": 6,
+    "photographs_per_class_per_round": 1,
+    "fit_rounds": ["r01", "r02", "r03", "r04"],
+    "development_rounds": ["r05", "r06"],
+    "fit_count": 32,
+    "development_count": 16,
+    "physical_objects": 16,
+    "instance_rule": "One physical object per class, named class-A, in all four fit rounds. A different physical object per class, named class-B, in both development rounds. Never move an object between partitions.",
+    "round_rule": "Every round contains every class. Draw and record a fresh random order before capture. Re-arrange the scene between rounds; vary viewpoint, position, background or lighting. Use each round's general setup for every class; do not give a class its own background. Avoid burst near-duplicates.",
+    "camera_rule": "Ordinary human camera photographs only. Use one camera in normal photo mode, no generative fill or portrait-mode background replacement. Original JPEG or PNG, short side at least 224 pixels. Retain original files; no filters, manual crops or edits. No stock images, screenshots, rendered scenes, generated images or photographs of existing pictures.",
+    "framing": "One target object clearly visible, wholly inside the central square with margin. Exclude the nonce paper and labels made for this experiment from scored images. Avoid other objects from the eight target classes in the same scored image. Do not choose objects or views using model scores.",
+    "marker": "For each round, after generating the packet and before taking that round's scored photographs, take a separate original photograph showing all eight actual objects and a handwritten copy of that round's random nonce. Retain it as evidence only; never feed marker photographs to either model. Human review must check the nonce and objects against the log.",
+    "caption_rule": "After all 48 scored photographs exist, write one short factual English caption per photograph in the packet's shuffled caption order. Use human words without an LLM, autocaptioner or generated template. Say what is visible; no prescribed category word is required. Hide partition labels where practical. Retain repeated captions and synonyms.",
+    "quality_rule": "Use the first usable photograph for each scheduled slot. Before any feature extraction, replace only a corrupt file, severe blur, wrong object, or target cut off by the prescribed center crop. Keep every rejected original and explain the replacement in that round's notes. Do not reject for model scores, difficult captions or unusual appearances.",
+    "failure_rule": "Stop if the exact balanced packet cannot be completed or any feature is invalid. Report the problem. No post-score replacements, silent exclusions, added rounds or parameter search. A changed collection or analysis requires a new dated protocol version.",
+    "test_set": "None collected in this pilot. A confirmatory trial requires a separate protocol and newly collected held-out data.",
+    "generalization_unit": "Eight held-out physical objects, each photographed in two development rounds. The 16 development photographs are not 16 independent object instances. One collector and camera limit generalization."
+  },
+  "models": {
+    "image": {
+      "name": "original DINOv1 ViT-B/16",
+      "checkpoint_sha256": "bf34ad0f424b9029b593e8dc3ed553bf26e88bcba0d32bf3e62a6209cb64c85e",
+      "source_commit": "7c446df5b9f45747937fb0d72314eb9f7b66930a",
+      "source_sha256": {
+        "vision_transformer.py": "b1f998d5f49ab43666b9fc6d007c5f6540c3ead2e8645e144f74045f63ff44d7",
+        "utils.py": "962a97e1acda1c986dfd921275325e4083f9016dddadcf018f1ccf03fa600eab"
+      },
+      "preprocess": "Apply EXIF orientation, convert RGB, resize short side to 256 with Pillow bicubic (long side integer floor), center crop 224 using round((dimension-224)/2), scale to [0,1], ImageNet mean [0.485,0.456,0.406] and std [0.229,0.224,0.225].",
+      "representation": "Final normalized CLS, 768 dimensions, then L2 normalize; one photograph per row.",
+      "arithmetic": "Evaluation mode, float32, deterministic algorithms, TF32 disabled; no model training."
+    },
+    "text": {
+      "name": "original GloVe 6B, 300 dimensions",
+      "archive_sha256": "6471382cdd837544bf3ac72497a38715e845897d265b2b424b4761832009c837",
+      "member": "glove.6B.300d.txt",
+      "member_sha256": "a12599d41e3589c7160be27fffe5b0080eccd0f0c75f46666c59f90188093c40",
+      "tokenizer": "Unicode NFKC, lowercase, regex [a-z]+(?:'[a-z]+)?|[0-9]+",
+      "representation": "Mean of known token vectors, retaining repeats and stopwords, then L2 normalize. Sort token strings before accumulation for deterministic arithmetic. Omit out-of-vocabulary tokens and report every omission; stop on zero known tokens or zero/nonfinite vector.",
+      "limit": "Averaging loses word order; this pilot asks about broad object categories only."
+    }
+  },
+  "analysis": {
+    "preprocessing": "Separately subtract each modality's 32-row fitting mean from fitting and development vectors, then row L2 normalize. Never estimate centering from development. Fail on zero or nonfinite vectors.",
+    "arithmetic": "float64 linear algebra; record exact runtime versions",
+    "ridge_alpha": 1.0,
+    "ridge_formula": "W = X.T @ solve(X @ X.T + alpha * I, Y); no intercept after feature centering",
+    "fits": ["image-to-one-hot noun ridge probe", "text-to-one-hot noun ridge probe", "paired image-to-text ridge", "shuffled image-to-text ridge seed 0", "shuffled image-to-text ridge seed 1", "shuffled image-to-text ridge seed 2"],
+    "shuffle": "NumPy default_rng(seed). In lexicographically sorted fit rounds, permute the eight text rows within each round, in protocol class order. Retain chance fixed points. No shuffling across rounds.",
+    "gallery": "All 16 development captions for every development image. L2 normalize mapped predictions and use cosine similarity to centered/L2 gallery vectors.",
+    "primary_measure": "Noun-class hit@1: either caption with the correct class is relevant. For exact ties, score the fraction of tied gallery entries with the correct class. Probes use the analogous fraction among tied maximum class scores.",
+    "chance": 0.125,
+    "report": ["all six fits and failures", "every development prediction and tie", "mean score", "scores per class", "scores per development round", "caption and text-vector duplicates", "known and unknown caption tokens", "input, protocol, model, code and output hashes"],
+    "inference_limit": "Descriptive feasibility only. Three shuffle references are not a null distribution for a significance test. Two development rounds do not support a reliable session-bootstrap interval. No p-values, confidence intervals, power claim or pass threshold.",
+    "stopping": "Run this fixed analysis once after the entire packet is sealed. Do not tune to development scores. If the implementation is wrong, preserve the failed run, publish the correction and distinguish the rerun. A useful result can motivate, but does not itself establish, an unpaired experiment."
+  },
+  "relationship_to_prior_work": "Separate from the paused 9392-clip EPIC protocol. Its sample, files and suspended jobs remain preserved; this protocol does not amend or resume it."
+}

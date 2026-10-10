@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#191a16">
+  <meta name="description" content="Make new photographs after the models are fixed. A collection guide for the first 48-photograph competence pilot.">
+  <title>Bring the objects — Beyond the Cave</title>
+  <link rel="canonical" href="https://platoscave.si/collect/">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header wrap"><a class="wordmark" href="../"><span class="mark" aria-hidden="true">↗</span> Beyond the Cave<span class="wordmark-sub">THE FIRST COLLECTION</span></a><nav aria-label="Main navigation"><a href="../#fresh-recordings">The question</a><a href="../downloads/fresh-protocol.json">The protocol</a><a class="nav-download" href="../downloads/fresh-collection-kit.zip" download>Get the kit <span aria-hidden="true">↓</span></a></nav></header>
+<main id="main" class="wrap collection">
+  <section class="section" aria-labelledby="collection-title">
+    <p class="eyebrow">FRESH-OBJECTS-V1 · BEFORE ANY SCORES</p>
+    <div class="section-heading"><h1 id="collection-title">Bring the objects.<br>Keep an honest record.</h1><p>The models and rules come first. The photographs come after. This guide asks for 48 new photographs and 48 human descriptions. Nothing here takes a photograph or writes a caption for you.</p></div>
+    <div class="scope-note"><p class="scope-lead">Sixteen objects. One camera. Six rounds.</p><p>Gather two physical examples of each kind: <strong>mug, bowl, plate, bottle, spoon, fork, book and shoe.</strong> Set aside one of each for fitting, and the other for development. A mug has a handle; a bowl does not. Use closed books and one shoe per photograph.</p><p>If a kind is unavailable, settle a revised protocol before taking photographs. Do not quietly replace a class.</p></div>
+    <div class="epic-links"><a class="button" href="../downloads/fresh-collection-kit.zip" download>Download the collection kit <span aria-hidden="true">↓</span></a><a class="text-link" href="../downloads/fresh-collection-guide.txt" download>Save the full instructions <span aria-hidden="true">↓</span></a></div>
+    <p class="epic-snapshot">This is a guide, not an upload form. Keep filled records and photographs private until you choose to share them. The code is in <a href="https://github.com/posix4e/platoscave/tree/main/research/fresh-pilot">the public GitHub repository</a>.</p>
+  </section>
+  <section class="collection-section" aria-labelledby="prepare-title">
+    <div class="section-top"><p class="eyebrow">01 / BEFORE THE FIRST PHOTOGRAPH</p><p class="section-kicker">Let the order be written first.</p></div>
+    <h2 id="prepare-title">Make the capture sheets.</h2>
+    <p>Unzip the kit. From its <code>fresh-pilot</code> directory, run the command below with your chosen alias. It creates blank records, a random order for each round, six markers and a later captioning order. It uses Python’s standard library; no model or GPU is needed.</p>
+    <pre><code>python3 intake.py prepare --out my-capture --collector your-alias</code></pre>
+    <p>Read the generated <code>CAPTURE-SHEETS.txt</code>. Keep <code>session-plan.json</code>, <code>samples.csv</code>, <code>rounds.csv</code> and protocol. Leave the published kit unchanged. Save original JPEG or PNG camera files; select JPEG before capture if your camera normally saves HEIC.</p>
+    <div class="outcome-table-wrap"><table class="outcome-table"><caption>One photograph of every kind in every round. Keep the two physical sets separate.</caption><thead><tr><th scope="col">Rounds</th><th scope="col">Objects and use</th></tr></thead><tbody><tr><th scope="row">1–4 · 32 photographs</th><td>Set A: the same eight physical objects in all four fitting rounds.</td></tr><tr><th scope="row">5–6 · 16 photographs</th><td>Set B: eight different physical objects, each photographed twice for development.</td></tr></tbody></table></div>
+    <p class="chronology-note">Sixteen development photographs are two observations of eight new objects. They do not supply sixteen independent objects, and there is no final test in this pilot.</p>
+  </section>
+  <section class="collection-section" aria-labelledby="capture-title">
+    <div class="section-top"><p class="eyebrow">02 / IN EACH ROUND</p><p class="section-kicker">Show what was there.</p></div>
+    <h2 id="capture-title">Record the scene, then each object.</h2>
+    <ol class="collection-steps">
+      <li><strong>Keep a marker apart.</strong> Record the UTC start time. Copy that round’s random marker onto paper by hand. Take a separate photograph showing the paper beside all eight objects. Keep that original as the round’s evidence photograph. It never goes into the models.</li>
+      <li><strong>Follow the written order.</strong> Photograph each object on its own in the order in <code>session-plan.json</code>. Keep the whole object inside the central square with margin. Leave out the marker, experiment labels and other objects from the eight classes.</li>
+      <li><strong>Change the view between rounds.</strong> Vary position, background, lighting or viewpoint. Use the same general setup for every kind within a round. Do not give books one special background and mugs another. Avoid a burst of nearly identical views.</li>
+      <li><strong>Keep the first usable photograph.</strong> Replace only a corrupt file, severe blur, the wrong object or an object cut off by the fixed center crop. Preserve rejected originals and explain replacements in the round’s notes. Never choose by a model score.</li>
+      <li><strong>Keep the originals and log.</strong> Put files under <code>my-capture/</code>, record their relative paths and UTC capture times in <code>samples.csv</code>, and the marker path in <code>rounds.csv</code>. Preserve IDs, classes, object instances and splits. Use normal camera mode, with no generative edits or manual crops.</li>
+    </ol>
+    <p class="chronology-note">The model applies EXIF orientation, resizes the short side to 256 pixels and takes the central 224 × 224 square. Leave space around the object. Hashes and local times support the record; a person must still attest that the photographs are new and the objects and markers match.</p>
+  </section>
+  <section class="collection-section" aria-labelledby="caption-title">
+    <div class="section-top"><p class="eyebrow">03 / AFTER ALL 48 PHOTOGRAPHS EXIST</p><p class="section-kicker">Say what you see.</p></div>
+    <h2 id="caption-title">Write the descriptions yourself.</h2>
+    <p>Follow <code>caption_order</code> in the session plan. Write one short, factual English caption for each photograph and record its UTC time in <code>samples.csv</code>. Hide partition labels while captioning where practical. There is no required wording. Keep repetitions and ordinary synonyms.</p>
+    <p>Use no language model, automatic captioner or generated template. The photographs must also be new camera photographs of physical objects: no stock images, screenshots, rendered scenes or pictures of pictures.</p>
+    <p>Finally, check all 48 scored images and six marker images. Confirm every nonce, both sets of physical objects, captions, times and replacement notes. Retain the unchanged kit with the packet. Share the completed packet privately for validation and analysis in the research VM.</p>
+    <div class="scope-note"><p class="scope-lead">What this can establish.</p><p>When honest capture follows the published model lock, those later scenes cannot have trained the fixed files. Familiar kinds of object and familiar words remain. This small paired trial asks whether the features suffice for a useful next experiment. It does not settle unpaired alignment or the choice of models.</p></div>
+    <a class="text-link" href="../#fresh-recordings">Return to the inquiry <span aria-hidden="true">↗</span></a>
+  </section>
+</main>
+<footer class="wrap"><span>BEYOND THE CAVE / Fresh collection protocol · 10 October 2026</span><a href="../downloads/fresh-release-lock.json">Code and protocol hashes ↗</a></footer>
+</body>
+</html>

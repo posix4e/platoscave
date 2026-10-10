@@ -1,11 +1,15 @@
 # Beyond the Cave
 
 A static research page about source overlap and model choice in Unpaired Rosetta.
-The page presents the paused DINOv1/GloVe experiment on later EPIC-KITCHENS
-recordings, its fixed sample and provenance limits, and a proposed smaller
-competence pilot before resumption. It also retains the source
-overlap audit and all 15 earlier reduced pilot runs. Neither the earlier pilot
-nor the current setup is presented as a completed model-choice result.
+The chosen next step is a prospective 48-photograph pilot: lock DINOv1 and
+GloVe, then collect new human photographs and captions. It tests competence with
+known pairs before any unpaired trial. The [collection kit](research/fresh-pilot/README.md)
+contains the protocol, capture instructions, input validator, extraction and
+analysis code. Human collection and scientific scoring have not begun.
+
+The older EPIC-KITCHENS experiment remains paused with its protocol preserved.
+The site also retains the source-overlap audit and all 15 earlier reduced pilot
+runs. None of this is presented as a completed model-choice result.
 
 Source: [posix4e/platoscave](https://github.com/posix4e/platoscave).
 Hosted on [Cloudflare Pages](https://platoscave.pages.dev/).
