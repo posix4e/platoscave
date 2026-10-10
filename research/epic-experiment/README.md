@@ -9,11 +9,25 @@ The protocol below was fixed before computing benchmark alignment scores.
 Frame acquisition started on 10 October 2026. No benchmark result is reported
 in this initial protocol record.
 
-**Work in progress:** the acquisition, feature extraction, alignment and
-independent verification code is now published. The VM is still acquiring the
-fixed sample; no full benchmark alignment has run. `wip-status.json` records
-the checks completed and the work remaining. A recorded decoding failure is
-retained for investigation, not used to remove a clip from the sample.
+**Paused for scope review on 10 October 2026:** acquisition and the pipeline
+supervisor are suspended at the user's request. The source, fixed sample and
+existing caches are preserved; no full benchmark alignment has run.
+`wip-status.json` records the pause and completed checks. A recorded decoding
+failure remains part of the account, not a reason to remove a clip.
+
+The first claim concerns object-category correspondence for this one pair on
+recorded episodes excluded by its documented training chronology. This makes
+direct episode exposure a more tractable objection; shared concepts, human
+curation and model-choice dependence remain. The current 9,392-clip, 17-fit
+plan is substantial rather than a minimal computational demonstration.
+
+The [webpage's proposed order](https://platoscave.si/#replan) starts with a
+smaller, separately specified fit/development competence pilot, keeping final
+test kitchens out of its setting choices. This pilot has not been specified or
+run. Its sample must be chosen by fixed identifiers, not acquisition progress.
+Any later protocol change must be separately versioned before held-out scoring;
+this original protocol remains unchanged. Model-family replication is a later
+study and must report failures as well as successes.
 
 ## Frozen sample
 
@@ -108,7 +122,7 @@ ties; it does not establish alignment or absence of pretraining contamination.
 The summary omits full extractor metadata and per-group UID listings and
 records the complete report's hash. Rerun the script to reproduce those details.
 
-The ongoing run also computed an early image cache for 82 fully acquired
+Before the pause, the run computed an early image cache for 82 fully acquired
 videos while acquisition continued. `prewarm-summary.json` records 7,432
 frames processed in 220.5 seconds and 7,428 validated frame vectors added to
 the final cache; one existing entry was preserved. `prepare_feature_prewarm.py`

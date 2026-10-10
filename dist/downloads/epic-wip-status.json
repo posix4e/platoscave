@@ -1,6 +1,6 @@
 {
-  "recorded_at_utc": "2026-10-10T18:08:10.257404+00:00",
-  "state": "work_in_progress",
+  "recorded_at_utc": "2026-10-10T18:56:20.966994+00:00",
+  "state": "paused_for_scope_review",
   "benchmark_alignment_completed": false,
   "files": {
     "acquire_frames.py": "c3025e54c7f8db18fc7a883f1373f1ffaf8707d77a29371acb77735288d55f65",
@@ -41,5 +41,14 @@
     "17benchmark fits",
     "independent benchmark result verification"
   ],
-  "failure_observed": "P03_05 failed during acquisition after39of88frames. The isolated failing target was recovered in both transport modes; full-video retry remains unverified. Original failure evidence is preserved."
+  "failure_observed": "P03_05 failed during acquisition after39of88frames. The isolated failing target was recovered in both transport modes; full-video retry remains unverified. Original failure evidence is preserved.",
+  "pause": {
+    "requested_by_user": true,
+    "acquisition_suspended": true,
+    "supervisor_suspended": true,
+    "existing_work_preserved": true,
+    "benchmark_alignment_completed": false,
+    "protocol_changed": false
+  },
+  "proposed_next_step": "Separately specify a small fit/development competence pilot before resuming; keep final test kitchens out of setting choices. No smaller pilot has run."
 }

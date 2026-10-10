@@ -15,7 +15,7 @@
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header wrap">
   <a class="wordmark" href="#"><span class="mark" aria-hidden="true">↗</span> Beyond the Cave<span class="wordmark-sub">ROSETTA CONTROLS</span></a>
-  <nav aria-label="Main navigation"><a href="#question">The question</a><a href="#later-recordings">The present trial</a><a href="#evidence">Earlier evidence</a><a class="nav-download" href="downloads/epic-protocol.json" download>Protocol <span aria-hidden="true">↓</span></a></nav>
+  <nav aria-label="Main navigation"><a href="#question">The question</a><a href="#later-recordings">The first case</a><a href="#evidence">Earlier evidence</a><a class="nav-download" href="downloads/epic-protocol.json" download>Protocol <span aria-hidden="true">↓</span></a></nav>
 </header>
 <main id="main">
 <section class="hero wrap" aria-labelledby="hero-title">
@@ -23,7 +23,7 @@
     <p class="eyebrow">AN INQUIRY INTO UNPAIRED ROSETTA <span>10 OCT 2026</span></p>
     <h1 id="hero-title">Do the shadows agree,<br>or the things<br><em>themselves?</em></h1>
     <p class="hero-intro">Let us ask of Unpaired Rosetta: how much of the agreement belongs to what is seen, and how much to the models through which we see it?</p>
-    <div class="hero-actions"><a class="button" href="#later-recordings">Examine the trial <span aria-hidden="true">↗</span></a><a class="text-link" href="https://dominik-schnaus.github.io/unpaired-rosetta/#method">Read the original work <span aria-hidden="true">↗</span></a></div>
+    <div class="hero-actions"><a class="button" href="#later-recordings">Examine the first case <span aria-hidden="true">↗</span></a><a class="text-link" href="https://dominik-schnaus.github.io/unpaired-rosetta/#method">Read the original work <span aria-hidden="true">↗</span></a></div>
   </div>
   <div class="hero-figure">
     <div class="figure-head"><span class="eyebrow">THE WALL AND ITS SHADOWS</span><span class="figure-number">FIG. 01</span></div>
@@ -78,7 +78,7 @@
     <p class="figure-caption">This scene is an allegory made for the inquiry. The measured evidence is given below.</p>
   </div>
 </section>
-<div class="status-strip"><div class="wrap status-inner"><span class="status-dot" aria-hidden="true"></span><strong>9,392 clips · sample fixed</strong><span>EPIC frame acquisition in progress</span><span class="status-open">No EPIC result yet</span></div></div>
+<div class="status-strip"><div class="wrap status-inner"><span class="status-dot" aria-hidden="true"></span><strong>Experiment paused · scope under review</strong><span>Fixed protocol and work preserved</span><span class="status-open">No EPIC result yet</span></div></div>
 
 <section id="question" class="wrap section" aria-labelledby="question-title">
   <div class="section-top"><p class="eyebrow">01 / THE QUESTION</p><p class="section-kicker">What follows from agreement?</p></div>
@@ -91,22 +91,41 @@
 </section>
 
 <section id="later-recordings" class="wrap section" aria-labelledby="later-title">
-  <div class="section-top"><p class="eyebrow">THE PRESENT TRIAL</p><p class="section-kicker">Let the test come after the teaching.</p></div>
-  <div class="section-heading"><h2 id="later-title">Could they have seen<br>these things before?</h2><p>Original DINO learned from the ImageNet collection; original GloVe learned from older text. The EPIC-KITCHENS episodes were recorded later. If the published training histories hold, these particular recordings could not have taught either model.</p></div>
-  <ol class="chronology" aria-label="Training sources and evaluation recordings">
-    <li><span>2012</span><h3>The images</h3><p>ImageNet-1K, used without class labels by the original DINOv1 image encoder.</p></li>
-    <li><span>2014 and earlier</span><h3>The words</h3><p>Original GloVe 6B: Wikipedia 2014 and the older Gigaword 5 news collection.</p></li>
-    <li><span>2017</span><h3>The later episodes</h3><p>EPIC-KITCHENS-55: recordings of kitchen work, followed by human narrations.</p></li>
-  </ol>
-  <p class="chronology-note">These are corpus and recording dates, not model publication dates. The chronology excludes the particular episodes under the documented histories. Familiar objects, ordinary phrases, and human choices in collecting the training data remain.</p>
-  <div class="questions-grid epic-plan">
-    <article><span class="index">I</span><h3>Keep the test apart.</h3><p>The sample was fixed before scores: 6,639 fitting clips, 1,127 development clips and 1,626 test clips. The seven test kitchens appear in neither other partition.</p><span class="state">Selection checked</span></article>
-    <article><span class="index">II</span><h3>Withhold the correspondence.</h3><p>The main fit receives images from 73 videos and text from 74 different videos. Paired, shuffled and random-map controls ask what the same frozen features can support.</p><span class="state state-open">17 fits prescribed</span></article>
-    <article><span class="index">III</span><h3>State what a match means.</h3><p>The first measure asks whether the nearest description names the same object class. Each test kitchen receives equal weight. This does not establish motion, syntax, or the identity of a particular episode.</p><span class="state state-open">Scoring pending</span></article>
+  <div class="section-top"><p class="eyebrow">THE FIRST CASE · PAUSED FOR REVIEW</p><p class="section-kicker">Let the claim be no larger than the trial.</p></div>
+  <div class="section-heading"><h2 id="later-title">Begin with one case.<br>Ask what it proves.</h2><p>Can one fixed image model and one fixed word model recover object-category correspondence on later kitchen recordings, when their alignment receives no paired episodes? That is the first question. Original DINOv1 and GloVe give us a case whose training sources we can examine.</p></div>
+  <div class="scope-note">
+    <p class="eyebrow">WHY BEGIN HERE?</p>
+    <p class="scope-lead">A narrower claim is easier to defend.</p>
+    <p>The training corpora predate these recorded episodes. Under the published training histories, memorizing these particular episodes cannot explain a result. This makes the case stronger against direct episode exposure. Familiar objects, ordinary phrases and the choices of the model builders remain part of the account.</p>
+    <p><strong>The question is small; the present run is substantial.</strong> One model pair, one source of recordings and one primary measure keep the claim narrow. The frozen plan nevertheless calls for 9,392 clips, 37,568 frames and 17 fits. It is a first controlled case, not the smallest possible demonstration.</p>
   </div>
-  <div class="experiment-notes"><p><strong>The work is in progress.</strong> Four frames per clip are being acquired: 37,568 in all. Missing or invalid examples stop the run. The recorded decoding failure and its bounded recovery check remain in the account.</p><p><strong>A stronger control has a cost.</strong> Paired and shared-episode controls use all fitting clips, a larger information budget. Their comparison with the disjoint fit cannot isolate contamination. Annotated action windows also supply preprocessing supervision.</p></div>
-  <div class="epic-links"><a class="button" href="https://github.com/posix4e/platoscave/tree/main/research/epic-experiment">Examine the code and record <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/posix4e/platoscave/tree/main/research/clean-example">Read the provenance audit <span aria-hidden="true">↗</span></a><a class="text-link" href="downloads/epic-protocol.json" download>Download the fixed protocol <span aria-hidden="true">↓</span></a></div>
-  <p class="epic-snapshot">Work record · 10 October 2026. This page is a dated account, not a live monitor. The earlier pilot below used different models and data.</p>
+  <ol class="chronology" aria-label="Training sources and evaluation recordings">
+    <li><span>2012</span><h3>The images</h3><p>The ImageNet-1K collection, used without class labels by original DINOv1 ViT-B/16. <a href="https://arxiv.org/html/2104.14294">DINO training record</a> · <a href="https://www.image-net.org/challenges/LSVRC/2012/">ImageNet release</a></p></li>
+    <li><span>2014 and earlier</span><h3>The words</h3><p>Original GloVe 6B: Wikipedia 2014 and the older Gigaword 5 collection. We average its word vectors without further language training. <a href="https://nlp.stanford.edu/projects/glove/">Original GloVe release</a></p></li>
+    <li><span>2017</span><h3>The later episodes</h3><p>EPIC-KITCHENS-55 recordings and their human narrations. The recording years come from the per-video metadata. <a href="https://github.com/epic-kitchens/epic-kitchens-55-annotations/blob/63fa7d78eba41a8d2280374061a6b1bab3e7e41d/EPIC_descriptions.csv">Recording dates</a></p></li>
+  </ol>
+  <p class="chronology-note">These are corpus and recording dates, not model publication dates. The argument depends on the documented training histories and publisher-supplied dates. A short phrase may occur in both old text and a later narration; that alone is not exposure to the later episode.</p>
+  <div class="questions-grid epic-plan">
+    <article><span class="index">I</span><h3>Keep the test apart.</h3><p>The existing sample was fixed before alignment scores: 6,639 fitting clips, 1,127 development clips and 1,626 test clips. The seven test kitchens appear in neither other partition.</p><span class="state">Selection checked</span></article>
+    <article><span class="index">II</span><h3>Withhold the correspondence.</h3><p>The main fit receives images from 73 videos and text from 74 different videos. Known-pair mappings, shuffled-pair mappings, random maps and separate encoder probes help us interpret success and failure.</p><span class="state state-open">17 fits prescribed · paused</span></article>
+    <article><span class="index">III</span><h3>State what a match means.</h3><p>The first measure asks whether the nearest description has the same annotated noun class. Each test kitchen receives equal weight; duplicate descriptions and exact ties are accounted for. Recognizing a cup does not yet distinguish this cup or what is done with it.</p><span class="state state-open">No benchmark scores</span></article>
+  </div>
+  <div class="trial-reading" aria-labelledby="reading-title">
+    <h3 id="reading-title">What could follow from the result?</h3>
+    <div class="outcome-table-wrap"><table class="outcome-table">
+      <caption>Possible outcomes, not findings. Negative controls use shuffled pairs or random maps. Read differences with the prescribed uncertainty intervals and results for every seed.</caption>
+      <thead><tr><th scope="col">What we observe</th><th scope="col">What we may conclude</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Unpaired retrieval exceeds the negative controls; paired retrieval also works.</th><td>Evidence of recoverable object-category correspondence for this pair on later episodes. Shared concepts and model biases remain possible explanations for that correspondence.</td></tr>
+        <tr><th scope="row">Paired retrieval works; unpaired retrieval does not.</th><td>The frozen features support a useful mapping with pairing information. The tested unpaired procedure has not recovered it under these conditions.</td></tr>
+        <tr><th scope="row">Neither paired nor unpaired retrieval works.</th><td>The features, pooling, task or domain may be unsuitable. This outcome alone cannot identify the unpaired solver as the cause.</td></tr>
+      </tbody>
+    </table></div>
+    <p class="chronology-note">Unexpected behavior between controls also needs investigation. No outcome from this one pair establishes a universal representation, understanding of actions or syntax, or independence from model choice. Changing both the models and the benchmark cannot measure how much contamination affected the original COCO/SPC result.</p>
+  </div>
+  <div class="experiment-notes"><p><strong>The run is paused.</strong> Acquisition and its supervisor were suspended on 10 October 2026 before any full EPIC alignment scores. Existing data, caches and the fixed protocol are preserved. A proposed smaller pilot below has not run.</p><p><strong>The controls have limits too.</strong> Paired and shared-episode controls use all fitting clips, a larger information budget than the main disjoint fit. Annotated action windows supply preprocessing supervision. These comparisons cannot isolate contamination by themselves.</p></div>
+  <div class="epic-links"><a class="button" href="#replan">Examine the proposed order <span aria-hidden="true">↓</span></a><a class="text-link" href="https://github.com/posix4e/platoscave/tree/main/research/clean-example">Read the provenance audit <span aria-hidden="true">↗</span></a><a class="text-link" href="downloads/epic-protocol.json" download>Read the preserved protocol <span aria-hidden="true">↓</span></a></div>
+  <p class="epic-snapshot">Work record · 10 October 2026. <a href="downloads/epic-wip-status.json">Paused-run record</a> · <a href="https://github.com/posix4e/platoscave/tree/main/research/epic-experiment">Code and checks</a>. The earlier pilot below used different models and data.</p>
 </section>
 
 <section class="audit-section" aria-labelledby="audit-title"><div class="wrap audit-layout">
@@ -144,13 +163,18 @@
   <details class="run-details"><summary>Examine all 15 reduced pilot runs <span aria-hidden="true">+</span></summary><div class="run-table-wrap"><p>FOSCTTM below uses the same clean queries against the full gallery. Lower is better. These reduced runs check the procedure; their scores do not answer the scientific question. Every seed is shown.</p><table><caption>Reduced pilot runs · DINOv2-B × MPNet</caption><thead><tr><th scope="col">Arm</th><th scope="col">Fit seed</th><th scope="col">Status</th><th scope="col">FOSCTTM</th><th scope="col">Fit time</th></tr></thead><tbody id="run-rows"></tbody></table><a href="downloads/pilot-metrics.json" download>Download all pilot measurements (JSON) ↓</a></div></details>
 </div></section>
 
-<section class="wrap section next-section" aria-labelledby="next-title">
-  <div class="section-top"><p class="eyebrow">04 / WHAT MUST WE ASK NEXT?</p><p class="section-kicker">Proposed · not yet begun</p></div>
-  <div class="section-heading"><h2 id="next-title">Would the agreement hold<br>with other models?</h2><p>Even if this pair survives the exclusions, we will still have examined only this pair. Further trials must ask how far the agreement extends.</p></div>
-  <ol class="next-list"><li><span>01</span><div><h3>Repeat the comparison with the full data.</h3><p>Compare targeted exclusions with their size controls using the full solver profile. Set the uncertainty calculation and justify the expected precision before beginning. The proposed 180-fit budget and effect margin remain provisional.</p></div><span class="next-status">PROPOSED</span></li><li><span>02</span><div><h3>Choose other encoders before seeing their results.</h3><p>Original ELMo is the next language candidate: its documented news corpus predates the EPIC recordings. ImageNet-only MoCo-v2 and MAE add image encoders. Their original weight bytes and feature extraction still need checking before an extension runs. <a href="https://github.com/posix4e/platoscave/tree/main/research/clean-example/further-search">Read the continued search.</a></p></div><span class="next-status">PROPOSED</span></li><li><span>03</span><div><h3>Ask what the training has taught them.</h3><p>Hold architecture fixed while varying the objective, disjoint training corpus, and independent pretraining seeds. Test retrieval within categories, including differences in count, attribute, relation, and who did what.</p></div><span class="next-status">PROPOSED</span></li></ol>
+<section id="replan" class="wrap section next-section" aria-labelledby="next-title">
+  <div class="section-top"><p class="eyebrow">04 / THE PROPOSED ORDER</p><p class="section-kicker">Review first; then resume.</p></div>
+  <div class="section-heading"><h2 id="next-title">Take the next step<br>only as far as it warrants.</h2><p>The experiment remains paused. The smaller pilot below is a proposal, not a new result or a silent change to the frozen protocol. Its sample and rules must be written before it runs.</p></div>
+  <ol class="next-list">
+    <li><span>01</span><div><h3>First establish that the features can answer the question.</h3><p>Use a small, separately specified pilot from fitting and development kitchens only. Check known-pair mappings, separate noun probes, repeated descriptions and chance performance. Choose clips by fixed identifiers, not by which videos arrived first. Keep the final test kitchens out of this pilot and publish its failures too. This checks feasibility; it does not establish unpaired alignment.</p></div><span class="next-status">PROPOSED</span></li>
+    <li><span>02</span><div><h3>Then make the unpaired test and report its whole result.</h3><p>Before held-out scoring, either retain the existing 9,392-clip protocol or publish a separate amendment with the reason for each change. Fix the sample, controls, settings and measures. Report failed fits and weak results alongside successes. The earlier protocol and evidence remain available.</p></div><span class="next-status">AFTER REVIEW</span></li>
+    <li><span>03</span><div><h3>Only then ask how far the result extends.</h3><p>Prespecify other encoder pairs to test model-choice dependence, regardless of the first pair’s outcome. Original ELMo, ImageNet-only MoCo-v2 and MAE are audited candidates; their weights and extraction still need checking. A further study must test distinctions within object classes, including number, relation and action. <a href="https://github.com/posix4e/platoscave/tree/main/research/clean-example/further-search">Read the candidate audit.</a></p></div><span class="next-status">LATER STUDY</span></li>
+  </ol>
+  <p class="replan-footnote">Training from scratch is not required for this first, conditional chronology argument. If we require tighter control over exact-item exposure, we can lock the model files and then collect new human-recorded scenes and descriptions. That would require a new protocol and would still leave the question of model choice open.</p>
 </section>
 
-<section class="resources wrap" aria-labelledby="resources-title"><div><p class="eyebrow">THE RECORDS</p><h2 id="resources-title">Examine the account.</h2><p>The protocol and evidence records are below. They describe the work as it stood on the date shown; they do not update as experiments run.</p></div><div class="resource-links"><a href="downloads/protocol.md" download><span>Experiment protocol<small>The questions, comparisons, measures, and limits</small></span><span aria-hidden="true">↓</span></a><a href="downloads/source-audit.json" download><span>Source-identity audit<small>Counts, metadata hashes, and source references</small></span><span aria-hidden="true">↓</span></a><a href="downloads/model-choice-design.json" download><span>Proposed model-choice design<small>The candidates and what their selection can establish</small></span><span aria-hidden="true">↓</span></a><a href="https://github.com/dominik-schnaus/unpaired-rosetta/tree/fdfad84ea488f29702a61a455be71622c4ff5d49"><span>Original implementation<small>The original code at the examined commit</small></span><span aria-hidden="true">↗</span></a></div></section>
+<section class="resources wrap" aria-labelledby="resources-title"><div><p class="eyebrow">THE RECORDS</p><h2 id="resources-title">Examine the account.</h2><p>The protocol and evidence records are below. They describe the work as it stood on the date shown; they do not update as experiments run.</p></div><div class="resource-links"><a href="downloads/epic-protocol.json" download><span>Preserved EPIC protocol<small>The paused first case: sample, controls, measures and limits</small></span><span aria-hidden="true">↓</span></a><a href="downloads/protocol.md" download><span>Earlier overlap-study proposal<small>The separate COCO/SPC questions and comparisons</small></span><span aria-hidden="true">↓</span></a><a href="downloads/source-audit.json" download><span>Source-identity audit<small>Counts, metadata hashes, and source references</small></span><span aria-hidden="true">↓</span></a><a href="downloads/model-choice-design.json" download><span>Proposed model-choice design<small>The candidates and what their selection can establish</small></span><span aria-hidden="true">↓</span></a><a href="https://github.com/dominik-schnaus/unpaired-rosetta/tree/fdfad84ea488f29702a61a455be71622c4ff5d49"><span>Original implementation<small>The original code at the examined commit</small></span><span aria-hidden="true">↗</span></a></div></section>
 </main>
 <footer class="wrap"><span>BEYOND THE CAVE <span class="footer-divider">/</span> An inquiry written for this study · <a href="https://github.com/posix4e/platoscave">Page source ↗</a></span><span>Independent of the original authors. <a href="https://arxiv.org/html/2610.09411v1">Read their paper ↗</a></span></footer>
 </body>
