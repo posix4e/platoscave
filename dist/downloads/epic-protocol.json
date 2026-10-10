@@ -1,0 +1,81 @@
+{
+  "protocol_id": "epic55-clean-v1",
+  "frozen_on": "2026-10-10",
+  "stage": "first controlled alignment experiment; not a smoke test or a full model-family study",
+  "question": "Can independently pretrained, frozen original DINOv1 and original GloVe align on EPIC-55 episodes that postdate their documented training corpora, without any episode correspondence entering the primary unpaired fit?",
+  "interpretation_limits": [
+    "This changes both encoders and benchmark relative to the original COCO/SPC result and does not estimate a causal effect of contamination there.",
+    "Chronology excludes direct exposure to these recordings under the publishers' documented training histories; it does not exclude shared concepts, ordinary phrases, similar scenes, or curatorial biases.",
+    "Three solver seeds measure optimization variability, not independent pretraining runs or model-family robustness.",
+    "Averaging word and frame vectors removes order; action and motion limitations must be separated from object correspondence.",
+    "An unpaired failure is interpretable as a failure to recover available correspondence only if the paired competence control establishes that the same features support the evaluated task."
+  ],
+  "provenance": {
+    "reference_directory": "research/clean-example",
+    "vision": "Original ImageNet-only DINOv1 ViT-B/16 backbone; original artifact-lock.json weights; no downstream tuning",
+    "text": "Original glove.6B.300d.txt inside the Stanford GloVe6B archive; original artifact-lock.json; no sentence fine-tuning",
+    "dataset": "EPIC-KITCHENS-55 public training action annotations at 63fa7d78eba41a8d2280374061a6b1bab3e7e41d",
+    "dataset_partition_disclosure": "Our fit/dev/test are new participant partitions of the public labeled training data. They are not the official EPIC held-out challenge test sets."
+  },
+  "selection": {
+    "salt": "epic55-clean-v1",
+    "participant_order": "Ascending hex SHA256('epic55-clean-v1|participant|' + participant_id)",
+    "split_participant_counts": {"fit": 16, "dev": 5, "test": 7},
+    "split_participants": {
+      "fit": ["P20", "P12", "P28", "P05", "P29", "P19", "P01", "P14", "P23", "P27", "P26", "P04", "P15", "P10", "P21", "P31"],
+      "dev": ["P03", "P06", "P30", "P16", "P24"],
+      "test": ["P13", "P22", "P25", "P02", "P08", "P17", "P07"]
+    },
+    "row_caps_per_participant": {"fit": 512, "dev": 256, "test": 256},
+    "row_selection": "Within participant retain the first cap rows by SHA256('epic55-clean-v1|row|' + uid), with numeric UID as collision tie-break; retain all rows if below cap.",
+    "fit_modalities": "Group selected fit rows by video within each participant. Sort videos by descending selected-row count, then SHA256('epic55-clean-v1|role-video|' + participant_id + '|' + video_id). Assign the next whole video to the role with fewer rows. If totals tie, even SHA256('epic55-clean-v1|role-tie|' + participant_id + '|' + video_id) assigns x, odd assigns y. No episode or video is shared between the primary fit marginals.",
+    "target_selected_counts": {"fit": 6639, "dev": 1127, "test": 1626, "total": 9392},
+    "selection_inputs": "Identifiers and counts only; no captions, class identities, image content, feature vectors, or model scores guide selection.",
+    "exclusions": "No substitution by easier examples. Acquisition or invalid-feature failures must be reported by UID and reason. Stop or explicitly amend the protocol if failures materially change the sample; do not silently replace rows."
+  },
+  "features": {
+    "frames_per_action": 4,
+    "requested_times": "start_seconds + (j + 0.5) * (stop_seconds - start_seconds) / 4 for j=0,1,2,3; nearest decodable frame within the same action window; record actual timestamps and any duplicate frames",
+    "frame_acquisition": "HTTP Range seeking of original publisher MP4; nearest decoded frame inside the annotation window; retain original decoded resolution, encode JPEG quality95 with chroma subsampling0. Record actual PTS, source URL, frame hashes, and seek-time error for every frame. Refuse time error greater than max(0.1 seconds, 2/fps); do not substitute a nearby action or video.",
+    "image_preprocessing": "RGB; resize shortest edge to256 bicubic; center crop224x224; ImageNet mean[0.485,0.456,0.406] and std[0.229,0.224,0.225]; no random augmentation",
+    "image_feature": "768d final DINO CLS vector per frame; L2-normalize each; mean four frame vectors; L2-normalize the mean",
+    "text_preprocessing": "Unicode NFKC then lower(); regex tokenization [a-z]+(?:'[a-z]+)?|[0-9]+; retain stopwords; match original GloVe vocabulary exactly; omit OOV tokens from mean and report token and narration coverage",
+    "text_feature": "Mean original300d vectors of in-vocabulary token occurrences, then L2 normalization; no fitted IDF, stopword list, or supervised pooling",
+    "invalid_vectors": "Zero, empty, NaN or infinite vectors must be detected and reported before fit. No fallback encoder or score-based replacement is allowed.",
+    "annotation_use": "Action start/stop windows provide preprocessing supervision. Noun and verb classes are used only in evaluation; unpaired fitting gets numeric arrays without metadata or paired identifiers."
+  },
+  "alignment": {
+    "implementation": "Pinned upstream WassersteinProcrustes; record source SHA256, git revision, and package versions",
+    "settings": {"num_clusters": 30, "num_restarts": 30, "num_iterations": 100, "maximum_batch_size": 2048},
+    "effective_batch": "min(2048, number of image fit rows, number of text fit rows)",
+    "seeds": [0, 1, 2],
+    "centering": "Fitting-set means per arm only, followed by upstream center-and-normalize; no held-out means",
+    "paper_difference": "The paper default batch is10000. This prespecified first experiment uses at most2048 for bounded assignment cost; other C/S/R defaults are retained.",
+    "no_initial_dev_tuning": true,
+    "fit_time_pair_access": "Primary unpaired fit has no paired arrays, no class labels, no identifiers, and no synchronized source order. Inputs use fit_role x for images and y for text."
+  },
+  "arms": [
+    {"name": "unpaired_disjoint_videos", "role": "primary", "rows": "Fit x-role videos supply only images, y-role videos supply only text", "repeats": 3},
+    {"name": "unpaired_shared_episodes", "role": "diagnostic for fitting-marginal mismatch", "rows": "All fit images and all fit texts, independently shuffled; corresponding episodes are present, but no pairing is passed", "repeats": 3},
+    {"name": "paired_procrustes", "role": "feature/linear-map competence control", "rows": "All fit image-text pairs with the same frozen features; exact centered semiorthogonal Procrustes", "budget_disclosure": "This deliberately has a larger information budget than the disjoint unpaired arm; it is a competence control, not a matched-data causal comparison"},
+    {"name": "paired_ridge", "role": "unconstrained linear-map competence control", "rows": "All fit image-text pairs with the same frozen centered/normalized features; ridge map solving (X^T X + alpha I)W=X^T Y with fixed alpha=1, no development-set tuning", "alpha": 1.0, "budget_disclosure": "Uses known fit pairs and a broader map class than semiorthogonal Procrustes; identifies an additional feature/readout limitation if Procrustes fails"},
+    {"name": "random_semiorthogonal", "role": "random-map negative control", "rows": "Gaussian random768x300 map with orthonormal columns, after fit-only centering and normalization; no label or correspondence access", "repeats": 3},
+    {"name": "paired_shuffled", "role": "correspondence-negative paired-fit control", "rows": "Same fit features and paired-control algorithm, but text pairing is permuted independently within participant", "repeats": 3},
+    {"name": "paired_ridge_shuffled", "role": "correspondence-negative ridge-fit control", "rows": "Same fixed-alpha1 paired ridge map but text pairing is permuted independently within participant", "repeats": 3},
+    {"name": "single_modality_noun_verb_probes", "role": "representation competence diagnostics", "rows": "Fit separate fixed-alpha1 ridge classifiers for noun and verb labels on each frozen modality using all fit rows. Center/normalize with fit-only means; one-hot labels; intercept equals fit class priors. Report dev/test top1/top5, class-balanced top1, participant-macro top1, majority-class baseline, and fit-class coverage. Held-out classes absent from fit count as errors; do not discard them.", "interpretation": "These controls use explicit supervision and do not constitute an unpaired alignment result."},
+    {"name": "evaluation_correspondence_shuffle", "role": "chance/context diagnostic", "rows": "Fixed held-out scores; permute query semantic/caption assignments within participant, preserving class/caption frequencies. Do not refit or call fitting-array-order shuffling a null.", "interpretation": "Diagnostic null; temporal dependence means arbitrary episode permutations are not an exact exchangeability-based significance test."},
+    {"name": "synthetic_rotated_features", "role": "implementation/solver competence check", "rows": "Known orthogonal synthetic transformation, hidden row correspondence, separate held-out rows; never count these synthetic scores as benchmark evidence"}
+  ],
+  "evaluation": {
+    "test_gallery": "All retained test rows, identically fixed across arms and seeds; no class-balanced filtering or query-dependent gallery",
+    "primary_endpoint": "Image-to-text noun-class hit@1 averaged equally across test participants; relevance is equality of EPIC noun_class and may include multiple relevant gallery rows",
+    "secondary_endpoints": ["Noun hit@5 and hit@10", "Text-to-image noun hit@1/5/10", "Action (verb_class,noun_class) hit@1/5/10 in both directions", "Normalized-caption equivalence hit@1/5/10 in both directions", "Micro averages and per-participant values for every reported aggregate"],
+    "caption_normalization": "Unicode NFKC, casefold, collapse whitespace. Publish duplicate narration and duplicate pooled-vector counts. Exact episode retrieval is not a primary claim because repeated captions can be indistinguishable.",
+    "ties": "Expected hit@k under uniform ordering of exactly tied scores, accounting for every relevant item in each tie group; no UID-order advantage",
+    "uncertainty": "Average optimization seeds within participant, then compute a95% percentile interval from10000 bootstrap resamples of the seven test participants with seed65537, keeping participant rows together. Report seed dispersion separately; do not treat optimization seeds or neighboring frames as independent participants.",
+    "correspondence_null_draws": 999,
+    "correspondence_null_seed": 104729,
+    "decision": "Report every prespecified arm and seed, including failures. Assess the unpaired endpoint relative to shuffled correspondence diagnostics and paired competence before interpreting success/failure. Do not search a new pair or revise the endpoint after observing scores."
+  },
+  "deliverables": ["Frozen protocol and selected-row manifest with input hashes", "Acquisition report with requested/actual frame times, missing frames and hashes", "Pinned frozen feature extraction code and NPZ cache hash", "All arm settings, learned-map hashes, per-query outputs and participant aggregates", "Independent metric/manifest verification", "Reproduction commands and bounded interpretation published with repository source"]
+}

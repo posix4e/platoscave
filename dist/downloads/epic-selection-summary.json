@@ -1,0 +1,304 @@
+{
+  "participants": {
+    "fit": [
+      "P20",
+      "P12",
+      "P28",
+      "P05",
+      "P29",
+      "P19",
+      "P01",
+      "P14",
+      "P23",
+      "P27",
+      "P26",
+      "P04",
+      "P15",
+      "P10",
+      "P21",
+      "P31"
+    ],
+    "dev": [
+      "P03",
+      "P06",
+      "P30",
+      "P16",
+      "P24"
+    ],
+    "test": [
+      "P13",
+      "P22",
+      "P25",
+      "P02",
+      "P08",
+      "P17",
+      "P07"
+    ]
+  },
+  "participant_counts": {
+    "P20": {
+      "split": "fit",
+      "source_rows": 926,
+      "selected_rows": 512,
+      "selected_videos": 4,
+      "fit_role_counts": {
+        "x": 253,
+        "y": 259
+      }
+    },
+    "P12": {
+      "split": "fit",
+      "source_rows": 446,
+      "selected_rows": 446,
+      "selected_videos": 6,
+      "fit_role_counts": {
+        "x": 220,
+        "y": 226
+      }
+    },
+    "P28": {
+      "split": "fit",
+      "source_rows": 1150,
+      "selected_rows": 512,
+      "selected_videos": 14,
+      "fit_role_counts": {
+        "x": 256,
+        "y": 256
+      }
+    },
+    "P05": {
+      "split": "fit",
+      "source_rows": 535,
+      "selected_rows": 512,
+      "selected_videos": 7,
+      "fit_role_counts": {
+        "x": 249,
+        "y": 263
+      }
+    },
+    "P29": {
+      "split": "fit",
+      "source_rows": 995,
+      "selected_rows": 512,
+      "selected_videos": 4,
+      "fit_role_counts": {
+        "x": 246,
+        "y": 266
+      }
+    },
+    "P19": {
+      "split": "fit",
+      "source_rows": 203,
+      "selected_rows": 203,
+      "selected_videos": 4,
+      "fit_role_counts": {
+        "x": 97,
+        "y": 106
+      }
+    },
+    "P01": {
+      "split": "fit",
+      "source_rows": 3090,
+      "selected_rows": 512,
+      "selected_videos": 14,
+      "fit_role_counts": {
+        "x": 257,
+        "y": 255
+      }
+    },
+    "P14": {
+      "split": "fit",
+      "source_rows": 110,
+      "selected_rows": 110,
+      "selected_videos": 7,
+      "fit_role_counts": {
+        "x": 57,
+        "y": 53
+      }
+    },
+    "P23": {
+      "split": "fit",
+      "source_rows": 449,
+      "selected_rows": 449,
+      "selected_videos": 4,
+      "fit_role_counts": {
+        "x": 217,
+        "y": 232
+      }
+    },
+    "P27": {
+      "split": "fit",
+      "source_rows": 308,
+      "selected_rows": 308,
+      "selected_videos": 6,
+      "fit_role_counts": {
+        "x": 152,
+        "y": 156
+      }
+    },
+    "P26": {
+      "split": "fit",
+      "source_rows": 733,
+      "selected_rows": 512,
+      "selected_videos": 28,
+      "fit_role_counts": {
+        "x": 256,
+        "y": 256
+      }
+    },
+    "P04": {
+      "split": "fit",
+      "source_rows": 1914,
+      "selected_rows": 512,
+      "selected_videos": 22,
+      "fit_role_counts": {
+        "x": 256,
+        "y": 256
+      }
+    },
+    "P15": {
+      "split": "fit",
+      "source_rows": 344,
+      "selected_rows": 344,
+      "selected_videos": 10,
+      "fit_role_counts": {
+        "x": 172,
+        "y": 172
+      }
+    },
+    "P10": {
+      "split": "fit",
+      "source_rows": 785,
+      "selected_rows": 512,
+      "selected_videos": 3,
+      "fit_role_counts": {
+        "x": 184,
+        "y": 328
+      }
+    },
+    "P21": {
+      "split": "fit",
+      "source_rows": 245,
+      "selected_rows": 245,
+      "selected_videos": 3,
+      "fit_role_counts": {
+        "x": 98,
+        "y": 147
+      }
+    },
+    "P31": {
+      "split": "fit",
+      "source_rows": 438,
+      "selected_rows": 438,
+      "selected_videos": 11,
+      "fit_role_counts": {
+        "x": 217,
+        "y": 221
+      }
+    },
+    "P03": {
+      "split": "dev",
+      "source_rows": 1373,
+      "selected_rows": 256,
+      "selected_videos": 19,
+      "fit_role_counts": {}
+    },
+    "P06": {
+      "split": "dev",
+      "source_rows": 821,
+      "selected_rows": 256,
+      "selected_videos": 7,
+      "fit_role_counts": {}
+    },
+    "P30": {
+      "split": "dev",
+      "source_rows": 1657,
+      "selected_rows": 256,
+      "selected_videos": 8,
+      "fit_role_counts": {}
+    },
+    "P16": {
+      "split": "dev",
+      "source_rows": 103,
+      "selected_rows": 103,
+      "selected_videos": 3,
+      "fit_role_counts": {}
+    },
+    "P24": {
+      "split": "dev",
+      "source_rows": 1459,
+      "selected_rows": 256,
+      "selected_videos": 8,
+      "fit_role_counts": {}
+    },
+    "P13": {
+      "split": "test",
+      "source_rows": 402,
+      "selected_rows": 256,
+      "selected_videos": 7,
+      "fit_role_counts": {}
+    },
+    "P22": {
+      "split": "test",
+      "source_rows": 4823,
+      "selected_rows": 256,
+      "selected_videos": 13,
+      "fit_role_counts": {}
+    },
+    "P25": {
+      "split": "test",
+      "source_rows": 512,
+      "selected_rows": 256,
+      "selected_videos": 9,
+      "fit_role_counts": {}
+    },
+    "P02": {
+      "split": "test",
+      "source_rows": 1769,
+      "selected_rows": 256,
+      "selected_videos": 11,
+      "fit_role_counts": {}
+    },
+    "P08": {
+      "split": "test",
+      "source_rows": 2032,
+      "selected_rows": 256,
+      "selected_videos": 22,
+      "fit_role_counts": {}
+    },
+    "P17": {
+      "split": "test",
+      "source_rows": 90,
+      "selected_rows": 90,
+      "selected_videos": 3,
+      "fit_role_counts": {}
+    },
+    "P07": {
+      "split": "test",
+      "source_rows": 760,
+      "selected_rows": 256,
+      "selected_videos": 11,
+      "fit_role_counts": {}
+    }
+  },
+  "counts_by_split": {
+    "fit": 6639,
+    "test": 1626,
+    "dev": 1127
+  },
+  "fit_counts_by_role": {
+    "x": 3187,
+    "y": 3452
+  },
+  "fit_video_counts_by_role": {
+    "x": 73,
+    "y": 74
+  },
+  "selected_video_count": 268,
+  "selected_row_count": 9392,
+  "requested_frame_count": 37568,
+  "fit_video_overlap_between_modalities": 0,
+  "participant_overlap_between_splits": 0,
+  "row_order": "ascending numeric UID; embedding acquisition must preserve this order",
+  "output_sha256": "d1a34b2ad47a1456a011c6e4f2d6308bae34ebf6aed0c6fb335794ac3dc648be"
+}

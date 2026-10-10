@@ -1,0 +1,45 @@
+{
+  "recorded_at_utc": "2026-10-10T18:08:10.257404+00:00",
+  "state": "work_in_progress",
+  "benchmark_alignment_completed": false,
+  "files": {
+    "acquire_frames.py": "c3025e54c7f8db18fc7a883f1373f1ffaf8707d77a29371acb77735288d55f65",
+    "verify_acquisition.py": "fadbafc2d07b2b4e1bb146cbf7b6ba3e82c093b6d83015702140053ba6933e6a",
+    "extract_features.py": "471ede5f611b17ab63252957c0f9785ff2afede22a656f8452fdadff4217f203",
+    "run_experiment.py": "5806ce2c397d2c1a473e2422a41f850d332f453237dc785fe09d1d077798b26d",
+    "verify_results.py": "5c7ac4df0fe8991b7a3fa7d664c0ff89891f41925d3b444d7de0395e463402a8",
+    "check_preprocess.py": "7b562b0f21b761c6d274e35224cc539c7313dddaeb4b6f0b087f689c4e01d8bf",
+    "benchmark_http_seek.py": "84534532a3351695a21913fade8adb105b743cfb01adc2ab9a0d9ea26076bc3d",
+    "preprocess-validation.json": "20c1ad347a9b506a95a98a2565347a4561530b6d5becaaf8ea6e565eaf82737d",
+    "feature-repeat-validation.json": "e5af151a61a61fd6898be232d3338829319cad2ae685c74cf0031a4001292b73",
+    "http-seek-benchmark.json": "b451cc43fb25495b8ec8785948b16974272220cbcbd29dea2af3dbcb2bc163a7",
+    "synthetic_check.json": "40827a0b30f4713d619a70e1c5f2cc063d3b52c575036d2351be32cc93220376",
+    "gpu-environment.json": "8eea61175a2a6f7ffd45faf4ac245f2ab636bc8e50df1015f16ec47e2593f4f1",
+    "continue_experiment.py": "767d1126ef36e97b755a02acca9f65350cb45ca93e0f19d943b541ac1cc76867",
+    "diagnose_p03_05.py": "fb4cf3fba709b3297c103cae894e6344f6798bc3e72d142c426b1eb7d2347d5e",
+    "p03-05-failure-review.md": "7f36a565b147774f5b14ec3f34276643cfb0590f89d7d4fb4f5c3d5a4280395e",
+    "p03-05-failure-diagnostic.json": "9df718132a47312d7952a2bc4e1209264576f547f71e1d5dd99dc04af59ae7f0"
+  },
+  "upstream": {
+    "public_base_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "executed_checkout_commit": "263ad1d85e86e28f8eee22ad758f0bb1de7c6dab",
+    "note": "Executed checkout adds earlier research scripts. The unpaired_rosetta package has no changes from the public base; runtime source digests will also be recorded in the alignment config."
+  },
+  "checks_completed": [
+    "frozen sample independently verified",
+    "image preprocessing matches torchvision in all31checkedcases",
+    "one-action feature cache repeat bit-identical",
+    "synthetic unpaired solver recovery sanity check",
+    "runner provenance/eligibility and metric self-tests",
+    "independent result verifier self-tests",
+    "supervisor mock tests verify waiting, concurrency guard, bounded retry and failure stops",
+    "isolated P03_05 target recovered in two transport modes with identical timestamps and frame bytes"
+  ],
+  "not_completed": [
+    "all37568frame acquisition",
+    "full9392row feature extraction",
+    "17benchmark fits",
+    "independent benchmark result verification"
+  ],
+  "failure_observed": "P03_05 failed during acquisition after39of88frames. The isolated failing target was recovered in both transport modes; full-video retry remains unverified. Original failure evidence is preserved."
+}

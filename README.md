@@ -1,9 +1,10 @@
 # Beyond the Cave
 
 A static research page about source overlap and model choice in Unpaired Rosetta.
-The page presents a metadata audit, five experimental conditions, and all 15
-completed reduced pilot runs. These runs check the procedure; they do not settle
-the model-choice question or estimate the planned full-data exclusion effects.
+The page presents the running DINOv1/GloVe experiment on later EPIC-KITCHENS
+recordings, its fixed sample and provenance limits. It also retains the source
+overlap audit and all 15 earlier reduced pilot runs. Neither the earlier pilot
+nor the current setup is presented as a completed model-choice result.
 
 Source: [posix4e/platoscave](https://github.com/posix4e/platoscave).
 Hosted on [Cloudflare Pages](https://platoscave.pages.dev/).
@@ -34,9 +35,8 @@ upload, not an automatic Git integration.
 `platoscave.si` is attached to the Pages project, with a proxied CNAME pointing
 to `platoscave.pages.dev`. Namecheap has the Cloudflare nameservers saved:
 `dayana.ns.cloudflare.com` and `thomas.ns.cloudflare.com`.
-At setup on 10 October 2026, delegation and certificate validation were pending;
-the Pages address was serving the site. Check current DNS and HTTPS status before
-claiming the custom domain is live.
+Delegation and certificate validation completed on 10 October 2026. Deployment
+records should still include a current HTTPS check for the custom domain.
 
 ## Scientific scope
 
