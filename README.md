@@ -107,6 +107,22 @@ to `platoscave.pages.dev`. Namecheap has the Cloudflare nameservers saved:
 Delegation and certificate validation completed on 10 October 2026. Deployment
 records should still include a current HTTPS check for the custom domain.
 
+## Proposed next steps
+
+The five-photo distance-matching trial neither replicates nor disproves Rosetta.
+The next task is to reproduce one documented result with the authors' actual
+alignment procedure, full settings, fixed seeds and original evaluation. Released
+embeddings can establish an alignment baseline; they cannot independently verify
+encoder training or feature extraction. The earlier reduced pipeline runs do not
+complete this step.
+
+After that baseline, vary one encoder at a time with data and alignment settings
+fixed, adding paired and shuffled controls. Study source overlap separately with
+unchanged encoders and size-matched random removal. A later collection should
+follow a complete model and protocol lock, include human descriptions and enough
+fitting examples, and keep final evaluation scenes apart. No new run or frozen
+protocol is claimed by this proposed sequence.
+
 ## Scientific scope
 
 The protocol and model matrix in `dist/downloads/` distinguish completed work
