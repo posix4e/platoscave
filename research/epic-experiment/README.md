@@ -336,3 +336,45 @@ Only then does it write `RESULTS.md`, JSON summaries, participant/seed scores,
 control differences and intervals, diagnostic null tables and a hash receipt.
 This is local report preparation; deployment is a separate action. A failure
 at any stage is an incomplete experiment, not a negative alignment result.
+
+### Releasing and restoring feature files
+
+`feature_release.py` prepares a derived-feature bundle without the narration
+array or either per-row token list. Readers obtain the narrations from the
+pinned EPIC annotations and reproduce the manifest above. Aggregate OOV word
+counts remain in the bundle. The helper accepts only the full frozen sample;
+it does not verify alignment results or upload files.
+
+Export reconstructs both original feature files in a temporary directory and
+requires their exact SHA-256 hashes before writing a finished bundle. Restore
+repeats those checks. The receipt records array order, dtypes and writer
+versions because different NumPy or zlib versions can change archive bytes.
+Use the recorded writer stack if restoration fails; do not substitute a new
+hash in the experiment records.
+
+These commands use the extraction environment to match its writer versions.
+The helper itself needs NumPy but no GPU; a CPU-only reader can use a matching
+Python/NumPy/zlib stack and must pass the same hash checks.
+
+```bash
+"$EPIC_CPU_PY" -m unittest discover -s "$EPIC_SCRIPTS" -p test_feature_release.py
+"$EPIC_GPU_PY" "$EPIC_SCRIPTS/feature_release.py" export \
+  --manifest "$EPIC_RUN/selected_rows.json" --features "$EPIC_RUN/features.npz" \
+  --extractor "$EPIC_SCRIPTS/extract_features.py" \
+  --output "$EPIC_RUN/feature-release"
+"$EPIC_GPU_PY" "$EPIC_SCRIPTS/feature_release.py" restore \
+  --manifest "$EPIC_RUN/selected_rows.json" --bundle "$EPIC_RUN/feature-release" \
+  --extractor "$EPIC_SCRIPTS/extract_features.py" \
+  --output "$EPIC_RUN/restored-features"
+```
+
+Both output directories must be new. After restoration, the unchanged result
+verifier above can use `--features "$EPIC_RUN/restored-features/features.npz"`
+with the original results and protocol. It still requires every fit and all
+original provenance checks.
+
+`feature-release-bounded-validation.json` records an earlier byte-identical
+reconstruction of one partial feature file and its metadata. That limited
+check supports this packaging approach; it is not a full export or a benchmark
+result. The full feature file is still pending and must pass its own export
+roundtrip before release.

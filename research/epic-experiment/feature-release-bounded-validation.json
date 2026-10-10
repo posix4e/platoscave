@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "recorded_date_utc": "2026-10-10",
+  "status": "bounded_lossless_reconstruction_proof_passed",
+  "scope": "Read-only source inspection and temporary reconstruction of an existing 1858-row partial warm cache. This predates the full feature-release helper test and is not a full-cache export, benchmark result, or independent alignment verification.",
+  "final_full_cache_verified": false,
+  "benchmark_result_verified": false,
+  "rows": 1858,
+  "source_directory": "/opt/rosetta/epic-experiment/frame-cache-prewarm/warm-20261010T1825",
+  "selected_partial_manifest": {
+    "filename": "selected-complete-videos.json",
+    "sha256": "8c4f347520a4b59f30a2d26382a99832d1431d45fa71968dce5f2a0203725b4a"
+  },
+  "frozen_extractor_sha256": "471ede5f611b17ab63252957c0f9785ff2afede22a656f8452fdadff4217f203",
+  "writer": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "zlib": "1.3"
+  },
+  "npz_roundtrip": {
+    "original_filename": "partial-features.npz",
+    "original_and_restored_bytes": 7039061,
+    "original_and_restored_sha256": "c89c2f9bb05e173df861eda5f9739c1f69dc036368b548efea8099165546acd7",
+    "without_narration_bytes": 7025336,
+    "without_narration_sha256": "60a44537d4a84671c0b735e1dc892de85828477c8da07e50a44c321c999cad9a",
+    "original_array_members": 15,
+    "narration_dtype": "<U53",
+    "method": "Remove only the narration array; regenerate it by UID from selected rows with the original dtype; write arrays in original NPZ member order with numpy.savez_compressed.",
+    "checks": {
+      "all_arrays_dtypes_shapes_identical": true,
+      "all_npy_member_payloads_identical": true,
+      "zip_metadata_identical": true,
+      "full_archive_bytes_identical": true
+    }
+  },
+  "json_roundtrip": {
+    "original_filename": "partial-features.json",
+    "original_and_restored_bytes": 1753995,
+    "original_and_restored_sha256": "b22c27066fe8423612c3228cc25d5d49655478e290afb04a60bd5f818844ecc2",
+    "template_bytes": 1650451,
+    "template_sha256": "126b3ae651508bc82405ed0bfa770311aca2f65f12af3bc79d96dbaeb4c205c4",
+    "per_row_token_lists_replaced_with_null": 3716,
+    "aggregate_oov_vocabulary_size_retained": 6,
+    "method": "Preserve key order and all other values; replace each row_coverage.tokens/oov_tokens with null. Restore tokens using the frozen tokenizer and UID-linked selected narration, and restore OOV lists using the aggregate OOV vocabulary. Write json.dumps(indent=2) plus newline.",
+    "checks": {
+      "full_json_structure_identical": true,
+      "full_json_bytes_identical": true
+    }
+  },
+  "original_source_files_unchanged": true,
+  "private_temporary_directories_removed": true,
+  "uploads_or_deployments_performed": false,
+  "limitations": [
+    "This is a bounded partial-cache proof. Production export must separately check every row of the frozen 9392-row sample and pass its own exact roundtrip.",
+    "Byte identity was proved with this Python/NumPy/zlib stack, original array order and narration dtype. Other writer versions can preserve array values while changing ZIP bytes.",
+    "The restored full NPZ and JSON must match their original hashes before the unchanged frozen result verifier is allowed to consume them. Failure to match is a failed restoration, not a benchmark result."
+  ]
+}
