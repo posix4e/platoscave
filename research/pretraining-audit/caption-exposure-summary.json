@@ -1,0 +1,258 @@
+{
+  "audit_kind": "released_caption_corpus_membership_not_checkpoint_sampling",
+  "corpus": {
+    "compressed_sha256": "d87745aa14816db320ae3b0fe927ac76c02e66aaf19b06baaee5d06492e92243",
+    "filename": "coco_captions.jsonl.gz",
+    "rows": 828395,
+    "texts_per_row_histogram": {
+      "2": 828395
+    },
+    "uncompressed_sha256": "36d69321b77e8c1b6f5ed60afacaa9a5cb52fd6da56248bf416f9de36d56d271"
+  },
+  "interpretation": [
+    "Matches establish caption-text membership in the released corpus, not whether a checkpoint actually sampled these rows.",
+    "A whole-group candidate is a Karpathy source image containing every distinct group caption; no matching text is silently dropped from this intersection.",
+    "Unique means one candidate inside this reference, not proof of original source identity or absence of duplicates outside the reference.",
+    "Identical generic captions may occur on multiple images; individual-text matches and ambiguous groups are not definite image exposure.",
+    "Groups collapsing to one distinct text are reported separately even when their reference candidate is unique.",
+    "The guid diagnostic tests whether a numeric release guid equals a reference COCO ID and every group caption occurs on that image. It reports consistency, not independent proof of guid semantics or checkpoint sampling.",
+    "Original COCO train2014/val2014 comes from agreeing filename/filepath metadata; Karpathy train/restval/val/test is not substituted.",
+    "This is a text-identity audit, not an image-byte, perceptual-duplicate, training-log, or full pretraining-lineage audit."
+  ],
+  "normalization": "Unicode NFKC, then casefold, then collapse/trim Python Unicode whitespace; no punctuation removal",
+  "reference": {
+    "archive_sha256": "4cfd70132527b80933105e5829dc9034eaab9573482e2e680abbab6130244817",
+    "caption_occurrences_by_original_split": {
+      "train2014": 414113,
+      "val2014": 202654
+    },
+    "images": 123287,
+    "images_by_original_split": {
+      "train2014": 82783,
+      "val2014": 40504
+    },
+    "karpathy_split_counts_diagnostic_only": {
+      "restval": 30504,
+      "test": 5000,
+      "train": 82783,
+      "val": 5000
+    },
+    "member": "dataset_coco.json",
+    "member_sha256": "2fd999220673258012acfb411a4e7e66af7d488050b2519b0badcc49b7600b8d",
+    "unique_captions": {
+      "exact": 593968,
+      "normalized": 591674
+    }
+  },
+  "schema_version": "1.0.0",
+  "script_sha256": "07ec2e9f40a198f522748b6b4b02d340bf781741bdcbdbf9c6273ad6c7894b28",
+  "unicode_version": "15.0.0",
+  "modes": {
+    "exact": {
+      "guid_diagnostic": {
+        "known_source_all_captions_match_rows_by_original_split": {
+          "train2014": 609845
+        },
+        "known_source_rows_by_original_split": {
+          "train2014": 828395
+        },
+        "row_counts_by_status": {
+          "known_source_all_captions_match": 609845,
+          "known_source_caption_mismatch": 218550
+        }
+      },
+      "matching_text_occurrences": 1427016,
+      "rows_with_all_texts_matching_somewhere": 614707,
+      "rows_with_any_text_match": 812309,
+      "rows_with_only_one_distinct_text": 24,
+      "text_occurrences": 1656790,
+      "unique_candidate_rows_at_least_two_distinct_texts_by_original_split": {
+        "train2014": 609477,
+        "val2014": 11
+      },
+      "unique_candidate_rows_by_original_split": {
+        "train2014": 609498,
+        "val2014": 11
+      },
+      "unique_corpus_captions": 400172,
+      "unique_matching_corpus_captions": 343327,
+      "whole_group_candidate_count_histogram": {
+        "0": 218506,
+        "1": 609509,
+        "2": 255,
+        "3": 60,
+        "4": 23,
+        "5": 22,
+        "6": 15,
+        "11": 5
+      },
+      "whole_group_candidate_count_histogram_at_least_two_distinct_texts": {
+        "0": 218506,
+        "1": 609488,
+        "2": 253,
+        "3": 59,
+        "4": 23,
+        "5": 22,
+        "6": 15,
+        "11": 5
+      },
+      "matching_source_images": {
+        "ambiguous_whole_group_candidate": {
+          "count": 460,
+          "counts_by_original_split": {
+            "train2014": 338,
+            "val2014": 122
+          }
+        },
+        "any_matching_caption": {
+          "count": 89678,
+          "counts_by_original_split": {
+            "train2014": 82781,
+            "val2014": 6897
+          }
+        },
+        "any_whole_group_candidate": {
+          "count": 82761,
+          "counts_by_original_split": {
+            "train2014": 82629,
+            "val2014": 132
+          }
+        },
+        "numeric_guid_known_source": {
+          "count": 82783,
+          "counts_by_original_split": {
+            "train2014": 82783,
+            "val2014": 0
+          }
+        },
+        "numeric_guid_source_with_all_captions_matching": {
+          "count": 82629,
+          "counts_by_original_split": {
+            "train2014": 82629,
+            "val2014": 0
+          }
+        },
+        "unique_whole_group_candidate": {
+          "count": 82639,
+          "counts_by_original_split": {
+            "train2014": 82628,
+            "val2014": 11
+          }
+        },
+        "unique_whole_group_candidate_at_least_two_distinct_texts": {
+          "count": 82639,
+          "counts_by_original_split": {
+            "train2014": 82628,
+            "val2014": 11
+          }
+        }
+      }
+    },
+    "normalized": {
+      "guid_diagnostic": {
+        "known_source_all_captions_match_rows_by_original_split": {
+          "train2014": 828395
+        },
+        "known_source_rows_by_original_split": {
+          "train2014": 828395
+        },
+        "row_counts_by_status": {
+          "known_source_all_captions_match": 828395
+        }
+      },
+      "matching_text_occurrences": 1656790,
+      "rows_with_all_texts_matching_somewhere": 828395,
+      "rows_with_any_text_match": 828395,
+      "rows_with_only_one_distinct_text": 43,
+      "text_occurrences": 1656790,
+      "unique_candidate_rows_at_least_two_distinct_texts_by_original_split": {
+        "train2014": 827827
+      },
+      "unique_candidate_rows_by_original_split": {
+        "train2014": 827862
+      },
+      "unique_corpus_captions": 399594,
+      "unique_matching_corpus_captions": 399594,
+      "whole_group_candidate_count_histogram": {
+        "1": 827862,
+        "2": 376,
+        "3": 66,
+        "4": 37,
+        "5": 22,
+        "6": 10,
+        "7": 1,
+        "8": 9,
+        "9": 5,
+        "15": 7
+      },
+      "whole_group_candidate_count_histogram_at_least_two_distinct_texts": {
+        "1": 827827,
+        "2": 372,
+        "3": 65,
+        "4": 35,
+        "5": 22,
+        "6": 10,
+        "8": 9,
+        "9": 5,
+        "15": 7
+      },
+      "matching_source_images": {
+        "ambiguous_whole_group_candidate": {
+          "count": 652,
+          "counts_by_original_split": {
+            "train2014": 483,
+            "val2014": 169
+          }
+        },
+        "any_matching_caption": {
+          "count": 90599,
+          "counts_by_original_split": {
+            "train2014": 82783,
+            "val2014": 7816
+          }
+        },
+        "any_whole_group_candidate": {
+          "count": 82952,
+          "counts_by_original_split": {
+            "train2014": 82783,
+            "val2014": 169
+          }
+        },
+        "numeric_guid_known_source": {
+          "count": 82783,
+          "counts_by_original_split": {
+            "train2014": 82783,
+            "val2014": 0
+          }
+        },
+        "numeric_guid_source_with_all_captions_matching": {
+          "count": 82783,
+          "counts_by_original_split": {
+            "train2014": 82783,
+            "val2014": 0
+          }
+        },
+        "unique_whole_group_candidate": {
+          "count": 82782,
+          "counts_by_original_split": {
+            "train2014": 82782,
+            "val2014": 0
+          }
+        },
+        "unique_whole_group_candidate_at_least_two_distinct_texts": {
+          "count": 82782,
+          "counts_by_original_split": {
+            "train2014": 82782,
+            "val2014": 0
+          }
+        }
+      }
+    }
+  },
+  "component_source_url": "https://public.ukp.informatik.tu-darmstadt.de/reimers/sentence-transformers/datasets/paraphrases/coco_captions.jsonl.gz",
+  "full_report": {
+    "file": "caption-exposure.json.gz",
+    "uncompressed_sha256": "387b5448b85ccec0fe68813a4155922b33ed04bf51d4e6e5af3b5017d892656a"
+  },
+  "main_finding": "All 828395 released caption pairs have numeric GUIDs corresponding to 82783 original COCO train2014 images, and all captions agree with those images after the stated normalization. No GUID identifies an original val2014 image. This describes this component, not the complete pretraining mixture or actual optimizer sampling."
+}

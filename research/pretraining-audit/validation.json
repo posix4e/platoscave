@@ -1,0 +1,20 @@
+{
+  "recorded_at": "2026-10-10T17:00:08.613165+00:00",
+  "execution_environment": "existing experiment VM",
+  "unit_tests": {
+    "passed": 3,
+    "coverage": [
+      "original source split differs from Karpathy split",
+      "ambiguous/missing/incompatible caption groups and source metadata",
+      "normalization differences without punctuation removal"
+    ]
+  },
+  "full_component_rows_processed": 828395,
+  "independent_guid_check": "independent-guid-check.json",
+  "source_script_hash_matches_executed_hash": true,
+  "limitations": [
+    "No encoder weights were trained or evaluated in this audit.",
+    "No clean candidate admitted.",
+    "Full language-model pretraining streams and ImageNet pixels were not audited."
+  ]
+}

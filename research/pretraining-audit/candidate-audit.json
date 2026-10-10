@@ -1,0 +1,146 @@
+{
+  "version": "0.1.0",
+  "recorded_date": "2026-10-10",
+  "status": "provenance_screen_complete_no_candidate_certified_clean_for_coco_spc",
+  "decision": "Do not admit a checkpoint to the contamination-sensitive run merely because its weights or dataset names are public. Scratch training is optional if an existing checkpoint meets the same provenance and evaluation-separation requirements.",
+  "scope": {
+    "evaluation_exposure": "Exposure to evaluation images, descriptions or source/near duplicates.",
+    "shared_source_instances": "Separate training sets may describe the same underlying scenes.",
+    "shared_supervision": "Paired multimodal training, teacher lineage or same-scene caption grouping may impart correspondence-relevant structure.",
+    "selection": "Choose models and extraction settings before inspecting test alignment outcomes.",
+    "not_contamination_by_itself": "Ordinary shared concepts, object categories or language."
+  },
+  "candidates": [
+    {
+      "id": "sentence-transformers/all-mpnet-base-v2",
+      "inspected_revision": "e8c3b32edf5434bc2275fc9bab85f82640a19130",
+      "status": "excluded_as_unexposed_control",
+      "documented_training_components": [
+        {
+          "name": "coco_captions.jsonl.gz",
+          "configured_lines": 828395,
+          "weight": 1
+        },
+        {
+          "name": "flickr30k_captions.jsonl.gz",
+          "configured_lines": 317695,
+          "weight": 1
+        }
+      ],
+      "finding": "The model card and released configuration explicitly include COCO and Flickr caption fine-tuning. The original implementation maps mpnet to this checkpoint family. Exact executed upstream weight revision is not established from cached embeddings alone.",
+      "limits": [
+        "Does not prove which examples the optimizer sampled.",
+        "Does not by itself establish COCO validation exposure.",
+        "Does not mean the Rosetta aligner received paired image-text labels.",
+        "SPC/COCO row exclusions do not undo encoder pretraining."
+      ],
+      "sources": [
+        "https://huggingface.co/sentence-transformers/all-mpnet-base-v2/blob/e8c3b32edf5434bc2275fc9bab85f82640a19130/README.md",
+        "https://huggingface.co/sentence-transformers/all-mpnet-base-v2/blob/e8c3b32edf5434bc2275fc9bab85f82640a19130/data_config.json",
+        "https://github.com/dominik-schnaus/unpaired-rosetta/blob/fdfad84ea488f29702a61a455be71622c4ff5d49/modalities/image_captions/encoders.py"
+      ]
+    },
+    {
+      "id": "DINOv1 ViT-B/16 original ImageNet checkpoint",
+      "status": "conditional_no_explicit_multimodal_supervision_not_overlap_cleared",
+      "training": "ImageNet image self-supervision; teacher is an EMA of the student, not an external multimodal model.",
+      "checkpoint_url": "https://dl.fbaipublicfiles.com/dino/dino_vitbase16_pretrain/dino_vitbase16_pretrain.pth",
+      "hf_alternative": {
+        "id": "facebook/dino-vitb16",
+        "revision": "f205d5d8e640a89a2b8ef0369670dfc37cc07fc2",
+        "conversion_equivalence_verified": false
+      },
+      "missing": [
+        "Checkpoint byte hash",
+        "Per-run image manifest or independently checked corpus equivalence",
+        "ImageNet-to-COCO/SPC exact and near-duplicate exclusion audit"
+      ],
+      "sources": [
+        "https://arxiv.org/html/2104.14294v2",
+        "https://github.com/facebookresearch/dino/blob/7c446df5b9f45747937fb0d72314eb9f7b66930a/main_dino.py",
+        "https://dl.fbaipublicfiles.com/dino/dino_vitbase16_pretrain/args.txt"
+      ]
+    },
+    {
+      "id": "MAE ViT-B/16 original pretrained checkpoint",
+      "status": "conditional_no_explicit_multimodal_supervision_not_overlap_cleared",
+      "training": "ImageNet-1K training-image pixel reconstruction. Select original pretrained encoder, not a downstream fine-tuned checkpoint.",
+      "checkpoint_url": "https://dl.fbaipublicfiles.com/mae/pretrain/mae_pretrain_vit_base.pth",
+      "hf_alternative": {
+        "id": "facebook/vit-mae-base",
+        "revision": "25b184bea5538bf5c4c852c79d221195fdd2778d",
+        "conversion_equivalence_verified": false
+      },
+      "missing": [
+        "Checkpoint byte hash",
+        "Per-run image manifest or independently checked corpus equivalence",
+        "ImageNet-to-COCO/SPC exact and near-duplicate exclusion audit"
+      ],
+      "sources": [
+        "https://arxiv.org/html/2111.06377v3",
+        "https://github.com/facebookresearch/mae#fine-tuning-with-pre-trained-checkpoints"
+      ]
+    },
+    {
+      "id": "EleutherAI/pythia-160m",
+      "revision": "b56d9bee36300031aeea723b73c4d62ac7fa71a2",
+      "checkpoint": "step143000",
+      "status": "auditable_candidate_not_overlap_cleared",
+      "training": "Base causal LM trained on the Pile. Public training-order reconstruction and multiple independent training seeds are available.",
+      "missing": [
+        "Checkpoint byte hash",
+        "COCO/SPC caption/source overlap audit of training stream",
+        "Prespecified sentence readout and separate competence test"
+      ],
+      "limits": [
+        "A base causal LM is not a sentence retrieval encoder.",
+        "Deduplicated Pile is not equivalent to benchmark decontamination.",
+        "Tokenizer training is part of provenance.",
+        "A small language model failing alignment would not alone refute representational convergence."
+      ],
+      "sources": [
+        "https://github.com/EleutherAI/pythia",
+        "https://huggingface.co/EleutherAI/pythia-160m",
+        "https://arxiv.org/html/2304.01373v2"
+      ]
+    }
+  ],
+  "admission_requirements": [
+    "Pin exact weight, tokenizer and implementation revisions and hash downloaded bytes.",
+    "Record complete initialization, pretraining, teacher and fine-tuning lineage.",
+    "State exactly which contamination mechanism is excluded and which remains unknown.",
+    "Audit pretraining corpora against alignment and evaluation sources, or use independently acquired new post-checkpoint scenes/captions for an explicitly narrower evaluation-exposure claim.",
+    "Prespecify readout, preprocessing, model crossings, evaluation and solver settings before test results.",
+    "Check unimodal competence and a separate supervised alignment positive control; preserve failures."
+  ],
+  "next_design": {
+    "candidate_pair": "Original MAE ViT-B/16 \u00d7 Pythia-160M",
+    "status": "candidate_only_not_admitted_or_run",
+    "route_a": "Audit corpus-versus-benchmark exact and near-duplicate overlap, then freeze exclusion masks before alignment. Full token-stream and image-corpus audit has not run.",
+    "route_b": "Newly captured post-checkpoint photographs and independently written descriptions, with disjoint source scenes for fitting, development and evaluation. If the depicted scene/event and exact photographs were first created after the pinned checkpoint, chronology rules out direct exposure to those exact new items. Earlier photographs of the same static scene, near duplicates and repeated caption text still require checks. This does not establish independence of the encoders' training histories.",
+    "synthetic_option": "New procedural scenes can test the same narrower mechanisms cheaply, but claims would concern that constructed world. It is not a substitute for the natural-image experiment.",
+    "training_from_scratch": "Fallback when existing checkpoint lineage or corpus control is insufficient; no scratch-training job started."
+  },
+  "relation_to_existing_work": "The 15 completed DINOv2/MPNet fits are pipeline checks. They do not answer the model-choice or pretraining-contamination question. The existing model-choice matrix remains an unexecuted sensitivity proposal, not a clean-control certification.",
+  "source_snapshots": [
+    {
+      "file": "mpnet-model-card.md",
+      "sha256": "89a1a9c3290fe58e76c939b578c48a14331dc7bfcaaf5a53102adb183da6f96a"
+    },
+    {
+      "file": "mpnet-data-config.json",
+      "sha256": "32edcb108fc2516b920734a862ae0692bcae1c5d45d5f8d972cb0d53434a4c54"
+    },
+    {
+      "file": "mpnet-train-script.py",
+      "sha256": "dea86a7066caa55d0c84c343890dfd849714b6affd8b424ba12372a091578cc8"
+    }
+  ],
+  "caption_component_audit": {
+    "status": "completed_in_experiment_vm",
+    "summary": "caption-exposure-summary.json",
+    "script": "check_caption_exposure.py",
+    "finding": "All 828395 released caption pairs have numeric GUIDs corresponding to 82783 original COCO train2014 images, and all captions agree with those images after the stated normalization. No GUID identifies an original val2014 image. This describes this component, not the complete pretraining mixture or actual optimizer sampling.",
+    "limits": "Other mixture components, original pretraining and actual optimizer example selection remain unverified. No effect on alignment performance has been estimated."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "method": "independent direct GUID lookup plus normalized caption membership; no shared checker code",
+  "rows_by_original_split": {
+    "train2014": 828395
+  },
+  "unique_source_images": 82783,
+  "caption_mismatch_rows": 0
+}

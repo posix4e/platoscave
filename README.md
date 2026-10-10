@@ -44,3 +44,11 @@ The protocol and model matrix in `dist/downloads/` distinguish completed work
 from proposed studies. The full confirmatory study and model-family experiments
 have not run. The cave text is an original inquiry written for this study, not a
 quotation from Plato. This work is independent of the original paper's authors.
+
+## Pretraining provenance
+
+The [pretraining audit](research/pretraining-audit/README.md) records why none of
+the screened checkpoints has yet been admitted as an uncontaminated COCO/SPC
+control. It includes a reproducible audit of the released COCO caption component
+listed in MPNet's fine-tuning configuration. Research files outside `dist/` are
+stored in GitHub and are not automatically published to the website.
