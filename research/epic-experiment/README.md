@@ -61,13 +61,8 @@ The full manifest SHA-256 is
 The protocol SHA-256 is
 `656a4fad35609bb753fb5045268e3448e4c71a36bce70a4b20050fd16a547370`.
 
-Use the pinned `EPIC_train_action_labels.csv` downloaded by
-`../clean-example/audit_epic55.py`:
-
-```sh
-python3 select_rows.py --annotations /path/to/EPIC_train_action_labels.csv \
-  --protocol protocol.json --output selected_rows.json
-```
+The reproduction commands below download the pinned annotation CSV and recreate
+the full manifest locally. Narrations are not distributed in this repository.
 
 The annotation source is the
 [EPIC-KITCHENS-55 repository](https://github.com/epic-kitchens/epic-kitchens-55-annotations/tree/63fa7d78eba41a8d2280374061a6b1bab3e7e41d).
@@ -128,12 +123,6 @@ checkout includes our earlier research scripts at revision `263ad1d`; its
 reconstructing the solver. `wip-status.json` records source hashes. Runtime
 configuration will also hash every executed upstream package file.
 
-After recreating the full selected manifest, stages must run in order. Each
-script's `--help` documents its explicit paths. Keep the original model weights
-from the adjacent provenance audit and the pinned DINO source; do not replace
-them with model-library defaults. Full videos, extracted frames and large
-feature arrays are not stored in Git.
-
 `publish_results.py` prepares the eventual report and CSV tables from a complete
 result set. It requires the frozen runner and verifier, all 17 fits, and a
 successful verification record, then reruns independent verification and
@@ -141,3 +130,196 @@ checks that input and result files stayed unchanged. It writes a new local
 report directory with file hashes. It does not upload or deploy anything.
 This script is preparation for reporting; no full benchmark result has yet
 passed its publication checks.
+
+## Reproduce the fixed experiment
+
+These commands describe the complete run; they do not claim it has finished.
+Use a Linux machine or VM with an NVIDIA GPU, network access to the original
+artifact and EPIC video hosts, and room for the models, 37,568 JPEG frames,
+feature caches and score arrays. Videos are read by HTTP seeking rather than
+downloaded in full. Full videos, frames, narrations and large arrays stay
+outside the Git checkout.
+
+Prepare two separate Python 3.12 environments first. The GPU environment needs
+CUDA-enabled PyTorch, torchvision, NumPy, Pillow and PyAV. The CPU environment
+needs CPU PyTorch, NumPy, SciPy, scikit-learn and pylibmgm plus the solver's
+dependencies. The observed versions are in
+[`gpu-observed-freeze.txt`](gpu-observed-freeze.txt),
+[`gpu-environment.json`](gpu-environment.json), and
+[`solver-observed-freeze.txt`](solver-observed-freeze.txt). These records are
+not a tested portable installation recipe; in particular, the editable solver
+entry refers to our VM checkout. Use the public solver revision below instead.
+Source and artifact hashes do not guarantee identical floating-point results
+across different hardware or library versions.
+
+Run the following blocks in the same Bash session, replacing the four absolute
+paths. `EPIC_RUN` should be a new working directory. Keep Python assertions
+enabled; do not use `-O` or `PYTHONOPTIMIZE`.
+
+```bash
+set -euo pipefail
+EPIC_REPO=/absolute/path/to/platoscave
+EPIC_RUN=/absolute/path/to/epic55-run
+EPIC_GPU_PY=/absolute/path/to/gpu-environment/bin/python
+EPIC_CPU_PY=/absolute/path/to/cpu-environment/bin/python
+EPIC_SCRIPTS="$EPIC_REPO/research/epic-experiment"
+EPIC_AUDIT="$EPIC_REPO/research/clean-example"
+EPIC_DINO="$EPIC_RUN/dino-source"
+EPIC_SOLVER="$EPIC_RUN/unpaired-rosetta"
+mkdir -p "$EPIC_RUN"
+
+"$EPIC_GPU_PY" -c 'import av, numpy, torch, torchvision; from PIL import Image; assert torch.cuda.is_available(); print(torch.__version__, torch.cuda.get_device_name(0))'
+"$EPIC_CPU_PY" -c 'import numpy, scipy, sklearn, torch, importlib.metadata; assert torch.version.cuda is None; print(torch.__version__, importlib.metadata.version("pylibmgm"))'
+```
+
+### Original artifacts and source
+
+The required sources are DINO revision
+`7c446df5b9f45747937fb0d72314eb9f7b66930a`, Unpaired Rosetta revision
+`fdfad84ea488f29702a61a455be71622c4ff5d49`, and EPIC annotations revision
+`63fa7d78eba41a8d2280374061a6b1bab3e7e41d`. The annotation downloader pins that
+last revision and all three CSV hashes internally.
+
+`fetch_models.py` obtains the original `dino_vitbase16_pretrain.pth`, its training
+arguments, and `glove.6B.zip`; it checks every artifact and the 300-dimensional
+GloVe member against [`artifact-lock.json`](../clean-example/artifact-lock.json).
+The extractor accepts the ZIP directly. Its own checks pin the checkpoint,
+GloVe bytes, and DINO's `vision_transformer.py` and `utils.py`. Do not substitute
+DINOv2, Landmarks fine-tuned weights, GloVe 2024, or another GloVe corpus.
+
+```bash
+"$EPIC_CPU_PY" "$EPIC_AUDIT/audit_epic55.py" --output "$EPIC_RUN/metadata"
+"$EPIC_CPU_PY" "$EPIC_AUDIT/fetch_models.py" \
+  --directory "$EPIC_RUN/models" \
+  --expected-manifest "$EPIC_AUDIT/artifact-lock.json"
+
+git clone https://github.com/facebookresearch/dino.git "$EPIC_DINO"
+git -C "$EPIC_DINO" checkout --detach 7c446df5b9f45747937fb0d72314eb9f7b66930a
+git clone https://github.com/dominik-schnaus/unpaired-rosetta.git "$EPIC_SOLVER"
+git -C "$EPIC_SOLVER" checkout --detach fdfad84ea488f29702a61a455be71622c4ff5d49
+
+export PYTHONPATH="$EPIC_SOLVER"
+export OMP_NUM_THREADS=4 MKL_NUM_THREADS=4 CUBLAS_WORKSPACE_CONFIG=:4096:8
+"$EPIC_CPU_PY" -c 'import unpaired_rosetta; print(unpaired_rosetta.__file__)'
+```
+
+`PYTHONPATH` points to the checkout root so the runner imports this exact
+`unpaired_rosetta` package. The verification flag `--upstream-source` below
+instead points to the package directory inside that checkout. Cloning source
+does not install its dependencies.
+
+### Frozen selection and source checks
+
+```bash
+"$EPIC_CPU_PY" "$EPIC_SCRIPTS/select_rows.py" \
+  --annotations "$EPIC_RUN/metadata/EPIC_train_action_labels.csv" \
+  --protocol "$EPIC_SCRIPTS/protocol.json" \
+  --output "$EPIC_RUN/selected_rows.json"
+"$EPIC_CPU_PY" "$EPIC_SCRIPTS/verify_selection.py" \
+  --annotations "$EPIC_RUN/metadata/EPIC_train_action_labels.csv" \
+  --manifest "$EPIC_RUN/selected_rows.json" \
+  --output "$EPIC_RUN/selection_validation.json"
+
+"$EPIC_CPU_PY" - "$EPIC_SCRIPTS" "$EPIC_RUN" "$EPIC_SOLVER/unpaired_rosetta" <<'PY'
+import hashlib, json, sys
+from pathlib import Path
+scripts, run, upstream = map(Path, sys.argv[1:])
+sys.path.insert(0, str(scripts))
+from continue_experiment import FROZEN, UPSTREAM_SHA256
+def digest(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
+for name, expected in FROZEN.items():
+    path = (run if name == "selected_rows.json" else scripts) / name
+    if digest(path) != expected:
+        raise SystemExit(f"Frozen file differs: {path}")
+files = {str(p.relative_to(upstream)): digest(p) for p in sorted(upstream.rglob("*.py"))}
+encoded = json.dumps(files, sort_keys=True, separators=(",", ":")).encode()
+if hashlib.sha256(encoded).hexdigest() != UPSTREAM_SHA256:
+    raise SystemExit("Upstream solver package differs from the frozen source")
+print("Frozen manifest, protocol, experiment scripts and solver package match")
+PY
+```
+
+The selected manifest must reproduce the SHA-256 recorded above: all 9,392
+clips, their partitions and four requested frame times. This check also binds
+the acquisition, extraction, runner and independent verifier to their frozen
+source bytes.
+
+### Acquisition and feature extraction
+
+```bash
+"$EPIC_GPU_PY" -u "$EPIC_SCRIPTS/acquire_frames.py" \
+  --manifest "$EPIC_RUN/selected_rows.json" \
+  --output "$EPIC_RUN/data" --workers 4
+"$EPIC_GPU_PY" -u "$EPIC_SCRIPTS/verify_acquisition.py" \
+  --manifest "$EPIC_RUN/selected_rows.json" --data "$EPIC_RUN/data" \
+  --acquirer "$EPIC_SCRIPTS/acquire_frames.py" \
+  --output "$EPIC_RUN/acquisition-verification.json"
+
+"$EPIC_GPU_PY" "$EPIC_SCRIPTS/check_preprocess.py" \
+  --extractor "$EPIC_SCRIPTS/extract_features.py" --require-torchvision \
+  --output "$EPIC_RUN/preprocess-validation.json"
+"$EPIC_CPU_PY" "$EPIC_SCRIPTS/text_preflight.py" \
+  --manifest "$EPIC_RUN/selected_rows.json" --glove "$EPIC_RUN/models/glove.6B.zip" \
+  --extractor "$EPIC_SCRIPTS/extract_features.py" \
+  --output "$EPIC_RUN/text-preflight.json"
+"$EPIC_GPU_PY" -u "$EPIC_SCRIPTS/extract_features.py" \
+  --manifest "$EPIC_RUN/selected_rows.json" --frame-root "$EPIC_RUN/data" \
+  --dino-source "$EPIC_DINO" \
+  --dino-checkpoint "$EPIC_RUN/models/dino_vitbase16_pretrain.pth" \
+  --glove "$EPIC_RUN/models/glove.6B.zip" \
+  --cache-dir "$EPIC_RUN/frame-cache" --batch-size 64 --device cuda \
+  --output "$EPIC_RUN/features.npz"
+```
+
+Acquisition must finish all 268 selected videos and pass timestamp, frame-byte
+and source checks before extraction. If a video fails, retain its failure
+report and investigate; do not remove or replace clips. Completed videos can
+be reused only when their recorded hashes still match. No `--videos` subset or
+`--allow-partial` option belongs in this full run. The resulting `features.npz`
+and adjacent `features.json` must contain all 9,392 rows with finite, nonzero
+vectors. Keep both files together; the runner checks their provenance and
+refuses partial or ineligible inputs.
+
+### All fits, independent replay and report preparation
+
+```bash
+"$EPIC_CPU_PY" "$EPIC_SCRIPTS/run_experiment.py" --self-test
+"$EPIC_CPU_PY" "$EPIC_SCRIPTS/verify_results.py" --self-test
+"$EPIC_CPU_PY" -m unittest discover -s "$EPIC_SCRIPTS" -p test_publish_results.py
+
+"$EPIC_CPU_PY" -u "$EPIC_SCRIPTS/run_experiment.py" \
+  --manifest "$EPIC_RUN/selected_rows.json" --features "$EPIC_RUN/features.npz" \
+  --output "$EPIC_RUN/results" --seeds 0 1 2 \
+  --methods rosetta_disjoint rosetta_shared paired_orthogonal paired_ridge \
+    shuffled_orthogonal shuffled_ridge random_map \
+  --clusters 30 --restarts 30 --iterations 100 --batch-size 2048 \
+  --workers 4 --threads 4 --ridge-alpha 1 --permutations 999
+"$EPIC_CPU_PY" -u "$EPIC_SCRIPTS/verify_results.py" \
+  --manifest "$EPIC_RUN/selected_rows.json" --protocol "$EPIC_SCRIPTS/protocol.json" \
+  --features "$EPIC_RUN/features.npz" --results "$EPIC_RUN/results" \
+  --runner "$EPIC_SCRIPTS/run_experiment.py" \
+  --upstream-source "$EPIC_SOLVER/unpaired_rosetta" \
+  --output "$EPIC_RUN/verification.json"
+"$EPIC_CPU_PY" -u "$EPIC_SCRIPTS/publish_results.py" \
+  --manifest "$EPIC_RUN/selected_rows.json" --protocol "$EPIC_SCRIPTS/protocol.json" \
+  --features "$EPIC_RUN/features.npz" --results "$EPIC_RUN/results" \
+  --verification "$EPIC_RUN/verification.json" \
+  --runner "$EPIC_SCRIPTS/run_experiment.py" \
+  --verifier "$EPIC_SCRIPTS/verify_results.py" \
+  --upstream-source "$EPIC_SOLVER/unpaired_rosetta" --python "$EPIC_CPU_PY" \
+  --output "$EPIC_RUN/publication"
+```
+
+The two deterministic paired controls each run once; the other five methods
+each use three seeds, giving 17 fits and 34 development/test score matrices.
+The verifier replays every saved score matrix, duplicate-aware retrieval
+metric, diagnostic null, participant bootstrap and probe prediction. It does
+not rerun encoder inference or independently retrain the six Rosetta fits.
+
+The final command requires a new `publication` directory, reruns independent
+verification, and checks that the input and result bytes remain unchanged.
+Only then does it write `RESULTS.md`, JSON summaries, participant/seed scores,
+control differences and intervals, diagnostic null tables and a hash receipt.
+This is local report preparation; deployment is a separate action. A failure
+at any stage is an incomplete experiment, not a negative alignment result.
