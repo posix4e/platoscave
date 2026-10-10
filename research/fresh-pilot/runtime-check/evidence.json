@@ -1,0 +1,41 @@
+{
+  "recorded_at_utc": "2026-10-10T20:08:52.002529+00:00",
+  "scope": "Software runtime readiness only. Artificial pixels and a fixed software-test string; not human data, not a competence result, not an unpaired result.",
+  "source_commit": "3be06bc11a001dbe3894c3060da937a6437e026e",
+  "protocol_sha256": "17b7e9f7da4143b9dca7ff5c374fa5f93124e571669232a704df92037b64b118",
+  "extractor_sha256": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+  "release_lock_sha256": "58a13864b3aa88e3ea09fc57f6ba5736d6254a216da61dc614f86a6b45825620",
+  "checks": {
+    "published_code_hashes": true,
+    "actual_dino_checkpoint_and_source_hashes": true,
+    "actual_glove_archive_and_member_hashes": true,
+    "dino_output_shape": [
+      1,
+      768
+    ],
+    "glove_output_shape": [
+      1,
+      300
+    ],
+    "dino_repeat_bit_identical": true,
+    "finite_l2_normalized_outputs": true
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "pillow": "12.3.0",
+    "torch": "2.7.1+cu128",
+    "cuda": "12.8",
+    "device": "NVIDIA H100 NVL",
+    "float32": true,
+    "tf32": false,
+    "deterministic_algorithms": true
+  },
+  "artificial_fixture_sha256": "9b78ce91a86664fd930b33de7c2f0b534c7cb3c06a93a740c7272c7a43cb42cd",
+  "human_photographs_used": 0,
+  "human_captions_used": 0,
+  "human_packet_sealed": false,
+  "alignment_fits_run": 0,
+  "elapsed_seconds": 13.926,
+  "check_script_sha256": "a840d1e9559f59a9fa34bc4b266a7b98bfbf9c9256a8067e51a50572c01c24e1"
+}
