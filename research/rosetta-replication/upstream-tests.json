@@ -1,0 +1,283 @@
+{
+  "schema": 1,
+  "recorded_at_utc": "2026-10-10T23:35:29.944090+00:00",
+  "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+  "command": "pixi run --frozen -e default pytest -q tests/test_method.py tests/test_evaluation.py --junitxml=<receipt-dir>/upstream-preflight.xml",
+  "scope": "Original upstream synthetic fixture tests of the aligner and evaluator; no real-data experiment fits or encoder inference.",
+  "counts": {
+    "tests": 42,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "expected_tests": 42,
+  "collection_matches_executed_tests": true,
+  "collection_sha256": "d40ed6dcfc8330bb16b60055a3d901d09f83fc8f82c21b7519e595ed4a105f7e",
+  "passed": true,
+  "seconds": 766.749,
+  "xml_sha256": "f9bfeaaf9d719f1f6da3dbf30d3b90aab8c9dcf2fdf9590df70a9936b114d414",
+  "log_sha256": "6d039e03847275cd10dc737128579eca8315d3e613e927ddff3e22810b50846d",
+  "environment_receipt_sha256": "6b1eafff181c474534963b308474a44b9dd864672545b8e7108cb048027ccef9",
+  "original_source_files_unchanged": true,
+  "pixi_lock_sha256": "ef6c63baa0e8c9965c52a570e9807413a89f9d3c1211e9e4fb195452a57eb9c5",
+  "cases": [
+    {
+      "module": "tests.test_method",
+      "name": "test_the_seeds_of_the_paper",
+      "seconds": 0.001,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_randomness_reproduces_the_global_generators",
+      "seconds": 0.003,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_polar_solves_orthogonal_procrustes[shape0]",
+      "seconds": 0.67,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_polar_solves_orthogonal_procrustes[shape1]",
+      "seconds": 0.004,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_polar_solves_orthogonal_procrustes[shape2]",
+      "seconds": 0.004,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_center_and_normalize",
+      "seconds": 0.001,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_procrustes_weights_pairs_like_the_pseudo_pairs",
+      "seconds": 0.001,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_hungarian_matching_maximizes_the_total_score",
+      "seconds": 0.001,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_batched_hungarian_matching_solves_every_block[1000-1000]",
+      "seconds": 0.095,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_batched_hungarian_matching_solves_every_block[1003-998]",
+      "seconds": 0.074,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_batched_hungarian_matching_solves_every_block[250-700]",
+      "seconds": 0.027,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_mpopt_finds_the_optimum_of_small_problems[0]",
+      "seconds": 1.578,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_mpopt_finds_the_optimum_of_small_problems[1]",
+      "seconds": 0.348,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_mpopt_finds_the_optimum_of_small_problems[2]",
+      "seconds": 0.362,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_mpopt_finds_the_optimum_of_small_problems[3]",
+      "seconds": 0.461,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_mpopt_finds_the_optimum_of_small_problems[4]",
+      "seconds": 0.354,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_centered_kernel_is_h_k_h",
+      "seconds": 0.001,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_parallel_restarts_give_identical_initializations",
+      "seconds": 5.025,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_same_seed_gives_the_same_map",
+      "seconds": 1.518,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_recovers_a_planted_map_from_disjoint_halves",
+      "seconds": 4.878,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_pairs_are_used_and_improve_a_hard_problem",
+      "seconds": 5.253,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_global_generators_continue_the_run_streams",
+      "seconds": 0.206,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_kmeans_is_deterministic",
+      "seconds": 0.317,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_the_map_does_not_depend_on_the_callers_thread_count",
+      "seconds": 98.069,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_mpopt_solves_with_its_own_seed_whatever_ran_before",
+      "seconds": 576.65,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_mpopt_does_not_depend_on_the_global_c_rand_state",
+      "seconds": 68.408,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_method",
+      "name": "test_floating_point_code_path_is_the_same_on_every_cpu",
+      "seconds": 0.0,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_disjoint_split_gives_two_disjoint_shuffled_halves[10]",
+      "seconds": 0.001,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_disjoint_split_gives_two_disjoint_shuffled_halves[11]",
+      "seconds": 0.001,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_disjoint_split_gives_two_disjoint_shuffled_halves[82783]",
+      "seconds": 0.028,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_disjoint_split_with_a_size_limit",
+      "seconds": 0.001,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_overlapping_training_sets_are_rejected",
+      "seconds": 0.0,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_independent_split_and_pairs",
+      "seconds": 0.001,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_foscttm_matches_the_definition_of_the_paper",
+      "seconds": 0.026,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_mean_rank_is_one_plus_foscttm_times_n_minus_one",
+      "seconds": 0.002,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_a_constant_aligner_is_exactly_at_chance",
+      "seconds": 0.003,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_the_row_order_carries_no_information",
+      "seconds": 0.157,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_an_oracle_map_is_near_perfect",
+      "seconds": 0.01,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_metrics_do_not_depend_on_the_shuffle",
+      "seconds": 0.012,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_midranks_count_ties_half",
+      "seconds": 0.001,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_zero_shot_accuracy",
+      "seconds": 0.001,
+      "outcome": "passed"
+    },
+    {
+      "module": "tests.test_evaluation",
+      "name": "test_label_transfer_accuracy",
+      "seconds": 0.001,
+      "outcome": "passed"
+    }
+  ],
+  "status": "passed",
+  "tests": 42,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "original_receipt_sha256": "7ee992ec82427612b5a9215bd69ce62c865aa78396e5d0732252adc24510ef3a"
+}

@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-published-coco-baseline-v1",
+  "status": "pre_run_protocol",
+  "recorded_at_utc": "2026-10-10T23:23:49.452212+00:00",
+  "objective": "Reproduce one complete published COCO zero-pair DINOv2 B/14 mean \u00d7 MPNet configuration over all five original seeds, including full retrieval and classification evaluation. This is phase 1 of the approved replication-and-controls plan.",
+  "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+  "upstream_url": "https://github.com/dominik-schnaus/unpaired-rosetta/tree/fdfad84ea488f29702a61a455be71622c4ff5d49",
+  "seeds": [
+    734796314,
+    576165995,
+    2197670066,
+    839703249,
+    2584932063
+  ],
+  "selection_filter": "method == 'ours' and dataset == 'coco_train2014' and model_x == 'dinov2_vit-b14@224_mean' and model_y == 'mpnet'",
+  "configuration_except_seed": {
+    "dataset": "coco_train2014",
+    "model_x": "dinov2_vit-b14@224_mean",
+    "model_y": "mpnet",
+    "method": "ours",
+    "modality_x": "vision",
+    "modality_y": "language",
+    "dataset_y": null,
+    "num_pairs": 0,
+    "pairs_dataset": null,
+    "validation": "coco_val2014",
+    "holdout": 0,
+    "train_size": null,
+    "validation_size": null,
+    "classification": [
+      "CIFAR-10",
+      "CIFAR-100",
+      "ImageNet-100"
+    ],
+    "labels": null
+  },
+  "algorithm_defaults": {
+    "num_clusters": 30,
+    "num_restarts": 30,
+    "batch_size": 10000,
+    "num_iterations": 100
+  },
+  "execution": {
+    "workers": 4,
+    "threads": 4,
+    "environment": "default",
+    "seeds_run_sequentially": true,
+    "algorithm_device": "cpu",
+    "required_command": "pixi run --frozen -e default python -m experiments.unpaired run --workers 4 --threads 4 --only FILTER",
+    "source_changes_allowed": false
+  },
+  "expected_python": "3.14.7",
+  "expected_versions": {
+    "torch": "2.14.0+cu130",
+    "torchvision": "0.29.0+cu130",
+    "numpy": "2.5.3",
+    "scipy": "1.18.0",
+    "scikit-learn": "1.9.1",
+    "pylibmgm": "1.1.2",
+    "pot": "0.9.7.post1",
+    "transformers": "5.12.0",
+    "timm": "1.0.29",
+    "scotplus": "1.0.2"
+  },
+  "expected_activation": {
+    "MKL_CBWR": "AVX2,STRICT",
+    "ATEN_CPU_CAPABILITY": "avx2"
+  },
+  "expected_shapes": {
+    "embeddings/coco_train2014/vision/dinov2_vit-b14@224_mean.pt": [
+      82783,
+      768
+    ],
+    "embeddings/coco_train2014/language/mpnet.pt": [
+      82783,
+      7,
+      768
+    ],
+    "embeddings/coco_val2014/vision/dinov2_vit-b14@224_mean.pt": [
+      40504,
+      768
+    ],
+    "embeddings/coco_val2014/language/mpnet.pt": [
+      40504,
+      7,
+      768
+    ],
+    "embeddings/CIFAR-10/vision/dinov2_vit-b14@224_mean.pt": [
+      50000,
+      768
+    ],
+    "embeddings/CIFAR-10/language_b953684b7ed3a62cbea9fe4e30935ee2/mpnet.pt": [
+      10,
+      18,
+      768
+    ],
+    "embeddings/CIFAR-10/labels.pt": [
+      50000
+    ],
+    "embeddings/CIFAR-100/vision/dinov2_vit-b14@224_mean.pt": [
+      50000,
+      768
+    ],
+    "embeddings/CIFAR-100/language_b953684b7ed3a62cbea9fe4e30935ee2/mpnet.pt": [
+      100,
+      18,
+      768
+    ],
+    "embeddings/CIFAR-100/labels.pt": [
+      50000
+    ],
+    "embeddings/ImageNet-100/vision/dinov2_vit-b14@224_mean.pt": [
+      5000,
+      768
+    ],
+    "embeddings/ImageNet-100/language/mpnet.pt": [
+      100,
+      1,
+      768
+    ],
+    "embeddings/ImageNet-100/labels.pt": [
+      5000
+    ]
+  },
+  "expected_dtypes": {
+    "embeddings/coco_train2014/vision/dinov2_vit-b14@224_mean.pt": "torch.bfloat16",
+    "embeddings/coco_train2014/language/mpnet.pt": "torch.bfloat16",
+    "embeddings/coco_val2014/vision/dinov2_vit-b14@224_mean.pt": "torch.bfloat16",
+    "embeddings/coco_val2014/language/mpnet.pt": "torch.bfloat16",
+    "embeddings/CIFAR-10/vision/dinov2_vit-b14@224_mean.pt": "torch.bfloat16",
+    "embeddings/CIFAR-10/language_b953684b7ed3a62cbea9fe4e30935ee2/mpnet.pt": "torch.bfloat16",
+    "embeddings/CIFAR-10/labels.pt": "torch.int64",
+    "embeddings/CIFAR-100/vision/dinov2_vit-b14@224_mean.pt": "torch.bfloat16",
+    "embeddings/CIFAR-100/language_b953684b7ed3a62cbea9fe4e30935ee2/mpnet.pt": "torch.bfloat16",
+    "embeddings/CIFAR-100/labels.pt": "torch.int64",
+    "embeddings/ImageNet-100/vision/dinov2_vit-b14@224_mean.pt": "torch.bfloat16",
+    "embeddings/ImageNet-100/language/mpnet.pt": "torch.bfloat16",
+    "embeddings/ImageNet-100/labels.pt": "torch.int64"
+  },
+  "sample_counts": {
+    "train_corpus": 82783,
+    "fit_x": 41391,
+    "fit_y": 41392,
+    "validation": 40504,
+    "CIFAR-10": 50000,
+    "CIFAR-100": 50000,
+    "ImageNet-100": 5000
+  },
+  "required_metrics": [
+    "foscttm",
+    "mean_rank",
+    "num_validation_samples",
+    "CIFAR-10_top1",
+    "CIFAR-10_top5",
+    "CIFAR-100_top1",
+    "CIFAR-100_top5",
+    "ImageNet-100_top1",
+    "ImageNet-100_top5",
+    "fit_and_evaluation_seconds"
+  ],
+  "input_preprocessing": "Use original load_rows/reduce_texts without edits: normalize each stored caption, average non-NaN captions, normalize, all in stored bfloat16 precision, then convert to float32. Preserve exact disjoint half split and the entire validation set.",
+  "comparison": {
+    "reference_file": "reference.json",
+    "all_five_seeds_required": true,
+    "aggregation": "Arithmetic mean and sample standard deviation ddof=1; no seed omission or best-seed selection.",
+    "full_precision_foscttm": {
+      "mean": 0.042989911199083145,
+      "sample_sd": 0.0480892962510061,
+      "specific_seed": 734796314,
+      "specific_seed_value": 0.016328599083198735
+    },
+    "strict_numerical_agreement_absolute_tolerance": 1e-10,
+    "strict_tolerance_attribution": "Our prespecified numerical comparison flag, not an author-provided tolerance or statistical test. Apply separately to every available full-precision retrieval reference.",
+    "paper_display_agreement": {
+      "foscttm_mean_and_sample_sd_decimal_places": 2,
+      "classification_mean_and_sample_sd_percent_decimal_places": 0,
+      "report_each_metric_separately": true
+    },
+    "unavailable_references": "No complete five-seed reference list or full-precision classification aggregates located. Aggregate agreement cannot prove exact reproduction of all individual seeds.",
+    "interpretation": "Report numerical differences and rounded agreement separately. A mismatch triggers implementation/environment/input investigation; it does not establish that the published scientific claim is false.",
+    "no_adaptive_changes": "Do not widen tolerance, change seeds, input precision, metrics, data size, initialization or refinement in response to results. Preserve any failed or superseded run."
+  },
+  "preflight": [
+    "Exact upstream source and lock hashes",
+    "Exact pinned core runtime and AVX2 activation",
+    "All13 publisher input hashes and expected tensors",
+    "All five complete original configurations and disjoint halves",
+    "Upstream test_method.py and test_evaluation.py pass",
+    "Fresh output directory and no stale matching results"
+  ],
+  "completion_requirements": [
+    "Every predetermined result file exists with complete finite metrics and correct configuration",
+    "Five original seeds retained and aggregated",
+    "Full input/source hashes unchanged after execution",
+    "Independent comparison to frozen public references",
+    "Publish numerical results, evidence and clear limits on GitHub and Cloudflare"
+  ],
+  "scope_limits": [
+    "Only one published configuration is reproduced, not the whole paper.",
+    "Released embeddings replay alignment; they do not independently authenticate pretraining or re-extract image/text features.",
+    "The five-photo direct-matching experiment remains a separate exploratory result.",
+    "Model-choice controls, separate source-overlap controls and a prospective fresh collection remain later phases and are not completed by this baseline.",
+    "New collection requires actual later human photographs and descriptions; none may be fabricated or relabeled as a fresh capture."
+  ],
+  "bootstrap_receipt_sha256": "8ae61f5d484ac19b505f037bab2ad3fc076d2b2429bc4deb1a10167562a1789f",
+  "expected_input_count": 13,
+  "expected_source_file_count": 228,
+  "expected_training_counts": {
+    "x": 41391,
+    "y": 41392
+  },
+  "expected_validation_count": 40504
+}

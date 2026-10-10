@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "repository": "schnaus/unpaired-rosetta-embeddings",
+  "revision": "b39767e18cdb5031020a0e1c4b8d9fba6ae13453",
+  "recorded_at_utc": "2026-10-10T23:20:36.279802+00:00",
+  "files": [
+    {
+      "path": "embeddings/coco_train2014/vision/dinov2_vit-b14@224_mean.pt",
+      "size_bytes": 127156441,
+      "sha256": "431d0caf275e71837ced1d519d5a3464a8b6896744529188e1bae95b10cd013c"
+    },
+    {
+      "path": "embeddings/coco_train2014/language/mpnet.pt",
+      "size_bytes": 890084315,
+      "sha256": "dae4a0ab368c0d63235ce38cdb24ad205f7d9f689da7dfc57a20ac54f1fdb38f"
+    },
+    {
+      "path": "embeddings/coco_val2014/vision/dinov2_vit-b14@224_mean.pt",
+      "size_bytes": 62215897,
+      "sha256": "13bc24b7ed9164f605d0892fe2bbc17feb30d8fcc66bb2e94d2a0ad77e9f8e3a"
+    },
+    {
+      "path": "embeddings/coco_val2014/language/mpnet.pt",
+      "size_bytes": 435500507,
+      "sha256": "dc960f4d1fda472f3ddfbd9e5e618e1ef43072261ec19e291c5cb8089006fb1a"
+    },
+    {
+      "path": "embeddings/CIFAR-10/vision/dinov2_vit-b14@224_mean.pt",
+      "size_bytes": 76801753,
+      "sha256": "6267335e748e4d61a5faa4c787658b8aaa7b196ad22562cfe73fbb80ad47b704"
+    },
+    {
+      "path": "embeddings/CIFAR-10/language_b953684b7ed3a62cbea9fe4e30935ee2/mpnet.pt",
+      "size_bytes": 277979,
+      "sha256": "568d0781b838beab472a570e246c6c2c1ea08f83dc3458579c9ddebe21ce7077"
+    },
+    {
+      "path": "embeddings/CIFAR-10/labels.pt",
+      "size_bytes": 401506,
+      "sha256": "60908c4df2f94e3fc8fd233391e7cafcec10358ed93f3e1427d5ccf5dd365495"
+    },
+    {
+      "path": "embeddings/CIFAR-100/vision/dinov2_vit-b14@224_mean.pt",
+      "size_bytes": 76801753,
+      "sha256": "3b801bd59dd8ce740892f5d7bdc952e4ce201ae45d928bf98aef6cb7436d9c49"
+    },
+    {
+      "path": "embeddings/CIFAR-100/language_b953684b7ed3a62cbea9fe4e30935ee2/mpnet.pt",
+      "size_bytes": 2766299,
+      "sha256": "24e76e0c999c3e68818261d40ba3a9c8eac3745dd9122567dfd77df735b20fb1"
+    },
+    {
+      "path": "embeddings/CIFAR-100/labels.pt",
+      "size_bytes": 401506,
+      "sha256": "4d7cbb56bd255fc0a03c9f7e1f6547ae9966fde83c30230865561777740f6d2c"
+    },
+    {
+      "path": "embeddings/ImageNet-100/vision/dinov2_vit-b14@224_mean.pt",
+      "size_bytes": 7681753,
+      "sha256": "f3c4a69da3fdb489c448ff6d810b8f60cfe04bffbf2d612a8f16eeb90e36853f"
+    },
+    {
+      "path": "embeddings/ImageNet-100/language/mpnet.pt",
+      "size_bytes": 155099,
+      "sha256": "4e672d73a3b7d667d46fd49f45dbbf2bc465f1384fa462fca14f9076c423ff8b"
+    },
+    {
+      "path": "embeddings/ImageNet-100/labels.pt",
+      "size_bytes": 41506,
+      "sha256": "0ab5242df65bd20cf6830144df7c049b53dd88fe2864b76c642f773d70ba86b9"
+    }
+  ]
+}

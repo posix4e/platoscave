@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-published-coco-baseline-v1",
+  "frozen_at_utc": "2026-10-10T23:36:16.123624+00:00",
+  "scope": "Original full five-seed configuration, operational scripts, comparison rules and input/source/runtime records fixed before real-data fitting.",
+  "files": {
+    "README.md": "18db0f61755d1776d23389e0913b253ff773b3a9d719d99405006b7f6e850af5",
+    "acquire_inputs.py": "5fc3501cb60d1a0b666933abb330d371e22129b11db65058d0f5c4d5f9957826",
+    "compare.py": "565d371e862020fb334d91dad189691f8f1a9332a4a46d8c6d82aaad983662a0",
+    "environment.json": "7ced0256181037bf33d12fe8905c314d64a023786ebadb394f7fefa3eabb6f0c",
+    "inputs-acquisition.json": "5ea16513ce2ef27f06a2fc0253deae3a543e81ec087a98ebca05a8491b1b35b4",
+    "inputs-lock.json": "85105b3ea186a5cb730dc2a9e9d6a96dfaa9d5dece00cbee91b98915586d1962",
+    "preflight.py": "4280788b77a071d4585a3efcc5bfd07fda08e641718e81ae26188677ddcd5d55",
+    "protocol.json": "5c97f9b899566a39f911c5cb5fa9ffd65f8be2ba09c567a2499aa3b41d8c4dba",
+    "reference.json": "0aa18eaa121ef4b7bb3421ff1b6f2eb53a7019efe3978a1562074c8d43a50302",
+    "run_locked.py": "64c02089a63bc7d8a77cc1014cc4ff4e0a35ae2fcd5b980fc954a7e22ef8f151",
+    "source-lock.json": "223c1b4e9de79386c50c4f326d2b73c02002abb8d963e23ba826279740e43a0b",
+    "upstream-tests.json": "8c529119846c20f7b1e081974b3c45351c2cf52c94ce389578c8dcf69eede364"
+  }
+}
