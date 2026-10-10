@@ -1,0 +1,10 @@
+{
+  "assignments.json": "7d7d14947dcff9320d6c685e35bb1a736bcc9e1875f72d31b0d04d4689f2461e",
+  "blind-distances.json": "4614d2b1ab377d6ca252322deb7c31589dad657f8f310eb4e2fce6335cc9df24",
+  "checksums.json": "c0e8eb1501230a1a8f53117cc05a4773d8774585e753517d0766183e841a79dc",
+  "evaluation.json": "6561389d21da6a9450205cf9fc158b291ea17af8ca1253c2ec129b13606cfe01",
+  "independent-audit.json": "91631a7f48fa622d95478fbb79cb381000fcf897cb186ec58ae6cdef7a32e352",
+  "public-replay-check.json": "ff079a7c8d9f9d84b8202905c6f298a55ae19ac1eeefc71876c06479f9d0c5bf",
+  "run-evidence.json": "2ce79c8307b66d050a5ef6530083fa5c3ab916ef9893ededd7eebda0367b7070",
+  "selected.json": "a1e438fbe79ce42bae93e92e6139e825e7ac368c56abcfe7e5221ad3e9f19b11"
+}

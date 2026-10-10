@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "protocol_id": "five-photo-geometry-v1",
+  "scope": "Exploratory matching of five photographs and five descriptions using their within-modality distances. This is not Rosetta, uses no paired fitting, and has no held-out sample. Ranks, ties and shuffled alternatives are descriptive, not p-values or confidence estimates.",
+  "selected_sha256": "a1e438fbe79ce42bae93e92e6139e825e7ac368c56abcfe7e5221ad3e9f19b11",
+  "assignments_sha256": "7d7d14947dcff9320d6c685e35bb1a736bcc9e1875f72d31b0d04d4689f2461e",
+  "ground_truth_sha256": "09f81d617a232360d5ebe490c265faa70763e908e1572a6b275c1f9b5cffada5",
+  "blind_input_sha256": "4614d2b1ab377d6ca252322deb7c31589dad657f8f310eb4e2fce6335cc9df24",
+  "checksums_sha256": "c0e8eb1501230a1a8f53117cc05a4773d8774585e753517d0766183e841a79dc",
+  "best_assignments_evaluated": [
+    {
+      "text_indices": [
+        0,
+        4,
+        1,
+        3,
+        2
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T04",
+        "I02": "T01",
+        "I03": "T03",
+        "I04": "T02"
+      },
+      "cost": 0.03781860020010573,
+      "distance_correlation": 0.8782134342420858,
+      "optimal": true,
+      "correct_out_of_5": 1
+    }
+  ],
+  "tied_count": 1,
+  "mean_correct_out_of_5": 1.0,
+  "mean_accuracy": 0.2,
+  "correct_out_of_5_range": [
+    1,
+    1
+  ],
+  "random_individual_match_reference": 0.2,
+  "random_expected_correct_out_of_5": 1.0,
+  "true_mapping": {
+    "I00": "T04",
+    "I01": "T00",
+    "I02": "T01",
+    "I03": "T02",
+    "I04": "T03"
+  },
+  "true_mapping_present_in_all_120": true,
+  "true_cost": 0.07347346776688789,
+  "true_assignment_rank": 94,
+  "true_assignment_rank_interval": [
+    94,
+    94
+  ],
+  "true_cost_tied_count": 1,
+  "true_mapping_is_optimal": false,
+  "gap_to_first_distinct_cost": 0.00028064526353802077,
+  "tie_tolerance": 1e-12,
+  "labels": {
+    "T00": "Slide",
+    "T01": "Water fountain",
+    "T02": "Trashcan",
+    "T03": "Tree",
+    "T04": "Basketball"
+  },
+  "image_labels": {
+    "I00": "Basketball",
+    "I01": "Slide",
+    "I02": "Water fountain",
+    "I03": "Trashcan",
+    "I04": "Tree"
+  }
+}

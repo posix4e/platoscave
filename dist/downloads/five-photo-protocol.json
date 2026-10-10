@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "protocol_id": "five-photo-geometry-v1",
+  "written_on": "2026-10-10",
+  "stage": "exploratory; specified after viewing the five photographs and labels, before computing their embeddings or scores",
+  "question": "Do the within-image and within-label cosine-distance structures support the human correspondence for these five items?",
+  "data": {
+    "items": 5,
+    "candidate_ids": ["candidate-001", "candidate-002", "candidate-003", "candidate-004", "candidate-005"],
+    "human_labels_verbatim": ["Slide", "Trashcan", "Tree", "Basketball", "Water fountain"],
+    "selection": "The user supplied all five photographs and labels during one outing. Include every submitted item without quality or score-based exclusions. The labels mix objects and an activity/scene; preserve them exactly.",
+    "chronology": "The collector explicitly confirmed that all five photographs were taken just now, after the previously published model files were fixed. This is a human attestation, not independently authenticated capture chronology. Familiar objects and label words existed before the photographs.",
+    "image_bytes": "Use the attached JPEG bytes without manual editing; hash them in a private manifest before extraction. These are the supplied attachment bytes, not an independently verified camera-original archive.",
+    "privacy": "Keep photographs, private manifest, raw features and identifying capture metadata out of the public repository and website. Public code and numerical aggregate/assignment results may identify the five generic labels.",
+    "split": "No fit/test split. All five images and the full five-label candidate set participate in a transductive, closed-set comparison. No claim of held-out generalization."
+  },
+  "models": {
+    "image": {
+      "name": "original DINOv1 ViT-B/16",
+      "checkpoint_sha256": "bf34ad0f424b9029b593e8dc3ed553bf26e88bcba0d32bf3e62a6209cb64c85e",
+      "source_commit": "7c446df5b9f45747937fb0d72314eb9f7b66930a",
+      "source_sha256": {
+        "vision_transformer.py": "b1f998d5f49ab43666b9fc6d007c5f6540c3ead2e8645e144f74045f63ff44d7",
+        "utils.py": "962a97e1acda1c986dfd921275325e4083f9016dddadcf018f1ccf03fa600eab"
+      },
+      "preprocess": "Frozen helper: EXIF orientation, RGB, short side 256 with Pillow bicubic, center crop 224, ImageNet mean/std; final normalized CLS, 768 dimensions, then L2 normalize.",
+      "arithmetic": "FP32 evaluation, deterministic algorithms, TF32 disabled, batch size one; no encoder training."
+    },
+    "text": {
+      "name": "original GloVe 6B, 300 dimensions",
+      "archive_sha256": "6471382cdd837544bf3ac72497a38715e845897d265b2b424b4761832009c837",
+      "member_sha256": "a12599d41e3589c7160be27fffe5b0080eccd0f0c75f46666c59f90188093c40",
+      "representation": "Use the five human labels verbatim as input to the frozen helper: NFKC, lowercase, regex [a-z]+(?:'[a-z]+)?|[0-9]+; mean known original 300d token vectors, retaining repeats and stopwords, sorting token occurrences before float32 accumulation, then L2 normalize. Report OOV tokens and stop for any empty or invalid feature. No prompt expansion or label rewriting."
+    },
+    "helper_sha256": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+    "helper_source": "../fresh-pilot/extract.py"
+  },
+  "blinding": {
+    "image_order": "Python random.Random(20261010).shuffle of manifest indices 0..4",
+    "text_order": "Python random.Random(20261011).shuffle of manifest indices 0..4",
+    "opaque_ids": "I00 through I04 for shuffled images; T00 through T04 for independently shuffled texts",
+    "solver_input": "Only the two 5x5 distance matrices, opaque IDs, schema/protocol IDs and protocol/feature hashes. No labels, image bytes, file names or correct correspondence.",
+    "evaluation": "Write all assignments and the selected minima before opening the separate private ground-truth mapping. Never use correctness to break a tie.",
+    "limit": "The investigator has seen the photographs and labels while designing this exploratory test. Withholding correspondence from the numerical solver is not a claim that the overall study was designed blind."
+  },
+  "analysis": {
+    "features": "Convert the frozen float32 embeddings to float64 and L2 normalize once more for distance arithmetic. No mean centering, PCA, learned metric, projection, alignment training, or feature selection.",
+    "distances": "d(i,j) = 1 - dot(unit_feature_i, unit_feature_j); symmetric matrices with diagonal set to zero. Retain unrounded float64 values.",
+    "permutations": 120,
+    "objective": "For every bijection pi, cost(pi) = mean over the ten unordered image pairs i<j of (image_distance[i,j] - text_distance[pi(i),pi(j)])^2. Select the global minimum.",
+    "normalization": "No extra distance normalization. Each permutation uses every text distance once, so the squared-norm terms are constant. Positive global rescaling or centering either distance list cannot change the permutation ranking in exact arithmetic.",
+    "tie_tolerance_absolute": 1e-12,
+    "tie_rule": "Every cost within 1e-12 of the global minimum is an optimum. Report all optima and the range and mean of their correct-match counts; never choose the one with the most correct labels.",
+    "report": ["all 120 costs and assignments", "all optimal assignments", "number correct out of five for each optimum", "mean and range over tied optima", "cost and rank interval of the human assignment, with the same tie tolerance", "gap to the next distinct cost", "Pearson correlation of the ten distance pairs for each assignment, or null if either distance list has zero variance", "all tokens and OOVs", "input, source, protocol, model and output hashes"],
+    "random_reference": "A uniform random bijection has one correct match out of five in expectation (20%). Individual correctness indicators are dependent. This is a descriptive reference, not a significance test.",
+    "inference_limit": "No p-value, confidence interval, power claim, learned cross-modal map, or out-of-sample accuracy. Enumerating 120 possibilities does not create 120 independent observations.",
+    "stopping": "Run this fixed primary analysis once. Publish mismatches and ambiguities as observed. Do not change crops, labels, layers, distances or the included photographs after seeing scores. Any later test is separately specified and labeled. Stop on incomplete inputs, byte mismatches, invalid features or implementation errors; retain failure evidence."
+  },
+  "interpretation": {
+    "success": "Correct matches would show that this objective recovers some or all of the human assignment from the two tiny distance graphs for this chosen set.",
+    "failure": "Incorrect matches show that this objective did not recover those correspondences for this set; they do not by themselves refute Unpaired Rosetta or the existence of shared useful structure.",
+    "limits": ["one photograph per label", "one outing and strongly shared backgrounds", "the fixed center crop may omit useful scene content", "polysemy of words such as slide and basketball", "averaging multiword labels loses word order", "chosen model pair and feature layer", "design chosen after seeing this sample", "no estimate of the effect of contamination in the original paper"]
+  },
+  "relationship_to_other_work": "A new exploratory experiment authorized after the user requested a different experiment and supplied five photographs. It is not a run or amendment of fresh-objects-v1, not a reproduction of the Rosetta algorithm, and does not resume the paused EPIC experiment."
+}

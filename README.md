@@ -1,11 +1,37 @@
 # Beyond the Cave
 
 A static research page about source overlap and model choice in Unpaired Rosetta.
-The chosen next step is a prospective 48-photograph pilot: lock DINOv1 and
-GloVe, then collect new human photographs and captions. It tests competence with
-known pairs before any unpaired trial. The [collection kit](research/fresh-pilot/README.md)
-contains the protocol, capture instructions, input validator, extraction and
-analysis code. Human collection and scientific scoring have not begun.
+The current [five-photo experiment](research/five-photo-pilot/) is complete:
+exhaustive distance matching selected one correct image–label match out of five.
+The human assignment ranked 94th among the 120 possible assignments. The unique
+optimum matched Water fountain correctly and exchanged Slide with Basketball
+and Trashcan with Tree. The distance objective failed to recover four human
+matches in this set.
+
+Original DINOv1 and GloVe supplied the features. No correct pairs were given to
+the matcher and no cross-modal map was trained. The test was chosen after seeing
+the photographs; [its code and rules](https://github.com/posix4e/platoscave/commit/feead1d)
+were published before feature inference. All five photographs and the complete
+candidate label set took part in selection. There is no unseen evaluation set,
+significance test or general accuracy claim, and this is not a Rosetta run.
+One correct match is also the average under a random assignment; that numerical
+agreement alone does not establish chance-level performance.
+
+The collector attests that all five photographs were taken after the model files
+were fixed. This supports a conditional argument against training on those
+particular captures, not independent proof of capture time or freedom from
+familiar concepts. Photographs and raw features remain private. The page shows
+generic human labels and numerical results.
+
+The public [distances](dist/downloads/five-photo-distances.json),
+[all 120 assignments](dist/downloads/five-photo-assignments.json),
+[evaluation](dist/downloads/five-photo-evaluation.json) and
+[run record](dist/downloads/five-photo-run-evidence.json) allow the numerical
+comparison to be replayed without publishing the photographs or raw features.
+
+The earlier prospective 48-photograph paired competence study has not run. Its
+[collection kit](research/fresh-pilot/README.md), protocol and analysis code are
+preserved as a separate proposal; the five photographs do not complete it.
 
 The older EPIC-KITCHENS experiment remains paused with its protocol preserved.
 The site also retains the source-overlap audit and all 15 earlier reduced pilot
@@ -46,9 +72,12 @@ records should still include a current HTTPS check for the custom domain.
 ## Scientific scope
 
 The protocol and model matrix in `dist/downloads/` distinguish completed work
-from proposed studies. The full confirmatory study and model-family experiments
-have not run. The cave text is an original inquiry written for this study, not a
-quotation from Plato. This work is independent of the original paper's authors.
+from proposed studies. The five-photo result concerns one distance rule and one
+model pair on five supplied photographs. It does not refute Rosetta or answer
+the model-choice criticism. The full confirmatory study and model-family
+experiments have not run. The cave text is an original inquiry written for this
+study, not a quotation from Plato. This work is independent of the original
+paper's authors.
 
 ## Pretraining provenance
 

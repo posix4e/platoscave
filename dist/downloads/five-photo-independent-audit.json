@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "status": "passed",
+  "protocol_id": "five-photo-geometry-v1",
+  "audited_at_utc": "2026-10-10T21:06:58.659934+00:00",
+  "reference_source_commit": "feead1da4d77bb0dc674fcf0f5f38979fac9a90c",
+  "audit_script_sha256": "a5a1f7a4846e458127c0a151e5b4647a9eefa432289768f18f78d79653f95002",
+  "runtime": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "independence": "No primary extractor or solver code imported. Scalar fsum cosine geometry from saved float32 features; separate NumPy MSE/correlation replay of all 120 bijections.",
+  "checks_performed": [
+    "published three-file source lock",
+    "frozen source bytes",
+    "frozen feature helper bytes",
+    "protocol identity, labels and tie tolerance",
+    "complete original manifest identity and labels",
+    "complete feature metadata",
+    "feature provenance hashes",
+    "feature and preflight rows match original manifest",
+    "preflight and final input hash records agree",
+    "recorded model-verification flags",
+    "model and source provenance matches protocol",
+    "recorded frozen inference settings",
+    "extraction artifact hashes",
+    "exact feature archive fields",
+    "feature row order and unique identities",
+    "feature dimensions, dtype and finite values",
+    "nonzero unit feature vectors",
+    "declared independent shuffle seeds and index mappings",
+    "answer-free solver input schema",
+    "solver received identical blind matrices",
+    "blind matrix provenance",
+    "opaque shuffled IDs",
+    "all 50 matrix entries replayed from raw features",
+    "human mapping replayed from original manifest and both shuffles",
+    "all 120 bijections present exactly once in declared order",
+    "every saved assignment mapping",
+    "all 120 MSE costs independently recomputed",
+    "all 120 distance correlations independently recomputed",
+    "every tolerance-based optimum flag",
+    "selected optimum set and ties",
+    "minimum objective",
+    "gap to next distinct cost",
+    "selected-result provenance hashes",
+    "selected-result frozen source hashes",
+    "completed solver output checksums",
+    "evaluation provenance hashes",
+    "evaluated human labels and pairing",
+    "human-assignment rank interval and optimum status",
+    "evaluated ties and correctness range",
+    "human-assignment objective",
+    "evaluated objective gap",
+    "mean correct count",
+    "mean correct fraction",
+    "uniform random row-match reference",
+    "uniform random expected correct count",
+    "each evaluated optimum and its correctness",
+    "token report covers all five labels",
+    "fixed tokenization and reported coverage accounting",
+    "aggregate token and OOV accounting",
+    "reported token-coverage fraction",
+    "all audited input bytes unchanged during replay"
+  ],
+  "input_sha256_by_role": {
+    "features": "d9924e021e2b4233493930454ca7d32be2cde55617d1ed8aaca83bf11b528515",
+    "feature_metadata": "52329157770a80d6f751e7af3bae90da985ddd528940524f334ee85146b554a0",
+    "extraction_preflight": "569fa0680948dcefe1e94defe32668de258af2e26d23c3462eb0aa0e8e8667ac",
+    "extracted_blind_matrices": "4614d2b1ab377d6ca252322deb7c31589dad657f8f310eb4e2fce6335cc9df24",
+    "ground_truth": "09f81d617a232360d5ebe490c265faa70763e908e1572a6b275c1f9b5cffada5",
+    "solver_blind_matrices": "4614d2b1ab377d6ca252322deb7c31589dad657f8f310eb4e2fce6335cc9df24",
+    "assignments": "7d7d14947dcff9320d6c685e35bb1a736bcc9e1875f72d31b0d04d4689f2461e",
+    "selected": "a1e438fbe79ce42bae93e92e6139e825e7ac368c56abcfe7e5221ad3e9f19b11",
+    "selection_checksums": "c0e8eb1501230a1a8f53117cc05a4773d8774585e753517d0766183e841a79dc",
+    "evaluation": "6561389d21da6a9450205cf9fc158b291ea17af8ca1253c2ec129b13606cfe01",
+    "private_manifest": "252eab59d902fcb3a772a73782d46156d6f53c9bf67bc3f79010b52e95287ece",
+    "release_lock": "28bf4082cc710aeced85b2e59911b9e8c44b8728469592c0d9423b44f3daf333",
+    "frozen_helper": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+    "source_protocol.json": "fcc1c4252ae268e7dcf645419eaea07e1196c09e939a7066e55cf084afddf603",
+    "source_extract_five.py": "37665c8dbb0d2479bfc162854ad0508d6e1b89a6dc8ee51f75bb4d095c14a823",
+    "source_solve.py": "6819921cecd461dc841b1ea89dddb18fab53fc0c36c07b631d7f755346ce5dfc"
+  },
+  "replay_tolerance_absolute": 2e-14,
+  "tie_tolerance_absolute": 1e-12,
+  "maximum_distance_matrix_absolute_error": 3.3306690738754696e-16,
+  "maximum_cost_absolute_error": 5.551115123125783e-17,
+  "maximum_correlation_absolute_error": 1.1102230246251565e-15,
+  "permutations_replayed": 120,
+  "distance_entries_replayed": 50,
+  "minimum_cost": 0.03781860020010573,
+  "optimal_assignment_count": 1,
+  "optimal_assignments": [
+    {
+      "text_indices": [
+        0,
+        4,
+        1,
+        3,
+        2
+      ],
+      "correct_out_of_5": 1,
+      "cost": 0.03781860020010573,
+      "distance_correlation": 0.8782134342420859,
+      "matches": [
+        {
+          "image_id": "I00",
+          "human_label": "Basketball",
+          "assigned_label": "Slide",
+          "correct": false
+        },
+        {
+          "image_id": "I01",
+          "human_label": "Slide",
+          "assigned_label": "Basketball",
+          "correct": false
+        },
+        {
+          "image_id": "I02",
+          "human_label": "Water fountain",
+          "assigned_label": "Water fountain",
+          "correct": true
+        },
+        {
+          "image_id": "I03",
+          "human_label": "Trashcan",
+          "assigned_label": "Tree",
+          "correct": false
+        },
+        {
+          "image_id": "I04",
+          "human_label": "Tree",
+          "assigned_label": "Trashcan",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "mean_correct_out_of_5": 1.0,
+  "correct_out_of_5_range": [
+    1,
+    1
+  ],
+  "mean_correct_fraction": 0.2,
+  "human_assignment_cost": 0.07347346776688787,
+  "human_assignment_rank_interval": [
+    94,
+    94
+  ],
+  "gap_to_next_distinct_cost": 0.00028064526353802077,
+  "uniform_random_expected_correct_out_of_5": 1.0,
+  "tokens": [
+    {
+      "label": "Slide",
+      "tokens": [
+        "slide"
+      ],
+      "reported_oov_tokens": []
+    },
+    {
+      "label": "Trashcan",
+      "tokens": [
+        "trashcan"
+      ],
+      "reported_oov_tokens": []
+    },
+    {
+      "label": "Tree",
+      "tokens": [
+        "tree"
+      ],
+      "reported_oov_tokens": []
+    },
+    {
+      "label": "Basketball",
+      "tokens": [
+        "basketball"
+      ],
+      "reported_oov_tokens": []
+    },
+    {
+      "label": "Water fountain",
+      "tokens": [
+        "water",
+        "fountain"
+      ],
+      "reported_oov_tokens": []
+    }
+  ],
+  "not_performed": [
+    "No encoder inference replay or independent GloVe lookup",
+    "No inspection or rehash of photograph bytes",
+    "No independent authentication of human labels or capture chronology",
+    "No audit of process-level access to the answer file"
+  ],
+  "scope": "Numerical and recorded-provenance consistency for five selected items only. Exploratory transductive comparison, not Rosetta, a p-value, a confidence interval, or held-out generalization.",
+  "privacy": "No photographs, raw feature vectors, private paths or capture metadata are included."
+}

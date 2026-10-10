@@ -10,6 +10,47 @@ The design was written **after seeing the photographs and labels, before
 extracting their features or computing scores**. It is not a preregistered sample
 or a held-out test. The photographs and private feature artifacts are not public.
 
+## Result, 10 October 2026
+
+The unique minimum recovered **one of the five names**. The human assignment
+ranked **94th of 120** under the fixed distance objective.
+
+| Photograph's human label | Chosen label | Correct |
+| --- | --- | --- |
+| Slide | Basketball | No |
+| Trashcan | Tree | No |
+| Tree | Trashcan | No |
+| Basketball | Slide | No |
+| Water fountain | Water fountain | Yes |
+
+The chosen assignment's cost was 0.03781860020010573; the human assignment's cost
+was 0.07347346776688789. The gap to the next distinct cost was
+0.00028064526353802077. The chosen assignment had distance correlation
+0.8782134342420858 despite four wrong names. It was selected to make these
+distances agree, so that correlation is not independent evidence of semantic
+correctness.
+
+One correct match equals the expectation for a uniform random bijection. This
+single result does not establish statistical equivalence to chance. It shows
+that the specified distance objective preferred a mostly incorrect assignment
+for this sample. No labels, crops, layers or distance rules were revised after
+seeing that outcome.
+
+The [source commit](https://github.com/posix4e/platoscave/commit/feead1da4d77bb0dc674fcf0f5f38979fac9a90c)
+was pushed before feature extraction. The saved selection preceded evaluation.
+See [the evaluation](results/evaluation.json), [all 120 assignments](results/assignments.json)
+and [run evidence](results/run-evidence.json). Every supplied label token was
+present in GloVe; there were no missing-word fallbacks.
+
+An [independent numerical replay](results/independent-audit.json) rebuilt the
+distance matrices from the saved features, recreated both shuffled orders and
+checked all 120 assignments without importing the primary extractor or solver.
+It agreed on every selected match, the rank and the cost gap; differences in
+floating-point costs were at most 5.56 × 10⁻¹⁷. The
+[audit script](independent_audit.py) checks numerical and recorded-provenance
+consistency. It does not rerun the encoders or independently authenticate the
+photographs or capture time.
+
 ## The question
 
 If two images are close to each other in DINO, are their names also close in
@@ -57,6 +98,19 @@ python solve.py evaluate --selection selection \
 Run selection to completion before evaluation. Retain logs, file hashes and all
 outputs. Existing outputs must not be overwritten. Failures stay in the record;
 any revised test must be specified and named separately before it is run.
+
+The published distance matrices allow anyone to replay the matching calculation:
+
+```sh
+python research/five-photo-pilot/solve.py solve \
+  --input research/five-photo-pilot/results/blind-distances.json \
+  --out /tmp/five-photo-selection-replay
+```
+
+Choose a new output directory. The private photographs and raw features are not
+included, so public replay starts at the distance matrices, not the camera input.
+The [public replay check](results/public-replay-check.json) reproduced the
+original selection artifacts byte for byte on a second machine.
 
 ## What a result would mean
 

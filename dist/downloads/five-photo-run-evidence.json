@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "protocol_id": "five-photo-geometry-v1",
+  "status": "complete",
+  "pre_inference_source_commit": "feead1da4d77bb0dc674fcf0f5f38979fac9a90c",
+  "pre_inference_source_commit_recorded_at": "2026-10-10T17:01:24-04:00",
+  "publication_order": "Source commit was pushed to GitHub successfully before the extraction command was launched. The selected assignment was saved by a completed solver process before the separate evaluation command was launched.",
+  "preflight_recorded_at_utc": "2026-10-10T21:03:45.149763+00:00",
+  "features_completed_at_utc": "2026-10-10T21:03:59.673687+00:00",
+  "feature_extraction_seconds": 15.686565506002808,
+  "source_hashes": {
+    "protocol_sha256": "fcc1c4252ae268e7dcf645419eaea07e1196c09e939a7066e55cf084afddf603",
+    "extractor_sha256": "37665c8dbb0d2479bfc162854ad0508d6e1b89a6dc8ee51f75bb4d095c14a823",
+    "helper_sha256": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+    "release_lock_sha256": "28bf4082cc710aeced85b2e59911b9e8c44b8728469592c0d9423b44f3daf333"
+  },
+  "private_artifact_commitments": {
+    "manifest_sha256": "252eab59d902fcb3a772a73782d46156d6f53c9bf67bc3f79010b52e95287ece",
+    "preflight_sha256": "569fa0680948dcefe1e94defe32668de258af2e26d23c3462eb0aa0e8e8667ac",
+    "feature_sha256": "d9924e021e2b4233493930454ca7d32be2cde55617d1ed8aaca83bf11b528515"
+  },
+  "private_feature_metadata_sha256": "52329157770a80d6f751e7af3bae90da985ddd528940524f334ee85146b554a0",
+  "models_verified": {
+    "image": true,
+    "text": true
+  },
+  "model_hashes": {
+    "dino_checkpoint_sha256": "bf34ad0f424b9029b593e8dc3ed553bf26e88bcba0d32bf3e62a6209cb64c85e",
+    "glove_zip_sha256": "6471382cdd837544bf3ac72497a38715e845897d265b2b424b4761832009c837",
+    "glove_member_sha256": "a12599d41e3589c7160be27fffe5b0080eccd0f0c75f46666c59f90188093c40"
+  },
+  "dino_source_sha256": {
+    "vision_transformer.py": "b1f998d5f49ab43666b9fc6d007c5f6540c3ead2e8645e144f74045f63ff44d7",
+    "utils.py": "962a97e1acda1c986dfd921275325e4083f9016dddadcf018f1ccf03fa600eab"
+  },
+  "dino_source_commit": "7c446df5b9f45747937fb0d72314eb9f7b66930a",
+  "sample_count": 5,
+  "feature_shapes": {
+    "image": [
+      5,
+      768
+    ],
+    "text": [
+      5,
+      300
+    ]
+  },
+  "text_coverage": {
+    "rows": [
+      {
+        "human_label": "Slide",
+        "tokens": [
+          "slide"
+        ],
+        "known_tokens": 1,
+        "total_tokens": 1,
+        "oov_tokens": []
+      },
+      {
+        "human_label": "Trashcan",
+        "tokens": [
+          "trashcan"
+        ],
+        "known_tokens": 1,
+        "total_tokens": 1,
+        "oov_tokens": []
+      },
+      {
+        "human_label": "Tree",
+        "tokens": [
+          "tree"
+        ],
+        "known_tokens": 1,
+        "total_tokens": 1,
+        "oov_tokens": []
+      },
+      {
+        "human_label": "Basketball",
+        "tokens": [
+          "basketball"
+        ],
+        "known_tokens": 1,
+        "total_tokens": 1,
+        "oov_tokens": []
+      },
+      {
+        "human_label": "Water fountain",
+        "tokens": [
+          "water",
+          "fountain"
+        ],
+        "known_tokens": 2,
+        "total_tokens": 2,
+        "oov_tokens": []
+      }
+    ],
+    "tokenizer": {
+      "normalization": "NFKC",
+      "case": "lower",
+      "regex": "[a-z]+(?:'[a-z]+)?|[0-9]+"
+    },
+    "pooling": "float32 mean of sorted known token occurrences, retaining repeats and stopwords; L2",
+    "identical_vector_groups": [],
+    "total_tokens": 6,
+    "known_tokens": 6,
+    "token_coverage": 1.0
+  },
+  "runtime": {
+    "python": "3.12.3",
+    "numpy": "2.5.3",
+    "torch": "2.7.1+cu128",
+    "pillow": "12.3.0",
+    "torchvision": "0.22.1+cu128",
+    "device": "cuda",
+    "cuda": "12.8",
+    "device_name": "NVIDIA H100 NVL",
+    "batch_size": 1,
+    "torch_threads": 1,
+    "float32": true,
+    "tf32": false,
+    "deterministic_algorithms": true,
+    "cublas_workspace_config": ":4096:8"
+  },
+  "distance_arithmetic": "Renormalize each feature row in float64; 1-dot; symmetrize; diagonal zero; no extra distance normalization",
+  "capture_chronology": {
+    "human_attestation_verbatim": "Yes, all five were taken just now",
+    "question": "Were all five photographs taken during this outing, after we fixed the model files?",
+    "independently_authenticated": false
+  },
+  "privacy": "Photographs, capture metadata, private manifest and raw feature vectors remain private. Published numerical distance matrices permit replay of the matching calculation; they do not permit an independent rerun of image feature extraction.",
+  "scope": "Exploratory matching of five photographs and five descriptions using their within-modality distances. This is not Rosetta, uses no paired fitting, and has no held-out sample. Ranks, ties and shuffled alternatives are descriptive, not p-values or confidence estimates.",
+  "interpretation": "The unique minimum recovered only Water fountain. The four other labels form two swaps. The human correspondence ranks 94th of 120 by the fixed objective. One correct match equals the expectation for a uniform random bijection, without establishing statistical equivalence to chance. This outcome concerns this chosen sample, representations and objective; it does not estimate a contamination effect or refute Rosetta.",
+  "vm_file_modification_times_utc": {
+    "preflight.json": "2026-10-10T21:03:45.148901+00:00",
+    "features.json": "2026-10-10T21:03:59.672812+00:00",
+    "selected.json": "2026-10-10T21:04:05.458777+00:00",
+    "evaluation.json": "2026-10-10T21:04:10.596746+00:00"
+  },
+  "timestamp_limit": "Application and VM filesystem timestamps document execution order; they are not an independent timestamp authority or authenticated camera capture times.",
+  "post_run_compute_status": {
+    "gpu_compute_processes": 0,
+    "older_epic_processes_still_stopped": 14,
+    "older_epic_resumed": false
+  }
+}

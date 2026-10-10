@@ -1,0 +1,2300 @@
+{
+  "schema_version": 1,
+  "protocol_id": "five-photo-geometry-v1",
+  "image_ids": [
+    "I00",
+    "I01",
+    "I02",
+    "I03",
+    "I04"
+  ],
+  "text_ids": [
+    "T00",
+    "T01",
+    "T02",
+    "T03",
+    "T04"
+  ],
+  "assignments": [
+    {
+      "text_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T01",
+        "I02": "T02",
+        "I03": "T03",
+        "I04": "T04"
+      },
+      "cost": 0.06838188619332267,
+      "distance_correlation": -0.16513447177111554,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        1,
+        2,
+        4,
+        3
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T01",
+        "I02": "T02",
+        "I03": "T04",
+        "I04": "T03"
+      },
+      "cost": 0.07954347816223857,
+      "distance_correlation": -0.5461610279839098,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        1,
+        3,
+        2,
+        4
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T01",
+        "I02": "T03",
+        "I03": "T02",
+        "I04": "T04"
+      },
+      "cost": 0.06751057370452238,
+      "distance_correlation": -0.13539022042082935,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        1,
+        3,
+        4,
+        2
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T01",
+        "I02": "T03",
+        "I03": "T04",
+        "I04": "T02"
+      },
+      "cost": 0.048340879566272296,
+      "distance_correlation": 0.5190112808606631,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        1,
+        4,
+        2,
+        3
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T01",
+        "I02": "T04",
+        "I03": "T02",
+        "I04": "T03"
+      },
+      "cost": 0.0776586445575154,
+      "distance_correlation": -0.48181790744681574,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        1,
+        4,
+        3,
+        2
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T01",
+        "I02": "T04",
+        "I03": "T03",
+        "I04": "T02"
+      },
+      "cost": 0.047327358450349404,
+      "distance_correlation": 0.5536101500474708,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        2,
+        1,
+        3,
+        4
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T02",
+        "I02": "T01",
+        "I03": "T03",
+        "I04": "T04"
+      },
+      "cost": 0.0507479144666932,
+      "distance_correlation": 0.43684162071311844,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        2,
+        1,
+        4,
+        3
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T02",
+        "I02": "T01",
+        "I03": "T04",
+        "I04": "T03"
+      },
+      "cost": 0.06637624295672966,
+      "distance_correlation": -0.09666723720827203,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        2,
+        3,
+        1,
+        4
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T02",
+        "I02": "T03",
+        "I03": "T01",
+        "I04": "T04"
+      },
+      "cost": 0.05268297236876764,
+      "distance_correlation": 0.3707839785279244,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        2,
+        3,
+        4,
+        1
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T02",
+        "I02": "T03",
+        "I03": "T04",
+        "I04": "T01"
+      },
+      "cost": 0.06915168438234183,
+      "distance_correlation": -0.19141329953669517,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        2,
+        4,
+        1,
+        3
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T02",
+        "I02": "T04",
+        "I03": "T01",
+        "I04": "T03"
+      },
+      "cost": 0.07099033959522609,
+      "distance_correlation": -0.2541800146951636,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        2,
+        4,
+        3,
+        1
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T02",
+        "I02": "T04",
+        "I03": "T03",
+        "I04": "T01"
+      },
+      "cost": 0.07183072311876382,
+      "distance_correlation": -0.28286843483839264,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        3,
+        1,
+        2,
+        4
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T03",
+        "I02": "T01",
+        "I03": "T02",
+        "I04": "T04"
+      },
+      "cost": 0.06657289330467064,
+      "distance_correlation": -0.10338034812136353,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        3,
+        1,
+        4,
+        2
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T03",
+        "I02": "T01",
+        "I03": "T04",
+        "I04": "T02"
+      },
+      "cost": 0.0454019248068834,
+      "distance_correlation": 0.6193392460786853,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        3,
+        2,
+        1,
+        4
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T03",
+        "I02": "T02",
+        "I03": "T01",
+        "I04": "T04"
+      },
+      "cost": 0.06937926369554538,
+      "distance_correlation": -0.1991822416568438,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        3,
+        2,
+        4,
+        1
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T03",
+        "I02": "T02",
+        "I03": "T04",
+        "I04": "T01"
+      },
+      "cost": 0.07937996482846185,
+      "distance_correlation": -0.5405791250943106,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        3,
+        4,
+        1,
+        2
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T03",
+        "I02": "T04",
+        "I03": "T01",
+        "I04": "T02"
+      },
+      "cost": 0.044669048954498525,
+      "distance_correlation": 0.6443576451514519,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        3,
+        4,
+        2,
+        1
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T03",
+        "I02": "T04",
+        "I03": "T02",
+        "I04": "T01"
+      },
+      "cost": 0.07584071858520224,
+      "distance_correlation": -0.4197588324860638,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        4,
+        1,
+        2,
+        3
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T04",
+        "I02": "T01",
+        "I03": "T02",
+        "I04": "T03"
+      },
+      "cost": 0.07461789718792944,
+      "distance_correlation": -0.3780150178793536,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        4,
+        1,
+        3,
+        2
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T04",
+        "I02": "T01",
+        "I03": "T03",
+        "I04": "T02"
+      },
+      "cost": 0.03781860020010573,
+      "distance_correlation": 0.8782134342420858,
+      "optimal": true
+    },
+    {
+      "text_indices": [
+        0,
+        4,
+        2,
+        1,
+        3
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T04",
+        "I02": "T02",
+        "I03": "T01",
+        "I04": "T03"
+      },
+      "cost": 0.08111682743114905,
+      "distance_correlation": -0.5998709159033392,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        4,
+        2,
+        3,
+        1
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T04",
+        "I02": "T02",
+        "I03": "T03",
+        "I04": "T01"
+      },
+      "cost": 0.07995593659514962,
+      "distance_correlation": -0.5602412431280119,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        4,
+        3,
+        1,
+        2
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T04",
+        "I02": "T03",
+        "I03": "T01",
+        "I04": "T02"
+      },
+      "cost": 0.03809924546364375,
+      "distance_correlation": 0.8686329641280445,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        0,
+        4,
+        3,
+        2,
+        1
+      ],
+      "mapping": {
+        "I00": "T00",
+        "I01": "T04",
+        "I02": "T03",
+        "I03": "T02",
+        "I04": "T01"
+      },
+      "cost": 0.07373765161546801,
+      "distance_correlation": -0.34796581521806746,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        0,
+        2,
+        3,
+        4
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T00",
+        "I02": "T02",
+        "I03": "T03",
+        "I04": "T04"
+      },
+      "cost": 0.07356046547998359,
+      "distance_correlation": -0.3419171598649328,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        0,
+        2,
+        4,
+        3
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T00",
+        "I02": "T02",
+        "I03": "T04",
+        "I04": "T03"
+      },
+      "cost": 0.07796054518730373,
+      "distance_correlation": -0.4921239782660213,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        0,
+        3,
+        2,
+        4
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T00",
+        "I02": "T03",
+        "I03": "T02",
+        "I04": "T04"
+      },
+      "cost": 0.06373573316063108,
+      "distance_correlation": -0.00652737570325512,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        0,
+        3,
+        4,
+        2
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T00",
+        "I02": "T03",
+        "I03": "T04",
+        "I04": "T02"
+      },
+      "cost": 0.04870877548854666,
+      "distance_correlation": 0.5064523092821182,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        0,
+        4,
+        2,
+        3
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T00",
+        "I02": "T04",
+        "I03": "T02",
+        "I04": "T03"
+      },
+      "cost": 0.07267413300940598,
+      "distance_correlation": -0.3116601669678378,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        0,
+        4,
+        3,
+        2
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T00",
+        "I02": "T04",
+        "I03": "T03",
+        "I04": "T02"
+      },
+      "cost": 0.05324709563000139,
+      "distance_correlation": 0.35152633641862385,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        2,
+        0,
+        3,
+        4
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T02",
+        "I02": "T00",
+        "I03": "T03",
+        "I04": "T04"
+      },
+      "cost": 0.05822611374742864,
+      "distance_correlation": 0.18155612680266728,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        2,
+        0,
+        4,
+        3
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T02",
+        "I02": "T00",
+        "I03": "T04",
+        "I04": "T03"
+      },
+      "cost": 0.062305601434670885,
+      "distance_correlation": 0.042293452722548565,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        2,
+        3,
+        0,
+        4
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T02",
+        "I02": "T03",
+        "I03": "T00",
+        "I04": "T04"
+      },
+      "cost": 0.05470494012265198,
+      "distance_correlation": 0.30175946910476775,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        2,
+        3,
+        4,
+        0
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T02",
+        "I02": "T03",
+        "I03": "T04",
+        "I04": "T00"
+      },
+      "cost": 0.06067492658772748,
+      "distance_correlation": 0.0979602808026307,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        2,
+        4,
+        0,
+        3
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T02",
+        "I02": "T04",
+        "I03": "T00",
+        "I04": "T03"
+      },
+      "cost": 0.06305772107619652,
+      "distance_correlation": 0.01661812274555167,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        2,
+        4,
+        3,
+        0
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T02",
+        "I02": "T04",
+        "I03": "T03",
+        "I04": "T00"
+      },
+      "cost": 0.06494821985402979,
+      "distance_correlation": -0.0479183914764667,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        3,
+        0,
+        2,
+        4
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T03",
+        "I02": "T00",
+        "I03": "T02",
+        "I04": "T04"
+      },
+      "cost": 0.06835117537794665,
+      "distance_correlation": -0.16408608761106036,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        3,
+        0,
+        4,
+        2
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T03",
+        "I02": "T00",
+        "I03": "T04",
+        "I04": "T02"
+      },
+      "cost": 0.054256109738078075,
+      "distance_correlation": 0.31708132428762387,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        3,
+        2,
+        0,
+        4
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T03",
+        "I02": "T02",
+        "I03": "T00",
+        "I04": "T04"
+      },
+      "cost": 0.07465473407252247,
+      "distance_correlation": -0.37927252947063755,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        3,
+        2,
+        4,
+        0
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T03",
+        "I02": "T02",
+        "I03": "T04",
+        "I04": "T00"
+      },
+      "cost": 0.08187720458989176,
+      "distance_correlation": -0.6258281351804335,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        3,
+        4,
+        0,
+        2
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T03",
+        "I02": "T04",
+        "I03": "T00",
+        "I04": "T02"
+      },
+      "cost": 0.05604363236460941,
+      "distance_correlation": 0.25606013730672794,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        3,
+        4,
+        2,
+        0
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T03",
+        "I02": "T04",
+        "I03": "T02",
+        "I04": "T00"
+      },
+      "cost": 0.07736116852184727,
+      "distance_correlation": -0.4716628803017521,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        4,
+        0,
+        2,
+        3
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T04",
+        "I02": "T00",
+        "I03": "T02",
+        "I04": "T03"
+      },
+      "cost": 0.06838174610542294,
+      "distance_correlation": -0.1651296895491753,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        4,
+        0,
+        3,
+        2
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T04",
+        "I02": "T00",
+        "I03": "T03",
+        "I04": "T02"
+      },
+      "cost": 0.05020719277831213,
+      "distance_correlation": 0.45530039642962755,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        4,
+        2,
+        0,
+        3
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T04",
+        "I02": "T02",
+        "I03": "T00",
+        "I04": "T03"
+      },
+      "cost": 0.07442027792484632,
+      "distance_correlation": -0.37126883082435563,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        4,
+        2,
+        3,
+        0
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T04",
+        "I02": "T02",
+        "I03": "T03",
+        "I04": "T00"
+      },
+      "cost": 0.07724266873489545,
+      "distance_correlation": -0.4676176181330631,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        4,
+        3,
+        0,
+        2
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T04",
+        "I02": "T03",
+        "I03": "T00",
+        "I04": "T02"
+      },
+      "cost": 0.04745639526338872,
+      "distance_correlation": 0.549205182312226,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        1,
+        4,
+        3,
+        2,
+        0
+      ],
+      "mapping": {
+        "I00": "T01",
+        "I01": "T04",
+        "I02": "T03",
+        "I03": "T02",
+        "I04": "T00"
+      },
+      "cost": 0.06845333940054865,
+      "distance_correlation": -0.16757369097528438,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        0,
+        1,
+        3,
+        4
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T00",
+        "I02": "T01",
+        "I03": "T03",
+        "I04": "T04"
+      },
+      "cost": 0.05085244661632573,
+      "distance_correlation": 0.4332731758981737,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        0,
+        1,
+        4,
+        3
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T00",
+        "I02": "T01",
+        "I03": "T04",
+        "I04": "T03"
+      },
+      "cost": 0.06602797834172153,
+      "distance_correlation": -0.0847784253544724,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        0,
+        3,
+        1,
+        4
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T00",
+        "I02": "T03",
+        "I03": "T01",
+        "I04": "T04"
+      },
+      "cost": 0.04989060258809726,
+      "distance_correlation": 0.46610792910456017,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        0,
+        3,
+        4,
+        1
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T00",
+        "I02": "T03",
+        "I03": "T04",
+        "I04": "T01"
+      },
+      "cost": 0.06943461545624037,
+      "distance_correlation": -0.20107180103302066,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        0,
+        4,
+        1,
+        3
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T00",
+        "I02": "T04",
+        "I03": "T01",
+        "I04": "T03"
+      },
+      "cost": 0.06811696203171094,
+      "distance_correlation": -0.1560906775491446,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        0,
+        4,
+        3,
+        1
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T00",
+        "I02": "T04",
+        "I03": "T03",
+        "I04": "T01"
+      },
+      "cost": 0.07248544317445825,
+      "distance_correlation": -0.3052188064340792,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        1,
+        0,
+        3,
+        4
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T01",
+        "I02": "T00",
+        "I03": "T03",
+        "I04": "T04"
+      },
+      "cost": 0.05315206661040027,
+      "distance_correlation": 0.3547703700815398,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        1,
+        0,
+        4,
+        3
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T01",
+        "I02": "T00",
+        "I03": "T04",
+        "I04": "T03"
+      },
+      "cost": 0.06354026979459759,
+      "distance_correlation": 0.0001452148584596453,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        1,
+        3,
+        0,
+        4
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T01",
+        "I02": "T03",
+        "I03": "T00",
+        "I04": "T04"
+      },
+      "cost": 0.05568741088587289,
+      "distance_correlation": 0.2682205749638293,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        1,
+        3,
+        4,
+        0
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T01",
+        "I02": "T03",
+        "I03": "T04",
+        "I04": "T00"
+      },
+      "cost": 0.060589961739351675,
+      "distance_correlation": 0.10086075088485003,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        1,
+        4,
+        0,
+        3
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T01",
+        "I02": "T04",
+        "I03": "T00",
+        "I04": "T03"
+      },
+      "cost": 0.06516885506079079,
+      "distance_correlation": -0.055450280587407225,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        1,
+        4,
+        3,
+        0
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T01",
+        "I02": "T04",
+        "I03": "T03",
+        "I04": "T00"
+      },
+      "cost": 0.059683202730072236,
+      "distance_correlation": 0.13181505055669368,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        3,
+        0,
+        1,
+        4
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T03",
+        "I02": "T00",
+        "I03": "T01",
+        "I04": "T04"
+      },
+      "cost": 0.05230522129348174,
+      "distance_correlation": 0.3836793783707704,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        3,
+        0,
+        4,
+        1
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T03",
+        "I02": "T00",
+        "I03": "T04",
+        "I04": "T01"
+      },
+      "cost": 0.06755861718106713,
+      "distance_correlation": -0.13703029474600784,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        3,
+        1,
+        0,
+        4
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T03",
+        "I02": "T01",
+        "I03": "T00",
+        "I04": "T04"
+      },
+      "cost": 0.05580240959718284,
+      "distance_correlation": 0.2642948300466734,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        3,
+        1,
+        4,
+        0
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T03",
+        "I02": "T01",
+        "I03": "T04",
+        "I04": "T00"
+      },
+      "cost": 0.06120167201130237,
+      "distance_correlation": 0.07997861695893081,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        3,
+        4,
+        0,
+        1
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T03",
+        "I02": "T04",
+        "I03": "T00",
+        "I04": "T01"
+      },
+      "cost": 0.06959782374948961,
+      "distance_correlation": -0.20664329066418693,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        3,
+        4,
+        1,
+        0
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T03",
+        "I02": "T04",
+        "I03": "T01",
+        "I04": "T00"
+      },
+      "cost": 0.05974369027602374,
+      "distance_correlation": 0.12975016936484862,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        4,
+        0,
+        1,
+        3
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T04",
+        "I02": "T00",
+        "I03": "T01",
+        "I04": "T03"
+      },
+      "cost": 0.0635060841753461,
+      "distance_correlation": 0.0013122194230120589,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        4,
+        0,
+        3,
+        1
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T04",
+        "I02": "T00",
+        "I03": "T03",
+        "I04": "T01"
+      },
+      "cost": 0.06837127687873418,
+      "distance_correlation": -0.164772298470686,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        4,
+        1,
+        0,
+        3
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T04",
+        "I02": "T01",
+        "I03": "T00",
+        "I04": "T03"
+      },
+      "cost": 0.06304568575154988,
+      "distance_correlation": 0.0170289761718174,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        4,
+        1,
+        3,
+        0
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T04",
+        "I02": "T01",
+        "I03": "T03",
+        "I04": "T00"
+      },
+      "cost": 0.05326941644027363,
+      "distance_correlation": 0.35076436433672087,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        4,
+        3,
+        0,
+        1
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T04",
+        "I02": "T03",
+        "I03": "T00",
+        "I04": "T01"
+      },
+      "cost": 0.06735965572893876,
+      "distance_correlation": -0.13023828898780648,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        2,
+        4,
+        3,
+        1,
+        0
+      ],
+      "mapping": {
+        "I00": "T02",
+        "I01": "T04",
+        "I02": "T03",
+        "I03": "T01",
+        "I04": "T00"
+      },
+      "cost": 0.05271819371427443,
+      "distance_correlation": 0.36958161707079507,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        0,
+        1,
+        2,
+        4
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T00",
+        "I02": "T01",
+        "I03": "T02",
+        "I04": "T04"
+      },
+      "cost": 0.06460400070319297,
+      "distance_correlation": -0.03616768082595128,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        0,
+        1,
+        4,
+        2
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T00",
+        "I02": "T01",
+        "I03": "T04",
+        "I04": "T02"
+      },
+      "cost": 0.04474921498836831,
+      "distance_correlation": 0.6416209936150302,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        0,
+        2,
+        1,
+        4
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T00",
+        "I02": "T02",
+        "I03": "T01",
+        "I04": "T04"
+      },
+      "cost": 0.073466888994317,
+      "distance_correlation": -0.33872271178124264,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        0,
+        2,
+        4,
+        1
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T00",
+        "I02": "T02",
+        "I03": "T04",
+        "I04": "T01"
+      },
+      "cost": 0.07740762180164423,
+      "distance_correlation": -0.47324866961165735,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        0,
+        4,
+        1,
+        2
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T00",
+        "I02": "T04",
+        "I03": "T01",
+        "I04": "T02"
+      },
+      "cost": 0.048992146450495024,
+      "distance_correlation": 0.496778791197728,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        0,
+        4,
+        2,
+        1
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T00",
+        "I02": "T04",
+        "I03": "T02",
+        "I04": "T01"
+      },
+      "cost": 0.07278766497264691,
+      "distance_correlation": -0.3155358410736684,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        1,
+        0,
+        2,
+        4
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T01",
+        "I02": "T00",
+        "I03": "T02",
+        "I04": "T04"
+      },
+      "cost": 0.07015712332036027,
+      "distance_correlation": -0.22573626503322233,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        1,
+        0,
+        4,
+        2
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T01",
+        "I02": "T00",
+        "I03": "T04",
+        "I04": "T02"
+      },
+      "cost": 0.05323550399728862,
+      "distance_correlation": 0.35192204340251376,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        1,
+        2,
+        0,
+        4
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T01",
+        "I02": "T02",
+        "I03": "T00",
+        "I04": "T04"
+      },
+      "cost": 0.07356378008463317,
+      "distance_correlation": -0.3420303115012191,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        1,
+        2,
+        4,
+        0
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T01",
+        "I02": "T02",
+        "I03": "T04",
+        "I04": "T00"
+      },
+      "cost": 0.08148779453800899,
+      "distance_correlation": -0.6125347294156688,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        1,
+        4,
+        0,
+        2
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T01",
+        "I02": "T04",
+        "I03": "T00",
+        "I04": "T02"
+      },
+      "cost": 0.05444699268095391,
+      "distance_correlation": 0.3105650969818511,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        1,
+        4,
+        2,
+        0
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T01",
+        "I02": "T04",
+        "I03": "T02",
+        "I04": "T00"
+      },
+      "cost": 0.07929262645740136,
+      "distance_correlation": -0.5375976293683347,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        2,
+        0,
+        1,
+        4
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T02",
+        "I02": "T00",
+        "I03": "T01",
+        "I04": "T04"
+      },
+      "cost": 0.059185216372923746,
+      "distance_correlation": 0.14881495766973585,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        2,
+        0,
+        4,
+        1
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T02",
+        "I02": "T00",
+        "I03": "T04",
+        "I04": "T01"
+      },
+      "cost": 0.06530334308035099,
+      "distance_correlation": -0.06004133776702905,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        2,
+        1,
+        0,
+        4
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T02",
+        "I02": "T01",
+        "I03": "T00",
+        "I04": "T04"
+      },
+      "cost": 0.05372898484607262,
+      "distance_correlation": 0.33507594215703046,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        2,
+        1,
+        4,
+        0
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T02",
+        "I02": "T01",
+        "I03": "T04",
+        "I04": "T00"
+      },
+      "cost": 0.06089722680779541,
+      "distance_correlation": 0.09037155264147621,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        2,
+        4,
+        0,
+        1
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T02",
+        "I02": "T04",
+        "I03": "T00",
+        "I04": "T01"
+      },
+      "cost": 0.06589005008123984,
+      "distance_correlation": -0.08006992765610492,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        2,
+        4,
+        1,
+        0
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T02",
+        "I02": "T04",
+        "I03": "T01",
+        "I04": "T00"
+      },
+      "cost": 0.0669401653355354,
+      "distance_correlation": -0.11591802173489428,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        4,
+        0,
+        1,
+        2
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T04",
+        "I02": "T00",
+        "I03": "T01",
+        "I04": "T02"
+      },
+      "cost": 0.046161563387174205,
+      "distance_correlation": 0.5934072398719851,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        4,
+        0,
+        2,
+        1
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T04",
+        "I02": "T00",
+        "I03": "T02",
+        "I04": "T01"
+      },
+      "cost": 0.06920130941767308,
+      "distance_correlation": -0.1931073640005159,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        4,
+        1,
+        0,
+        2
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T04",
+        "I02": "T01",
+        "I03": "T00",
+        "I04": "T02"
+      },
+      "cost": 0.04313012060871278,
+      "distance_correlation": 0.6968924958686247,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        4,
+        1,
+        2,
+        0
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T04",
+        "I02": "T01",
+        "I03": "T02",
+        "I04": "T00"
+      },
+      "cost": 0.07015314828526023,
+      "distance_correlation": -0.22560056808791112,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        4,
+        2,
+        0,
+        1
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T04",
+        "I02": "T02",
+        "I03": "T00",
+        "I04": "T01"
+      },
+      "cost": 0.07440797324755927,
+      "distance_correlation": -0.3708487824275808,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        3,
+        4,
+        2,
+        1,
+        0
+      ],
+      "mapping": {
+        "I00": "T03",
+        "I01": "T04",
+        "I02": "T02",
+        "I03": "T01",
+        "I04": "T00"
+      },
+      "cost": 0.07839125489360783,
+      "distance_correlation": -0.5068272425116156,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        0,
+        1,
+        2,
+        3
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T00",
+        "I02": "T01",
+        "I03": "T02",
+        "I04": "T03"
+      },
+      "cost": 0.07347346776688789,
+      "distance_correlation": -0.33894729328034945,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        0,
+        1,
+        3,
+        2
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T00",
+        "I02": "T01",
+        "I03": "T03",
+        "I04": "T02"
+      },
+      "cost": 0.038443150326667445,
+      "distance_correlation": 0.8568929824132783,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        0,
+        2,
+        1,
+        3
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T00",
+        "I02": "T02",
+        "I03": "T01",
+        "I04": "T03"
+      },
+      "cost": 0.08084886363477506,
+      "distance_correlation": -0.5907233567732051,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        0,
+        2,
+        3,
+        1
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T00",
+        "I02": "T02",
+        "I03": "T03",
+        "I04": "T01"
+      },
+      "cost": 0.08038951673478215,
+      "distance_correlation": -0.5750424962025315,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        0,
+        3,
+        1,
+        2
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T00",
+        "I02": "T03",
+        "I03": "T01",
+        "I04": "T02"
+      },
+      "cost": 0.038147761647339413,
+      "distance_correlation": 0.8669767528594703,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        0,
+        3,
+        2,
+        1
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T00",
+        "I02": "T03",
+        "I03": "T02",
+        "I04": "T01"
+      },
+      "cost": 0.07271873218756694,
+      "distance_correlation": -0.31318266226348385,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        1,
+        0,
+        2,
+        3
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T01",
+        "I02": "T00",
+        "I03": "T02",
+        "I04": "T03"
+      },
+      "cost": 0.0722218282324908,
+      "distance_correlation": -0.2962197054291491,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        1,
+        0,
+        3,
+        2
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T01",
+        "I02": "T00",
+        "I03": "T03",
+        "I04": "T02"
+      },
+      "cost": 0.044912005725221846,
+      "distance_correlation": 0.6360637582296671,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        1,
+        2,
+        0,
+        3
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T01",
+        "I02": "T02",
+        "I03": "T00",
+        "I04": "T03"
+      },
+      "cost": 0.07573524710340716,
+      "distance_correlation": -0.41615832141211,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        1,
+        2,
+        3,
+        0
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T01",
+        "I02": "T02",
+        "I03": "T03",
+        "I04": "T00"
+      },
+      "cost": 0.07249766958786708,
+      "distance_correlation": -0.3056361831137654,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        1,
+        3,
+        0,
+        2
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T01",
+        "I02": "T03",
+        "I03": "T00",
+        "I04": "T02"
+      },
+      "cost": 0.04713701552481002,
+      "distance_correlation": 0.5601079426221967,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        1,
+        3,
+        2,
+        0
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T01",
+        "I02": "T03",
+        "I03": "T02",
+        "I04": "T00"
+      },
+      "cost": 0.07120926051653889,
+      "distance_correlation": -0.26165338273827504,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        2,
+        0,
+        1,
+        3
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T02",
+        "I02": "T00",
+        "I03": "T01",
+        "I04": "T03"
+      },
+      "cost": 0.06611149794248727,
+      "distance_correlation": -0.0876295585928728,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        2,
+        0,
+        3,
+        1
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T02",
+        "I02": "T00",
+        "I03": "T03",
+        "I04": "T01"
+      },
+      "cost": 0.06815013696267228,
+      "distance_correlation": -0.15722317994951898,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        2,
+        1,
+        0,
+        3
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T02",
+        "I02": "T01",
+        "I03": "T00",
+        "I04": "T03"
+      },
+      "cost": 0.062249520945516466,
+      "distance_correlation": 0.04420788891702191,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        2,
+        1,
+        3,
+        0
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T02",
+        "I02": "T01",
+        "I03": "T03",
+        "I04": "T00"
+      },
+      "cost": 0.0537894344172028,
+      "distance_correlation": 0.33301235732285817,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        2,
+        3,
+        0,
+        1
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T02",
+        "I02": "T03",
+        "I03": "T00",
+        "I04": "T01"
+      },
+      "cost": 0.06605780522713914,
+      "distance_correlation": -0.08579663453689736,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        2,
+        3,
+        1,
+        0
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T02",
+        "I02": "T03",
+        "I03": "T01",
+        "I04": "T00"
+      },
+      "cost": 0.055559079678640474,
+      "distance_correlation": 0.2726014552255851,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        3,
+        0,
+        1,
+        2
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T03",
+        "I02": "T00",
+        "I03": "T01",
+        "I04": "T02"
+      },
+      "cost": 0.041886982074873375,
+      "distance_correlation": 0.7393298825571347,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        3,
+        0,
+        2,
+        1
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T03",
+        "I02": "T00",
+        "I03": "T02",
+        "I04": "T01"
+      },
+      "cost": 0.07123544360232734,
+      "distance_correlation": -0.2625472024583277,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        3,
+        1,
+        0,
+        2
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T03",
+        "I02": "T01",
+        "I03": "T00",
+        "I04": "T02"
+      },
+      "cost": 0.04440738055378958,
+      "distance_correlation": 0.6532902965034723,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        3,
+        1,
+        2,
+        0
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T03",
+        "I02": "T01",
+        "I03": "T02",
+        "I04": "T00"
+      },
+      "cost": 0.07097761146569637,
+      "distance_correlation": -0.2537455107843192,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        3,
+        2,
+        0,
+        1
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T03",
+        "I02": "T02",
+        "I03": "T00",
+        "I04": "T01"
+      },
+      "cost": 0.07681389641400942,
+      "distance_correlation": -0.4529804909847536,
+      "optimal": false
+    },
+    {
+      "text_indices": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "mapping": {
+        "I00": "T04",
+        "I01": "T03",
+        "I02": "T02",
+        "I03": "T01",
+        "I04": "T00"
+      },
+      "cost": 0.07403566579846224,
+      "distance_correlation": -0.35813921325708264,
+      "optimal": false
+    }
+  ]
+}
