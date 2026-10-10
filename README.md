@@ -1,8 +1,9 @@
 # Beyond the Cave
 
 A static research page about source overlap and model choice in Unpaired Rosetta.
-The page presents the running DINOv1/GloVe experiment on later EPIC-KITCHENS
-recordings, its fixed sample and provenance limits. It also retains the source
+The page presents the paused DINOv1/GloVe experiment on later EPIC-KITCHENS
+recordings, its fixed sample and provenance limits, and a proposed smaller
+competence pilot before resumption. It also retains the source
 overlap audit and all 15 earlier reduced pilot runs. Neither the earlier pilot
 nor the current setup is presented as a completed model-choice result.
 
@@ -59,5 +60,6 @@ to its 2017 recordings. It includes reproducible metadata checks, original model
 artifact hashes, and the limitations that must guide the next experiment.
 
 The [EPIC experiment](research/epic-experiment/README.md) records its frozen
-protocol and 9,392 selected clips. Acquisition has started; the initial protocol
-record contains no benchmark alignment results.
+protocol and 9,392 selected clips. Acquisition and its supervisor are paused
+for scope review; the record contains no benchmark alignment results. Any
+smaller pilot or protocol amendment must be specified separately before running.
