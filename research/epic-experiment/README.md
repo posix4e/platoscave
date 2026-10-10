@@ -108,6 +108,19 @@ ties; it does not establish alignment or absence of pretraining contamination.
 The summary omits full extractor metadata and per-group UID listings and
 records the complete report's hash. Rerun the script to reproduce those details.
 
+The ongoing run also computed an early image cache for 82 fully acquired
+videos while acquisition continued. `prewarm-summary.json` records 7,432
+frames processed in 220.5 seconds and 7,428 validated frame vectors added to
+the final cache; one existing entry was preserved. `prepare_feature_prewarm.py`
+checks whole-video acquisition records and prepares a bounded pass in a
+private directory. `promote_feature_prewarm.py` requires that pass to have
+stopped, checks source/runtime fingerprints, frame bytes and saved vectors,
+and adds cache files atomically without overwriting existing entries. These
+helpers use this VM's pinned paths and runtime. Promotion must run with the
+cache-owning service user's privileges; a failed ownership check is retained
+in the record. The partial output remains ineligible for alignment. The full
+pipeline still verifies all frames and uses the original 9,392-row manifest.
+
 `benchmark_http_seek.py` and `http-seek-benchmark.json` compare transport
 settings on eight frame requests. Connection reuse preserved their timestamps
 and bytes and reduced elapsed time in that bounded check. The acquisition

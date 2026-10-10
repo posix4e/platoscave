@@ -1,0 +1,503 @@
+{
+  "schema_version": 1,
+  "purpose": "Early image feature cache computation during full acquisition; no alignment or sample changes",
+  "snapshot": "warm-20261010T1825",
+  "source_manifest_sha256": "d1a34b2ad47a1456a011c6e4f2d6308bae34ebf6aed0c6fb335794ac3dc648be",
+  "subset_manifest_sha256": "8c4f347520a4b59f30a2d26382a99832d1431d45fa71968dce5f2a0203725b4a",
+  "snapshot_sha256": "dac51e0ca2bbdd9887a301111e6526ab94fda208c879363a2ee4ce5cd04d0a8f",
+  "started_at_utc": "2026-10-10T18:25:07.867821+00:00",
+  "feature_finished_at_utc": "2026-10-10T18:28:50.065167+00:00",
+  "rows": 1858,
+  "videos": 82,
+  "frames": 7432,
+  "warm_service": "rosetta-epic-prewarm-20261010t1825.service",
+  "time_limit_seconds": 240,
+  "extraction_seconds": 220.5033409660009,
+  "eligible_rows": 1858,
+  "partial_output_is_final": false,
+  "partial_feature_file_sha256": "c89c2f9bb05e173df861eda5f9739c1f69dc036368b548efea8099165546acd7",
+  "extractor_sha256": "471ede5f611b17ab63252957c0f9785ff2afede22a656f8452fdadff4217f203",
+  "cache_fingerprint": "2b7c847909cd571ed5c5a2f47da7e0288fc08d8a28dd0f014c73732e0264cc2f",
+  "prepare_helper_sha256": "e3abf30a9a4168fcaee75b05c5d71905e75b567951d72bcd2f4ddb320e540554",
+  "promotion_helper_sha256": "738f03088f9782bc8e90f4a87ca13a942c9e0eec3cebbac2cebff1b8c4979813",
+  "runtime_recipe": {
+    "version": 1,
+    "model": "original DINOv1 ViT-B/16, final-block normalized CLS",
+    "source_commit": "7c446df5b9f45747937fb0d72314eb9f7b66930a",
+    "source_sha256": {
+      "vision_transformer.py": "b1f998d5f49ab43666b9fc6d007c5f6540c3ead2e8645e144f74045f63ff44d7",
+      "utils.py": "962a97e1acda1c986dfd921275325e4083f9016dddadcf018f1ccf03fa600eab"
+    },
+    "checkpoint_sha256": "bf34ad0f424b9029b593e8dc3ed553bf26e88bcba0d32bf3e62a6209cb64c85e",
+    "rgb": true,
+    "resize_short_side": 256,
+    "interpolation": "Pillow BICUBIC",
+    "center_crop": 224,
+    "center_crop_rounding": "round((resized_dimension - 224) / 2)",
+    "normalization_mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "normalization_std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "arithmetic": "float32; TF32 disabled; deterministic algorithms",
+    "frame_normalization": "L2",
+    "action_pooling": "mean of four L2-normalized frame features, then L2",
+    "torch_version": "2.7.1+cu128",
+    "numpy_version": "2.5.3",
+    "pillow_version": "12.3.0",
+    "device": "cuda",
+    "cuda_version": "12.8",
+    "batch_size": 64,
+    "device_name": "NVIDIA H100 NVL",
+    "extractor_sha256": "471ede5f611b17ab63252957c0f9785ff2afede22a656f8452fdadff4217f203"
+  },
+  "snapshot_videos": {
+    "P01_01": {
+      "report_sha256": "d3029a3b5f66cbabaa0bb8ff65ec9483348047986b1d9aaf0b8d84efc75d16a7",
+      "rows": 49,
+      "frames": 196
+    },
+    "P01_02": {
+      "report_sha256": "13213b1cf9b4edff6cb4414007ff3e811e331c1b5be3abe76c0bb5fd15af66eb",
+      "rows": 20,
+      "frames": 80
+    },
+    "P01_03": {
+      "report_sha256": "c133db6a5e8ca98d65387ff8ce9f65d37bff90966b43a06c242daf318083f0bd",
+      "rows": 10,
+      "frames": 40
+    },
+    "P01_04": {
+      "report_sha256": "55d864a32b864ab440badd46eebc883e58c6b53beff56966244652069cc7bc96",
+      "rows": 6,
+      "frames": 24
+    },
+    "P01_05": {
+      "report_sha256": "f6cf97a729645e6713115a780002dac26dd2d354e75a78a74abb21ba657d3959",
+      "rows": 40,
+      "frames": 160
+    },
+    "P01_06": {
+      "report_sha256": "0c0f6d488b8e2c5c2b23a9612971c5b8100dd84cd2ee06c513ee6c45da7b347f",
+      "rows": 23,
+      "frames": 92
+    },
+    "P01_07": {
+      "report_sha256": "5656f1c84a0cfbf4570404bf7d3d37f5a417bda585e4b5656db7fad3e5575229",
+      "rows": 8,
+      "frames": 32
+    },
+    "P01_08": {
+      "report_sha256": "fb1bff001a3acb1846ba7007a691aeafc4d7df4c3d0295fb1285a1124fde2f39",
+      "rows": 5,
+      "frames": 20
+    },
+    "P01_09": {
+      "report_sha256": "0c144a0dde36861d19e74e139f556e7ad29adfe832e9838732b794c2ce858cf0",
+      "rows": 156,
+      "frames": 624
+    },
+    "P01_10": {
+      "report_sha256": "c3bdad5fe8f2737cde619dd208eb54166089b35993dfc62c438bcd9b1e9aa51e",
+      "rows": 5,
+      "frames": 20
+    },
+    "P01_16": {
+      "report_sha256": "69aabe907828c4fad4a1bae727c2e0415fcd0928a98ffc273a67f1d4974bce7a",
+      "rows": 8,
+      "frames": 32
+    },
+    "P01_17": {
+      "report_sha256": "e3bbb416dde7ff24b27f380a3c7f3966757f8c57ed42313d925be9d99715c058",
+      "rows": 43,
+      "frames": 172
+    },
+    "P01_18": {
+      "report_sha256": "23ffe71f88ea0a027e08038f6b71639e7ad63ac3fbf1f59b53472c3a92f9b1d1",
+      "rows": 116,
+      "frames": 464
+    },
+    "P01_19": {
+      "report_sha256": "dc844cdca4dc41ef8da313c3453a46f232df23819e48b9a120727a4da73aaf01",
+      "rows": 23,
+      "frames": 92
+    },
+    "P02_01": {
+      "report_sha256": "baae81965f80efae8f8bbfab2b44c6aa187d56c29c8327b7d2c8d94fb83589ce",
+      "rows": 8,
+      "frames": 32
+    },
+    "P02_02": {
+      "report_sha256": "5a025401111d670342cd659ae1c82e411ae7b611de4ea0d5d9277a27e7e8f5fc",
+      "rows": 13,
+      "frames": 52
+    },
+    "P02_03": {
+      "report_sha256": "18a4960f4aa5f83d5a5d42a635aad31e96956d42213d6180be657a41ff844249",
+      "rows": 53,
+      "frames": 212
+    },
+    "P02_04": {
+      "report_sha256": "d2289fcc6ef95d1434c38159af02ce6a9057b974b9f1be4fdf35b94af1488624",
+      "rows": 22,
+      "frames": 88
+    },
+    "P02_05": {
+      "report_sha256": "d3676a9f2a5b726734266445dfe656081999318f63bd984822e1397ce1b751fc",
+      "rows": 1,
+      "frames": 4
+    },
+    "P02_06": {
+      "report_sha256": "9b2f2043a4fd39c13cf9980d46ed5364990f8f466619ceb216df525581e09533",
+      "rows": 60,
+      "frames": 240
+    },
+    "P02_07": {
+      "report_sha256": "a2e7114737389cb48026317f6e57997bf0d1f665bd1a9eeef7faec78afb56c1a",
+      "rows": 7,
+      "frames": 28
+    },
+    "P02_08": {
+      "report_sha256": "aed4e65fd10a57468528a6ac2b02599c7580dbe30a7ce6451cbd043417ff55f7",
+      "rows": 5,
+      "frames": 20
+    },
+    "P02_09": {
+      "report_sha256": "6aca1bb25cd13d94ca389f19399694fac6d1b7fb581d5c4472c1b4d386086030",
+      "rows": 83,
+      "frames": 332
+    },
+    "P02_10": {
+      "report_sha256": "fe87b41cb47fb6873cf75785d4c8a501383755482a683ebbdd3822f50af900d0",
+      "rows": 1,
+      "frames": 4
+    },
+    "P02_11": {
+      "report_sha256": "809c9f11547f862892e1c7bcd55ec7ce167dc7c0f809a43188bd849c9bb6f80c",
+      "rows": 3,
+      "frames": 12
+    },
+    "P03_02": {
+      "report_sha256": "064773391690b1637665d21975d61297aac796af4ec1032b8cfaa9fcfa674773",
+      "rows": 25,
+      "frames": 100
+    },
+    "P03_03": {
+      "report_sha256": "b9b4d773293b037889d0ffa0326f78bbdeda4cc8d0e5e73cd04dc3a6b32b5300",
+      "rows": 4,
+      "frames": 16
+    },
+    "P03_04": {
+      "report_sha256": "18e0135ae897378b0fd0f23d5d5f0a457801b20cc14af142d05a6e4f4704a03c",
+      "rows": 55,
+      "frames": 220
+    },
+    "P03_06": {
+      "report_sha256": "3bc89a18684329f97add0d579d2e0dcbb46a450471eb0feb7f803b2e499d80a0",
+      "rows": 11,
+      "frames": 44
+    },
+    "P03_07": {
+      "report_sha256": "6fedd7f20a286c8b2fbed1b0573ae4b46246fb4c4ad50db7cd4b1e7a7d444065",
+      "rows": 7,
+      "frames": 28
+    },
+    "P03_08": {
+      "report_sha256": "7cb7630c03b5ebb215b54a63bd8c39baab74f252acf91094b6153dc678ebe668",
+      "rows": 1,
+      "frames": 4
+    },
+    "P03_09": {
+      "report_sha256": "f3975e60f83c25686051334148793e0dabd377f951360bbd6cfdef019690105f",
+      "rows": 36,
+      "frames": 144
+    },
+    "P03_10": {
+      "report_sha256": "6ac6853a45f205376f50ee40325124d42031c2ff6e28bc64d13e07c7ab8940fa",
+      "rows": 10,
+      "frames": 40
+    },
+    "P03_11": {
+      "report_sha256": "98324adcdffcbb71e694f6712b4a1fdf875626caec53d6f904f7847fb561083f",
+      "rows": 4,
+      "frames": 16
+    },
+    "P03_13": {
+      "report_sha256": "8a4510a593bbcc83035f88ac575a28d789ad53659890f74fd8bf523ac1d54154",
+      "rows": 5,
+      "frames": 20
+    },
+    "P03_14": {
+      "report_sha256": "db7a4c60ecac10f6c9a82d0cd4c59c7b1d2c2912ecaefb9941c38fa8a9b6626c",
+      "rows": 8,
+      "frames": 32
+    },
+    "P03_16": {
+      "report_sha256": "f389ff08d6b7585978b78b3e1b3dd8551eb900a0745551b0171e7cfc7b26d601",
+      "rows": 8,
+      "frames": 32
+    },
+    "P03_17": {
+      "report_sha256": "18e565b66fd2e045eb3afbae84568edec535d14f6fff16b0300e4fb88ccaa2de",
+      "rows": 7,
+      "frames": 28
+    },
+    "P03_18": {
+      "report_sha256": "119ebe9bf96d0211e7ee4bc9833077376aaabed25ed036c5d93dd47d81a6d475",
+      "rows": 1,
+      "frames": 4
+    },
+    "P03_19": {
+      "report_sha256": "eef9c16ee8acd2d78742bde6ffcfbc9dddd58f5aa26ce46ab9c009e48ec256d5",
+      "rows": 28,
+      "frames": 112
+    },
+    "P03_20": {
+      "report_sha256": "24086bb05cd97f3c3d77a035742938675751e9e9082d5894298c39bb3d34df16",
+      "rows": 10,
+      "frames": 40
+    },
+    "P03_27": {
+      "report_sha256": "e59e7ab6f7f54bf3b61b6ba3bbadcb4f93800d494ba97623842fc8e0d7b3bf69",
+      "rows": 10,
+      "frames": 40
+    },
+    "P03_28": {
+      "report_sha256": "8f017d509f93d9fda751e251d191c66aaa68af74dcb75019cf0a727a7f4c68fa",
+      "rows": 4,
+      "frames": 16
+    },
+    "P04_01": {
+      "report_sha256": "454fe8b2c21d79d702d102d990bb64f04b2e56a03fe766efa72e4bdac79bc683",
+      "rows": 65,
+      "frames": 260
+    },
+    "P04_02": {
+      "report_sha256": "67d08d8661f48b0b82045d5621f6d20cc7c63b222c5370ec48d4949c0fa55b19",
+      "rows": 100,
+      "frames": 400
+    },
+    "P04_03": {
+      "report_sha256": "26d577c3dcfc39a7448507e79e3fc4d294daaf6fdfde4b8f670c05cbeea22f59",
+      "rows": 60,
+      "frames": 240
+    },
+    "P04_04": {
+      "report_sha256": "0ac9b278fc4f4442eb26f9cb23020bb24abb10aafa75a77b680f800e97912082",
+      "rows": 44,
+      "frames": 176
+    },
+    "P04_05": {
+      "report_sha256": "9f68769420f5ce08b1ae1a1d886c4ae6019a3a855fe1b54aae6ad3c87746a98b",
+      "rows": 78,
+      "frames": 312
+    },
+    "P04_06": {
+      "report_sha256": "4a76db3ee3e6ab2ce17ecbe683e3d1dde565d3ba8c5a2a4e18a7961a1bcc217f",
+      "rows": 37,
+      "frames": 148
+    },
+    "P04_07": {
+      "report_sha256": "078e17be0f29e5af1e08bfcac381ce0efd8e283ff42fe21eb73e6da5cab79577",
+      "rows": 6,
+      "frames": 24
+    },
+    "P04_08": {
+      "report_sha256": "c69c6b284658e27fd916e96131aaf832996198e532bf3be41d09cc2557e78421",
+      "rows": 6,
+      "frames": 24
+    },
+    "P04_09": {
+      "report_sha256": "7a511876afdc169acf0469223a74e498637328c9bbfb878e04281eed7d7e6a44",
+      "rows": 9,
+      "frames": 36
+    },
+    "P04_10": {
+      "report_sha256": "006c9535f1940bcaf2afef0de010e248bf0ce77725b5873f7990bcdea8a8b25a",
+      "rows": 23,
+      "frames": 92
+    },
+    "P04_11": {
+      "report_sha256": "4f924e477b4faafad615bf5571f345d6fb6cc5e50ba4e7c1b6bb64109cd3ecc4",
+      "rows": 7,
+      "frames": 28
+    },
+    "P04_12": {
+      "report_sha256": "f5b3c91354038f6a80572efcc12120323c59a5884c942b2e69f6751bcae19811",
+      "rows": 4,
+      "frames": 16
+    },
+    "P04_13": {
+      "report_sha256": "eaa8dda85ac9eb73be04c4e8126df792e8b8ddbfd6cae8a150a730a504b4ff3b",
+      "rows": 10,
+      "frames": 40
+    },
+    "P04_14": {
+      "report_sha256": "1ddd897ab1f341fece58ae52b2c2d1cfe988dddc8c54713ad9be2e57b19fea52",
+      "rows": 2,
+      "frames": 8
+    },
+    "P04_16": {
+      "report_sha256": "2bb948169f0eec054808a9b3d3d374e8dbd81972c5cae5553713edd4b0c2adb1",
+      "rows": 9,
+      "frames": 36
+    },
+    "P04_17": {
+      "report_sha256": "303ee013ddd2e824b39bfc488b832f15ab7377e6c1ccef9f04dc56b7d3affb10",
+      "rows": 9,
+      "frames": 36
+    },
+    "P04_18": {
+      "report_sha256": "9700690ee432228491e692ed65d2149e70c34021cc4811cb696c46459bc40317",
+      "rows": 8,
+      "frames": 32
+    },
+    "P04_19": {
+      "report_sha256": "f91b0199ead5d58709c3b685ba33e59aaa2557de8201153e741e1b5186a43941",
+      "rows": 1,
+      "frames": 4
+    },
+    "P04_20": {
+      "report_sha256": "49db20802a8b1579e4b55cd03c37dc92fef39a964ab102386e560d11ed01ae2a",
+      "rows": 2,
+      "frames": 8
+    },
+    "P04_21": {
+      "report_sha256": "e4a1c0eca20d4428d1fcec21ad9bd4e4fbd8ff313420a8e58bfac11ab34fb61f",
+      "rows": 7,
+      "frames": 28
+    },
+    "P04_22": {
+      "report_sha256": "83cc31fd2b71f0faa0a4488fbaa3026b8330a980a249fcf0fd8b560286d40a10",
+      "rows": 4,
+      "frames": 16
+    },
+    "P04_23": {
+      "report_sha256": "48dce43b438d43c51b0403e50eb025efc5325bfa8d857e540b012529bf7ad8b8",
+      "rows": 21,
+      "frames": 84
+    },
+    "P05_01": {
+      "report_sha256": "313bd2c56f312bd00d62b3f91b3fe9b20de97fde654854f5d17cce13d63b7ef6",
+      "rows": 43,
+      "frames": 172
+    },
+    "P05_02": {
+      "report_sha256": "3fe836cb5d93522b6483ddf937d7eeddbccfdeb9b5802bb9e9a7916706c657dd",
+      "rows": 54,
+      "frames": 216
+    },
+    "P05_04": {
+      "report_sha256": "7c0fcb25d3aa177fcdfa77b9c1b51830ff3010c550c0f0b5db2b6ede343bf778",
+      "rows": 57,
+      "frames": 228
+    },
+    "P05_05": {
+      "report_sha256": "0f6e545d2f97daa7789904450e25889190d5ac587e43ba525bca84083b154dcb",
+      "rows": 26,
+      "frames": 104
+    },
+    "P05_06": {
+      "report_sha256": "20cbe90a30dd34a6c4e7d8358805e6cec01e7f7064fc4a41e05f7c0f8dec0a20",
+      "rows": 37,
+      "frames": 148
+    },
+    "P06_01": {
+      "report_sha256": "0a7b001d503b827d707494c57f3d8417892587342b5a4eee25418e440e2ba8cd",
+      "rows": 5,
+      "frames": 20
+    },
+    "P06_02": {
+      "report_sha256": "e1c4d20d535bb46259cbd9ec07680239a21b64d840d85e6ef0ced6080e8bd271",
+      "rows": 1,
+      "frames": 4
+    },
+    "P06_03": {
+      "report_sha256": "6bbd80993eea7acb48c5c96cb135410e333b8eec2c878f747d8f0a9e75dda451",
+      "rows": 41,
+      "frames": 164
+    },
+    "P06_08": {
+      "report_sha256": "a15b67e9949d3744358243d3cfcddb8421d548b9891b2cb13def69944c8a37b3",
+      "rows": 2,
+      "frames": 8
+    },
+    "P07_01": {
+      "report_sha256": "6a38f31909d6324968a032e186fc4eee96ed7772995830d94f213f027a505b57",
+      "rows": 5,
+      "frames": 20
+    },
+    "P07_02": {
+      "report_sha256": "1b244ed5ab3b8ee0ed3e4ad38e0ccb8b0a13ff79e0c101914b5c442b58065b59",
+      "rows": 8,
+      "frames": 32
+    },
+    "P07_03": {
+      "report_sha256": "8d1943728303031e3c4e72495fac071c874a42c395b9ab044b4bc2dddc4b3ce9",
+      "rows": 10,
+      "frames": 40
+    },
+    "P07_05": {
+      "report_sha256": "331063bd6a9b9962e8f007362dbf0bec44c34956906ea4274385d9a5f6f6a782",
+      "rows": 10,
+      "frames": 40
+    },
+    "P07_06": {
+      "report_sha256": "efc0367699df58e4f01c1d1357830c36795a013f83dae464bef8a17cbfade7b9",
+      "rows": 10,
+      "frames": 40
+    },
+    "P07_07": {
+      "report_sha256": "6de411a32f810b31664e58a7458ded77ea7f1c1c0298af0c5e49f27c0ac0fb4f",
+      "rows": 21,
+      "frames": 84
+    },
+    "P07_08": {
+      "report_sha256": "7a7578938d431bc48797e449379fdbd675c928409e809fffbbcfdefd90c2a201",
+      "rows": 10,
+      "frames": 40
+    },
+    "P08_02": {
+      "report_sha256": "19a70086f71c87dc80c8dc7c9b6c9b2028a2f14fcef23a38d317b1aaade7b581",
+      "rows": 4,
+      "frames": 16
+    }
+  },
+  "skipped_stale_complete_reports": [],
+  "promotion": {
+    "status": "complete",
+    "finished_utc": "2026-10-10T18:30:34.244973+00:00",
+    "validated_caches": 82,
+    "added_caches": 81,
+    "added_frames": 7428,
+    "existing_entries_preserved": 1,
+    "missing_private_cache_videos": [],
+    "terminal_service_evidence": {
+      "MainPID": "0",
+      "Result": "success",
+      "ExecMainStatus": "0",
+      "LoadState": "loaded",
+      "ActiveState": "active",
+      "SubState": "exited"
+    },
+    "complete_audit_sha256": "912028e297d34a11e581a19e815771fdf9aec26923e5f054747e71e2750ceeaa"
+  },
+  "retained_failed_attempts": [
+    {
+      "file": "promotion-20261010T182919.134259Z.json",
+      "sha256": "29f13b69a40da05bfd108d8809c9b6c03e09231cb3c5d268d7dfd039fb9080fe",
+      "error_type": "PermissionError",
+      "error": "[Errno 1] Operation not permitted: '/opt/rosetta/epic-experiment/frame-cache-prewarm/warm-20261010T1825/cache/P01_01-49131790.npz' -> '/opt/rosetta/epic-experiment/frame-cache/P01_01-49131790.npz'",
+      "promoted_caches": 0
+    }
+  ],
+  "permission_resolution": "Warm systemd service owns the new files as root; promotion was rerun with the same authorized VM service privileges after the research-user hardlink attempt failed. No kernel protection or validation gate was changed.",
+  "guard_checks": "Six synthetic terminal/live service cases passed before the real transfer. Real transfer checked all available cache vectors, runtime fingerprints and current frame bytes before adding any cache entry.",
+  "scope": "Only whole videos with current complete acquisition reports were eligible. The final pipeline still requires independent acquisition verification, the complete original manifest, all 9,392 eligible rows and all 17 fits. It rechecks cache fingerprints and input hashes. The partial NPZ cannot enter alignment.",
+  "publication_note": "Summary omits narration rows and the large per-frame promotion audit; its hash is retained above. No benchmark alignment result is claimed."
+}
