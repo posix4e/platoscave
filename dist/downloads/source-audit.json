@@ -1,0 +1,91 @@
+{
+  "title": "SPC/COCO public source-metadata overlap audit",
+  "counts": {
+    "paragraph_rows": 19561,
+    "paragraph_distinct_vg_ids": 19551,
+    "official_split_distinct_vg_ids": 19551,
+    "paragraph_ids_equal_official_split_union": true,
+    "paragraph_ids_not_in_split_union": [],
+    "split_ids_not_in_paragraphs": [],
+    "duplicate_paragraph_image_id_counts": {
+      "2349250": 2,
+      "2385924": 2,
+      "2408653": 2,
+      "2412652": 2,
+      "2340853": 2,
+      "2377108": 2,
+      "2414810": 2,
+      "2327869": 2,
+      "2363167": 2,
+      "2370496": 2
+    },
+    "paragraph_vg_ids_missing_from_vg_metadata": [],
+    "paragraph_distinct_vg_ids_with_coco_id": 9595,
+    "coco_metadata_images_by_official_filepath": {
+      "val2014": 40504,
+      "train2014": 82783
+    },
+    "spc_distinct_vg_ids_joined_to_coco_trainval": 9595,
+    "spc_unique_coco_ids_joined_to_trainval": 9593,
+    "vg_ids_per_duplicate_coco_id": {
+      "112040": 2,
+      "322194": 2
+    },
+    "overlap_distinct_vg_ids_by_official_filepath": {
+      "train2014": 6259,
+      "val2014": 3336
+    },
+    "overlap_unique_coco_ids_by_official_filepath": {
+      "train2014": 6258,
+      "val2014": 3335
+    }
+  },
+  "method": [
+    "Load all paragraph rows from the same published paragraphs_v1.json source used by the released dataset loader.",
+    "Check its distinct Visual Genome image IDs against the union of the official SPC train, validation, and test split IDs.",
+    "Join Visual Genome image_id to coco_id using published image_data.json metadata.",
+    "Join coco_id to cocoid in the original authors' dataset_coco.json; use filepath train2014/val2014, not the later Karpathy split label.",
+    "Count both distinct Visual Genome IDs and unique COCO IDs; separately report any duplicate mappings."
+  ],
+  "sources": [
+    {
+      "url": "https://cs.stanford.edu/people/ranjaykrishna/im2p/train_split.json",
+      "sha256": "c1a5685dfd6994b15b40b59cf422e12a665f6bf4475bca16b863be5d15e17898"
+    },
+    {
+      "url": "https://cs.stanford.edu/people/ranjaykrishna/im2p/val_split.json",
+      "sha256": "d7e735db44b73530f65fbfe1087c35552fd774caa5b2169bde47274779116402"
+    },
+    {
+      "url": "https://cs.stanford.edu/people/ranjaykrishna/im2p/test_split.json",
+      "sha256": "aa93f1636dce87bff4798bb9b4ac738eef25a953e0f6e9d5f34fc11d83965bb4"
+    },
+    {
+      "url": "https://homes.cs.washington.edu/~ranjay/visualgenome/data/dataset/image_data.json.zip",
+      "sha256": "b87a94918cb2ff4d952cf1dfeca0b9cf6cd6fd204c2f8704645653be1163681a"
+    },
+    {
+      "url": "https://cs.stanford.edu/people/karpathy/deepimagesent/caption_datasets.zip",
+      "sha256": "4cfd70132527b80933105e5829dc9034eaab9573482e2e680abbab6130244817"
+    },
+    {
+      "url": "https://homes.cs.washington.edu/~ranjay/visualgenome/data/dataset/paragraphs_v1.json.zip",
+      "sha256": "8407f1068e0711e5f6550d641c523ee26984ee8e02c1d51564369cccd56e8b26"
+    }
+  ],
+  "released_code_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+  "released_code_locations": [
+    "https://github.com/dominik-schnaus/unpaired-rosetta/blob/fdfad84ea488f29702a61a455be71622c4ff5d49/experiments/cross_dataset.py",
+    "https://github.com/dominik-schnaus/unpaired-rosetta/blob/fdfad84ea488f29702a61a455be71622c4ff5d49/experiments/alignment.py#L64-L69",
+    "https://github.com/dominik-schnaus/unpaired-rosetta/blob/fdfad84ea488f29702a61a455be71622c4ff5d49/unpaired_rosetta/evaluation.py#L58-L65",
+    "https://github.com/dominik-schnaus/unpaired-rosetta/blob/fdfad84ea488f29702a61a455be71622c4ff5d49/modalities/image_captions/datasets.py#L173-L180"
+  ],
+  "uncertainty_and_scope": [
+    "The released loader and splitting logic were inspected. The full published experiments have not been replicated; the subsequent 15-fit reduced pilot only validates the control pipeline.",
+    "These are source-image identity overlaps, not proof that the aligner was given pairing labels or row-order correspondence.",
+    "The numerical impact on reported performance is unknown without a deduplicated rerun.",
+    "The published metadata and released code may differ from unpublished cached inputs used for the paper.",
+    "COCO validation overlap means SPC fitting text describes those validation source images; it does not mean their original COCO captions were provided.",
+    "This finding concerns the COCO-to-SPC protocol and does not invalidate the separate disjoint-half COCO experiment."
+  ]
+}

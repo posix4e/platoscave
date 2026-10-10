@@ -1,0 +1,131 @@
+{
+  "arms": 5,
+  "checks": {
+    "complete_status": true,
+    "exact_arm_seed_matrix": true,
+    "finite_maps": true,
+    "fixed_populations": true,
+    "manifest_and_config_hashes": true,
+    "mean_median_foscttm_recomputed": true,
+    "per_query_foscttm": true,
+    "positive_timings": true,
+    "query_ids_and_true_columns": true,
+    "sidecar_and_map_file_hashes": true,
+    "sidecar_config_hashes": true,
+    "source_identity_holdouts": true
+  },
+  "complete_fits": 15,
+  "counts_by_arm": {
+    "fully_dedup": 3,
+    "original": 3,
+    "random_drop_size_matched": 3,
+    "random_drop_validation_size_matched": 3,
+    "validation_clean": 3
+  },
+  "fit_seeds": [
+    0,
+    1,
+    2
+  ],
+  "fixed_population_sizes": {
+    "train_x": 4096,
+    "validation": 40504,
+    "validation_clean": 2048,
+    "validation_exposed": 2048,
+    "validation_queries": 2048
+  },
+  "limitations": [
+    "Outcome values and between-arm contrasts are intentionally omitted.",
+    "Recall@k is not recomputed: midpoint ranks alone do not recover exact tie-group boundaries.",
+    "Saved ranks are checked against saved metrics; embeddings/similarity scores are not recomputed.",
+    "Metadata identity checks do not establish absence of unknown or visual near duplicates."
+  ],
+  "result_files": [
+    {
+      "config_sha256": "2fc84d81907e616799f160850156c57679b8d9e5713237c29f8a0fd818f2b3f4",
+      "filename": "fully_dedup_selection-None_fit-0_2fc84d81907e.json",
+      "sha256": "ed5c2623b852080174ed16b0f14492484a3dd84be0ab7dc9583c8211ef513806"
+    },
+    {
+      "config_sha256": "502e2cfd79f695904fb49d6a5566ca6e3c7d1de6c5b9eb50a07c517497e246ee",
+      "filename": "fully_dedup_selection-None_fit-1_502e2cfd79f6.json",
+      "sha256": "e4b89621e7d99d699e4c9331eb860f5c07bdd6a2eac6f2b06bc40ffa8f9820c5"
+    },
+    {
+      "config_sha256": "ac9b48df8412d332bf3bf72700adb13d424e011a466744aca75c99470166be6d",
+      "filename": "fully_dedup_selection-None_fit-2_ac9b48df8412.json",
+      "sha256": "39c39176b92014c3ec2b616794bcf002e75898e6465f2577fb5316943257e64d"
+    },
+    {
+      "config_sha256": "c981e37b5893b20114d0ba8fa8f35eb28d1189bfc395da44f9c29d58932d747e",
+      "filename": "original_selection-None_fit-0_c981e37b5893.json",
+      "sha256": "bef35b209788fe337522c10c34c714cf9d7247b6af50f07b3511a5ca0bbd3fbe"
+    },
+    {
+      "config_sha256": "5b2eec20ad3a3467181365547be4bff169562f9c81b6f61ffa4d1e0751cd8de2",
+      "filename": "original_selection-None_fit-1_5b2eec20ad3a.json",
+      "sha256": "3435abfc4ce96b499d7727d915bb0eedabd0fd241995dd3e5c8e03625be0e7b4"
+    },
+    {
+      "config_sha256": "a82c9d7c6a631855a8b56d031cd72274e78e5e60d43628fa009ea77e9e127145",
+      "filename": "original_selection-None_fit-2_a82c9d7c6a63.json",
+      "sha256": "b01cd2cccd35a2fb6989629497101761abf06f5fefb498bf1218c7e413eb2ff8"
+    },
+    {
+      "config_sha256": "ff3452f884ce044e54309f838c7eefc0d7d4ba68781180f590a561f9d544fe30",
+      "filename": "random_drop_size_matched_selection-0_fit-0_ff3452f884ce.json",
+      "sha256": "655897efcd1f595392544eca999aa022a5c3d4bf2369ae4fea2e5d4876de9796"
+    },
+    {
+      "config_sha256": "95b4028067c25c8f2984a15ab9c80a42f886d52703846d1f412b4f8a402efea6",
+      "filename": "random_drop_size_matched_selection-0_fit-1_95b4028067c2.json",
+      "sha256": "ca101dc9948d207f9c2e61ea0f5de9596d2ca0f803b7e86b1aec3d00b6d704c9"
+    },
+    {
+      "config_sha256": "1971762f6d3ed8943a596d6c7a45333f9625a914fdbdfc6e00e800e3a0d5f063",
+      "filename": "random_drop_size_matched_selection-0_fit-2_1971762f6d3e.json",
+      "sha256": "8f27e2b67cf2fe54fb955240fa7b7ae99d07d4fb43d84d2eac3234192e4a238f"
+    },
+    {
+      "config_sha256": "3e7237856c5be576c979b61e89732b034b085caeba05f7b182617adc61396ea4",
+      "filename": "random_drop_validation_size_matched_selection-0_fit-0_3e7237856c5b.json",
+      "sha256": "bbab69129ac72539b8159af54c0d6edd7d1c231c060948687825106d215a6fcf"
+    },
+    {
+      "config_sha256": "e4ea191c41e71386151a5b0016ae1157037a90268fcb389203919588e87b868c",
+      "filename": "random_drop_validation_size_matched_selection-0_fit-1_e4ea191c41e7.json",
+      "sha256": "3e8ff99a5999cc4e3e2327379e5e8e6394ab1752bc96f1da20481ca7aa95ad21"
+    },
+    {
+      "config_sha256": "8bd1f8e13dcb97c2254127c931fd679275d24d69b13e6b53683bcfce72d37ff0",
+      "filename": "random_drop_validation_size_matched_selection-0_fit-2_8bd1f8e13dcb.json",
+      "sha256": "9ddb4e91659b5299ca0d8738b4b132fa29e1cd1c67f4fa5359dbe23cc0830f52"
+    },
+    {
+      "config_sha256": "34f96c8f81dad9c772b83d97136b9d415b4d3173e3adef960628cc1b57621335",
+      "filename": "validation_clean_selection-None_fit-0_34f96c8f81da.json",
+      "sha256": "008f9f6b9e9fc6f08848c8be741a4c7cb54fed20cee95f9a228b0ca4b36f9d50"
+    },
+    {
+      "config_sha256": "2e2b15bc4b9d442032368a9be6e2bf47e31c21cf3efbbab9eb82d3df5fc345e6",
+      "filename": "validation_clean_selection-None_fit-1_2e2b15bc4b9d.json",
+      "sha256": "455cf9e6f152e19f7fa28f9bbd2e2d8defd12ac1d4d81acbfc5020f3a90d111f"
+    },
+    {
+      "config_sha256": "e1b2e1807c46bdc4eb56ac7faf921bb3b2c96eaca589fd3847ee3321f1177512",
+      "filename": "validation_clean_selection-None_fit-2_e1b2e1807c46.json",
+      "sha256": "c066626165dd0527671cef78765999c9b885260b69afcb58468092690d67d4e1"
+    }
+  ],
+  "status": "passed",
+  "total_evaluation_seconds": 78.69895064600001,
+  "total_fit_seconds": 44.00606352800003,
+  "training_y_rows_per_fit": [
+    4096
+  ],
+  "verification_seconds": 3.047112950999999,
+  "verified_query_records": 92160,
+  "verified_rank_strata": 45,
+  "verified_utc": "2026-10-10T15:01:55.610752+00:00",
+  "verifier_sha256": "2930d44fa76aec290a9893e07571cc935cd27a63a78f7df10adc227b9a3bdbfb"
+}

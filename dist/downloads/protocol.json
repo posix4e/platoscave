@@ -1,0 +1,325 @@
+{
+  "schema_version": 1,
+  "protocol_version": "0.1.0",
+  "recorded_date": "2026-10-10",
+  "date_timezone": "America/New_York",
+  "record_type": "prospective_design_record_not_runner_configuration",
+  "alignment_results_included": false,
+  "source_baseline_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+  "actual_execution_requires_source_hashes_and_git_state": true,
+  "research_questions": [
+    "With encoders fixed, do known evaluation-source and cross-training-source exclusions affect retrieval beyond matched row-count removal?",
+    "Does the cleaned result extend to previously unused encoder families and within-category distinctions?"
+  ],
+  "cleaning_scope": {
+    "method": "known_metadata_source_identity",
+    "source_ids": [
+      "COCO image ID",
+      "Visual Genome image ID",
+      "SPC paragraph source image ID"
+    ],
+    "source_archive_hashes_required": true,
+    "unknown_mappings_prove_disjointness": false,
+    "image_bytes_audited": false,
+    "image_hash_deduplication_completed": false,
+    "perceptual_near_duplicate_audit_completed": false,
+    "pretraining_corpus_decontamination_claimed": false,
+    "fully_dedup_is_short_identifier_only": true,
+    "keep_training_image_bank_fixed": true,
+    "preserve_repeated_paragraph_source_groups": true,
+    "random_selection_policy": "SHA256-ranked source groups; skip groups exceeding remaining exact row budget",
+    "random_selection_is_uniform_over_row_subsets": false
+  },
+  "arms": [
+    {
+      "id": "O",
+      "variant": "original",
+      "parent": null,
+      "caption_selection": "all_original_SPC_rows",
+      "diagnostic_only": true,
+      "evaluation_overlap_allowed": true
+    },
+    {
+      "id": "C",
+      "variant": "validation_clean",
+      "parent": "O",
+      "caption_selection": "exclude_known_COCO_validation_sources",
+      "diagnostic_only": false,
+      "evaluation_overlap_allowed": false
+    },
+    {
+      "id": "D",
+      "variant": "fully_dedup",
+      "parent": "C",
+      "caption_selection": "exclude_known_COCO_training_sources",
+      "diagnostic_only": false,
+      "evaluation_overlap_allowed": false,
+      "known_cross_training_source_overlap_allowed": false
+    },
+    {
+      "id": "Rv",
+      "variant": "random_drop_validation_size_matched",
+      "parent": "O",
+      "caption_selection": "group_preserving_random_subset",
+      "size_matched_to": "C",
+      "diagnostic_only": true,
+      "evaluation_overlap_allowed": true
+    },
+    {
+      "id": "Rp",
+      "variant": "random_drop_size_matched",
+      "parent": "C",
+      "caption_selection": "group_preserving_random_subset",
+      "size_matched_to": "D",
+      "diagnostic_only": false,
+      "evaluation_overlap_allowed": false
+    }
+  ],
+  "evaluation": {
+    "primary_direction": "image_to_caption",
+    "primary_metric": "FOSCTTM",
+    "formula": "mean_query((midrank - 1) / (gallery_size - 1))",
+    "tie_rule": "half_credit_for_tied_nonpartner_scores",
+    "common_query_ids_across_arms": true,
+    "common_gallery_ids_across_arms": true,
+    "primary_query_population": "never_known_spc_overlap_from_manifest_validation_clean",
+    "diagnostic_query_population": "all_validation_queries_and_separately_sampled_original_spc_overlap_queries",
+    "pilot_query_sampling": {
+      "primary_clean": {
+        "population": "never_known_spc_overlap",
+        "cap": 2048,
+        "seed": "subset_seed + 41"
+      },
+      "diagnostic_all_population": {
+        "population": "all_validation_queries",
+        "cap": 2048,
+        "seed": "subset_seed + 43"
+      },
+      "diagnostic_original_spc_exposed": {
+        "population": "original_spc_overlap",
+        "cap": 2048,
+        "seed": "subset_seed + 47",
+        "drawn_independently_from_own_population": true,
+        "restricted_to_exposed_members_of_all_population_sample": false
+      },
+      "all_three_query_sets_fixed_across_arms_and_fit_seeds": true,
+      "all_three_use_same_complete_gallery": true
+    },
+    "gallery_population": "complete_frozen_COCO_validation_40504_items",
+    "stable_primary_clean_query_metric_does_not_exclude_direct_leakage": true,
+    "stratum_reference": "original_SPC_source_population_before_any_arm_cleaning",
+    "query_strata": [
+      "original_spc_overlap",
+      "never_known_spc_overlap"
+    ],
+    "strata_keep_common_gallery": true,
+    "per_query_ranks_required": true,
+    "stratum_counts_required": true,
+    "validation_clean_gallery_is_separate_secondary_metric": true,
+    "secondary_metrics": [
+      "Recall@1",
+      "Recall@5",
+      "Recall@10",
+      "true_match_mean_rank",
+      "true_match_median_rank"
+    ],
+    "normalization_fit_population": "each_arm_selected_training_rows_only",
+    "CKA_use": "descriptive_paired_data_diagnostic_only",
+    "select_settings_or_seeds_from_evaluation": false
+  },
+  "phases": [
+    {
+      "id": "phase_0",
+      "name": "metadata_source_audit",
+      "scope": "source_identity_masks_and_provenance",
+      "alignment_evidence": false
+    },
+    {
+      "id": "phase_1",
+      "name": "computational_pipeline_pilot",
+      "scientific_status": "pipeline_validation_only_not_replication_or_confirmatory_evidence",
+      "models": {
+        "vision": "dinov2_vit-b14@224_mean",
+        "language": "mpnet",
+        "source": "cached_embeddings",
+        "hashes_required": true
+      },
+      "settings": {
+        "num_clusters": 10,
+        "num_restarts": 3,
+        "batch_size": 512,
+        "num_iterations": 10,
+        "train_cap_per_modality_per_arm": 4096,
+        "primary_clean_query_cap": 2048,
+        "diagnostic_all_population_query_cap": 2048,
+        "diagnostic_original_spc_exposed_query_cap": 2048,
+        "validation_gallery_cap": null
+      },
+      "subset_seed": 20261010,
+      "fit_seeds": [
+        0,
+        1,
+        2
+      ],
+      "random_control_selection_seeds": [
+        0
+      ],
+      "arms": [
+        "O",
+        "C",
+        "D",
+        "Rv",
+        "Rp"
+      ],
+      "intended_fit_count": 15,
+      "all_stored_selection_masks_should_be_run": false,
+      "training_caps_can_equalize_arm_counts": true,
+      "estimates_full_population_cleanup_effects": false,
+      "pilot_effects_may_choose_confirmatory_design": false,
+      "retain_failed_and_superseded_records": true
+    },
+    {
+      "id": "phase_2",
+      "name": "full_overlap_confirmation",
+      "status": "proposed_unstarted_not_locked",
+      "publish_final_analysis_plan_before_execution_or_unblinding": true,
+      "settings": {
+        "num_clusters": 30,
+        "num_restarts": 30,
+        "batch_size": 10000,
+        "num_iterations": 100,
+        "train_cap": null,
+        "validation_cap": null
+      },
+      "models": "same_fixed_cached_pair_as_phase_1",
+      "proposed_fit_seeds": [
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119
+      ],
+      "proposed_random_control_selection_seeds": [
+        1000,
+        1001,
+        1002
+      ],
+      "fits_per_seed": {
+        "O": 1,
+        "C": 1,
+        "D": 1,
+        "Rv": 3,
+        "Rp": 3
+      },
+      "proposed_fit_count": 180,
+      "achieved_power_claimed": false,
+      "precision_design_basis": "external_evidence_or_explicit_conservative_assumption_locked_before_results",
+      "primary_contrasts": [
+        {
+          "name": "delta_validation",
+          "formula": "F_C - mean_selection_masks(F_Rv)",
+          "compute_within_fit_seed_first": true
+        },
+        {
+          "name": "delta_pairing",
+          "formula": "F_D - mean_selection_masks(F_Rp)",
+          "compute_within_fit_seed_first": true
+        }
+      ],
+      "raw_secondary_contrasts": [
+        "F_C - F_O",
+        "F_D - F_C"
+      ],
+      "primary_contrast_query_population": "frozen_never_known_spc_overlap_queries",
+      "diagnostic_contrast_query_populations": [
+        "all_validation_queries",
+        "original_spc_overlap"
+      ],
+      "positive_contrast_interpretation": "targeted_exclusion_hurts_more_than_its_row_count_control",
+      "provisional_practical_margin_foscttm": 0.02,
+      "margin_status": "must_lock_on_scientific_grounds_without_pilot_retrieval_effects",
+      "multiplicity": "Holm_for_two_primary_hypotheses",
+      "uncertainty": {
+        "report_paired_seed_effects": true,
+        "separate_solver_mask_and_query_uncertainty": true,
+        "query_resampling_unit": "underlying_source_or_duplicate_group",
+        "gallery_fixed": true,
+        "exact_test_and_interval_implementation": "required_before_confirmatory_lock"
+      },
+      "outcome_based_optional_stopping_allowed": false,
+      "amendments": "dated_reason_and_prior_outcome_visibility_required_before_execution"
+    },
+    {
+      "id": "phase_3",
+      "name": "held_out_encoder_families_and_semantics",
+      "status": "proposed_unstarted",
+      "minimum_new_vision_families": 2,
+      "minimum_new_language_families": 2,
+      "minimum_crossings": 4,
+      "select_families_before_alignment_results": true,
+      "all_crossings_and_failures_reported": true,
+      "readout_or_size_variants_count_as_independent_families": false,
+      "paired_multimodal_encoders_count_as_unpaired_convergence_evidence": false,
+      "controls": [
+        "category_frequency_shifts",
+        "missing_categories",
+        "within_category_retrieval",
+        "count_attribute_relation_and_role_hard_negatives",
+        "category_oracle_random_within_category",
+        "evaluation_identity_permutation"
+      ],
+      "training_row_shuffle_is_valid_negative_control": false,
+      "scope": "small_external_validity_probe_not_all_models"
+    },
+    {
+      "id": "phase_4",
+      "name": "controlled_encoder_training",
+      "status": "proposed_unstarted",
+      "first_factorial": {
+        "architectures": 1,
+        "objectives": 2,
+        "disjoint_corpora": 2,
+        "pretraining_seeds_per_cell": 3,
+        "encoder_count": 12
+      },
+      "replication": "second_architecture_as_separate_factorial",
+      "controls": [
+        "data_volume",
+        "compute",
+        "downstream_competence",
+        "preregistered_opposite_modality_reference_encoder"
+      ]
+    }
+  ],
+  "interpretation_limits": [
+    "Cleaning_effects_are_specific_to_known_metadata_overlap_and_fixed_checkpoints.",
+    "Random_drop_controls_match_row_counts_not_automatically_class_mix_or_caption_style.",
+    "Nonsignificance_does_not_establish_equivalence.",
+    "Alignment_seeds_are_not_pretraining_seeds_or_independent_model_families.",
+    "No_pretraining_decontamination_or_universal_convergence_claim_is_supported_by_this_design_alone.",
+    "Reduced_pipeline_pilot_scores_do_not_settle_scientific_cleanup_effects."
+  ],
+  "sources": {
+    "paper": "https://arxiv.org/html/2610.09411v1",
+    "project_method": "https://dominik-schnaus.github.io/unpaired-rosetta/#method",
+    "coco_metadata": "https://cs.stanford.edu/people/karpathy/deepimagesent/caption_datasets.zip",
+    "visual_genome_metadata": "https://homes.cs.washington.edu/~ranjay/visualgenome/data/dataset/image_data.json.zip",
+    "spc_metadata": "https://homes.cs.washington.edu/~ranjay/visualgenome/data/dataset/paragraphs_v1.json.zip"
+  },
+  "publication_note": "Scientific design copy; machine-specific execution details omitted."
+}

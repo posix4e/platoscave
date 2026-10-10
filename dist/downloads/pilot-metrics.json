@@ -1,0 +1,792 @@
+{
+  "scope": "Reduced pipeline diagnostics only. Equal training caps erase full-population size contrasts; these scores do not estimate the planned cleanup effects. No scientific effect claim.",
+  "snapshot_date": "2026-10-10",
+  "source_commit": "263ad1d85e86e28f8eee22ad758f0bb1de7c6dab",
+  "settings": {
+    "batch_size": 512,
+    "num_clusters": 10,
+    "num_iterations": 10,
+    "num_restarts": 3,
+    "train_cap": 4096,
+    "validation_cap": 2048
+  },
+  "software": {
+    "packages": {
+      "numpy": "2.5.3",
+      "pylibmgm": "1.1.3",
+      "scikit-learn": "1.9.1",
+      "scipy": "1.18.1",
+      "torch": "2.14.1+cpu",
+      "tqdm": "4.70.1"
+    },
+    "platform": "Linux-6.8.0-146-generic-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]"
+  },
+  "runs": [
+    {
+      "arm": "O \u00b7 Original",
+      "variant": "original",
+      "fit_seed": 0,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.2624889837442597,
+        "mean_rank": 10632.59130859375,
+        "median_rank": 6878.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0009765625,
+        "recall_at_10": 0.00341796875,
+        "recall_at_5": 0.00244140625,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.2626930822446794,
+        "mean_rank": 10640.85791015625,
+        "median_rank": 6892.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0009765625,
+        "recall_at_10": 0.0029296875,
+        "recall_at_5": 0.00244140625,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.27286093680560697,
+        "mean_rank": 11052.6865234375,
+        "median_rank": 7390.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.00048828125,
+        "recall_at_10": 0.0029296875,
+        "recall_at_5": 0.00244140625,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 3.062611050000001,
+      "evaluation_seconds": 5.245109566,
+      "config_sha256": "c981e37b5893b20114d0ba8fa8f35eb28d1189bfc395da44f9c29d58932d747e",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 83,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 702,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "O \u00b7 Original",
+      "variant": "original",
+      "fit_seed": 1,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.5894825571369713,
+        "mean_rank": 23876.81201171875,
+        "median_rank": 25683.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.593299482397523,
+        "mean_rank": 24031.408935546875,
+        "median_rank": 26256.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.5875280638451936,
+        "mean_rank": 23797.649169921875,
+        "median_rank": 25868.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00048828125,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 2.7984502870000014,
+      "evaluation_seconds": 4.974709422999993,
+      "config_sha256": "5b2eec20ad3a3467181365547be4bff169562f9c81b6f61ffa4d1e0751cd8de2",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 83,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 702,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "O \u00b7 Original",
+      "variant": "original",
+      "fit_seed": 2,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.4099394390442529,
+        "mean_rank": 16604.777099609375,
+        "median_rank": 15355.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00244140625,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.43139187317143174,
+        "mean_rank": 17473.6650390625,
+        "median_rank": 16276.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0009765625,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.43891266783093225,
+        "mean_rank": 17778.27978515625,
+        "median_rank": 16740.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 2.7967988870000013,
+      "evaluation_seconds": 4.978832334000003,
+      "config_sha256": "a82c9d7c6a631855a8b56d031cd72274e78e5e60d43628fa009ea77e9e127145",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 83,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 702,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "C \u00b7 Validation-clean",
+      "variant": "validation_clean",
+      "fit_seed": 0,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.5395935177641162,
+        "mean_rank": 21856.15625,
+        "median_rank": 22216.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.5288911553908816,
+        "mean_rank": 21422.678466796875,
+        "median_rank": 21277.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00048828125,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.5271675538019561,
+        "mean_rank": 21352.867431640625,
+        "median_rank": 21410.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 2.897105904,
+      "evaluation_seconds": 5.365446370000001,
+      "config_sha256": "34f96c8f81dad9c772b83d97136b9d415b4d3173e3adef960628cc1b57621335",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 68,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 0,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "C \u00b7 Validation-clean",
+      "variant": "validation_clean",
+      "fit_seed": 1,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.37676487939550773,
+        "mean_rank": 15261.10791015625,
+        "median_rank": 13570.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.37220034241290767,
+        "mean_rank": 15076.23046875,
+        "median_rank": 13157.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00048828125,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.3821750146690523,
+        "mean_rank": 15480.234619140625,
+        "median_rank": 13644.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00244140625,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 2.7243575260000057,
+      "evaluation_seconds": 5.315983355,
+      "config_sha256": "2e2b15bc4b9d442032368a9be6e2bf47e31c21cf3efbbab9eb82d3df5fc345e6",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 68,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 0,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "C \u00b7 Validation-clean",
+      "variant": "validation_clean",
+      "fit_seed": 2,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.15757253537739488,
+        "mean_rank": 6383.160400390625,
+        "median_rank": 2885.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0009765625,
+        "recall_at_10": 0.01220703125,
+        "recall_at_5": 0.00732421875,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.17013922845028454,
+        "mean_rank": 6892.149169921875,
+        "median_rank": 3454.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0009765625,
+        "recall_at_10": 0.009765625,
+        "recall_at_5": 0.0048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.16792956983896257,
+        "mean_rank": 6802.6513671875,
+        "median_rank": 3702.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.00048828125,
+        "recall_at_10": 0.00927734375,
+        "recall_at_5": 0.00439453125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 3.0511856749999993,
+      "evaluation_seconds": 5.150029382,
+      "config_sha256": "e1b2e1807c46bdc4eb56ac7faf921bb3b2c96eaca589fd3847ee3321f1177512",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 68,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 0,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "D \u00b7 Source-disjoint",
+      "variant": "fully_dedup",
+      "fit_seed": 0,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.3764209378587697,
+        "mean_rank": 15247.17724609375,
+        "median_rank": 13674.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00048828125,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.3816473543433511,
+        "mean_rank": 15458.86279296875,
+        "median_rank": 14014.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.3767853193841351,
+        "mean_rank": 15261.935791015625,
+        "median_rank": 14103.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00048828125,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 2.890114311000005,
+      "evaluation_seconds": 5.4367800750000015,
+      "config_sha256": "2fc84d81907e616799f160850156c57679b8d9e5713237c29f8a0fd818f2b3f4",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 0,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 0,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "D \u00b7 Source-disjoint",
+      "variant": "fully_dedup",
+      "fit_seed": 1,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.24102357194220184,
+        "mean_rank": 9763.177734375,
+        "median_rank": 5974.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.00048828125,
+        "recall_at_10": 0.00537109375,
+        "recall_at_5": 0.00439453125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.24162807360527305,
+        "mean_rank": 9787.661865234375,
+        "median_rank": 6382.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0009765625,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.24971379796519705,
+        "mean_rank": 10115.157958984375,
+        "median_rank": 6989.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00146484375,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 2.932574408999997,
+      "evaluation_seconds": 5.327172758000003,
+      "config_sha256": "502e2cfd79f695904fb49d6a5566ca6e3c7d1de6c5b9eb50a07c517497e246ee",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 0,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 0,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "D \u00b7 Source-disjoint",
+      "variant": "fully_dedup",
+      "fit_seed": 2,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.3030409024968058,
+        "mean_rank": 12275.065673828125,
+        "median_rank": 9443.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0009765625,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.3077249510260042,
+        "mean_rank": 12464.78369140625,
+        "median_rank": 10236.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0009765625,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.3085594402343654,
+        "mean_rank": 12498.5830078125,
+        "median_rank": 10053.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00146484375,
+        "recall_at_5": 0.0009765625,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 2.8560590320000045,
+      "evaluation_seconds": 4.888112002,
+      "config_sha256": "ac9b48df8412d332bf3bf72700adb13d424e011a466744aca75c99470166be6d",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 0,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 0,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "Rv \u00b7 Random \u2192 C size",
+      "variant": "random_drop_validation_size_matched",
+      "fit_seed": 0,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.375063200613612,
+        "mean_rank": 15192.184814453125,
+        "median_rank": 13502.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.37854550921575253,
+        "mean_rank": 15333.228759765625,
+        "median_rank": 14062.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.3845938893125972,
+        "mean_rank": 15578.206298828125,
+        "median_rank": 14066.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00048828125,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 3.2428887359999976,
+      "evaluation_seconds": 5.100038076000004,
+      "config_sha256": "3e7237856c5be576c979b61e89732b034b085caeba05f7b182617adc61396ea4",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 51,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 702,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "Rv \u00b7 Random \u2192 C size",
+      "variant": "random_drop_validation_size_matched",
+      "fit_seed": 1,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.17234064114463743,
+        "mean_rank": 6981.31298828125,
+        "median_rank": 4302.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0029296875,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.18266169616293854,
+        "mean_rank": 7399.3466796875,
+        "median_rank": 4702.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.00048828125,
+        "recall_at_10": 0.00341796875,
+        "recall_at_5": 0.0009765625,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.18561892430228935,
+        "mean_rank": 7519.123291015625,
+        "median_rank": 4671.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.001953125,
+        "recall_at_5": 0.0009765625,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 2.907151584999994,
+      "evaluation_seconds": 5.039533930000005,
+      "config_sha256": "e4ea191c41e71386151a5b0016ae1157037a90268fcb389203919588e87b868c",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 51,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 702,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "Rv \u00b7 Random \u2192 C size",
+      "variant": "random_drop_validation_size_matched",
+      "fit_seed": 2,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.35365408166138923,
+        "mean_rank": 14325.05126953125,
+        "median_rank": 12014.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00048828125,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.3607260042851764,
+        "mean_rank": 14611.4853515625,
+        "median_rank": 12378.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00048828125,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.3744229726713916,
+        "mean_rank": 15166.253662109375,
+        "median_rank": 12572.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0009765625,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 3.085375796000008,
+      "evaluation_seconds": 5.179446072999994,
+      "config_sha256": "8bd1f8e13dcb97c2254127c931fd679275d24d69b13e6b53683bcfce72d37ff0",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 51,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 702,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "Rp \u00b7 Random \u2192 D size",
+      "variant": "random_drop_size_matched",
+      "fit_seed": 0,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.5371695436719195,
+        "mean_rank": 21757.97802734375,
+        "median_rank": 22327.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.5328567723764289,
+        "mean_rank": 21583.2978515625,
+        "median_rank": 22395.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.5391098477176846,
+        "mean_rank": 21836.566162109375,
+        "median_rank": 22563.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 2.9581808590000094,
+      "evaluation_seconds": 5.8665604220000205,
+      "config_sha256": "ff3452f884ce044e54309f838c7eefc0d7d4ba68781180f590a561f9d544fe30",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 88,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 0,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "Rp \u00b7 Random \u2192 D size",
+      "variant": "random_drop_size_matched",
+      "fit_seed": 1,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.3936488283853974,
+        "mean_rank": 15944.95849609375,
+        "median_rank": 14900.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.40026416952332233,
+        "mean_rank": 16212.899658203125,
+        "median_rank": 15025.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.00048828125,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.4029231100551193,
+        "mean_rank": 16320.5947265625,
+        "median_rank": 15135.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0009765625,
+        "recall_at_5": 0.00048828125,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 2.9195311770000103,
+      "evaluation_seconds": 5.264384852999996,
+      "config_sha256": "95b4028067c25c8f2984a15ab9c80a42f886d52703846d1f412b4f8a402efea6",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 88,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 0,
+        "train_y_primary_query_overlap_count": 0
+      }
+    },
+    {
+      "arm": "Rp \u00b7 Random \u2192 D size",
+      "variant": "random_drop_size_matched",
+      "fit_seed": 2,
+      "status": "complete",
+      "metrics": {
+        "foscttm": 0.3909170971421098,
+        "mean_rank": 15834.315185546875,
+        "median_rank": 13654.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "query_stratum": "common_clean_primary",
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "all_population_diagnostic": {
+        "foscttm": 0.38590310343523937,
+        "mean_rank": 15631.2333984375,
+        "median_rank": 13841.0,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "original_spc_exposed_diagnostic": {
+        "foscttm": 0.39713679098616156,
+        "mean_rank": 16086.2314453125,
+        "median_rank": 13867.5,
+        "num_candidates": 40504,
+        "num_queries": 2048,
+        "recall_at_1": 0.0,
+        "recall_at_10": 0.0,
+        "recall_at_5": 0.0,
+        "ties": "midrank; expected recall under uniform ordering of exact ties"
+      },
+      "fit_seconds": 2.883678293999992,
+      "evaluation_seconds": 5.566812026999997,
+      "config_sha256": "1971762f6d3ed8943a596d6c7a45333f9625a914fdbdfc6e00e800e3a0d5f063",
+      "selected_source_audit": {
+        "train_cross_source_overlap_count": 88,
+        "train_x_full_gallery_overlap_count": 0,
+        "train_x_primary_query_overlap_count": 0,
+        "train_y_duplicate_source_rows": 0,
+        "train_y_full_gallery_overlap_count": 0,
+        "train_y_primary_query_overlap_count": 0
+      }
+    }
+  ]
+}

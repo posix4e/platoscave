@@ -1,0 +1,82 @@
+{
+  "status": "proposed_unstarted_not_a_locked_registration",
+  "created_date": "2026-10-10",
+  "purpose": "Concrete expanded cross-modal sensitivity matrix for the next extraction pilot",
+  "strict_full_paper_family_holdout": false,
+  "vision_candidates": [
+    {
+      "checkpoint": "microsoft/resnet-50",
+      "source": "https://huggingface.co/microsoft/resnet-50",
+      "objective": "supervised ImageNet-1k classification",
+      "readout": "global average pooled features before classifier"
+    },
+    {
+      "checkpoint": "facebook/vit-mae-base",
+      "source": "https://huggingface.co/facebook/vit-mae-base",
+      "objective": "masked pixel reconstruction on ImageNet-1k",
+      "readout": "disable masking and mean-pool patch tokens"
+    }
+  ],
+  "language_candidates": [
+    {
+      "checkpoint": "facebook/contriever",
+      "source": "https://huggingface.co/facebook/contriever",
+      "objective": "unsupervised contrastive retrieval",
+      "readout": "published attention-mask-aware mean pooling",
+      "previous_paper_use": "generation experiments"
+    },
+    {
+      "checkpoint": "sentence-transformers/gtr-t5-base",
+      "source": "https://huggingface.co/sentence-transformers/gtr-t5-base",
+      "training_reference": "https://arxiv.org/abs/2112.07899",
+      "objective": "semantic retrieval with multistage training including supervised MS MARCO",
+      "readout": "published SentenceTransformer pipeline",
+      "previous_paper_use": "Natural Questions experiments"
+    }
+  ],
+  "proposed_pilot": {
+    "all_four_crossings_required": true,
+    "bridge_pair": [
+      "dinov2_vit-b14@224_mean",
+      "mpnet"
+    ],
+    "fit_seeds": [
+      0,
+      1,
+      2
+    ],
+    "total_fits": 15,
+    "data_arm": "fully_dedup_known_metadata_source_identity_only",
+    "settings": "same reduced pipeline pilot profile as PROTOCOL.md",
+    "extract_encoders_sequentially": true,
+    "freeze_before_extraction": [
+      "checkpoint revisions",
+      "readouts",
+      "image preprocessing",
+      "text truncation",
+      "selected rows",
+      "metric definitions"
+    ],
+    "report_all_combinations_and_failures": true,
+    "outcome_based_selection_allowed": false
+  },
+  "limits": [
+    "Contriever and GTR are held out from the main 7x3 grid, not from the full paper; this does not fulfill phase 3's strict unused-family criterion.",
+    "Both vision models use ImageNet; differences in architecture and objective do not establish independent data provenance.",
+    "Failure under reduced optimization can reflect solver effort rather than intrinsic geometric incompatibility.",
+    "The matrix varies several model attributes together and does not causally isolate architecture, objective, or corpus.",
+    "No new encoder was extracted or trained in the completed overlap pipeline pilot."
+  ],
+  "optional_separate_base_model_stress_candidates": [
+    {
+      "checkpoint": "answerdotai/ModernBERT-base",
+      "source": "https://huggingface.co/answerdotai/ModernBERT-base",
+      "caveat": "Masked language base model; retrieval competence and pooling are confounds. Verify absence from complete paper/config inventory before registration."
+    },
+    {
+      "checkpoint": "openai-community/gpt2",
+      "source": "https://huggingface.co/openai-community/gpt2",
+      "caveat": "Raw generative hidden states are not trained sentence embeddings; complete pretraining corpus unavailable. Verify absence from full inventory before registration."
+    }
+  ]
+}
