@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "comparison": "Repeated feature extraction for UID10962; all NPZ arrays bit-identical",
+  "first_npz_sha256": "071ff36fc3c36622285115512338748d3018886cd07864e86705a2a94998d8a0",
+  "second_npz_sha256": "071ff36fc3c36622285115512338748d3018886cd07864e86705a2a94998d8a0",
+  "second_run_reused_frames": 4,
+  "second_run_computed_frames": 0,
+  "scope": "one-action repeatability and cache check, not alignment evidence"
+}

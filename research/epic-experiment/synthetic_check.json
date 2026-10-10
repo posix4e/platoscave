@@ -1,0 +1,25 @@
+{
+  "artifact_sha256": "113b589b62764380d155722e28157f7bf9dc400c129eb07efc7ca5ca48b1e5e7",
+  "dimensions": [
+    768,
+    300
+  ],
+  "fit_seconds": 12.11608875499951,
+  "foscttm": 0.002748748748748749,
+  "gate": "held-out FOSCTTM<0.02 for known planted geometry; benchmark outcomes not inspected",
+  "paired_training_rows": 0,
+  "recall_at_1": 0.673,
+  "runtime_scope": "single smaller synthetic check; full benchmark has 30 restarts,100iterations,2048assignment batch",
+  "seed": 0,
+  "settings": {
+    "batch_size": 1000,
+    "num_clusters": 12,
+    "num_iterations": 10,
+    "num_restarts": 5
+  },
+  "shuffled_test_correspondence_recall_at_1": 0.003,
+  "status": "passed",
+  "test_rows": 1000,
+  "train_x": 1500,
+  "train_y": 1500
+}

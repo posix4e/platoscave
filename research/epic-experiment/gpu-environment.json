@@ -1,0 +1,50 @@
+{
+  "python": "3.12.3",
+  "gpu": "NVIDIA H100 NVL",
+  "torch": "2.7.1+cu128",
+  "cuda": "12.8",
+  "packages": {
+    "torchvision": "0.22.1+cu128",
+    "numpy": "2.5.3",
+    "pillow": "12.3.0",
+    "av": "19.0.1"
+  },
+  "libav_versions": {
+    "libavutil": [
+      61,
+      1,
+      102
+    ],
+    "libavcodec": [
+      63,
+      1,
+      102
+    ],
+    "libavformat": [
+      63,
+      1,
+      102
+    ],
+    "libavdevice": [
+      63,
+      1,
+      102
+    ],
+    "libavfilter": [
+      12,
+      1,
+      102
+    ],
+    "libswscale": [
+      10,
+      1,
+      102
+    ],
+    "libswresample": [
+      7,
+      1,
+      102
+    ]
+  },
+  "gpu_matrix_product_check": "passed"
+}

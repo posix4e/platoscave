@@ -1,0 +1,364 @@
+{
+  "created_utc": "2026-10-10T17:54:20.914597+00:00",
+  "selection_rule": "First two selected dev actions lasting at least 8 seconds from distinct videos; no feature or score access",
+  "manifest_sha256": "d1a34b2ad47a1456a011c6e4f2d6308bae34ebf6aed0c6fb335794ac3dc648be",
+  "script_sha256": "84534532a3351695a21913fade8adb105b743cfb01adc2ab9a0d9ea26076bc3d",
+  "av_version": "19.0.1",
+  "av_libraries": {
+    "libavutil": [
+      61,
+      1,
+      102
+    ],
+    "libavcodec": [
+      63,
+      1,
+      102
+    ],
+    "libavformat": [
+      63,
+      1,
+      102
+    ],
+    "libavdevice": [
+      63,
+      1,
+      102
+    ],
+    "libavfilter": [
+      12,
+      1,
+      102
+    ],
+    "libswscale": [
+      10,
+      1,
+      102
+    ],
+    "libswresample": [
+      7,
+      1,
+      102
+    ]
+  },
+  "runs": [
+    {
+      "uid": "6329",
+      "video_id": "P03_02",
+      "mode": "baseline",
+      "options": {
+        "tls_verify": "1",
+        "ca_file": "/etc/ssl/certs/ca-certificates.crt"
+      },
+      "frames": [
+        {
+          "requested_seconds": 224.1775,
+          "actual_seconds": 224.17395,
+          "source_pts": 13450437,
+          "rgb_sha256": "9602a6cb4903d21fae35e0e637abae7fc2e2383083e866d8d7652ae53dd52235",
+          "jpeg_sha256": "9c69a6d9ffb39b65a57b73c35bab5ef5fb09837995d0e90348da39b00f354b6c",
+          "elapsed_seconds": 3.4988048159993923
+        },
+        {
+          "requested_seconds": 227.1125,
+          "actual_seconds": 227.11021666666667,
+          "source_pts": 13626613,
+          "rgb_sha256": "75328035da9a18786369062050de5fc50f0dcd4049a90ed5ef4ac11a577edee2",
+          "jpeg_sha256": "0dd7b1983d1116a9c5a1b9e4fb120238e23a70de760e1866894d2260e5f0d8e1",
+          "elapsed_seconds": 8.242533417000232
+        },
+        {
+          "requested_seconds": 230.0475,
+          "actual_seconds": 230.04648333333333,
+          "source_pts": 13802789,
+          "rgb_sha256": "e6f8c42229eb4480a47bf03d82aba89e712c35fa0c467b0296152ed493c63c0b",
+          "jpeg_sha256": "fe757bbcb106c28b8af1013c9ca3e5cab114fd81e0d70c75a0a97134413f8270",
+          "elapsed_seconds": 3.2945449779999763
+        },
+        {
+          "requested_seconds": 232.9825,
+          "actual_seconds": 232.98275,
+          "source_pts": 13978965,
+          "rgb_sha256": "0fab9aab87f4700120f204932447753edbe7aa830bef927e7af6689822cc9a9d",
+          "jpeg_sha256": "830a5afe170fc97ef1c07f8497699aa0e3a94883daa62a034b85139485b6674e",
+          "elapsed_seconds": 3.1007078749989887
+        }
+      ],
+      "open_seconds": 3.849776123999618,
+      "status": "complete",
+      "elapsed_seconds": 21.98930309899879
+    },
+    {
+      "uid": "6329",
+      "video_id": "P03_02",
+      "mode": "keepalive",
+      "options": {
+        "tls_verify": "1",
+        "ca_file": "/etc/ssl/certs/ca-certificates.crt",
+        "multiple_requests": "1",
+        "seekable": "1"
+      },
+      "frames": [
+        {
+          "requested_seconds": 224.1775,
+          "actual_seconds": 224.17395,
+          "source_pts": 13450437,
+          "rgb_sha256": "9602a6cb4903d21fae35e0e637abae7fc2e2383083e866d8d7652ae53dd52235",
+          "jpeg_sha256": "9c69a6d9ffb39b65a57b73c35bab5ef5fb09837995d0e90348da39b00f354b6c",
+          "elapsed_seconds": 3.316301761999057
+        },
+        {
+          "requested_seconds": 227.1125,
+          "actual_seconds": 227.11021666666667,
+          "source_pts": 13626613,
+          "rgb_sha256": "75328035da9a18786369062050de5fc50f0dcd4049a90ed5ef4ac11a577edee2",
+          "jpeg_sha256": "0dd7b1983d1116a9c5a1b9e4fb120238e23a70de760e1866894d2260e5f0d8e1",
+          "elapsed_seconds": 3.6889086139999563
+        },
+        {
+          "requested_seconds": 230.0475,
+          "actual_seconds": 230.04648333333333,
+          "source_pts": 13802789,
+          "rgb_sha256": "e6f8c42229eb4480a47bf03d82aba89e712c35fa0c467b0296152ed493c63c0b",
+          "jpeg_sha256": "fe757bbcb106c28b8af1013c9ca3e5cab114fd81e0d70c75a0a97134413f8270",
+          "elapsed_seconds": 3.405161764998411
+        },
+        {
+          "requested_seconds": 232.9825,
+          "actual_seconds": 232.98275,
+          "source_pts": 13978965,
+          "rgb_sha256": "0fab9aab87f4700120f204932447753edbe7aa830bef927e7af6689822cc9a9d",
+          "jpeg_sha256": "830a5afe170fc97ef1c07f8497699aa0e3a94883daa62a034b85139485b6674e",
+          "elapsed_seconds": 2.994219209000221
+        }
+      ],
+      "open_seconds": 3.370436741000958,
+      "status": "complete",
+      "elapsed_seconds": 16.777381617001083
+    },
+    {
+      "uid": "6329",
+      "video_id": "P03_02",
+      "mode": "keepalive_4mib",
+      "options": {
+        "tls_verify": "1",
+        "ca_file": "/etc/ssl/certs/ca-certificates.crt",
+        "multiple_requests": "1",
+        "seekable": "1",
+        "request_size": "4194304",
+        "initial_request_size": "4194304",
+        "short_seek_size": "4194304"
+      },
+      "frames": [
+        {
+          "requested_seconds": 224.1775,
+          "actual_seconds": 224.17395,
+          "source_pts": 13450437,
+          "rgb_sha256": "9602a6cb4903d21fae35e0e637abae7fc2e2383083e866d8d7652ae53dd52235",
+          "jpeg_sha256": "9c69a6d9ffb39b65a57b73c35bab5ef5fb09837995d0e90348da39b00f354b6c",
+          "elapsed_seconds": 11.149427005000689
+        },
+        {
+          "requested_seconds": 227.1125,
+          "actual_seconds": 227.11021666666667,
+          "source_pts": 13626613,
+          "rgb_sha256": "75328035da9a18786369062050de5fc50f0dcd4049a90ed5ef4ac11a577edee2",
+          "jpeg_sha256": "0dd7b1983d1116a9c5a1b9e4fb120238e23a70de760e1866894d2260e5f0d8e1",
+          "elapsed_seconds": 7.809945770999548
+        },
+        {
+          "requested_seconds": 230.0475,
+          "actual_seconds": 230.04648333333333,
+          "source_pts": 13802789,
+          "rgb_sha256": "e6f8c42229eb4480a47bf03d82aba89e712c35fa0c467b0296152ed493c63c0b",
+          "jpeg_sha256": "fe757bbcb106c28b8af1013c9ca3e5cab114fd81e0d70c75a0a97134413f8270",
+          "elapsed_seconds": 8.642958439999347
+        },
+        {
+          "requested_seconds": 232.9825,
+          "actual_seconds": 232.98275,
+          "source_pts": 13978965,
+          "rgb_sha256": "0fab9aab87f4700120f204932447753edbe7aa830bef927e7af6689822cc9a9d",
+          "jpeg_sha256": "830a5afe170fc97ef1c07f8497699aa0e3a94883daa62a034b85139485b6674e",
+          "elapsed_seconds": 6.677984803998697
+        }
+      ],
+      "open_seconds": 26.914967249000256,
+      "status": "complete",
+      "elapsed_seconds": 61.19853829500062
+    },
+    {
+      "uid": "6461",
+      "video_id": "P03_04",
+      "mode": "keepalive_4mib",
+      "options": {
+        "tls_verify": "1",
+        "ca_file": "/etc/ssl/certs/ca-certificates.crt",
+        "multiple_requests": "1",
+        "seekable": "1",
+        "request_size": "4194304",
+        "initial_request_size": "4194304",
+        "short_seek_size": "4194304"
+      },
+      "frames": [
+        {
+          "requested_seconds": 211.32875,
+          "actual_seconds": 211.32778333333334,
+          "source_pts": 12679667,
+          "rgb_sha256": "3a4c45575bb7bea9e692695b1dd26308e23b731f9a1f821a86e1d2e45912fc02",
+          "jpeg_sha256": "26a6bd942a2e5b908a199a6073f70beb6e70cacabb47652da88bd7c539e3a52a",
+          "elapsed_seconds": 10.387226395998368
+        },
+        {
+          "requested_seconds": 213.62625,
+          "actual_seconds": 213.63008333333335,
+          "source_pts": 12817805,
+          "rgb_sha256": "c9d14b99f5a901218784faa75af61cc73348fb5c3bddb82e91147784ac3f27bd",
+          "jpeg_sha256": "bc1fe107c095a161770752479b8f927152fd215b77e3f25116a645b89cea3fb8",
+          "elapsed_seconds": 4.199740318001204
+        },
+        {
+          "requested_seconds": 215.92375,
+          "actual_seconds": 215.9157,
+          "source_pts": 12954942,
+          "rgb_sha256": "979a08f95ec728e07bbd928fd4d118a291f7e501bf940690a78c79920327b1f0",
+          "jpeg_sha256": "e5072510f6f614bd812e14cf2848d7c0322029c12efd7a0bdd4d76fcaa1b3d53",
+          "elapsed_seconds": 11.647296348000964
+        },
+        {
+          "requested_seconds": 218.22125,
+          "actual_seconds": 218.218,
+          "source_pts": 13093080,
+          "rgb_sha256": "f86b8066a27a245571e62ccad3a826df053585ebca38940fa8fae2997733702f",
+          "jpeg_sha256": "ec2456c5f03c3b2b217f8fad6ac606781ff2039e7cafd817e70fa9ceddae796d",
+          "elapsed_seconds": 4.895516747001238
+        }
+      ],
+      "open_seconds": 9.248705429999973,
+      "status": "complete",
+      "elapsed_seconds": 40.38141914299922
+    },
+    {
+      "uid": "6461",
+      "video_id": "P03_04",
+      "mode": "keepalive",
+      "options": {
+        "tls_verify": "1",
+        "ca_file": "/etc/ssl/certs/ca-certificates.crt",
+        "multiple_requests": "1",
+        "seekable": "1"
+      },
+      "frames": [
+        {
+          "requested_seconds": 211.32875,
+          "actual_seconds": 211.32778333333334,
+          "source_pts": 12679667,
+          "rgb_sha256": "3a4c45575bb7bea9e692695b1dd26308e23b731f9a1f821a86e1d2e45912fc02",
+          "jpeg_sha256": "26a6bd942a2e5b908a199a6073f70beb6e70cacabb47652da88bd7c539e3a52a",
+          "elapsed_seconds": 1.850063854999462
+        },
+        {
+          "requested_seconds": 213.62625,
+          "actual_seconds": 213.63008333333335,
+          "source_pts": 12817805,
+          "rgb_sha256": "c9d14b99f5a901218784faa75af61cc73348fb5c3bddb82e91147784ac3f27bd",
+          "jpeg_sha256": "bc1fe107c095a161770752479b8f927152fd215b77e3f25116a645b89cea3fb8",
+          "elapsed_seconds": 1.7803200830003334
+        },
+        {
+          "requested_seconds": 215.92375,
+          "actual_seconds": 215.9157,
+          "source_pts": 12954942,
+          "rgb_sha256": "979a08f95ec728e07bbd928fd4d118a291f7e501bf940690a78c79920327b1f0",
+          "jpeg_sha256": "e5072510f6f614bd812e14cf2848d7c0322029c12efd7a0bdd4d76fcaa1b3d53",
+          "elapsed_seconds": 2.6938830700000835
+        },
+        {
+          "requested_seconds": 218.22125,
+          "actual_seconds": 218.218,
+          "source_pts": 13093080,
+          "rgb_sha256": "f86b8066a27a245571e62ccad3a826df053585ebca38940fa8fae2997733702f",
+          "jpeg_sha256": "ec2456c5f03c3b2b217f8fad6ac606781ff2039e7cafd817e70fa9ceddae796d",
+          "elapsed_seconds": 0.8505239700007223
+        }
+      ],
+      "open_seconds": 2.9315769730001193,
+      "status": "complete",
+      "elapsed_seconds": 10.10903379299998
+    },
+    {
+      "uid": "6461",
+      "video_id": "P03_04",
+      "mode": "baseline",
+      "options": {
+        "tls_verify": "1",
+        "ca_file": "/etc/ssl/certs/ca-certificates.crt"
+      },
+      "frames": [
+        {
+          "requested_seconds": 211.32875,
+          "actual_seconds": 211.32778333333334,
+          "source_pts": 12679667,
+          "rgb_sha256": "3a4c45575bb7bea9e692695b1dd26308e23b731f9a1f821a86e1d2e45912fc02",
+          "jpeg_sha256": "26a6bd942a2e5b908a199a6073f70beb6e70cacabb47652da88bd7c539e3a52a",
+          "elapsed_seconds": 1.0557262479997007
+        },
+        {
+          "requested_seconds": 213.62625,
+          "actual_seconds": 213.63008333333335,
+          "source_pts": 12817805,
+          "rgb_sha256": "c9d14b99f5a901218784faa75af61cc73348fb5c3bddb82e91147784ac3f27bd",
+          "jpeg_sha256": "bc1fe107c095a161770752479b8f927152fd215b77e3f25116a645b89cea3fb8",
+          "elapsed_seconds": 1.7607842030010943
+        },
+        {
+          "requested_seconds": 215.92375,
+          "actual_seconds": 215.9157,
+          "source_pts": 12954942,
+          "rgb_sha256": "979a08f95ec728e07bbd928fd4d118a291f7e501bf940690a78c79920327b1f0",
+          "jpeg_sha256": "e5072510f6f614bd812e14cf2848d7c0322029c12efd7a0bdd4d76fcaa1b3d53",
+          "elapsed_seconds": 4.397899027000676
+        },
+        {
+          "requested_seconds": 218.22125,
+          "actual_seconds": 218.218,
+          "source_pts": 13093080,
+          "rgb_sha256": "f86b8066a27a245571e62ccad3a826df053585ebca38940fa8fae2997733702f",
+          "jpeg_sha256": "ec2456c5f03c3b2b217f8fad6ac606781ff2039e7cafd817e70fa9ceddae796d",
+          "elapsed_seconds": 0.8378931200004445
+        }
+      ],
+      "open_seconds": 6.319131664999077,
+      "status": "complete",
+      "elapsed_seconds": 14.374383332000434
+    }
+  ],
+  "comparisons": [
+    {
+      "uid": "6329",
+      "mode": "keepalive",
+      "exact_frames_match": true,
+      "speedup_vs_baseline": 1.3106516619206117
+    },
+    {
+      "uid": "6329",
+      "mode": "keepalive_4mib",
+      "exact_frames_match": true,
+      "speedup_vs_baseline": 0.35931092002560333
+    },
+    {
+      "uid": "6461",
+      "mode": "keepalive",
+      "exact_frames_match": true,
+      "speedup_vs_baseline": 1.4219344426322922
+    },
+    {
+      "uid": "6461",
+      "mode": "keepalive_4mib",
+      "exact_frames_match": true,
+      "speedup_vs_baseline": 0.35596528396136046
+    }
+  ],
+  "limit": "Two action windows; four requested frames per window and transport mode; not a throughput guarantee",
+  "documentation": "https://ffmpeg.org/ffmpeg-protocols.html#http"
+}

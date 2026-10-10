@@ -9,6 +9,12 @@ The protocol below was fixed before computing benchmark alignment scores.
 Frame acquisition started on 10 October 2026. No benchmark result is reported
 in this initial protocol record.
 
+**Work in progress:** the acquisition, feature extraction, alignment and
+independent verification code is now published. The VM is still acquiring the
+fixed sample; no full benchmark alignment has run. `wip-status.json` records
+the checks completed and the work remaining. A recorded decoding failure is
+retained for investigation, not used to remove a clip from the sample.
+
 ## Frozen sample
 
 | Partition | Kitchens | Clips | Use |
@@ -68,3 +74,52 @@ The annotation source is the
 The [collection paper](https://arxiv.org/html/2005.00343) describes the recording
 and human annotation procedure. Annotated action windows provide preprocessing
 supervision even though the primary alignment stage receives no pairs.
+
+## Implementation and checks
+
+The stages are `acquire_frames.py`, `verify_acquisition.py`,
+`extract_features.py`, `run_experiment.py`, and `verify_results.py`. The last
+script recomputes scores and metrics without importing the runner's metric
+functions. It requires all 17 fits and the complete frozen sample. Partial
+feature files cannot qualify for the benchmark runner.
+
+`continue_experiment.py` supervises those stages. Its default mode prints a
+plan; `--run` waits for the existing acquisition service, checks frozen source
+hashes and requires every selected frame before extraction. After a terminal
+acquisition failure it permits one retry using the same code and sample,
+archiving prior reports first. It stops if that retry or any later verification
+fails. A lock prevents concurrent supervisors. Its state-transition tests have
+passed; the full pipeline has not completed.
+
+The [P03_05 diagnosis](p03-05-failure-review.md) records one decoding failure
+and an isolated recovery of the target frame. Both transport modes recovered
+identical bytes. This supports a retry, but does not prove that the full video
+has recovered or identify the original failure's exact cause. Its retained
+diagnostic trace has HTTP cookie values redacted.
+
+`preprocess-validation.json` records exact agreement with torchvision on 31
+preprocessing cases. `feature-repeat-validation.json` records a repeat of one
+action's cached features. `synthetic_check.json` tests recovery of a known
+synthetic correspondence at smaller settings. These establish limited
+implementation checks; they are not evidence of successful EPIC alignment.
+
+`benchmark_http_seek.py` and `http-seek-benchmark.json` compare transport
+settings on eight frame requests. Connection reuse preserved their timestamps
+and bytes and reduced elapsed time in that bounded check. The acquisition
+script records its version and frame hashes; a changed version cannot silently
+reuse old completed-video reports.
+
+The `*-observed-freeze.txt` files record the actual two Python environments,
+not portable installation lockfiles. The GPU environment uses CUDA 12.8
+PyTorch; the alignment environment uses CPU PyTorch. The solver's editable
+checkout includes our earlier research scripts at revision `263ad1d`; its
+`unpaired_rosetta` package matches public upstream revision
+`fdfad84ea488f29702a61a455be71622c4ff5d49`. Use that public revision when
+reconstructing the solver. `wip-status.json` records source hashes. Runtime
+configuration will also hash every executed upstream package file.
+
+After recreating the full selected manifest, stages must run in order. Each
+script's `--help` documents its explicit paths. Keep the original model weights
+from the adjacent provenance audit and the pinned DINO source; do not replace
+them with model-library defaults. Full videos, extracted frames and large
+feature arrays are not stored in Git.
