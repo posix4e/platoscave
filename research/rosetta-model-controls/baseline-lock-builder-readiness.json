@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "status": "builder_checked_not_a_baseline_result_release",
+  "source_sha256": {
+    "build_baseline_lock.py": "32dc32be277b93ece29fa19c75f92099520bdaa329b749edc588f7265cad7cee",
+    "test_build_baseline_lock.py": "6db8ee7890f69d7c7e449741779d8ab1098746c18bed2dac8cef4bf0c1e77c6e"
+  },
+  "original_release_lock_sha256": "3d52418723d5da4b3a208f5f2078656b35e508a322c555d07d7aacc822da9c36",
+  "validation": {
+    "status": "passed",
+    "runtime": "Unchanged original baseline Pixi environment; Python 3.14.7. Only artificial result records were supplied.",
+    "command": "python -m pytest research/rosetta-model-controls/test_build_baseline_lock.py -q --junitxml=<private receipt>",
+    "receipt_sha256": "89a0d0861052d77b436dbde602a2a88958a0dabdf83b2856f2906d09e440249c",
+    "receipt_bytes": 1657,
+    "recorded_at_utc": "2026-10-11T01:20:25.630904+00:00",
+    "test_functions": 8,
+    "additional_passing_subtests": 11,
+    "tests_reported_in_xml": 19,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 0.219,
+    "scope": [
+      "All five fixed seeds, original configuration and result identities, and private-field exclusion.",
+      "Incomplete or interrupted supervisor, missing results, wrong source/Pixi/input inventory and tampered comparison rejected.",
+      "Numerical disagreement retained; late byte changes detected; existing output and partial files preserved.",
+      "Duplicate-key and nonfinite JSON rejected."
+    ],
+    "real_baseline_results_read": false,
+    "real_features_loaded": false,
+    "inference_or_fits_performed": false
+  },
+  "independent_review": {
+    "status": "passed_no_substantive_blocker_identified",
+    "source_sha256": {
+      "build_baseline_lock.py": "32dc32be277b93ece29fa19c75f92099520bdaa329b749edc588f7265cad7cee",
+      "test_build_baseline_lock.py": "6db8ee7890f69d7c7e449741779d8ab1098746c18bed2dac8cef4bf0c1e77c6e"
+    },
+    "evidence": "Separate read-only reviewer in this task confirmed these exact source hashes after correction of the missing Pixi binary check. No standalone signed review artifact.",
+    "limits": "Reviewer did not rerun tests or inspect actual baseline results."
+  },
+  "publication_rules": "An immutable outer release must bind this builder and test before actual use. Its embedded self-hash is provenance, not authorization.",
+  "remaining_gates": [
+    "Five completed original results and final supervisor post-checks.",
+    "Frozen comparison, independent interpretation, and investigation of any unexplained disagreement.",
+    "Actual process quiescence and current input/runtime checks before separate experiment release."
+  ]
+}

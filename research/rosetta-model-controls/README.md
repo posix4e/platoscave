@@ -183,8 +183,13 @@ lock. This second lock records generated data; it cannot alter the earlier
 scientific choices. Then run the five reference replays before the expanded
 cells. Keep all published releases immutable.
 
-The implementation has five stages:
+The implementation has six stages:
 
+- `build_baseline_lock.py` binds all five original result files, their completed
+  supervisor record and the comparison recomputed by the untouched original
+  script. It preserves numerical disagreements and omits machine paths and
+  hostnames. The resulting lock records evidence; it does not authorize new
+  experiments or establish that the original processes have stopped.
 - `acquire_coco_images.py` acquires the public image archives, checks every ZIP
   member and extracted file, and records their source and byte identities.
 - `extract_features.py` requires the final extraction lock before any corpus
@@ -206,6 +211,25 @@ the feature-lock builder's artificial fixtures replace numeric tensor inspection
 with a test stub; production has no such option and must pass the runner's real
 checks on every tensor. The readiness records distinguish those checks from
 actual experiment results.
+
+Run the baseline evidence builder only after the original supervisor finishes
+its post-run checks and the frozen `compare.py` has written the complete report:
+
+```sh
+python research/rosetta-model-controls/build_baseline_lock.py \
+  --release ORIGINAL_RELEASE_DIRECTORY \
+  --results ORIGINAL_RESULT_DIRECTORY \
+  --status COMPLETED_SUPERVISOR_STATUS \
+  --comparison FROZEN_COMPARISON_REPORT \
+  --out NEW_BASELINE_RESULT_LOCK
+```
+
+The builder checks the recorded source, Pixi binary, input inventory and every
+result against the original locks, then checks those records again before
+publishing. Existing outputs and unfinished output files are preserved. The
+outer release must bind the builder's exact bytes before use. A separate check
+of live processes, the current runtime and any unexplained numerical difference
+is still required before releasing the model controls.
 
 The [pretraining audit](../pretraining-audit/README.md) still applies. None of
 these additions is certified free of benchmark exposure. A separate COCO×SPC
