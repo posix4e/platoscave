@@ -2,19 +2,19 @@
   "schema_version": 1,
   "protocol_id": "rosetta-model-controls-v2",
   "status": "feature_extraction_running",
-  "observed_at_utc": "2026-10-11T11:17:17.593164+00:00",
+  "observed_at_utc": "2026-10-11T11:25:22.722822+00:00",
   "release_commit": "c14771afc455c588ad9a19854161b9bc2c60b63e",
   "outer_release_sha256": "caf5dbb25b1b769526dd3b36c4e9afffb735ca451a8cc447afc03788f56da674",
   "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
   "extraction_lock_sha256": "d9a816a20390dd53a480c3d5e12904f5d279e47f5bc1ae57b525283b97765250",
   "added_extractions_required": 10,
-  "added_extractions_complete": 6,
+  "added_extractions_complete": 8,
   "running": {
-    "model": "glove",
+    "model": "elmo",
     "split": "train2014",
     "attempt": 1,
-    "started_at_utc": "2026-10-11T11:16:19.625198+00:00",
-    "durable_rows_observed": 21929,
+    "started_at_utc": "2026-10-11T11:24:38.502698+00:00",
+    "durable_rows_observed": 99,
     "expected_rows": 82783,
     "completion_marker_observed": false
   },
@@ -22,7 +22,7 @@
   "method_results_complete": 0,
   "required_model_cells": 60,
   "required_method_results": 300,
-  "scope": "Both training and validation extractions for DINO, MoCo and MAE are complete and accepted: six of ten added extractions. GloVe training-caption extraction is running. The competing work has exited and the next admission passed fresh availability checks. No model-comparison fit or result is available. This is a dated observation, not a live counter.",
+  "scope": "Both training and validation extractions for DINO, MoCo, MAE and GloVe are complete and accepted: eight of ten added extractions. ELMo training-caption extraction is running. No model-comparison fit or result is available. This is a dated observation, not a live counter.",
   "next_steps": [
     "Finish and accept all ten sequential extractions, then verify all fourteen feature entries.",
     "Bind the complete execution release and run all five reference replay cells.",
@@ -143,16 +143,68 @@
       "successful_service_exit_and_quiescence_verified": true,
       "acceptance_receipt_sha256": "e64d15da28ac0288357dc0c08f5a2f31c3d75ebc040a8633a0101e44a3a61b34",
       "verification": "Full artifact hashes, metadata, canonical row and caption order, contiguous row journal, and actual tensor shape/dtype. The required all14-feature builder will later check finite/nonzero entries across every tensor."
+    },
+    {
+      "model": "glove",
+      "split": "train2014",
+      "attempt": 1,
+      "row_count": 82783,
+      "shape": [
+        82783,
+        7,
+        300
+      ],
+      "dtype": "float32",
+      "tensor_bytes": 695378729,
+      "feature_sha256": "324e5350da2aec6b7422c36e40e71de6cbedadbf950e804b7f0847423e846b83",
+      "metadata_sha256": "b216338d1fa56ca753662acd78e6677f2994cbbbe55d0d13f1465de83425c150",
+      "complete_sha256": "0c5dbaaa6b3c4090f92a635bd0cbd45a7f21a52c65423af212375424ab052224",
+      "completed_at_utc": "2026-10-11T11:20:51.883100+00:00",
+      "successful_service_exit_and_quiescence_verified": true,
+      "acceptance_receipt_sha256": "2743d0f601bf5fe0df65e743623137a98d20a349700ba7dfe55a095f24b67a73",
+      "verification": "Full artifact hashes, metadata, canonical row and caption order, contiguous row journal, and actual tensor shape/dtype. The required all14-feature builder will later check valid caption vectors and expected NaN padding across every text tensor."
+    },
+    {
+      "model": "glove",
+      "split": "val2014",
+      "attempt": 1,
+      "row_count": 40504,
+      "shape": [
+        40504,
+        7,
+        300
+      ],
+      "dtype": "float32",
+      "tensor_bytes": 340235177,
+      "feature_sha256": "366e7f88210f655081c66aa80f5d230b2120130129c221a655109f3bff1262a0",
+      "metadata_sha256": "590f72a956b4dc5a1721e14a317a2c04208354d0756ec521ec0f636d61e4edb7",
+      "complete_sha256": "21c34d7209783467ba7b31250b0e23cb363ea94ec035ba6ec8e997ee0a452b66",
+      "completed_at_utc": "2026-10-11T11:23:44.292219+00:00",
+      "successful_service_exit_and_quiescence_verified": true,
+      "acceptance_receipt_sha256": "80c22a1789585f015ebed8541fe8c5d0e93e4eb3407ad3c1f02c379cea90d977",
+      "verification": "Full artifact hashes, metadata, canonical row and caption order, contiguous row journal, and actual tensor shape/dtype. The required all14-feature builder will later check valid caption vectors and expected NaN padding across every text tensor."
     }
   ],
-  "private_acceptance_and_next_admission_observation_sha256": "e04a7678706e5eef075fc0adda1803655e703453f3c89166e698ebcc8e05a262",
-  "added_extractions_generated": 6,
-  "added_extractions_accepted": 6,
+  "private_acceptance_and_next_admission_observation_sha256": "af08634ac0b667796c89f50d213c48a2ca7298ad5d077b978fd368432d35cd4d",
+  "added_extractions_generated": 8,
+  "added_extractions_accepted": 8,
   "count_definitions": {
     "added_extractions_generated": "Extraction completion marker and successful service exit observed.",
     "added_extractions_complete": "Accepted extractions only; retained meaning of the earlier snapshots.",
     "added_extractions_accepted": "Acceptance receipt recorded; the complete fourteen-feature numerical audit is still required before fitting."
   },
   "private_generation_and_blocked_admission_observation_sha256": "50cd7382f22c9ff24d434dc219dc1caf0980cf39c7999c525e4c345cf367dbc4",
-  "scheduling_block_cleared": true
+  "scheduling_block_cleared": true,
+  "glove_acceptance_observations": [
+    {
+      "model": "glove",
+      "split": "train2014",
+      "sha256": "ef6a101b4fb8a246cb5526431c40c79f4eb24a8c0a1426444fd855f568005eea"
+    },
+    {
+      "model": "glove",
+      "split": "val2014",
+      "sha256": "af08634ac0b667796c89f50d213c48a2ca7298ad5d077b978fd368432d35cd4d"
+    }
+  ]
 }
