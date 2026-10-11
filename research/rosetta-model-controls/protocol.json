@@ -212,7 +212,15 @@
       "inference": "Descriptive only. No significance tests, success/failure score threshold, model ranking as a universal quality claim, or generalization beyond these pipelines and data.",
       "dependence": "Seeds share fixed data and pretrained encoders. Queries are not automatically independent population samples; no naive query-level confidence interval is planned.",
       "missing": "Report every failed or incomplete attempt. Five-seed summaries and contrasts requiring missing entries stay unavailable; never average a selected successful subset.",
-      "metrics_are_not_contamination_test": true
+      "metrics_are_not_contamination_test": true,
+      "summarizer": {
+        "source": "summarize_panel.py",
+        "sha256": "906d5819d92409c1a2a3b73ca325695e29be9903c58e8b75710db27050cd7e32",
+        "methods": 300,
+        "five_seed_score_series": 60,
+        "contrast_series": 103,
+        "verification_limit": "Checks saved-rank/metric/original-RNG/ID consistency, not a fresh similarity scoring of saved maps or independent proof of failure reasons."
+      }
     },
     "ordering": {
       "extraction_models": [
@@ -242,10 +250,33 @@
       "completion_marker_required": true,
       "retain_progress_and_failures": true,
       "retries": "Only for documented execution/input failures after review, in a new attempt directory. Keep and disclose the original attempt and reason. No retry because of an unfavorable score.",
-      "changed_numerics": "A separately named amended protocol; never relabel it as this frozen run."
+      "changed_numerics": "A separately named amended protocol; never relabel it as this frozen run.",
+      "attempt_tree": "cells/{vision}--{text}/seed-{decimal_seed}/attempt-{two_digit_positive_counter}; start at01 and require contiguous counters.",
+      "eligible_method": "An individually complete method may contribute from a finalized FAILED cell only when its full terminal manifest, map/rank artifacts, original row order and exact metric reconstruction verify. Aborted cells and failed numerical diagnostics retain observed scores but are unavailable as completed observations.",
+      "retry_review": {
+        "file": "retry-review.json inside new attempt, bound by final COMPLETE/FAILED manifest",
+        "binding": [
+          "schema_version=1",
+          "protocol_id",
+          "protocol_sha256",
+          "feature_lock_sha256",
+          "vision",
+          "text",
+          "seed"
+        ],
+        "previous_attempt": "Immediately preceding attempt counter; no retry after COMPLETE.",
+        "reason_kind": [
+          "external_execution_failure",
+          "input_failure"
+        ],
+        "reason": "Nonempty public explanation, reviewed:true, source_or_numerics_changed:false.",
+        "previous_artifacts": "Hash of predecessor FAILED.json, or started.json only when there is no terminal marker."
+      },
+      "selection": "Earliest eligible method by attempt counter. Every later eligible repetition must have exact identical FOSCTTM/mean_rank and canonical COCO-ID-sorted per-query midrank hash. Any conflict, undocumented retry chain or multiple fully COMPLETE cells makes the affected comparison unavailable. No choice by score.",
+      "terminal_markers": "Exactly one valid terminal manifest, no conflicting, partial or late-added terminal artifact. Partial/conflicting predecessors cannot authorize retries."
     },
     "privacy": "Publish code, public COCO provenance, locks, aggregate scores and COCO-indexed ranks. Private user photographs, capture metadata, private manifests, paths and raw private features are neither inputs nor publication artifacts.",
-    "remaining_goal": "Separate fixed-encoder COCO×SPC source-removal study, then a genuinely fresh collection after a complete pre-capture lock with fresh unpaired fitting and separate final evaluation. This panel completes neither.",
+    "remaining_goal": "Separate fixed-encoder COCO\u00d7SPC source-removal study, then a genuinely fresh collection after a complete pre-capture lock with fresh unpaired fitting and separate final evaluation. This panel completes neither.",
     "draft_pending": [
       "Complete baseline result lock and numerical comparison",
       "Final extraction lock",

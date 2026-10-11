@@ -1,0 +1,231 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-source-controls-v1",
+  "status": "draft_before_source_control_masks_and_fits",
+  "objective": "Measure whether removing known shared sources from the SPC fitting text bank changes COCO retrieval more than removing the same number of rows by a fixed whole-source random rule, with encoders unchanged.",
+  "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+  "seeds": [
+    734796314,
+    576165995,
+    2197670066,
+    839703249,
+    2584932063
+  ],
+  "counts": {
+    "train_x": 82783,
+    "original_y": 19561,
+    "validation": 40504
+  },
+  "arm_counts": {
+    "O": 19561,
+    "C": 16224,
+    "D": 9963,
+    "Rv": 16224,
+    "Rp": 9963
+  },
+  "algorithm_defaults": {
+    "num_clusters": 30,
+    "num_restarts": 30,
+    "batch_size": 10000,
+    "num_iterations": 100
+  },
+  "execution": {
+    "num_workers": 4,
+    "num_threads": 4,
+    "device": "cpu",
+    "evaluation_block_size": 4096,
+    "torch_threads": 16,
+    "torch_interop_threads": 16
+  },
+  "selection_seeds": {
+    "Rv": [
+      1000,
+      1001,
+      1002,
+      1003,
+      1004,
+      1005,
+      1006,
+      1007,
+      1008,
+      1009
+    ],
+    "Rp": [
+      2000,
+      2001,
+      2002,
+      2003,
+      2004,
+      2005,
+      2006,
+      2007,
+      2008,
+      2009
+    ]
+  },
+  "code_sha256": {
+    "run_cell.py": "f55bebcb0d0e73876b6ac269ef6f021a9e91b7e9e2f5244ac421a0f0e5dc32bc",
+    "run_source_arm.py": "eba2a216f4d95cc34804ef8a585a4713964dc9888df326eb28b389f2bd71df58",
+    "source_masks.py": "102dbbe8c4cab20ff2109af722edd09debc638f5e778a986d72165c5ad022c7b",
+    "source_primitives.py": "75446992c5c0c6c969e0e37e50da1fc8e655c316b5f44c429dd59612dd3e9de4"
+  },
+  "locks": {
+    "source": "223c1b4e9de79386c50c4f326d2b73c02002abb8d963e23ba826279740e43a0b",
+    "environment": "7ced0256181037bf33d12fe8905c314d64a023786ebadb394f7fefa3eabb6f0c",
+    "source_rows": "641aa61d233530f3c110b07ec8f444fd8dac84470e16e4a1c22907e390e99546",
+    "inputs": "f78d32abca45a4492a9646b188f88a1d4f5cb91fb74ded7e820643a9b9aa1132"
+  },
+  "source_archive_sha256": {
+    "caption_datasets.zip": "4cfd70132527b80933105e5829dc9034eaab9573482e2e680abbab6130244817",
+    "vg_image_data.json.zip": "b87a94918cb2ff4d952cf1dfeca0b9cf6cd6fd204c2f8704645653be1163681a",
+    "paragraphs_v1.json.zip": "8407f1068e0711e5f6550d641c523ee26984ee8e02c1d51564369cccd56e8b26"
+  },
+  "row_identity_sha256": "e4e0e295e82ead25e7afca9a81b4d0c9513e6f56c64247848f6cb5bf9006b455",
+  "strata_counts": {
+    "never_known_spc_overlap": 37169,
+    "original_spc_overlap": 3335,
+    "all": 40504
+  },
+  "metric_rules": {
+    "primary": "never_known_spc_overlap/foscttm",
+    "gallery": "full_40504",
+    "foscttm_denominator": 40503,
+    "recall_k": [
+      1,
+      5,
+      10
+    ],
+    "recall_ties": "expected_credit_under_uniform_order_within_exact_score_tie_block",
+    "median": "arithmetic_mean_of_two_central_ranks_when_even",
+    "inference": "descriptive_only"
+  },
+  "research_design": {
+    "stage": "Exploratory full-bank follow-up. Earlier reduced-pilot outcomes are known. This is not a confirmatory preregistration or the complete published cross-dataset classification experiment.",
+    "budget": {
+      "status": "proposed_pending_completed_full_run_resource_evidence",
+      "targeted_masks": 3,
+      "random_masks_per_arm": 10,
+      "algorithm_seeds_per_mask": 5,
+      "fits": 115,
+      "basis": "Practical repeated-deletion allocation, not a power calculation. Finalize from resource evidence before new masks or fits, never from desired outcomes."
+    },
+    "arms": {
+      "O": "All original SPC paragraphs; known source overlap retained as a diagnostic.",
+      "C": "O excluding every known COCO validation source.",
+      "D": "C excluding every known COCO training source. Remaining sources lack COCO mappings and are not independently established as different images.",
+      "Rv": "Whole-source subset of O with the same paragraph row count as C.",
+      "Rp": "Whole-source subset of C with the same paragraph row count as D."
+    },
+    "source_identity": {
+      "canonical": "coco:<id> when mapped, otherwise vg:<id>; group all paragraphs and VG aliases of a source together.",
+      "order": "Original COCO train2014/val2014 identity, ascending numeric IDs; SPC paragraph-file order. Do not substitute later Karpathy split labels.",
+      "unknown": "Missing mappings remain unknown. Published loaders support row ordering, but tensors without embedded IDs do not independently attest it."
+    },
+    "random_removal": {
+      "rule": "Rank whole source groups by (SHA256(UTF8(seed:source)), source), greedily retain groups that fit the exact remaining row budget, then restore original paragraph row order.",
+      "uniform_row_or_admissible_subset_sampling": false,
+      "failure": "Stop if exact budget cannot be filled. No replacement seed, partial group or approximate count.",
+      "report": [
+        "selected rows and mask hash",
+        "group-size histogram",
+        "known train/validation and unknown-map membership",
+        "all pairwise row and source-group intersections"
+      ]
+    },
+    "fitting": {
+      "image_bank": "All 82,783 image rows in every arm.",
+      "text_bank": "Full selected bank, including repeated descriptions of retained sources.",
+      "rng": "Fresh original Randomness(seed), consume original independent_split over full image and selected text populations, then pass the same advanced RNG to unchanged WassersteinProcrustes. Equal seeds do not imply identical later draws across unequal banks.",
+      "precision": "Preserve original BF16 caption normalization/averaging before FP32 conversion.",
+      "centering": "Each arm uses its own fitting-bank means, retaining no mean from excluded sources.",
+      "batch_dimensions": "Configured cap stays 10,000; D and Rp use their actual 9,963 text rows. No padding or image cap.",
+      "known_pairs": false
+    },
+    "evaluation": {
+      "gallery": "All 40,504 candidates for every query; never filter gallery by stratum.",
+      "strata": "Fixed original SPC membership: 37,169 never-known-exposed primary queries, 3,335 originally exposed diagnostic queries and all 40,504 diagnostic queries. Do not redefine after cleaning.",
+      "rng": "Fresh original evaluation RNG, full validation subset draw, then independent X and Y presentation shuffles.",
+      "artifacts": "Canonical per-query midranks, strictly-higher counts, tie-block sizes, COCO IDs and presentation permutations. Preserve original incoming-order overall metrics separately.",
+      "metrics": [
+        "foscttm",
+        "mean_rank",
+        "median_rank",
+        "recall_at_1",
+        "recall_at_5",
+        "recall_at_10"
+      ],
+      "foscttm": "(midrank-1)/40503; lower is better.",
+      "recall": "clamp((k-num_higher)/tie_count,0,1), expected credit under uniform order in exact tie block.",
+      "classification_extension": false
+    },
+    "reporting": {
+      "contrasts": [
+        "Within seed and fixed stratum: F(C)-mean of all declared Rv mask scores.",
+        "Within seed and fixed stratum: F(D)-mean of all declared Rp mask scores.",
+        "Within seed and fixed stratum: F(C)-F(O).",
+        "Within seed and fixed stratum: F(D)-F(C)."
+      ],
+      "aggregates": "Every seed/mask score; arithmetic means and sample SD ddof=1. Form each contrast within seed before aggregation.",
+      "direction": "Positive FOSCTTM differences mean worse retrieval; negative Recall differences mean worse retrieval.",
+      "missing": "Enumerate every fit and attempt. Missing terms keep the affected contrast unavailable; no successful-subset average.",
+      "inference": "Descriptive conditional variability only. No p-values, equivalence verdict, achieved-power claim, best seed/mask or naive query-level confidence interval. Masks share sources and are not independent corpora.",
+      "implementation": {
+        "source": "summarize_source.py",
+        "sha256": "8dc998ce495433ec4ebbb691b4701277fe7bd3abe7dc55378263777a48902c29",
+        "mask_budget": "All explicit protocol selection seeds; no hardcoded random-mask count.",
+        "contrasts": "Four within-seed contrasts for each of the three fixed strata, on all six metrics.",
+        "limits": "Saved-rank/order/tie/metric consistency, not a new scoring of fitted maps or independent verification of failure causes."
+      }
+    },
+    "interpretation_limits": [
+      "Removing fitting paragraphs cannot remove encoder pretraining exposure.",
+      "All D sources lack COCO mappings; their independence is unknown.",
+      "Row-count controls do not match categories, style, group composition or mapping coverage.",
+      "Exclusion changes semantic evidence and centering as well as overlap, so effects do not isolate memorization.",
+      "Metadata identities do not exhaust image-byte or perceptual near-duplicates.",
+      "Fixed-pipeline retrieval does not generalize to all encoders or reproduce every classification endpoint."
+    ],
+    "ordering": "Earlier reproduction and model panel remain ahead. After final source release: O,C,D, then Rv masks in declared order, then Rp masks in declared order; original algorithm seed order within each mask. One fit at a time unless a resource-based scheduling amendment is published before lock.",
+    "failure_policy": {
+      "no_overwrite": true,
+      "attempts": "Fresh attempt before preflight; retain journals, maps, ranks and partial artifacts on failure. Keep private machine traces separate.",
+      "completion": "Exactly one valid COMPLETE terminal marker, no conflicting FAILED marker, every required output hash verified, and final unchanged input/source/runtime byte checks. Both markers or partial markers are unavailable pending review.",
+      "retry": "No automatic retry. Reviewed external execution/input failures may use a fresh numbered attempt with reason and predecessor hash; retain all attempts. No retry for an unfavorable score.",
+      "numerical_change": "Separately named amended protocol, never relabelled as this frozen run.",
+      "selection": "One verified COMPLETE attempt per scheduled mask/seed. Multiple COMPLETE attempts remain unavailable pending separately disclosed resolution; no score-based selection.",
+      "attempt_tree": "cells/{mask}/seed-{decimal_seed}/attempt-{two_digit_positive_counter}; retain all attempts, begin at01 and require contiguous counters.",
+      "retry_review": {
+        "file": "retry-review.json inside fresh attempt, bound in its final terminal manifest",
+        "binding": [
+          "schema_version=1",
+          "protocol_id",
+          "protocol_sha256",
+          "masks_sha256",
+          "mask",
+          "seed"
+        ],
+        "previous_attempt": "Immediately preceding counter. No retry after COMPLETE or conflicting terminal markers.",
+        "reason_kind": [
+          "external_execution_failure",
+          "input_failure"
+        ],
+        "reason": "Nonempty public explanation, reviewed:true, source_or_numerics_changed:false.",
+        "previous_artifacts": "Predecessor FAILED.json hash, or started.json hash only when no terminal marker exists."
+      }
+    },
+    "release_order": [
+      "Finish completed-full-run resource assessment; freeze budget before new masks or fits.",
+      "Review code/tests; bind original source/runtime, four tensors and complete metadata provenance.",
+      "Publish final scientific protocol and code release before the mask helper runs.",
+      "Rebuild source rows from all three verified archives, construct all masks/strata/compositions/intersections and complete schedule; publish the exact mask bundle and final outer execution lock before any fit.",
+      "Run every declared fit and independently reconstruct numerical summaries from ranks before interpretation."
+    ],
+    "privacy": "Only public COCO/SPC inputs and IDs. Exclude private photographs, capture metadata, raw private features, private manifests and machine paths from publications.",
+    "remaining_goal": "Prospective collection after a complete pre-capture lock, with fresh unpaired fitting and separate final evaluation.",
+    "draft_pending": [
+      "Completed full-run cost evidence and final budget",
+      "Final protocol/code release and outer execution lock",
+      "Every actual mask and complete schedule"
+    ]
+  }
+}

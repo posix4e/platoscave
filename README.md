@@ -117,9 +117,10 @@ items and the three classification evaluations. The unchanged authors' software
 passed all 42 method/evaluation tests; all 13 input hashes and 228 source files
 passed preflight.
 
-The first full run has started. The [status snapshot](dist/downloads/rosetta-replication-status.json)
-records its observation time; it is not a live feed or a result. All five outputs
-and the frozen comparison are required before a reproduction verdict. Report
+The first of five runs has finished. Its [named-seed retrieval score](dist/downloads/rosetta-replication-first-seed.json)
+agrees exactly with the published reference. The [status snapshot](dist/downloads/rosetta-replication-status.json)
+records its observation time; it is not a live feed. All five outputs and the
+frozen comparison are required before a verdict on this configuration. Report
 paper-rounded agreement separately from available full-precision agreement.
 Released embeddings test alignment, not encoder pretraining or feature extraction.
 
@@ -133,8 +134,12 @@ execution while the baseline and final release remain incomplete.
 
 The paired controls need extra training counterparts because the
 unpaired banks are disjoint; their advantage cannot be attributed solely to
-revealing pair identities. Study source overlap separately with unchanged
-encoders and size-matched random removal. A later fresh collection requires a
+revealing pair identities. The separate [source-overlap draft](research/rosetta-source-controls/)
+keeps the encoders fixed and compares targeted exclusion with random removal
+of the same number of rows. Its proposed allocation is 115 full-bank fits,
+pending completed-run resource evidence. All remaining paragraphs after both
+exclusions lack COCO mappings, so that arm cannot be called proved clean.
+A later fresh collection requires a
 complete model/protocol lock and separate fitting and final evaluation scenes.
 These later phases are still being prepared; they are not completed by the
 baseline. Earlier frozen protocols and all six five-photo results are preserved.

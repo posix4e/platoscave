@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-source-controls-v1",
+  "status": "draft_implementation_checked_not_released",
+  "source_sha256": {
+    "source_masks.py": "102dbbe8c4cab20ff2109af722edd09debc638f5e778a986d72165c5ad022c7b",
+    "test_source_masks.py": "4bfadabd23d3d5da0ba8db20953638a8bd25e80548b7b636d8f117779c6a3445",
+    "source_primitives.py": "75446992c5c0c6c969e0e37e50da1fc8e655c316b5f44c429dd59612dd3e9de4",
+    "test_source_primitives.py": "25edf67fd0035f70afe01cb7afd02717fe0c0abb1476ae0f9db3edb05ad2ffa3",
+    "run_source_arm.py": "eba2a216f4d95cc34804ef8a585a4713964dc9888df326eb28b389f2bd71df58",
+    "test_run_source_arm.py": "1122c2eb6d57aa1c22cefe13432fb7c8464f202b412719db5e251c90b32d97f3",
+    "prepare_masks.py": "ff63d0c397cc69d486962f09753fc1b98c7c787fbef45f3fc05018ed12858f97",
+    "test_prepare_masks.py": "4b3560fe388d9e8f439e96e04429eb105e69466c6e53eb8be76df98db0beb43a",
+    "summarize_source.py": "8dc998ce495433ec4ebbb691b4701277fe7bd3abe7dc55378263777a48902c29",
+    "test_summarize_source.py": "7b9de99ac2d228e18b59925ca2e03409025d714651599fe76e5858a4b76d6428"
+  },
+  "checks": {
+    "test_source_primitives.py": {
+      "tests": 29,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 3.435,
+      "receipt_sha256": "e92087809ece42111780cd04743183df17c50f6fa99331ed8ead2030cb737016",
+      "evidence": "Original locked Pixi runtime XML receipt; root parsed exact copied bytes.",
+      "real_features_or_rosetta_fits": false
+    },
+    "test_run_source_arm.py": {
+      "tests": 19,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 2.047,
+      "receipt_sha256": "ca135ad0ec09fec5c3c1ec246c8f741df9e96dd1f650c570bb90ca767ebdbc33",
+      "evidence": "Original locked Pixi runtime XML receipt; root parsed exact copied bytes.",
+      "real_features_or_rosetta_fits": false
+    },
+    "test_source_masks.py": {
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 3.948,
+      "evidence": "Recorded tool output from implementation agent, reviewed source and archived-metadata check. No standalone XML receipt.",
+      "synthetic_tests": 10,
+      "read_only_existing_metadata_tests": 1,
+      "archived_masks_validated": 13,
+      "new_real_masks_issued": false
+    },
+    "test_prepare_masks.py": {
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 0.068,
+      "evidence": "Recorded implementation-agent tool output; independent read-only source/test review. No standalone XML receipt.",
+      "runtime": "Python3.14.8 standard library, no Torch import.",
+      "synthetic_zip_fixtures": true,
+      "new_real_masks_issued": false
+    },
+    "test_summarize_source.py": {
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "elapsed_seconds": 2.393,
+      "receipt_sha256": "f015f44632b60bb23d372a59216673c6c71cec8904cfbac2211a5ac5b9b14fe3",
+      "evidence": "Original locked Pixi runtime XML copied and parsed by root.",
+      "real_features_results_or_fits_used": false,
+      "independent_review": "passed_no_substantive_blocker_identified"
+    }
+  },
+  "independent_read_only_review": {
+    "status": "passed_no_substantive_blocker_identified",
+    "scope": [
+      "Archive and exact source-row binding, whole-source aliases and row order.",
+      "Full original advanced training RNG, BF16 caption reduction and unchanged algorithm calls.",
+      "Entire common gallery, canonical identities, original-order metrics, fixed strata and exact tie-aware Recall.",
+      "Durable attempt/failure records, no overwrites, final input recheck and completion suppression.",
+      "Independent metadata rebuild and complete mask/schedule construction; no circular hash dependency.",
+      "Complete schedule, original training/evaluation permutations, canonical COCO ranks/ties, all six metrics, complete-mask/complete-seed descriptive contrasts and reviewed retry history.",
+      "Stable, partial, conflicting or newly appearing terminal artifacts disable eligibility; no silent successful-subset aggregation."
+    ],
+    "limits": "Source review and artificial execution, not end-to-end full-size fitting or proof of correctness."
+  },
+  "original_environment_smoke_check": {
+    "status": "passed",
+    "evidence": "Implementation-agent stdout, separate from mocked synthetic wrapper tests.",
+    "source_files_verified": 228,
+    "source_lock_sha256": "223c1b4e9de79386c50c4f326d2b73c02002abb8d963e23ba826279740e43a0b",
+    "environment_sha256": "7ced0256181037bf33d12fe8905c314d64a023786ebadb394f7fefa3eabb6f0c",
+    "full_installed_distribution_versions_match": true,
+    "activation": {
+      "ATEN_CPU_CAPABILITY": "avx2",
+      "MKL_CBWR": "AVX2,STRICT"
+    },
+    "torch_threads": 16,
+    "torch_interop_threads": 16,
+    "original_source_unchanged": true,
+    "real_feature_loads": 0,
+    "fits": 0
+  },
+  "remaining_gates": [
+    "Finalize proposed mask budget using completed full-setting resource evidence before masks/fits.",
+    "Publish final scientific protocol and preparation code release.",
+    "Construct and independently verify every declared actual mask, strata/composition/intersection record and complete schedule.",
+    "Publish final outer execution lock binding the exact protocol and mask bundle.",
+    "Run every scheduled full fit; verify all saved results before interpretation."
+  ],
+  "limitations": [
+    "Tests do not establish performance, full-size resource cost or an experimental effect.",
+    "All actual masks and source-control fits remain pending.",
+    "Unknown COCO mappings are not evidence of different images.",
+    "An ambiguous or incomplete terminal marker cannot count as success.",
+    "Neither source removal nor these checks certify uncontaminated pretrained encoders.",
+    "Reporting reconstructs saved-rank metrics; it does not rescore fitted maps or independently prove declared retry reasons."
+  ]
+}

@@ -140,10 +140,29 @@ remain unavailable with the missing attempt identified; they are not averaged
 over a convenient subset of seeds.
 
 Each extraction and cell reserves a fresh attempt directory before work begins.
-Progress and failures survive an exception. An output is usable only with a
-final `COMPLETE.json` whose hashes match its data and metadata. Preserve failed
-attempts; a reviewed retry uses a new directory and reports its reason. A
-numerical change requires a separately identified amended protocol.
+Progress and failures survive an exception. An extraction needs a verified final
+`COMPLETE.json`. A cell's verified terminal manifest may preserve a complete
+method even if another method failed. An aborted cell without that manifest, or
+a method whose numerical diagnostic failed, retains its observed scores but
+cannot contribute a complete observation. All five reference cells must finish
+and agree with the untouched baseline before expanding the panel.
+Partial or conflicting terminal files cannot establish completion or authorize
+a retry, including files that appear while the summary is being checked.
+
+Store every cell attempt under
+`cells/{vision}--{text}/seed-{seed}/attempt-{01..99}`. A reviewed retry after an
+external execution or input failure uses the next counter, with an in-directory
+`retry-review.json` that binds the failed predecessor and states the reason.
+Its terminal manifest must also bind this record. Never retry after a complete
+cell or because of a poor score. Keep the earliest eligible method by counter;
+any later eligible repetition must have identical scalar metrics and identical
+per-query ranks when sorted by COCO ID. A disagreement, undocumented retry or
+multiple complete cells makes the affected comparison unavailable. A numerical
+change requires a separately identified amended protocol.
+
+The summary checks every directory in the declared experiment tree. It verifies
+saved ranks, metrics and the original ID/randomness order, but does not rescore
+the fitted maps or independently prove the stated cause of a failed attempt.
 
 ## Release order and remaining work
 
@@ -156,7 +175,7 @@ lock. This second lock records generated data; it cannot alter the earlier
 scientific choices. Then run the five reference replays before the expanded
 cells. Keep all published releases immutable.
 
-The implementation has four stages:
+The implementation has five stages:
 
 - `acquire_coco_images.py` acquires the public image archives, checks every ZIP
   member and extracted file, and records their source and byte identities.
@@ -168,6 +187,9 @@ The implementation has four stages:
 - `run_cell.py` checks the complete release and runs one model-pair/seed cell.
   It saves maps, ranks and individual method outcomes. Detailed machine logs
   remain separate from public results.
+- `summarize_panel.py` accounts for all 300 method slots, checks ranks and
+  retry records, and reports all 103 prescribed contrast series. It keeps
+  incomplete comparisons visible and requires all five seeds for an aggregate.
 
 The synthetic tests cover original split and caption-reduction behavior,
 randomness, ties, rectangular maps, correspondence shuffling, artifact identity

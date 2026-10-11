@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "publisher_repo": "schnaus/unpaired-rosetta-embeddings",
+  "publisher_revision": "b39767e18cdb5031020a0e1c4b8d9fba6ae13453",
+  "features": {
+    "train_x": {
+      "sha256": "431d0caf275e71837ced1d519d5a3464a8b6896744529188e1bae95b10cd013c",
+      "shape": [
+        82783,
+        768
+      ],
+      "dtype": "bfloat16",
+      "publisher_path": "embeddings/coco_train2014/vision/dinov2_vit-b14@224_mean.pt",
+      "size_bytes": 127156441
+    },
+    "train_y": {
+      "sha256": "d9c85440e34084b70890e07ac16a3a089a1b54d461e50268b681c7485016ac45",
+      "shape": [
+        19561,
+        1,
+        768
+      ],
+      "dtype": "bfloat16",
+      "publisher_path": "embeddings/StanfordParagraphCaptioning/language/mpnet.pt",
+      "size_bytes": 30047195
+    },
+    "validation_x": {
+      "sha256": "13bc24b7ed9164f605d0892fe2bbc17feb30d8fcc66bb2e94d2a0ad77e9f8e3a",
+      "shape": [
+        40504,
+        768
+      ],
+      "dtype": "bfloat16",
+      "publisher_path": "embeddings/coco_val2014/vision/dinov2_vit-b14@224_mean.pt",
+      "size_bytes": 62215897
+    },
+    "validation_y": {
+      "sha256": "dc960f4d1fda472f3ddfbd9e5e618e1ef43072261ec19e291c5cb8089006fb1a",
+      "shape": [
+        40504,
+        7,
+        768
+      ],
+      "dtype": "bfloat16",
+      "publisher_path": "embeddings/coco_val2014/language/mpnet.pt",
+      "size_bytes": 435500507
+    }
+  }
+}
