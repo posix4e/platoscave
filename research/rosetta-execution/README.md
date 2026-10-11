@@ -18,7 +18,11 @@ The final public execution lock has these fields:
 
 The model protocol and feature lock must have status `frozen_before_model_control_fits`. The source protocol must have status `frozen_before_source_control_fits`; its budget must have status `frozen_before_source_control_masks_and_fits` and a fit count matching the complete declared mask schedule. Both inputs must bind their final protocol hash.
 
-The resource policy declares `max_jobs` and a `classes` entry for every job ID, with values `shared` or `exclusive`. The current plan is one job. A prospective two-job policy also needs a bound `amendment` receipt with status `approved_before_execution`. The policy always names an `external_work_quiescent_receipt` with that status. This is reviewed evidence that earlier work has finished; the launcher does not discover unrelated processes from such a receipt.
+The resource policy declares `max_jobs` and a `classes` entry for every job ID, with values `shared` or `exclusive`. The published [scheduling amendment](scheduling-amendment.json) and [resource policy](resource-policy.json) permit at most two adjacent shared jobs. Any model cell using MoCo or ELMo is exclusive. The full table contains 30 exclusive model jobs and 145 shared jobs (30 model jobs and all 115 source jobs). It preserves the fixed order and every prescribed job. Per-process numerical settings remain unchanged; no twofold speedup is assumed.
+
+This operational amendment supersedes only the serial concurrency limit in the preserved source resource decision. It does not revise the frozen source protocol, mask budget or prepared masks. The 20 GiB allowance per shared job plus 16 GiB guest reserve is a planning estimate, not a measured upper bound. The all-14-feature preflight validates one memory-mapped tensor at a time with 512-row checks; it does not retain all fourteen tensors together. Recheck capacity before final execution, and delay admission if capacity is insufficient.
+
+The final execution lock must bind both files. The policy names an `amendment` receipt with status `approved_before_execution` and an `external_work_quiescent_receipt` with that status. The latter has not yet been issued: the original baseline and feature extraction must finish first. It is reviewed evidence that earlier work is quiescent; the launcher does not discover unrelated processes from such a receipt. Publishing this resource policy authorizes no dispatch on its own.
 
 Private immutable bindings contain:
 

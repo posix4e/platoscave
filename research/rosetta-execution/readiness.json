@@ -4,7 +4,7 @@
   "source_sha256": {
     "execution.py": "332dec331fcfa58ee1fcbc2f30fbd7eee77406fd0992dbba6293338332a4d5fd",
     "test_execution.py": "a8de10c9631c4d5bccbf1a9edc94d1c3f0e851feb9e6388e39df0ea4432203b7",
-    "README.md": "b91c6bb42771d841dcb855c0d041a97165bc6d4b9566827bcae7e897bef7fb21"
+    "README.md": "d370dc2e0f8d1381e3ff4fcf8b0f75072b5583735de61e856b932f2dd295abb1"
   },
   "scientific_scope": {
     "model_jobs": 60,
@@ -109,5 +109,17 @@
     },
     "scope": "Actual user services on the dedicated experiment VM, frozen artificial backend only. No full Controller execution, real scientific inputs, acceptance or reboot survival tested.",
     "raw_evidence_policy": "Private logs, process metadata, paths and command tickets are retained outside the repository. Public record binds their complete receipts by hash."
+  },
+  "documentation_revision": {
+    "recorded_at_utc": "2026-10-11T02:35:24.026883+00:00",
+    "prior_readiness_sha256": "f64b5c29989997f575bca409f8028c3195098a68a6b6ac1a663be0496e8ff181",
+    "prior_readme_sha256": "b91c6bb42771d841dcb855c0d041a97165bc6d4b9566827bcae7e897bef7fb21",
+    "prior_record_available_at_git_commit": "e80c6019d0e32b527b49b4f919add32deccea7c0",
+    "reason": "Document the prospective two-job resource policy; update only the current README binding. Existing scientific-scope, test and live-backend sections retain their historical preparation evidence.",
+    "scheduling_amendment_sha256": "1aeeaeddb647f912050718ecc04a2e490749d8cc39d1aaf7481b6ccd37343db5",
+    "resource_policy_sha256": "03d8c043eaeb79871fae5847feb908f11db0111f6d8403b099ce6bf1d2bd6873",
+    "launcher_or_test_code_changed": false,
+    "tests_rerun": false,
+    "scientific_dispatches": 0
   }
 }

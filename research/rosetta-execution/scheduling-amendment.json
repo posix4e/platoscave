@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "amendment_id": "rosetta-control-scheduling-two-jobs-v1",
+  "status": "approved_before_execution",
+  "recorded_at_utc": "2026-10-11T02:34:03.009863+00:00",
+  "scope": "Prospective operational scheduling for the complete later model and source controls. No baseline changes, feature extraction or control fitting is dispatched by this record.",
+  "review_basis": "Separate code reviews of memory lifetime, protocol compatibility and controller batch boundaries. Approval here records this operational review, not a claim of user sign-off or scientific completion.",
+  "preserved_source_protocol": {
+    "path": "research/rosetta-source-controls/protocol.json",
+    "sha256": "75076af19cdeeefd3d839e9eb2db9a33af2c47e17a7a0600339763b95b90eeae"
+  },
+  "preserved_resource_decision": {
+    "path": "research/rosetta-source-controls/resource-decision.json",
+    "sha256": "47975738844a60e05f5c8c254a43bf95150347a046498c674928761380f20854"
+  },
+  "preserved_source_masks": {
+    "path": "research/rosetta-source-controls/prepared-v1/masks.json",
+    "sha256": "1dd8f1fa7fd33207ecfe359643009352251e59820a1c12e936c75650e5f16ab6"
+  },
+  "supersedes_only": "The preserved source resource-decision decision.maximum_concurrent_fits=1, for the still-pending final control execution. All scientific choices, ten Rv masks, ten Rp masks, all original seeds and all prepared source bytes remain unchanged.",
+  "model_draft_edit": {
+    "path": "research/rosetta-model-controls/protocol.json",
+    "before_sha256": "0d27abc640739818b0da07e608463e61cfcee1afc6721956b5d90b62bac26ec1",
+    "after_sha256": "eaaa980bac48cfabc8a5970e4fb55cdd94e1f7a03f3981fb60b9aa82f119f4a3",
+    "only_field_changed": "research_design.ordering.fits",
+    "status": "The model protocol remains a draft pending baseline completion and final extraction/release locks."
+  },
+  "resource_policy": {
+    "path": "research/rosetta-execution/resource-policy.json",
+    "sha256": "03d8c043eaeb79871fae5847feb908f11db0111f6d8403b099ce6bf1d2bd6873"
+  },
+  "allocation": {
+    "maximum_jobs": 2,
+    "total_job_processes": 175,
+    "model_job_processes": 60,
+    "methods_per_model_job": 5,
+    "source_job_processes": 115,
+    "shared_model_jobs": 30,
+    "shared_source_jobs": 115,
+    "exclusive_model_jobs": 30,
+    "exclusive_rule": "Every cell whose vision model is moco OR whose text model is elmo runs alone for its entire five-method process.",
+    "shared_rule": "The remaining six vision/text combinations and every source mask/seed job may share an adjacent batch.",
+    "order": "Use the complete unchanged derived job order. Admit only the first one or two pending jobs. Never skip an exclusive job or cross replay/expanded/source boundaries. Drain every job and descendant in a batch before strict readers.",
+    "reference_replays": "The five reference cells run in batches of two, two and one. All five must agree with the original baseline at the existing absolute 1e-10 retrieval tolerance before any expanded fit.",
+    "unchanged_numerics": {
+      "fit_torch_threads": 4,
+      "process_default_torch_threads": 16,
+      "torch_interop_threads": 16,
+      "ATEN_CPU_CAPABILITY": "avx2",
+      "MKL_CBWR": "AVX2,STRICT",
+      "initialization_workers": 4,
+      "readout_assignment_threads": 4,
+      "refinement_assignment_threads": 1
+    },
+    "additional_affinity_or_numerical_environment_changes": false
+  },
+  "capacity": {
+    "guest_memory_kib": 65836688,
+    "guest_logical_cpus": 16,
+    "shared_job_allowance_gib": 20,
+    "guest_and_uncertainty_reserve_gib": 16,
+    "two_shared_jobs_plus_reserve_gib": 56,
+    "remaining_memory_beyond_allowances_gib": 6.7867584228515625,
+    "measured_two_job_peak": false,
+    "evidence": "The preserved source resource decision binds five-second samples from one completed full original run and part of the next: about 6.65-6.80 GiB summed process RSS. Those observations are not a peak bound for later controls.",
+    "preflight_memory_review": {
+      "all_feature_tensors_retained_together": false,
+      "validation": "feature_paths calls validate_tensor sequentially for all 14 entries and retains only paths. Each validator holds one memory-mapped tensor and checks 512-row blocks. Fitting banks are constructed afterward.",
+      "largest_elmo_training_tensor_payload_bytes": 2373554176,
+      "largest_indexed_validation_block_payload_bytes": 14680064,
+      "largest_elementwise_boolean_block_payload_bytes": 3670016,
+      "lifetime_limits": "Mapped pages, Python metadata and allocator arenas may remain resident temporarily. Reclaimable filesystem cache is shared, and summed RSS can double-count shared pages. There is no code-level retention of all fourteen tensor objects."
+    },
+    "limits": "Planning allowances, not measured upper bounds. Library workspace, copies and allocator behavior can vary. Two processes may contend for the 16 logical CPUs; faster completion and numerical equivalence are not assumed.",
+    "shortfall_policy": "Recheck available capacity before final execution. Insufficient capacity delays admission or requires additional capacity, never fewer models, seeds, masks, rows, methods or iterations."
+  },
+  "inspected_code": [
+    {
+      "path": "research/rosetta-execution/execution.py",
+      "sha256": "332dec331fcfa58ee1fcbc2f30fbd7eee77406fd0992dbba6293338332a4d5fd"
+    },
+    {
+      "path": "research/rosetta-execution/test_execution.py",
+      "sha256": "a8de10c9631c4d5bccbf1a9edc94d1c3f0e851feb9e6388e39df0ea4432203b7"
+    },
+    {
+      "path": "research/rosetta-model-controls/run_cell.py",
+      "sha256": "611aad8867cf174e5c03fc7a534d6edc8215fe9f08bcd056f5cd19943fe2c10a"
+    },
+    {
+      "path": "research/rosetta-source-controls/run_source_arm.py",
+      "sha256": "6dbf7c3132a75607d5d7912759a88feba3ef943deeb89f3c6d81afcc045648af"
+    }
+  ],
+  "controller_review": {
+    "finding": "No concrete blocker found for this policy in the reviewed code.",
+    "covered_by_existing_artificial_tests": [
+      "two-job draining",
+      "fifth-reference batch boundary",
+      "exclusive head",
+      "failure blocking",
+      "valid artifacts with a failed service"
+    ],
+    "coverage_limits": [
+      "No complete model-to-source transition is exercised by the current artificial suite.",
+      "The test named with_four checks absence of the replay gate; it does not construct four complete replays.",
+      "No live two-job scientific execution or measured concurrent numerical comparison has been performed."
+    ],
+    "new_tests_or_scientific_runs_for_this_review": false
+  },
+  "required_before_first_control_fit": [
+    "Complete and verify all five original baseline runs and the frozen comparison.",
+    "Freeze the final model protocol/extraction release before all ten added feature extractions; verify all outputs and the complete 14-entry feature lock.",
+    "Bind this amendment, resource policy, both scientific protocols, all inputs, exact prepared source closure, full schedule, code closure and private binding hashes in the final execution lock.",
+    "Issue a truthful, reviewed prior-work quiescence receipt after checking actual processes; the original baseline, extraction and unrelated work must not overlap control jobs.",
+    "Validate the final release and empty attempt-tree reader checks before dispatch."
+  ],
+  "failure_policy": "Stop new dispatch after any verified failure; allow an active sibling to finish. Preserve every attempt, with no timeout kill, automatic retry or score-based replacement. Any execution or policy change requires an explicit reviewed record before further dispatch.",
+  "scientific_scores_used_to_choose_scheduling": false,
+  "scientific_result": false
+}

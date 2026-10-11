@@ -59,9 +59,13 @@ for this fixed gallery, not an independent endpoint.
 The authors' source remains unchanged. Fits use the exact reproduction's
 locked Pixi runtime. The original fit context uses four Torch threads; the
 process default restored for evaluation is sixteen, with sixteen inter-op
-threads. Assignment workers and threads remain four each. Run one cell at a
-time. More memory or a documented scheduling change is preferable to silently
-shrinking the experiment.
+threads. Initialization uses four process workers. Assignment readout uses four
+threads; refinement retains its original one-thread assignment call. The prospective
+[scheduling amendment](../rosetta-execution/scheduling-amendment.json) permits
+two lighter cells at a time in adjacent fixed-order batches. A cell using MoCo
+or ELMo runs alone. Both jobs finish before verification; no batch crosses the
+five-reference replay gate. This changes scheduling only. The complete resource
+policy must be bound in the final execution lock before fitting.
 
 This panel evaluates retrieval only. The original reproduction retains its
 three classification evaluations; their results do not become twelve model

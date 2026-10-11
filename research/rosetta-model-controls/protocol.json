@@ -234,7 +234,7 @@
         "train2014",
         "val2014"
       ],
-      "fits": "First all five complete reference replay cells. Then vision-major and text-minor panel order, skipping the already replayed reference; original seed order within each cell. Methods in declared order. One cell process at a time."
+      "fits": "First all five complete reference replay cells. Then vision-major and text-minor panel order, skipping the already replayed reference; original seed order within each cell. Methods in declared order. The published prospective scheduling amendment permits fixed-order batches of at most two shared cell processes; any MoCo or ELMo cell runs alone. No batch crosses the replay/expanded boundary, no exclusive job is skipped, and all active jobs become quiescent before strict verification. Bind the complete resource policy and amendment in the final execution lock."
     },
     "gates": [
       "Complete faithful baseline, independent numerical comparison and investigation of any unexplained mismatch before release for new extraction.",
