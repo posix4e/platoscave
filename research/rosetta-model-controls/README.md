@@ -1,9 +1,11 @@
 # Does the result depend on the chosen models?
 
-**Draft protocol. No added COCO features or model-comparison fits have been run.**
-The [five-seed reproduction](../rosetta-replication/README.md) is running
-separately. This directory prepares the next experiment; its draft files cannot
-authorize extraction or fitting.
+**Protocol frozen for the next experiment. At this release, no added COCO
+features or model-comparison fits have been run.** All five original baseline
+runs are finished. Their [comparison](../rosetta-replication-results/2026-10-11/README.md)
+is close to the published result, with retained retrieval differences and a
+CIFAR-10 displayed-mean mismatch. The [bounded investigation](../rosetta-replication-results/2026-10-11/discrepancy-review.json)
+is complete; the cause remains unresolved. These results stay unchanged.
 
 The question is whether the same unpaired alignment procedure succeeds across
 these fixed image and language pipelines. We keep the data, splits, algorithm,
@@ -178,10 +180,18 @@ the fitted maps or independently prove the stated cause of a failed attempt.
 
 ## Release order and remaining work
 
-The draft [protocol](protocol.json) fixes the proposed scientific choices.
-Before any added corpus extraction, complete the reference audit, finish the
-independent runner review, and publish the complete scientific, code, model,
-runtime and input locks. No draft is executable. After extraction, verify all
+The final [protocol](protocol.json), [extraction lock](extraction-lock.json)
+and [baseline evidence lock](baseline-results-lock.json) fix the choices and
+record the completed baseline. The [outer release](release-lock.json) binds
+these files, reviewed code, model and runtime records, input locks, validation
+records and the completed discrepancy review. Publish this release and verify
+its exact bytes and every bound file before extraction. The operator also checks
+current resource availability and that earlier work has stopped. The extractor
+checks its own lock; it does not enforce the outer release gate itself.
+
+This release admits encoder extraction only. It does not admit alignment fits.
+The historical draft extraction lock and preparation records remain unchanged.
+After extraction, verify all
 fourteen model/split feature entries and bind their bytes in a separate feature
 lock. This second lock records generated data; it cannot alter the earlier
 scientific choices. Then run the five reference replays before the expanded
@@ -217,7 +227,9 @@ checks on every tensor. The readiness records distinguish those checks from
 actual experiment results.
 
 Run the baseline evidence builder only after the original supervisor finishes
-its post-run checks and the frozen `compare.py` has written the complete report:
+its post-run checks and the frozen `compare.py` has written the complete report.
+This was completed for the evidence lock linked above; the command below records
+the procedure and is not a request to repeat it:
 
 ```sh
 python research/rosetta-model-controls/build_baseline_lock.py \

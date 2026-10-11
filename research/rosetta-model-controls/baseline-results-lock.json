@@ -1,0 +1,43 @@
+{
+  "baseline_protocol_sha256": "5c97f9b899566a39f911c5cb5fa9ffd65f8be2ba09c567a2499aa3b41d8c4dba",
+  "baseline_release_lock_sha256": "3d52418723d5da4b3a208f5f2078656b35e508a322c555d07d7aacc822da9c36",
+  "builder_sha256": "32dc32be277b93ece29fa19c75f92099520bdaa329b749edc588f7265cad7cee",
+  "checks_not_performed": [
+    "Live-process quiescence",
+    "Current full input/runtime re-audit",
+    "Independent scientific interpretation of differences"
+  ],
+  "comparison_sha256": "284155f4d8d325565aba041f4519dfd4198a3c6b3ba72b85a8e53e9b9d802af2",
+  "mismatch_policy": "Keep every discrepancy. Any unexplained mismatch must be investigated before the separate model-control release.",
+  "results": {
+    "2197670066": {
+      "file": "8dfed73356bd9c25.json",
+      "sha256": "e4a35f10a5ce742c80013e5fa3b2f62df712a5301c540889315134dfbc9a5db6",
+      "size_bytes": 1176
+    },
+    "2584932063": {
+      "file": "a1b8bc950e3af26d.json",
+      "sha256": "9ec14e128ccf8258abdfe79a1523322903163fcc587aca2aa82188f9c58e9431",
+      "size_bytes": 1176
+    },
+    "576165995": {
+      "file": "3f3b8cfa49d20fae.json",
+      "sha256": "22bd30ab8958854a4e7308ac14e7fbd66de9c2e3bf7b0a7ff04a7c3e704c263c",
+      "size_bytes": 1172
+    },
+    "734796314": {
+      "file": "85b7359f5e715b51.json",
+      "sha256": "1221924862de19cf10aa60938deea49f80c08836a07689ecb26d9d1b343e8805",
+      "size_bytes": 1174
+    },
+    "839703249": {
+      "file": "1a6d12b0da6a4f3a.json",
+      "sha256": "b866a6c4e7eb88e2817c8b6d541a3e62f5cca4c9841de4fc200dbb9c7ffb34b8",
+      "size_bytes": 1174
+    }
+  },
+  "schema_version": 1,
+  "scope": "Five original completed results and their recomputed frozen comparison. This lock records evidence; it does not authorize extraction or fitting or establish whole-paper replication.",
+  "status": "complete",
+  "supervisor_status_sha256": "6bd1ed935b3916a21a3a33d1f9cefc492c310e3d1dc407e14b74689fdac6da2b"
+}

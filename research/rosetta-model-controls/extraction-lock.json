@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-model-controls-v2",
+  "status": "frozen_before_model_control_extraction",
+  "recorded_at_utc": "2026-10-10T23:56:50.991485+00:00",
+  "extractor_sha256": "2437693c5579b08941517b5b280403112e4d0350cf1e9e9283b1091e40aacb05",
+  "preprocessing_id": "authors_dinov2_square224_v1",
+  "caption_slots": 7,
+  "models": {
+    "dino": {
+      "dimension": 768,
+      "dtype": "float32",
+      "batch_size": 1,
+      "device": "cuda",
+      "torch_threads": 1,
+      "interop_threads": 1,
+      "runtime_environment": {
+        "ATEN_CPU_CAPABILITY": "avx2",
+        "MKL_CBWR": "AVX2,STRICT"
+      },
+      "readout": "original_final_cls",
+      "runtime_versions": {
+        "python": "3.12.3",
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "numpy": "2.5.3",
+        "Pillow": "12.3.0"
+      }
+    },
+    "moco": {
+      "dimension": 2048,
+      "dtype": "float32",
+      "batch_size": 1,
+      "device": "cuda",
+      "torch_threads": 1,
+      "interop_threads": 1,
+      "runtime_environment": {
+        "ATEN_CPU_CAPABILITY": "avx2",
+        "MKL_CBWR": "AVX2,STRICT"
+      },
+      "readout": "query_backbone_avgpool",
+      "runtime_versions": {
+        "python": "3.12.3",
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "numpy": "2.5.3",
+        "Pillow": "12.3.0"
+      }
+    },
+    "mae": {
+      "dimension": 768,
+      "dtype": "float32",
+      "batch_size": 1,
+      "device": "cuda",
+      "torch_threads": 1,
+      "interop_threads": 1,
+      "runtime_environment": {
+        "ATEN_CPU_CAPABILITY": "avx2",
+        "MKL_CBWR": "AVX2,STRICT"
+      },
+      "readout": "unmasked_final_cls",
+      "runtime_versions": {
+        "python": "3.12.3",
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "numpy": "2.5.3",
+        "Pillow": "12.3.0"
+      }
+    },
+    "glove": {
+      "dimension": 300,
+      "dtype": "float32",
+      "batch_size": 1,
+      "device": "cpu",
+      "readout": "mean_sorted_known_tokens",
+      "oov_policy": "omit_and_count_unknown_tokens_fail_if_none_known",
+      "runtime_versions": {
+        "python": "3.12.3",
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "numpy": "2.5.3",
+        "Pillow": "12.3.0"
+      }
+    },
+    "elmo": {
+      "dimension": 1024,
+      "dtype": "float32",
+      "batch_size": 1,
+      "device": "cpu",
+      "torch_threads": 4,
+      "interop_threads": 1,
+      "readout": "top_contextual_real_token_mean_fresh_state",
+      "oov_policy": "character_input_fail_empty_or_token_over_48_utf8_bytes",
+      "runtime_versions": {
+        "python": "3.10.19",
+        "torch": "1.12.1+cpu",
+        "torchvision": "0.13.1+cpu",
+        "numpy": "1.23.5",
+        "Pillow": "12.3.0",
+        "allennlp": "2.10.1",
+        "h5py": "3.8.0"
+      }
+    }
+  },
+  "files": {
+    "fresh_helper": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+    "vision_helper": "68278d4d0827acf748dc1a254b18ff39bb918c878311ef6caabcb1453eedc1a6",
+    "elmo_helper": "0fff41c3740a7ece2f89a4b9ba4b50d2d370606357f2ff57cce310a12e3d09ce",
+    "author_encoders": "54cc1ec028a35138edf2bb06a76b484db3c7bdbc6ed49b31e8eeb538db01c48a",
+    "dino_checkpoint": "bf34ad0f424b9029b593e8dc3ed553bf26e88bcba0d32bf3e62a6209cb64c85e",
+    "dino_vit": "b1f998d5f49ab43666b9fc6d007c5f6540c3ead2e8645e144f74045f63ff44d7",
+    "dino_utils": "962a97e1acda1c986dfd921275325e4083f9016dddadcf018f1ccf03fa600eab",
+    "moco_checkpoint": "5e4a3fd7178a95837c0ad71c265ed5f477d271e753ba505b6b6a5e86829eeb7e",
+    "mae_checkpoint": "aec5f0b68e5f3193a00b07bc65a37440db549c15b36b8bea242606cc40c4bc5d",
+    "mae_vit": "6770ed2226d46ab8ba2b1ebc6662cc353dabf759679569acd004f6b3ac868154",
+    "mae_license": "ffe3b1e0b58c1f1250ce48f84d8c37328f9a1ff59bb77b63bc97480cf2778b64",
+    "timm_wheel": "c1598ef61c246e38835a6b834811dcb8d62ae56b644cd54dc3ef9565c8387875",
+    "glove_zip": "6471382cdd837544bf3ac72497a38715e845897d265b2b424b4761832009c837",
+    "elmo_weights": "a6b92b9ccbb13fe489faacd2221c795d4bebe84b75f8aded9d85ea464fa5c994",
+    "elmo_options": "86cb4c1a7e2f25e3867d06810e33ae27fbbd511ac77ca377be5fb7405a7085b1"
+  },
+  "datasets": {
+    "train2014": {
+      "annotation_sha256": "dd8c9636dc11740f956e36728866ea0c4ebe4988dcbdc5e712b7c2267f152d12",
+      "image_manifest_sha256": "dea32f627c713a8b2d43b3764955a2658035ff4b23005ba14b99f77cf4b1c553"
+    },
+    "val2014": {
+      "annotation_sha256": "7da4cc45cb76ee1642d163e846e1e0a33feffac2e841c9c426d585ea499165a4",
+      "image_manifest_sha256": "3e520c9434baae78d8ccc9211b6a387f4ebfe243e6b50c7f06d9721b244ddabe"
+    }
+  },
+  "supporting_locks": {
+    "data": {
+      "file": "data-lock.json",
+      "sha256": "30cec4c87352e9a6aafcc80862daf4d3e9b3a7f3d46c409db632dce91c1be045"
+    },
+    "readiness": {
+      "file": "extraction-readiness.json",
+      "sha256": "c7d795f23315733492fcc3239497a1573471afa36ddf80189ffef15573b56728"
+    }
+  },
+  "source_baseline_provenance": {
+    "upstream_url": "https://github.com/dominik-schnaus/unpaired-rosetta/tree/fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "existing_baseline_locks": {
+      "source-lock.json": {
+        "path": "../rosetta-replication/source-lock.json",
+        "sha256": "223c1b4e9de79386c50c4f326d2b73c02002abb8d963e23ba826279740e43a0b"
+      },
+      "inputs-lock.json": {
+        "path": "../rosetta-replication/inputs-lock.json",
+        "sha256": "85105b3ea186a5cb730dc2a9e9d6a96dfaa9d5dece00cbee91b98915586d1962"
+      },
+      "protocol.json": {
+        "path": "../rosetta-replication/protocol.json",
+        "sha256": "5c97f9b899566a39f911c5cb5fa9ffd65f8be2ba09c567a2499aa3b41d8c4dba"
+      },
+      "reference.json": {
+        "path": "../rosetta-replication/reference.json",
+        "sha256": "0aa18eaa121ef4b7bb3421ff1b6f2eb53a7019efe3978a1562074c8d43a50302"
+      }
+    },
+    "loader_source": {
+      "commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+      "source_file": "modalities/image_captions/datasets.py",
+      "source_sha256": "76cd80132707b368c8180bb47c50283a933e2dfca2703086a7d023d951a20a7d",
+      "function": "coco_captions",
+      "method": "Executed original AST function with raw_root bound to new annotation directory and network download stub that raises; independently compared every image row and caption sequence.",
+      "image_order": "ascending original image ID",
+      "caption_order": "original annotations list order within image",
+      "cache_embedding_row_content_independently_authenticated": false,
+      "limitation": "Matches published loader ordering contract, not an independent re-extraction or semantic authentication of released feature rows."
+    }
+  },
+  "frozen_helper_sources": {
+    "fresh_helper": {
+      "file": "../fresh-pilot/extract.py",
+      "sha256": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624"
+    },
+    "vision_helper": {
+      "file": "../model-choice-controls/vision_features.py",
+      "sha256": "68278d4d0827acf748dc1a254b18ff39bb918c878311ef6caabcb1453eedc1a6"
+    },
+    "elmo_helper": {
+      "file": "../model-choice-controls/elmo_features.py",
+      "sha256": "0fff41c3740a7ece2f89a4b9ba4b50d2d370606357f2ff57cce310a12e3d09ce"
+    }
+  },
+  "scientific_protocol": {
+    "file": "protocol.json",
+    "binding": "The final outer release-lock.json binds this extraction lock, the scientific protocol and all supporting files together. No reverse protocol hash is stored here.",
+    "complete_reviewed_release_required_before_inference": true
+  },
+  "output_contract": {
+    "image_order": "Ascending original image ID, equal to verified image manifest row order.",
+    "caption_order": "Original annotation list order within each image.",
+    "image_features": "FP32 unit vectors, one row per image.",
+    "caption_features": "FP32 unit vector per original caption; all captions retained and padded with NaN to seven slots; no item dropped.",
+    "caption_reduction": "Use unchanged authors load_rows normalization, nanmean across slots and final normalization in stored feature dtype before its subsequent original cast.",
+    "complete_marker_required": "Exactly one valid COMPLETE.json; verify feature_sha256 and metadata_sha256 against actual bytes after all writers stop. Reject missing, conflicting, partial or late-added terminal artifacts, including FAILED.json, COMPLETE.json.partial and FAILED.json.partial.",
+    "failed_attempt_policy": "Retain started receipt, row journal, partial files and any FAILED receipt. Retry from scratch in a new directory only.",
+    "expected_shapes": {
+      "dino": {
+        "train2014": [
+          82783,
+          768
+        ],
+        "val2014": [
+          40504,
+          768
+        ]
+      },
+      "moco": {
+        "train2014": [
+          82783,
+          2048
+        ],
+        "val2014": [
+          40504,
+          2048
+        ]
+      },
+      "mae": {
+        "train2014": [
+          82783,
+          768
+        ],
+        "val2014": [
+          40504,
+          768
+        ]
+      },
+      "glove": {
+        "train2014": [
+          82783,
+          7,
+          300
+        ],
+        "val2014": [
+          40504,
+          7,
+          300
+        ]
+      },
+      "elmo": {
+        "train2014": [
+          82783,
+          7,
+          1024
+        ],
+        "val2014": [
+          40504,
+          7,
+          1024
+        ]
+      }
+    }
+  },
+  "scope": {
+    "pretraining_cleanliness_claimed": false,
+    "preregistration_claimed": false,
+    "real_corpus_feature_extraction_authorized_by_verified_published_release": true
+  },
+  "activation_gate": "Before inference, the operator must verify the published outer release-lock.json against its externally recorded SHA256, verify every bound file and the scientific protocol bindings, and record current process/resource admission. This extraction lock alone does not verify the outer release or baseline investigation. Model-control fitting remains gated on all fourteen verified feature entries and a separate execution release.",
+  "frozen_at_utc": "2026-10-11T04:34:23.190728+00:00"
+}

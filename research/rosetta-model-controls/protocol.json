@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_id": "rosetta-model-controls-v2",
-  "status": "draft_before_model_control_extraction_and_fits",
+  "status": "frozen_before_model_control_fits",
   "objective": "Measure dependence of full COCO unpaired alignment on a selected panel of complete encoder pipelines, with correct-pair and shuffled-pair map controls. This is an exploratory extension, not the full published classification panel or a certificate of uncontaminated pretraining.",
   "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
   "seeds": [
@@ -103,8 +103,8 @@
     "environment": "7ced0256181037bf33d12fe8905c314d64a023786ebadb394f7fefa3eabb6f0c",
     "baseline_inputs": "85105b3ea186a5cb730dc2a9e9d6a96dfaa9d5dece00cbee91b98915586d1962",
     "baseline_protocol": "5c97f9b899566a39f911c5cb5fa9ffd65f8be2ba09c567a2499aa3b41d8c4dba",
-    "extraction": null,
-    "baseline_results": null
+    "extraction": "d9a816a20390dd53a480c3d5e12904f5d279e47f5bc1ae57b525283b97765250",
+    "baseline_results": "0e6b2c82b5465e9a1297f4b30b0fb12e15c2814ffa1267a78bf2698ebf97260b"
   },
   "execution": {
     "num_workers": 4,
@@ -278,11 +278,15 @@
     },
     "privacy": "Publish code, public COCO provenance, locks, aggregate scores and COCO-indexed ranks. Private user photographs, capture metadata, private manifests, paths and raw private features are neither inputs nor publication artifacts.",
     "remaining_goal": "Separate fixed-encoder COCO\u00d7SPC source-removal study, then a genuinely fresh collection after a complete pre-capture lock with fresh unpaired fitting and separate final evaluation. This panel completes neither.",
-    "draft_pending": [
-      "Complete baseline result lock and numerical comparison",
-      "Final extraction lock",
-      "Outer release publication",
-      "All 14 generated and verified feature bindings"
-    ]
-  }
+    "release_status": {
+      "baseline": "All five original runs are complete. The published independent comparison and bounded discrepancy review preserve the numerical differences and unresolved cause.",
+      "extraction": "Final choices are frozen. Publish and verify the outer release before any added corpus inference.",
+      "later_output_gates": [
+        "All fourteen generated and verified feature bindings tied to this unchanged protocol",
+        "A separate complete execution lock before any model-control fit",
+        "All five reference replays agree with our untouched baseline within 1e-10 before expanded fits"
+      ]
+    }
+  },
+  "frozen_at_utc": "2026-10-11T04:34:23.190728+00:00"
 }
