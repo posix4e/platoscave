@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_baseline_evidence_binding",
+  "purpose": "Freeze the reviewed evidence-binding helper before its first use on the actual completed original results. This preparation authorizes no encoder inference, alignment fits or new scientific release.",
+  "files": {
+    "build_baseline_lock.py": "32dc32be277b93ece29fa19c75f92099520bdaa329b749edc588f7265cad7cee",
+    "test_build_baseline_lock.py": "6db8ee7890f69d7c7e449741779d8ab1098746c18bed2dac8cef4bf0c1e77c6e",
+    "baseline-lock-builder-readiness.json": "17e0ce2b3e75ec05a469b31a75499acf9fa6c7935862b3390e16ec38dc4739b2"
+  },
+  "original_release_lock_sha256": "3d52418723d5da4b3a208f5f2078656b35e508a322c555d07d7aacc822da9c36",
+  "input_policy": "Wait for all five original results, final supervisor checks and process quiescence; preserve raw records and use the untouched comparison script.",
+  "output_policy": "Create a new baseline evidence lock only after the helper verifies every recorded result. Bind its output in the later scientific protocol. Never add a reverse hash of that future protocol here.",
+  "verification_boundary": "The operator verifies this manifest and its code files before calling the helper. The helper separately pins and verifies the untouched original release; this preparation is not itself a live-process or runtime check."
+}

@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "status": "draft_execution_helper_checked_not_execution_authorization",
+  "source_sha256": {
+    "execution.py": "332dec331fcfa58ee1fcbc2f30fbd7eee77406fd0992dbba6293338332a4d5fd",
+    "test_execution.py": "a8de10c9631c4d5bccbf1a9edc94d1c3f0e851feb9e6388e39df0ea4432203b7",
+    "README.md": "b91c6bb42771d841dcb855c0d041a97165bc6d4b9566827bcae7e897bef7fb21"
+  },
+  "scientific_scope": {
+    "model_jobs": 60,
+    "methods_per_model_job": 5,
+    "source_jobs": "(3 + number of declared Rv masks + number of declared Rp masks) * 5; proposed budget115, not finalized here.",
+    "original_seeds": [
+      734796314,
+      576165995,
+      2197670066,
+      839703249,
+      2584932063
+    ],
+    "no_data_or_numerical_change": true,
+    "real_scientific_dispatches": 0,
+    "final_execution_release_created": false
+  },
+  "artificial_tests": {
+    "status": "passed",
+    "runtime": "Original unchanged baseline Pixi environment; Python3.14.7.",
+    "command": "python -m pytest test_execution.py -q --junitxml=<private receipt>",
+    "receipt_sha256": "f605bd564e57e39e83cea42a2a6f8be319450aad2ba252d62d6073bd155fbf2a",
+    "receipt_bytes": 4478,
+    "recorded_at_utc": "2026-10-11T01:22:09.564875+00:00",
+    "functions": 35,
+    "additional_passing_subtests": 3,
+    "tests_reported_in_xml": 38,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 1.31,
+    "fixture_scope": "Artificial metadata and fake service lifecycle; no tensors, corpus, masks, models or fitting APIs imported.",
+    "cases": [
+      "Complete schedule and draft/budget/code/environment gates.",
+      "Durable dispatch identity, lost replies, controller restart, descendant occupancy, prior invocation/boot rejection, resource ownership and fixed admission order.",
+      "Failed fit-service stops advancement even with valid scientific artifacts; reader and fit evidence retained.",
+      "Previous accepted jobs remain eligible in later whole-study summaries; stage gates and final artifact-history verification.",
+      "Explicit predecessor-bound retries only; interrupted metadata and conflicting terminal states preserved."
+    ]
+  },
+  "independent_review": {
+    "status": "passed_no_substantive_blocker_identified",
+    "source_sha256": {
+      "execution.py": "332dec331fcfa58ee1fcbc2f30fbd7eee77406fd0992dbba6293338332a4d5fd",
+      "test_execution.py": "a8de10c9631c4d5bccbf1a9edc94d1c3f0e851feb9e6388e39df0ea4432203b7"
+    },
+    "evidence": "Separate read-only reviewer checked source and fixtures, including the final metadata durability/progress delta. No standalone signed review artifact.",
+    "limits": "Reviewer did not rerun tests, launch services or inspect actual scientific outputs."
+  },
+  "remaining_gates": [
+    "Complete original five-seed reproduction and its independent comparison.",
+    "Final extraction release and all14 model/split feature entries.",
+    "Final source-control budget, protocol, preparation release and complete mask bundle.",
+    "Exact full schedule, reviewed resources, actual prior-work quiescence and immutable combined execution release.",
+    "Both strict readers must pass on real inputs before the first control fit; all five reference replays must agree before expansion."
+  ],
+  "live_backend_checks": {
+    "status": "scoped_artificial_operational_checks_passed_with_preserved_first_harness_race",
+    "tested_source_sha256": "b5785a81468f437430b04f0d806d883568967e3aa88ad85d58399f8a9d990555",
+    "final_source_sha256": "332dec331fcfa58ee1fcbc2f30fbd7eee77406fd0992dbba6293338332a4d5fd",
+    "receipts": [
+      {
+        "receipt_sha256": "ad976d440bc797fdad16b401aa652bd0a2ee133a9a27ef642b94308b757fd254",
+        "recorded_at_utc": "2026-10-11T01:26:05.634037+00:00",
+        "coverage_status": "partial-positive-and-negative-coverage",
+        "one_launch_per_unit": true,
+        "main_starts": 1,
+        "child_starts": 1,
+        "final_state": "quiescent",
+        "scientific_complete_marker_present": false,
+        "limits": "Initial backend reconcile succeeded, but private driver then raced creation of its event log. A raw read caught MainPID=0 with child alive; backend reconnect recovery was already quiescent. No relaunch occurred. Descendant-only backend reconcile was tested in the separately approved second unit."
+      },
+      {
+        "receipt_sha256": "b3edecfd6f27ebb762b6fc04121aceb8214a0588bf0f0ed65df90875046157c1",
+        "recorded_at_utc": "2026-10-11T01:26:05.640288+00:00",
+        "coverage_status": "passed-descendant-only-reconnect-and-quiescence",
+        "one_launch_per_unit": true,
+        "main_starts": 1,
+        "child_starts": 1,
+        "final_state": "quiescent",
+        "scientific_complete_marker_present": false,
+        "limits": "SSH-disconnect/reconnect and retained transient service exercised; no reboot survival, scientific result acceptance or full Controller loop exercised."
+      }
+    ],
+    "source_dependency_review_sha256": "7114a1d472b3ab318a0912024c15d55bbb73f7ed1fc123de3981fe58ab25498f",
+    "unchanged_definitions": [
+      "Systemd",
+      "reconcile_service",
+      "PROPERTIES",
+      "SHOW_PROPERTIES"
+    ],
+    "remaining_delta": "Systemd, reconcile_service and both property tables unchanged. write_new now calls new ensure_dir, which creates missing ancestor directories one-by-one and fsyncs each parent; final file write/fsync and parent fsync unchanged. This durability helper delta is statically reviewed, not exercised by the earlier frozen-source unit probe. No third live probe indicated solely by this delta; exact final-source lifecycle tests cover it.",
+    "negative_cases": {
+      "changed_ticket_binding": true,
+      "missing_unit": true,
+      "stale_identity": true
+    },
+    "descendant_only_reconnect": {
+      "main_pid_zero_child_alive": "running",
+      "after_child_exit": "quiescent",
+      "same_invocation": true,
+      "fresh_controller_processes": 3
+    },
+    "scope": "Actual user services on the dedicated experiment VM, frozen artificial backend only. No full Controller execution, real scientific inputs, acceptance or reboot survival tested.",
+    "raw_evidence_policy": "Private logs, process metadata, paths and command tickets are retained outside the repository. Public record binds their complete receipts by hash."
+  }
+}

@@ -224,10 +224,14 @@ python research/rosetta-model-controls/build_baseline_lock.py \
   --out NEW_BASELINE_RESULT_LOCK
 ```
 
+The [preparation manifest](baseline-builder-release.json) binds the reviewed
+builder and its validation record before use on the actual original results.
+Verify its file hashes before running the command above.
+
 The builder checks the recorded source, Pixi binary, input inventory and every
 result against the original locks, then checks those records again before
 publishing. Existing outputs and unfinished output files are preserved. The
-outer release must bind the builder's exact bytes before use. A separate check
+preparation manifest fixes the builder's exact bytes. A separate check
 of live processes, the current runtime and any unexplained numerical difference
 is still required before releasing the model controls.
 
