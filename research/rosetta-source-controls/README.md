@@ -1,8 +1,24 @@
 # Does known source overlap account for the result?
 
-**Scientific protocol fixed; no source fits have run.** It is separate from the
+**Scientific protocol fixed; all 23 input sets prepared and checked; no source fits have run.** It is separate from the
 disjoint-half COCO reproduction and the model comparison. It uses the original released
 DINOv2-B/14 mean image features and MPNet text features throughout.
+
+The [prepared records](prepared-v1/) contain every selected row, the fixed query
+strata, compositions, all 253 intersections among sets and the complete
+115-fit schedule. Their `COMPLETE.json` records metadata preparation only.
+The [independent audit](preparation-audit-v1/audit.json) rebuilt the source join
+from the three public archives and checked all selections, source groups,
+aliases, counts, schedule entries and file hashes without importing the
+preparation helpers. It loaded no model features and ran no fits.
+
+The [verifier](preparation-audit-v1/audit_masks.py) is published exactly as run
+for this fixed protocol. The [execution receipt](preparation-audit-v1/execution-receipt.json)
+records an earlier verifier-only error: it required dictionary keys to appear
+in schedule order, although JSON writes those keys alphabetically. The verifier
+now checks key membership separately from the explicit schedule's exact order.
+The preparation files and experimental code were unchanged; the earlier
+verifier and its failed execution record are retained privately.
 
 The question is whether removing known shared sources hurts retrieval more than
 removing the same amount of text data by a fixed random rule. Removing rows also

@@ -1,0 +1,43 @@
+{
+  "archive_members": {
+    "caption_datasets.zip": {
+      "member": "dataset_coco.json",
+      "member_sha256": "2fd999220673258012acfb411a4e7e66af7d488050b2519b0badcc49b7600b8d",
+      "member_size_bytes": 144186139,
+      "sha256": "4cfd70132527b80933105e5829dc9034eaab9573482e2e680abbab6130244817",
+      "size_bytes": 36745453
+    },
+    "paragraphs_v1.json.zip": {
+      "member": "paragraphs_v1.json",
+      "member_sha256": "3899cd8331100044056869c8f9b7e0746aaf6f09172b2c44a516f4113c4f2d85",
+      "member_size_bytes": 8188009,
+      "sha256": "8407f1068e0711e5f6550d641c523ee26984ee8e02c1d51564369cccd56e8b26",
+      "size_bytes": 2108680
+    },
+    "vg_image_data.json.zip": {
+      "member": "image_data.json",
+      "member_sha256": "93d0053d7e8f451497646fa513e8fb9b1a889df6e757010b88e51e2e21803487",
+      "member_size_bytes": 17612822,
+      "sha256": "b87a94918cb2ff4d952cf1dfeca0b9cf6cd6fd204c2f8704645653be1163681a",
+      "size_bytes": 1780854
+    }
+  },
+  "feature_loads": 0,
+  "fits": 0,
+  "masks_sha256": "1dd8f1fa7fd33207ecfe359643009352251e59820a1c12e936c75650e5f16ab6",
+  "operation": "prepare_all_source_masks",
+  "planned_fits": 115,
+  "prepared_masks": 23,
+  "protocol_id": "rosetta-source-controls-v1",
+  "protocol_sha256": "75076af19cdeeefd3d839e9eb2db9a33af2c47e17a7a0600339763b95b90eeae",
+  "release_lock_sha256": "fc65f7a87b5956d97074e850cc7dc31b3f3df9316398d7fbdf2ec0a0f3205d31",
+  "schema_version": 1,
+  "scope": "Known source metadata only; masks remove no encoder pretraining exposure.",
+  "source_rows_sha256": "641aa61d233530f3c110b07ec8f444fd8dac84470e16e4a1c22907e390e99546",
+  "status": "complete",
+  "strata_counts": {
+    "all": 40504,
+    "never_known_spc_overlap": 37169,
+    "original_spc_overlap": 3335
+  }
+}

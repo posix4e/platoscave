@@ -1,0 +1,4 @@
+{"event": "attempt_started", "stage": "preflight", "at_utc": "2026-10-11T01:39:22.001312+00:00"}
+{"event": "source_identity_and_bytes_verified", "stage": "independent_metadata_join", "at_utc": "2026-10-11T01:39:25.113859+00:00"}
+{"event": "complete_mask_schedule_prepared", "stage": "all_declared_masks", "at_utc": "2026-10-11T01:40:01.681981+00:00"}
+{"event": "attempt_complete", "stage": "final_input_recheck", "at_utc": "2026-10-11T01:40:01.715106+00:00"}

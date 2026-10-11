@@ -1,0 +1,192 @@
+{
+  "schema_version": 1,
+  "status": "independently_checked",
+  "observed_at_utc": "2026-10-11T01:43:38.638492+00:00",
+  "published_commit": "d6496b8d6db66ccdcb649911c60d061285dc22a1",
+  "protocol_sha256": "75076af19cdeeefd3d839e9eb2db9a33af2c47e17a7a0600339763b95b90eeae",
+  "preparation_release_sha256": "fc65f7a87b5956d97074e850cc7dc31b3f3df9316398d7fbdf2ec0a0f3205d31",
+  "auditor_sha256": "b53a78b3109835974779b8104baf474e48eb0ff1c990647b65be7c94cc31ee6a",
+  "preparation_code_sha256": {
+    "prepare_masks.py": "ff63d0c397cc69d486962f09753fc1b98c7c787fbef45f3fc05018ed12858f97",
+    "run_source_arm.py": "6dbf7c3132a75607d5d7912759a88feba3ef943deeb89f3c6d81afcc045648af",
+    "source_primitives.py": "75446992c5c0c6c969e0e37e50da1fc8e655c316b5f44c429dd59612dd3e9de4",
+    "source_masks.py": "102dbbe8c4cab20ff2109af722edd09debc638f5e778a986d72165c5ad022c7b",
+    "run_cell.py": "611aad8867cf174e5c03fc7a534d6edc8215fe9f08bcd056f5cd19943fe2c10a"
+  },
+  "archive_sha256": {
+    "caption_datasets.zip": "4cfd70132527b80933105e5829dc9034eaab9573482e2e680abbab6130244817",
+    "vg_image_data.json.zip": "b87a94918cb2ff4d952cf1dfeca0b9cf6cd6fd204c2f8704645653be1163681a",
+    "paragraphs_v1.json.zip": "8407f1068e0711e5f6550d641c523ee26984ee8e02c1d51564369cccd56e8b26"
+  },
+  "prepared_files_sha256": {
+    "COMPLETE.json": "d13aa02133750f3a959d82fd90921dfaf4db3575ad5f60d293edcdf73ed12a69",
+    "compositions.json": "a501577aec0fc80fbdd796ce1c672d05c8aea72ccde7a2b3b68f1e6a64e29b9b",
+    "intersections.json": "b8d34bb2f9dd133a6b27b993a6c8f3eaa530cb69e9c77882bbe3d4d6d0a0f9c3",
+    "journal.jsonl": "de30d88716225b28507411edbeed0fe834df00551d93bbd3f0cc009ef2a22d59",
+    "masks.json": "1dd8f1fa7fd33207ecfe359643009352251e59820a1c12e936c75650e5f16ab6",
+    "result.json": "934e7cbba2cdeeeeeee729127dd68de6b3536f8849e4751772c9a70384d95e0d",
+    "schedule.json": "f1ae59fd0f136246cff0a5a4a72b7e05c7ced4762442f83667206a04b91bddf9",
+    "source_rows.json": "641aa61d233530f3c110b07ec8f444fd8dac84470e16e4a1c22907e390e99546",
+    "started.json": "6084b1624dfaf8fe8ed68ce6870cde4d5385a7b0f9296d71a92707b13ef801fd"
+  },
+  "canonical_source_identity_sha256": "e4e0e295e82ead25e7afca9a81b4d0c9513e6f56c64247848f6cb5bf9006b455",
+  "masks_checked": 23,
+  "intersections_checked": 253,
+  "scheduled_fits_checked": 115,
+  "strata_counts": {
+    "never_known_spc_overlap": 37169,
+    "original_spc_overlap": 3335,
+    "all": 40504
+  },
+  "masks": {
+    "O": {
+      "mask_sha256": "409ea64e1bc685cfbb06415805708e4183e0600a3d5fce88f5b4b25a389a4c3f",
+      "rows": 19561,
+      "canonical_source_groups": 19549,
+      "groups_with_multiple_vg_aliases": 2
+    },
+    "C": {
+      "mask_sha256": "725fc58de6982ff4552817530e435e4e3ba16b53ef2acb483e4855972eb8399a",
+      "rows": 16224,
+      "canonical_source_groups": 16214,
+      "groups_with_multiple_vg_aliases": 1
+    },
+    "D": {
+      "mask_sha256": "5dc46d2358e7dd0545a64123784c39f9655ef081cea1b632d3ee68c0b0f7ada6",
+      "rows": 9963,
+      "canonical_source_groups": 9956,
+      "groups_with_multiple_vg_aliases": 0
+    },
+    "Rv-1000": {
+      "mask_sha256": "c7ebd5a8f2db784418bbc36c323a89632885a09782ed59c66c46f8eecd330622",
+      "rows": 16224,
+      "canonical_source_groups": 16214,
+      "groups_with_multiple_vg_aliases": 2
+    },
+    "Rv-1001": {
+      "mask_sha256": "a40a3618bab9ecbcf40d52ed1ff8e4f07b858fe737ec877816e8453062d217ed",
+      "rows": 16224,
+      "canonical_source_groups": 16213,
+      "groups_with_multiple_vg_aliases": 2
+    },
+    "Rv-1002": {
+      "mask_sha256": "b302aac2601b77b1ca7c3db400f6416fa61656064265dc166f6c10ab1a6566f4",
+      "rows": 16224,
+      "canonical_source_groups": 16215,
+      "groups_with_multiple_vg_aliases": 2
+    },
+    "Rv-1003": {
+      "mask_sha256": "88b2cd37bf0393207d66e22f33670082acc46f6e7731513df4b7d42f49272288",
+      "rows": 16224,
+      "canonical_source_groups": 16212,
+      "groups_with_multiple_vg_aliases": 2
+    },
+    "Rv-1004": {
+      "mask_sha256": "22d03f915a7557c15ae59d4701cfb94bc78e7b858649b055921ded1e0d0f9e62",
+      "rows": 16224,
+      "canonical_source_groups": 16212,
+      "groups_with_multiple_vg_aliases": 2
+    },
+    "Rv-1005": {
+      "mask_sha256": "f2ae615368f86139478052c184eb73eff1855742cbc53c5237bbd784d5c3729c",
+      "rows": 16224,
+      "canonical_source_groups": 16212,
+      "groups_with_multiple_vg_aliases": 2
+    },
+    "Rv-1006": {
+      "mask_sha256": "85c6f6d20d35aaddba379be9300d3c517e2c91af7a72e14b19a78ebf7caad781",
+      "rows": 16224,
+      "canonical_source_groups": 16213,
+      "groups_with_multiple_vg_aliases": 2
+    },
+    "Rv-1007": {
+      "mask_sha256": "4b0af4f7591a640caf1edd43d8018432ac721e90719acfc3764881432012f36e",
+      "rows": 16224,
+      "canonical_source_groups": 16212,
+      "groups_with_multiple_vg_aliases": 2
+    },
+    "Rv-1008": {
+      "mask_sha256": "f9939e6eabadf84d5afd4fed45167f5d02160a70c8711b2be9bf184e8b112b9c",
+      "rows": 16224,
+      "canonical_source_groups": 16214,
+      "groups_with_multiple_vg_aliases": 2
+    },
+    "Rv-1009": {
+      "mask_sha256": "68c5b94c33d21513ca6f2a2d21c63fd3d458164e2452f5543117d7dec1ef0734",
+      "rows": 16224,
+      "canonical_source_groups": 16214,
+      "groups_with_multiple_vg_aliases": 2
+    },
+    "Rp-2000": {
+      "mask_sha256": "ab744db42a969cdaa43157733255861d927cd8220a36e895f316f83737c1a524",
+      "rows": 9963,
+      "canonical_source_groups": 9957,
+      "groups_with_multiple_vg_aliases": 1
+    },
+    "Rp-2001": {
+      "mask_sha256": "5791dc2924317f86ce7cdc90aec7bf4a379e906676a46ac93b4d5c0400cdc95d",
+      "rows": 9963,
+      "canonical_source_groups": 9957,
+      "groups_with_multiple_vg_aliases": 1
+    },
+    "Rp-2002": {
+      "mask_sha256": "f1954f54c40668ea9bb6df1ea4b608511c68545f2f967436c70ccb2168f76c8c",
+      "rows": 9963,
+      "canonical_source_groups": 9955,
+      "groups_with_multiple_vg_aliases": 1
+    },
+    "Rp-2003": {
+      "mask_sha256": "f2844334937680b198d6f840efc8646d63c0e9907f371c7109756228402d5937",
+      "rows": 9963,
+      "canonical_source_groups": 9955,
+      "groups_with_multiple_vg_aliases": 1
+    },
+    "Rp-2004": {
+      "mask_sha256": "74365dc319a88ca7c551a26809ea477b2c5add77ac0cecd2531820d673b0b4bc",
+      "rows": 9963,
+      "canonical_source_groups": 9957,
+      "groups_with_multiple_vg_aliases": 0
+    },
+    "Rp-2005": {
+      "mask_sha256": "4e2f14a00836d5f1795f422909dd05136d29d3ce5eba7a58283d384699796c9b",
+      "rows": 9963,
+      "canonical_source_groups": 9958,
+      "groups_with_multiple_vg_aliases": 0
+    },
+    "Rp-2006": {
+      "mask_sha256": "ff3ca138daa09a363ea32016eb01009a0480b526e5ff2c6f13ac9d34eb9fc4e3",
+      "rows": 9963,
+      "canonical_source_groups": 9957,
+      "groups_with_multiple_vg_aliases": 1
+    },
+    "Rp-2007": {
+      "mask_sha256": "5513679481e7302b39572ac0b5eed11a1a5c00050a9f7ebf08b7792b17add64b",
+      "rows": 9963,
+      "canonical_source_groups": 9955,
+      "groups_with_multiple_vg_aliases": 1
+    },
+    "Rp-2008": {
+      "mask_sha256": "1120c1d923e1664d0ab56e5c99f1c8cf1983bb0d652f81b3a7d2dc9fd10beea5",
+      "rows": 9963,
+      "canonical_source_groups": 9957,
+      "groups_with_multiple_vg_aliases": 1
+    },
+    "Rp-2009": {
+      "mask_sha256": "7015042aee34aa8cc781b23436bcd552af3683ff6b783dd15939268d07735d8b",
+      "rows": 9963,
+      "canonical_source_groups": 9958,
+      "groups_with_multiple_vg_aliases": 1
+    }
+  },
+  "original_source_groups": 19549,
+  "original_duplicate_source_rows": 12,
+  "original_groups_with_multiple_vg_aliases": 2,
+  "whole_group_and_alias_splitting_violations": 0,
+  "independent_archive_join_and_historical_order": "passed",
+  "exact_sha_ranked_greedy_rv_rp_rule": "passed",
+  "compositions_and_all_pair_intersections": "passed",
+  "complete_manifest_and_final_byte_recheck": "passed",
+  "features_loaded": 0,
+  "fits_performed": 0,
+  "scope": "Independent metadata and mask-integrity audit only. Known source identities do not establish image-byte independence, absence of near duplicates, or clean encoder pretraining."
+}

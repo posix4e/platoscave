@@ -1,0 +1,18 @@
+{
+  "files": {
+    "compositions.json": "a501577aec0fc80fbdd796ce1c672d05c8aea72ccde7a2b3b68f1e6a64e29b9b",
+    "intersections.json": "b8d34bb2f9dd133a6b27b993a6c8f3eaa530cb69e9c77882bbe3d4d6d0a0f9c3",
+    "journal.jsonl": "de30d88716225b28507411edbeed0fe834df00551d93bbd3f0cc009ef2a22d59",
+    "masks.json": "1dd8f1fa7fd33207ecfe359643009352251e59820a1c12e936c75650e5f16ab6",
+    "result.json": "934e7cbba2cdeeeeeee729127dd68de6b3536f8849e4751772c9a70384d95e0d",
+    "schedule.json": "f1ae59fd0f136246cff0a5a4a72b7e05c7ced4762442f83667206a04b91bddf9",
+    "source_rows.json": "641aa61d233530f3c110b07ec8f444fd8dac84470e16e4a1c22907e390e99546",
+    "started.json": "6084b1624dfaf8fe8ed68ce6870cde4d5385a7b0f9296d71a92707b13ef801fd"
+  },
+  "operation": "prepare_all_source_masks",
+  "protocol_id": "rosetta-source-controls-v1",
+  "protocol_sha256": "75076af19cdeeefd3d839e9eb2db9a33af2c47e17a7a0600339763b95b90eeae",
+  "release_lock_sha256": "fc65f7a87b5956d97074e850cc7dc31b3f3df9316398d7fbdf2ec0a0f3205d31",
+  "schema_version": 1,
+  "status": "complete"
+}

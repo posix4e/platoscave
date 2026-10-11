@@ -117,8 +117,10 @@ items and the three classification evaluations. The unchanged authors' software
 passed all 42 method/evaluation tests; all 13 input hashes and 228 source files
 passed preflight.
 
-The first of five runs has finished. Its [named-seed retrieval score](dist/downloads/rosetta-replication-first-seed.json)
-agrees exactly with the published reference. The [status snapshot](dist/downloads/rosetta-replication-status.json)
+Two of five runs have finished. The first [named-seed retrieval score](dist/downloads/rosetta-replication-first-seed.json)
+agrees exactly with the published reference; the fixed reference record has no
+individual author value for the second seed. The [progress record](dist/downloads/rosetta-replication-progress.json)
+contains both results and their checks. The [status snapshot](dist/downloads/rosetta-replication-status.json)
 records its observation time; it is not a live feed. All five outputs and the
 frozen comparison are required before a verdict on this configuration. Report
 paper-rounded agreement separately from available full-precision agreement.
@@ -134,10 +136,13 @@ execution while the baseline and final release remain incomplete.
 
 The paired controls need extra training counterparts because the
 unpaired banks are disjoint; their advantage cannot be attributed solely to
-revealing pair identities. The separate [source-overlap draft](research/rosetta-source-controls/)
+revealing pair identities. The separate [fixed source-overlap protocol](research/rosetta-source-controls/)
 keeps the encoders fixed and compares targeted exclusion with random removal
-of the same number of rows. Its proposed allocation is 115 full-bank fits,
-pending completed-run resource evidence. All remaining paragraphs after both
+of the same number of rows. All 23 input sets and the full 115-fit schedule are
+prepared; an [independent metadata audit](research/rosetta-source-controls/preparation-audit-v1/audit.json)
+checked every selection, source group and file hash. No source fits have run.
+Their execution follows the original reproduction and model panel, under a
+complete combined execution release. All remaining paragraphs after both
 exclusions lack COCO mappings, so that arm cannot be called proved clean.
 A later fresh collection requires a
 complete model/protocol lock and separate fitting and final evaluation scenes.

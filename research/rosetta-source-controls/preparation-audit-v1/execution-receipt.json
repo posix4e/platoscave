@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "started_at_utc": "2026-10-11T01:43:31.171936+00:00",
+  "finished_at_utc": "2026-10-11T01:43:38.923595+00:00",
+  "exit_code": 0,
+  "auditor_sha256": "b53a78b3109835974779b8104baf474e48eb0ff1c990647b65be7c94cc31ee6a",
+  "stdout_sha256": "d0010fe811712c2601622431ec053e30193dd7d066aa908ba2ee1c0b4ca3c4cb",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "audit_sha256": "8dded42b20a0bc7fab11c2d482bf915345cbda40024c704826f41a8dcd581d5d",
+  "previous_audit": {
+    "auditor_sha256": "1d84f6e07110fbcaec93134f4364910d1ba738b013e276aea02ad810946dc109",
+    "disposition": "Verifier-only JSON dictionary-order assumption corrected to set equality; exact separate schedule order remains checked; failed source/log/receipt retained."
+  },
+  "scope": "Independent metadata-only audit; zero fits and feature loads."
+}

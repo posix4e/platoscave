@@ -1,0 +1,9 @@
+{
+  "operation": "prepare_all_source_masks",
+  "protocol_id": "rosetta-source-controls-v1",
+  "protocol_sha256": "75076af19cdeeefd3d839e9eb2db9a33af2c47e17a7a0600339763b95b90eeae",
+  "release_lock_sha256": "fc65f7a87b5956d97074e850cc7dc31b3f3df9316398d7fbdf2ec0a0f3205d31",
+  "retry_policy": "fresh_explicit_attempt_only",
+  "schema_version": 1,
+  "status": "started"
+}
