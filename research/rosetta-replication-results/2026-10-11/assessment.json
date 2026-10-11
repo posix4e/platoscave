@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-11T04:20:11.925832+00:00",
+  "status": "complete_run_discrepancies_under_investigation",
+  "comparison_sha256": "284155f4d8d325565aba041f4519dfd4198a3c6b3ba72b85a8e53e9b9d802af2",
+  "baseline_results_lock_sha256": "0e6b2c82b5465e9a1297f4b30b0fb12e15c2814ffa1267a78bf2698ebf97260b",
+  "public_status_sha256": "bc9b6a3531fcfff9d669c7ff815809aaf991e49b1b443d04df413842afb421e2",
+  "independent_scalar_and_aggregate_review": "passed; independent arithmetic agrees with untouched frozen comparator",
+  "verdict": "Close but not exact reproduction of the available references for one configuration. This result does not disprove Rosetta.",
+  "failed_comparisons": [
+    "Full-precision FOSCTTM mean at absolute tolerance 1e-10",
+    "Full-precision FOSCTTM sample SD at absolute tolerance 1e-10",
+    "CIFAR-10 top-1 mean at paper display precision"
+  ],
+  "matched_comparisons": [
+    "Named seed 734796314 FOSCTTM exactly",
+    "FOSCTTM mean and sample SD at paper display precision",
+    "CIFAR-10 top-1 sample SD at paper display precision",
+    "CIFAR-100 top-5 mean and sample SD at paper display precision",
+    "ImageNet-100 top-5 mean and sample SD at paper display precision"
+  ],
+  "no_adaptive_changes": "Every seed retained; no tolerance, metric, input, setting or reference changed. No replacement run.",
+  "next_action": "Investigate reference provenance and original source/runtime/randomness before added model extraction. Preserve every unexplained difference.",
+  "later_work_incomplete": [
+    "Full selected model pipeline panel and paired/shuffled controls",
+    "Full source-overlap study",
+    "Prospective collection after model/protocol lock, fresh unpaired fitting and separate final evaluation"
+  ]
+}

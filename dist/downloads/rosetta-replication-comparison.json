@@ -1,0 +1,292 @@
+{
+  "aggregates": {
+    "CIFAR-100_top1": {
+      "count": 5,
+      "ddof": 1,
+      "mean": 0.226999993622303,
+      "sample_standard_deviation": 0.07753942920115982
+    },
+    "CIFAR-100_top5": {
+      "count": 5,
+      "ddof": 1,
+      "mean": 0.4570840001106262,
+      "sample_standard_deviation": 0.138405417542908
+    },
+    "CIFAR-10_top1": {
+      "count": 5,
+      "ddof": 1,
+      "mean": 0.705508005619049,
+      "sample_standard_deviation": 0.10201017652136049
+    },
+    "CIFAR-10_top5": {
+      "count": 5,
+      "ddof": 1,
+      "mean": 0.9799559950828552,
+      "sample_standard_deviation": 0.016014587679218876
+    },
+    "ImageNet-100_top1": {
+      "count": 5,
+      "ddof": 1,
+      "mean": 0.20807999819517137,
+      "sample_standard_deviation": 0.07113558829158478
+    },
+    "ImageNet-100_top5": {
+      "count": 5,
+      "ddof": 1,
+      "mean": 0.451280003786087,
+      "sample_standard_deviation": 0.10809132027463245
+    },
+    "fit_and_evaluation_seconds": {
+      "count": 5,
+      "ddof": 1,
+      "mean": 3328.7462425708773,
+      "sample_standard_deviation": 322.8806525623173
+    },
+    "foscttm": {
+      "count": 5,
+      "ddof": 1,
+      "mean": 0.043206930600025444,
+      "sample_standard_deviation": 0.04840590027316027
+    },
+    "mean_rank": {
+      "count": 5,
+      "ddof": 1,
+      "mean": 1751.0103100928304,
+      "sample_standard_deviation": 1960.58417876381
+    },
+    "num_validation_samples": {
+      "count": 5,
+      "ddof": 1,
+      "mean": 40504,
+      "sample_standard_deviation": 0.0
+    }
+  },
+  "comparison_script_sha256": "565d371e862020fb334d91dad189691f8f1a9332a4a46d8c6d82aaad983662a0",
+  "full_precision_comparisons": {
+    "foscttm_mean": {
+      "absolute_error": 0.00021701940094229905,
+      "absolute_tolerance": 1e-10,
+      "observed": 0.043206930600025444,
+      "reference": 0.042989911199083145,
+      "signed_error": 0.00021701940094229905,
+      "strict_numerical_agreement": false
+    },
+    "foscttm_named_seed": {
+      "absolute_error": 0.0,
+      "absolute_tolerance": 1e-10,
+      "observed": 0.016328599083198735,
+      "reference": 0.016328599083198735,
+      "seed": 734796314,
+      "signed_error": 0.0,
+      "strict_numerical_agreement": true
+    },
+    "foscttm_sample_sd": {
+      "absolute_error": 0.0003166040221541655,
+      "absolute_tolerance": 1e-10,
+      "observed": 0.04840590027316027,
+      "reference": 0.0480892962510061,
+      "signed_error": 0.0003166040221541655,
+      "strict_numerical_agreement": false
+    }
+  },
+  "interpretation": {
+    "aggregate_agreement_does_not_establish_each_seed_agrees": true,
+    "four_individual_author_seed_scores_unavailable": true,
+    "mismatches": "Preserve each difference and investigate source, environment, input precision and random streams. No seed is discarded or replaced.",
+    "paper_display_agreement_is_limited_to_printed_precision": true,
+    "strict_tolerance_attribution": "Our prespecified numerical comparison flag, not an author-provided tolerance or statistical test. Apply separately to every available full-precision retrieval reference.",
+    "unrounded_classification_references_unavailable": true,
+    "whole_paper_verdict": "Not assessed by this comparison."
+  },
+  "paper_display_comparisons": {
+    "CIFAR-100_top5": {
+      "mean": {
+        "absolute_error_from_displayed_value": 0.29159998893737793,
+        "decimal_places": 0,
+        "error_reference_is_rounded": true,
+        "observed": 45.70840001106262,
+        "observed_display": "46",
+        "paper_display_agreement": true,
+        "reference_display": "46",
+        "signed_error_from_displayed_value": -0.29159998893737793,
+        "units": "percent"
+      },
+      "sample_standard_deviation": {
+        "absolute_error_from_displayed_value": 0.15945824570919953,
+        "decimal_places": 0,
+        "error_reference_is_rounded": true,
+        "observed": 13.8405417542908,
+        "observed_display": "14",
+        "paper_display_agreement": true,
+        "reference_display": "14",
+        "signed_error_from_displayed_value": -0.15945824570919953,
+        "units": "percentage_points"
+      }
+    },
+    "CIFAR-10_top1": {
+      "mean": {
+        "absolute_error_from_displayed_value": 0.5508005619049072,
+        "decimal_places": 0,
+        "error_reference_is_rounded": true,
+        "observed": 70.55080056190491,
+        "observed_display": "71",
+        "paper_display_agreement": false,
+        "reference_display": "70",
+        "signed_error_from_displayed_value": 0.5508005619049072,
+        "units": "percent"
+      },
+      "sample_standard_deviation": {
+        "absolute_error_from_displayed_value": 0.2010176521360485,
+        "decimal_places": 0,
+        "error_reference_is_rounded": true,
+        "observed": 10.201017652136048,
+        "observed_display": "10",
+        "paper_display_agreement": true,
+        "reference_display": "10",
+        "signed_error_from_displayed_value": 0.2010176521360485,
+        "units": "percentage_points"
+      }
+    },
+    "ImageNet-100_top5": {
+      "mean": {
+        "absolute_error_from_displayed_value": 0.1280003786087036,
+        "decimal_places": 0,
+        "error_reference_is_rounded": true,
+        "observed": 45.128000378608704,
+        "observed_display": "45",
+        "paper_display_agreement": true,
+        "reference_display": "45",
+        "signed_error_from_displayed_value": 0.1280003786087036,
+        "units": "percent"
+      },
+      "sample_standard_deviation": {
+        "absolute_error_from_displayed_value": 0.19086797253675591,
+        "decimal_places": 0,
+        "error_reference_is_rounded": true,
+        "observed": 10.809132027463244,
+        "observed_display": "11",
+        "paper_display_agreement": true,
+        "reference_display": "11",
+        "signed_error_from_displayed_value": -0.19086797253675591,
+        "units": "percentage_points"
+      }
+    },
+    "foscttm": {
+      "mean": {
+        "absolute_error_from_displayed_value": 0.0032069306000254427,
+        "decimal_places": 2,
+        "error_reference_is_rounded": true,
+        "observed": 0.043206930600025444,
+        "observed_display": "0.04",
+        "paper_display_agreement": true,
+        "reference_display": "0.04",
+        "signed_error_from_displayed_value": 0.0032069306000254427,
+        "units": "fraction"
+      },
+      "sample_standard_deviation": {
+        "absolute_error_from_displayed_value": 0.0015940997268397358,
+        "decimal_places": 2,
+        "error_reference_is_rounded": true,
+        "observed": 0.04840590027316027,
+        "observed_display": "0.05",
+        "paper_display_agreement": true,
+        "reference_display": "0.05",
+        "signed_error_from_displayed_value": -0.0015940997268397358,
+        "units": "fraction"
+      }
+    }
+  },
+  "per_seed": [
+    {
+      "metrics": {
+        "CIFAR-100_top1": 0.2528199851512909,
+        "CIFAR-100_top5": 0.5070199966430664,
+        "CIFAR-10_top1": 0.5524600148200989,
+        "CIFAR-10_top5": 0.9788600206375122,
+        "ImageNet-100_top1": 0.23839999735355377,
+        "ImageNet-100_top5": 0.4943999946117401,
+        "fit_and_evaluation_seconds": 3166.930678129196,
+        "foscttm": 0.016328599083198735,
+        "mean_rank": 662.3572486667983,
+        "num_validation_samples": 40504
+      },
+      "raw_result_sha256": "1221924862de19cf10aa60938deea49f80c08836a07689ecb26d9d1b343e8805",
+      "result_id": "85b7359f5e715b51",
+      "seed": 734796314
+    },
+    {
+      "metrics": {
+        "CIFAR-100_top1": 0.2972399890422821,
+        "CIFAR-100_top5": 0.5802599787712097,
+        "CIFAR-10_top1": 0.8102999925613403,
+        "CIFAR-10_top5": 0.9916200041770935,
+        "ImageNet-100_top1": 0.2655999958515167,
+        "ImageNet-100_top5": 0.5424000024795532,
+        "fit_and_evaluation_seconds": 3045.026193857193,
+        "foscttm": 0.008204032652519202,
+        "mean_rank": 333.2879345249852,
+        "num_validation_samples": 40504
+      },
+      "raw_result_sha256": "22bd30ab8958854a4e7308ac14e7fbd66de9c2e3bf7b0a7ff04a7c3e704c263c",
+      "result_id": "3f3b8cfa49d20fae",
+      "seed": 576165995
+    },
+    {
+      "metrics": {
+        "CIFAR-100_top1": 0.29016000032424927,
+        "CIFAR-100_top5": 0.5734800100326538,
+        "CIFAR-10_top1": 0.7749000191688538,
+        "CIFAR-10_top5": 0.9959200024604797,
+        "ImageNet-100_top1": 0.26759999990463257,
+        "ImageNet-100_top5": 0.5350000262260437,
+        "fit_and_evaluation_seconds": 3165.9039266109467,
+        "foscttm": 0.01064814456530285,
+        "mean_rank": 432.2817993284614,
+        "num_validation_samples": 40504
+      },
+      "raw_result_sha256": "e4a35f10a5ce742c80013e5fa3b2f62df712a5301c540889315134dfbc9a5db6",
+      "result_id": "8dfed73356bd9c25",
+      "seed": 2197670066
+    },
+    {
+      "metrics": {
+        "CIFAR-100_top1": 0.17725999653339386,
+        "CIFAR-100_top5": 0.3541800081729889,
+        "CIFAR-10_top1": 0.7279599905014038,
+        "CIFAR-10_top5": 0.9785599708557129,
+        "ImageNet-100_top1": 0.16279999911785126,
+        "ImageNet-100_top5": 0.3962000012397766,
+        "fit_and_evaluation_seconds": 3855.1365213394165,
+        "foscttm": 0.0595615504256764,
+        "mean_rank": 2413.421476891171,
+        "num_validation_samples": 40504
+      },
+      "raw_result_sha256": "b866a6c4e7eb88e2817c8b6d541a3e62f5cca4c9841de4fc200dbb9c7ffb34b8",
+      "result_id": "1a6d12b0da6a4f3a",
+      "seed": 839703249
+    },
+    {
+      "metrics": {
+        "CIFAR-100_top1": 0.11751999706029892,
+        "CIFAR-100_top5": 0.2704800069332123,
+        "CIFAR-10_top1": 0.6619200110435486,
+        "CIFAR-10_top5": 0.9548199772834778,
+        "ImageNet-100_top1": 0.10599999874830246,
+        "ImageNet-100_top5": 0.28839999437332153,
+        "fit_and_evaluation_seconds": 3410.733892917633,
+        "foscttm": 0.12129232627343002,
+        "mean_rank": 4913.7030910527355,
+        "num_validation_samples": 40504
+      },
+      "raw_result_sha256": "9ec14e128ccf8258abdfe79a1523322903163fcc587aca2aa82188f9c58e9431",
+      "result_id": "a1b8bc950e3af26d",
+      "seed": 2584932063
+    }
+  ],
+  "protocol_id": "rosetta-published-coco-baseline-v1",
+  "protocol_sha256": "5c97f9b899566a39f911c5cb5fa9ffd65f8be2ba09c567a2499aa3b41d8c4dba",
+  "reference_sha256": "0aa18eaa121ef4b7bb3421ff1b6f2eb53a7019efe3978a1562074c8d43a50302",
+  "release_lock_sha256": "3d52418723d5da4b3a208f5f2078656b35e508a322c555d07d7aacc822da9c36",
+  "schema_version": 1,
+  "scope": "One complete published zero-pair DINOv2 B/14 mean × MPNet MS COCO configuration, over the five predetermined seeds."
+}

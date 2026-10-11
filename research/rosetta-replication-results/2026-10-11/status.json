@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-published-coco-baseline-v1",
+  "status": "complete",
+  "observed_at_utc": "2026-10-11T04:20:11.925832+00:00",
+  "started_at_utc": "2026-10-10T23:37:36.306739+00:00",
+  "source_release_commit": "e064d49158ae244bf5c2d4ab38e38140798e24c9",
+  "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+  "release_lock_sha256": "3d52418723d5da4b3a208f5f2078656b35e508a322c555d07d7aacc822da9c36",
+  "preflight_sha256": "1f78606a1b6aa91ea81cbad30e0f036430abd65e920e4ebba522dc5ef296ad9a",
+  "expected_seeds": [
+    734796314,
+    576165995,
+    2197670066,
+    839703249,
+    2584932063
+  ],
+  "completed_seeds": [
+    734796314,
+    576165995,
+    2197670066,
+    839703249,
+    2584932063
+  ],
+  "completed_runs": 5,
+  "expected_runs": 5,
+  "complete_reproduction_result_available": true,
+  "upstream_tests_passed": 42,
+  "verified_original_source_files": 228,
+  "verified_input_files": 13,
+  "preflight_status": "passed",
+  "configuration": {
+    "dataset": "coco_train2014",
+    "model_x": "dinov2_vit-b14@224_mean",
+    "model_y": "mpnet",
+    "method": "ours",
+    "modality_x": "vision",
+    "modality_y": "language",
+    "dataset_y": null,
+    "num_pairs": 0,
+    "pairs_dataset": null,
+    "validation": "coco_val2014",
+    "holdout": 0,
+    "train_size": null,
+    "validation_size": null,
+    "classification": [
+      "CIFAR-10",
+      "CIFAR-100",
+      "ImageNet-100"
+    ],
+    "labels": null
+  },
+  "sample_counts": {
+    "train_corpus": 82783,
+    "fit_x": 41391,
+    "fit_y": 41392,
+    "validation": 40504,
+    "CIFAR-10": 50000,
+    "CIFAR-100": 50000,
+    "ImageNet-100": 5000
+  },
+  "algorithm_defaults": {
+    "num_clusters": 30,
+    "num_restarts": 30,
+    "batch_size": 10000,
+    "num_iterations": 100
+  },
+  "scope": "One complete original five-seed configuration; not the whole paper. Released embeddings test alignment, not pretraining history or feature extraction.",
+  "snapshot_note": "All five runs completed. The precise retrieval mean and sample SD differ from the frozen author values, and CIFAR-10 mean differs at printed precision. These discrepancies remain under investigation. Completion does not mean every reference comparison matched.",
+  "completed_results": [
+    {
+      "seed": 734796314,
+      "result_id": "85b7359f5e715b51",
+      "raw_result_sha256": "1221924862de19cf10aa60938deea49f80c08836a07689ecb26d9d1b343e8805",
+      "status": "independently_checked_complete",
+      "named_seed_reference_status": "available",
+      "named_seed_foscttm_agrees_exactly": true
+    },
+    {
+      "seed": 576165995,
+      "result_id": "3f3b8cfa49d20fae",
+      "raw_result_sha256": "22bd30ab8958854a4e7308ac14e7fbd66de9c2e3bf7b0a7ff04a7c3e704c263c",
+      "status": "independently_checked_complete",
+      "named_seed_reference_status": "unavailable_in_frozen_reference",
+      "named_seed_foscttm_agrees_exactly": null
+    },
+    {
+      "seed": 2197670066,
+      "result_id": "8dfed73356bd9c25",
+      "raw_result_sha256": "e4a35f10a5ce742c80013e5fa3b2f62df712a5301c540889315134dfbc9a5db6",
+      "status": "independently_checked_complete",
+      "named_seed_reference_status": "unavailable_in_frozen_reference",
+      "named_seed_foscttm_agrees_exactly": null
+    },
+    {
+      "seed": 839703249,
+      "result_id": "1a6d12b0da6a4f3a",
+      "raw_result_sha256": "b866a6c4e7eb88e2817c8b6d541a3e62f5cca4c9841de4fc200dbb9c7ffb34b8",
+      "status": "independently_checked_complete",
+      "named_seed_reference_status": "unavailable_in_frozen_reference",
+      "named_seed_foscttm_agrees_exactly": null
+    },
+    {
+      "seed": 2584932063,
+      "result_id": "a1b8bc950e3af26d",
+      "raw_result_sha256": "9ec14e128ccf8258abdfe79a1523322903163fcc587aca2aa82188f9c58e9431",
+      "status": "independently_checked_complete",
+      "named_seed_reference_status": "unavailable_in_frozen_reference",
+      "named_seed_foscttm_agrees_exactly": null
+    }
+  ],
+  "preserved_first_seed_record": "rosetta-replication-first-seed.json",
+  "completed_at_utc": "2026-10-11T04:15:09.665171+00:00",
+  "reference_agreement": "discrepancies_remain",
+  "child_returncode": 0,
+  "signals_received": [],
+  "source_unchanged_after_run": true,
+  "inputs_unchanged_after_run": true,
+  "release_unchanged_after_run": true,
+  "baseline_processes_exited": true,
+  "supervisor_status_sha256": "6bd1ed935b3916a21a3a33d1f9cefc492c310e3d1dc407e14b74689fdac6da2b",
+  "baseline_results_lock_sha256": "0e6b2c82b5465e9a1297f4b30b0fb12e15c2814ffa1267a78bf2698ebf97260b",
+  "comparison_file": "rosetta-replication-comparison.json",
+  "comparison_sha256": "284155f4d8d325565aba041f4519dfd4198a3c6b3ba72b85a8e53e9b9d802af2",
+  "result_record": "rosetta-replication-progress.json",
+  "result_record_sha256": "76940c5086789d2ebb5c0d5edadd38307082bc1ff4a54179ccbd63ae4044d236"
+}

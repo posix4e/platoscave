@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "recorded_at_utc": "2026-10-11T04:26:03.734390+00:00",
+  "status": "bounded_investigation_complete_cause_unresolved",
+  "comparison_sha256": "284155f4d8d325565aba041f4519dfd4198a3c6b3ba72b85a8e53e9b9d802af2",
+  "baseline_results_lock_sha256": "0e6b2c82b5465e9a1297f4b30b0fb12e15c2814ffa1267a78bf2698ebf97260b",
+  "scope": "Read-only review of frozen references, original source, completed supervisor integrity records and all five original results. No fits, parameter changes or replacement results.",
+  "confirmed_checks": [
+    "Archived author manifest and paper figure hashes match the frozen references; the selected row and column were independently checked.",
+    "The original configuration uses the same five seeds. The original plotting code uses arithmetic means, sample standard deviations with ddof=1, and the frozen rounding conventions.",
+    "The final supervisor reports unchanged release, 228 original source files and 13 input files, all five expected results, exit code zero and no signals.",
+    "Each original run constructs fresh explicit random streams. Restart seeds are drawn before worker submission, results are collected in submission order, and each native QAP solve is explicitly reseeded. The inspected code does not demonstrate a missing-seed or worker-completion-order error."
+  ],
+  "unresolved": [
+    "Four individual author retrieval values, unrounded classification results and their originating per-run source/runtime records were not found in the bounded public-source search.",
+    "Different native builds, hardware or default thread counts outside the fixed fit context are possible explanations, but none has been established as the cause.",
+    "The exact named-seed agreement does not establish agreement for all five seeds. Small differences alone do not demonstrate nondeterminism or an author error."
+  ],
+  "discrepancies_retained": [
+    "FOSCTTM mean differs by +0.00021701940094229905 and sample SD by +0.0003166040221541655; both fail the fixed absolute tolerance 1e-10.",
+    "CIFAR-10 top-1 mean70.55080056190491% prints71, versus the paper70. This is a comparison to a rounded label, not an available full-precision author mean."
+  ],
+  "release_gate_review": {
+    "protocol_file": "research/rosetta-model-controls/protocol.json",
+    "protocol_sha256": "eaaa980bac48cfabc8a5970e4fb55cdd94e1f7a03f3981fb60b9aa82f119f4a3",
+    "existing_gate": "Complete faithful baseline, independent numerical comparison and investigation of any unexplained mismatch before release for new extraction.",
+    "decision": "This bounded investigation satisfies the discrepancy-review condition while leaving its cause unresolved. It does not activate extraction. The complete final scientific, model, runtime, input and code locks still require publication before any added inference.",
+    "unchanged_hard_gate": "All five reference replays must match the preserved original baseline results within absolute tolerance1e-10 before expanded model fitting. This gate compares with our untouched baseline, not the unavailable individual author values."
+  },
+  "independent_private_receipt_sha256": {
+    "reference_provenance": "ac1ca47a99cbc2e2483dfe4b0b318ad9e2dc6e3b82063789367a270438c46fae",
+    "numerical_source_findings": "262ff935e9fd67aa5e4a5e73dce89e9ea67c661c58b49d32de5fc4708b6683db",
+    "numerical_source_evidence": "adb50e8cbe202fc05ead8612efcdd32c6d1e2224a922245b5a7484f5e8e1a1c3",
+    "terminal_process_receipt": "31e2cbcc3f9f8276f232b1426426ad5d56c76a1ec54a5f75e90b0e4711ef8d31"
+  },
+  "public_sources": [
+    "https://raw.githubusercontent.com/dominik-schnaus/dominik-schnaus.github.io/c99de989f86a23acdf7fc794c90dfbe028cc93ee/unpaired-rosetta/data/manifest.json",
+    "https://arxiv.org/html/2610.09411v1/unpaired-panel_coco_train2014.svg",
+    "https://github.com/dominik-schnaus/unpaired-rosetta/tree/fdfad84ea488f29702a61a455be71622c4ff5d49"
+  ],
+  "preservation": "No tolerance, reference, seed, scientific setting or original result was changed. Any separate future diagnostic must keep these completed results and their discrepancies."
+}
