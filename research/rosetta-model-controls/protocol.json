@@ -215,7 +215,7 @@
       "metrics_are_not_contamination_test": true,
       "summarizer": {
         "source": "summarize_panel.py",
-        "sha256": "906d5819d92409c1a2a3b73ca325695e29be9903c58e8b75710db27050cd7e32",
+        "sha256": "790592ca38bbedc09557c4e3438718767f7771326009751b889e926f85f09d26",
         "methods": 300,
         "five_seed_score_series": 60,
         "contrast_series": 103,

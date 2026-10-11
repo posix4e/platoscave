@@ -6,6 +6,7 @@ can be checked. Small counts below are test fixtures, never production options.
 import copy
 import json
 from pathlib import Path
+import pickle
 from types import SimpleNamespace
 
 import pytest
@@ -223,3 +224,34 @@ def test_documented_retry_uses_earliest_matching_methods_and_retains_reason(synt
     assert s.cell_selection([original,changed])['methods']['rosetta']['status']=='conflicting_repeated_results'
     undocumented=copy.deepcopy(retried); undocumented['retry_review']=None
     assert s.cell_selection([original,undocumented])['methods']['rosetta']['status']=='retry_history_unavailable'
+
+
+@pytest.mark.parametrize('artifact',['split.pt','rosetta/ranks.pt'])
+@pytest.mark.parametrize('payload',[b'',b'not a torch archive'])
+def test_interrupted_tensor_is_retained_and_does_not_hide_reviewed_retry(synthetic,artifact,payload):
+    first,metrics=make_attempt(synthetic)
+    (first/'COMPLETE.json').unlink()  # Artificial interruption: no final manifest.
+    tensor_path=first/artifact
+    tensor_path.write_bytes(payload)
+    if artifact.endswith('ranks.pt'):
+        result_path=first/'rosetta'/'result.json'
+        result=r.read_json(result_path); result['ranks_sha256']=r.digest(tensor_path)
+        result_path.write_text(json.dumps(result)+'\n')
+    with pytest.raises((EOFError,pickle.UnpicklingError)):
+        torch.load(tensor_path,weights_only=True,map_location='cpu')
+    original=inspect(synthetic,first)
+    assert not any(entry['eligible'] for entry in original['methods'].values())
+    assert original['methods']['rosetta']['reported_metrics']==metrics
+    if artifact=='split.pt':
+        assert {'code':'split_verification_failed'} in original['findings']
+    else:
+        assert 'rank_map_or_baseline_verification_failed' in original['methods']['rosetta']['findings']
+    review={'previous_attempt':'attempt-01','reason_kind':'external_execution_failure',
+            'reason':'Artificial interrupted tensor write; original corrupt bytes retained.',
+            'reviewed':True,'source_or_numerics_changed':False,
+            'previous_artifacts':{'started.json':r.digest(first/'started.json')}}
+    second,_=make_attempt(synthetic,counter=2,retry_review=review)
+    selected=s.cell_selection([original,inspect(synthetic,second)])
+    assert not selected['retry_history_findings']
+    assert all(entry['selected_attempt'].endswith('attempt-02') for entry in selected['methods'].values())
+    assert tensor_path.read_bytes()==payload

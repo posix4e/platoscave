@@ -30,6 +30,7 @@ from datetime import datetime, timezone
 import math
 import os
 from pathlib import Path
+import pickle
 import re
 import statistics
 from types import SimpleNamespace
@@ -189,7 +190,7 @@ def inspect_attempt(path, relative, binding, expected, api, bound, reference):
             check_tensors(api.torch.load(path/'split.pt',weights_only=True,map_location='cpu'),expected['split'],api.torch)
             r.require(not finalized or cell.get('split_sha256')==hashes['split.pt'], 'Split hash differs')
             split_ok=True
-        except (OSError,ValueError,TypeError,RuntimeError,KeyError): issues.append({'code':'split_verification_failed'})
+        except (OSError,ValueError,TypeError,RuntimeError,KeyError,EOFError,pickle.UnpicklingError): issues.append({'code':'split_verification_failed'})
     outcomes={}
     for method in r.METHODS:
         name=f'{method}/result.json'; result=read(name)
@@ -219,7 +220,7 @@ def inspect_attempt(path, relative, binding, expected, api, bound, reference):
                 if method=='rosetta' and reference is not None:
                     comparison=r.replay_comparison(result['metrics'],reference)
                     r.require(result.get('baseline_replay')==comparison and comparison['agrees'],'Baseline replay mismatch')
-            except (OSError,ValueError,TypeError,RuntimeError,KeyError):
+            except (OSError,ValueError,TypeError,RuntimeError,KeyError,EOFError,pickle.UnpicklingError):
                 entry['findings'].append('rank_map_or_baseline_verification_failed'); verified=False
         if finalized and cell['methods'].get(method)!=result.get('status'):
             entry['findings'].append('cell_method_status_differs'); verified=False

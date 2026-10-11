@@ -3,8 +3,8 @@
   "protocol_id": "rosetta-model-controls-v2",
   "status": "draft_reporting_checked_not_released",
   "source_sha256": {
-    "summarize_panel.py": "906d5819d92409c1a2a3b73ca325695e29be9903c58e8b75710db27050cd7e32",
-    "test_summarize_panel.py": "d250121e5f4662a7befa60ade2e73beaf3de8ebdf26a0db37948af553ef2764a"
+    "summarize_panel.py": "790592ca38bbedc09557c4e3438718767f7771326009751b889e926f85f09d26",
+    "test_summarize_panel.py": "e05c5fac5c2be9ee25d73e903dd127f57f8eba45581a256d8e176989af344002"
   },
   "synthetic_tests": {
     "tests": 14,
@@ -15,7 +15,10 @@
     "runtime": "Unmodified original locked Pixi environment",
     "receipt_sha256": "5d0d922bff37e1ff841fe3bbd57c3dcebab5e33f4c9ce228962b669fbf25c89c",
     "evidence": "Original locked Pixi runtime XML copied and parsed by root.",
-    "real_features_results_or_fits_used": false
+    "real_features_results_or_fits_used": false,
+    "evidence_classification": "historical_before_interrupted_tensor_handling",
+    "source_sha256": "906d5819d92409c1a2a3b73ca325695e29be9903c58e8b75710db27050cd7e32",
+    "test_source_sha256": "d250121e5f4662a7befa60ade2e73beaf3de8ebdf26a0db37948af553ef2764a"
   },
   "checks": [
     "All60 scheduled cell/seed groups and300 method slots remain visible.",
@@ -27,12 +30,33 @@
     "Conflicting ranks despite equal aggregate scores remain unavailable; no selection of favorable attempts.",
     "Original reference metrics and all5 replay completions gate expanded reporting.",
     "Late additions or removal of per-attempt artifacts/terminal markers invalidate the observation; the attempted snapshot cannot silently ignore a new conflicting FAILED marker.",
-    "Pre-existing COMPLETE.json.partial or FAILED.json.partial also blocks eligibility and cannot authorize a retry."
+    "Pre-existing COMPLETE.json.partial or FAILED.json.partial also blocks eligibility and cannot authorize a retry.",
+    "Empty or malformed split/rank tensors remain unavailable without aborting the entire attempt-history summary; corrupt bytes and reported metrics are retained."
   ],
   "independent_review": {
     "status": "passed_no_substantive_blocker_identified",
     "source_sha256": "906d5819d92409c1a2a3b73ca325695e29be9903c58e8b75710db27050cd7e32",
-    "scope": "Independent full implementation, retry and final partial/late-marker review."
+    "scope": "Independent full implementation, retry and final partial/late-marker review.",
+    "evidence_classification": "historical_before_interrupted_tensor_handling"
+  },
+  "interrupted_tensor_validation": {
+    "recorded_at_utc": "2026-10-11T01:02:11.258987+00:00",
+    "source_sha256": "790592ca38bbedc09557c4e3438718767f7771326009751b889e926f85f09d26",
+    "test_source_sha256": "e05c5fac5c2be9ee25d73e903dd127f57f8eba45581a256d8e176989af344002",
+    "shared_runner_sha256": "611aad8867cf174e5c03fc7a534d6edc8215fe9f08bcd056f5cd19943fe2c10a",
+    "tests": 18,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 3.128,
+    "runtime": "Unmodified original locked Pixi environment",
+    "receipt_sha256": "6520c413c0cf6ac235b230d2ff7d0ea30dc9ccb0c0e5316b22020faedc36ad87",
+    "receipt_bytes": 5214,
+    "evidence": "Exact-runtime XML copied and independently parsed by root; private paths and hostnames omitted.",
+    "change_scope": "Catch EOFError and pickle.UnpicklingError from split/rank decoding. No metric, RNG or attempt-selection rule changed.",
+    "new_fixtures": "Four combinations: empty or corrupt split.pt or ranks.pt. Each first provokes a real Torch decode exception, keeps the interrupted attempt unavailable and bytes intact, then verifies that a bound reviewed later attempt remains reportable.",
+    "independent_read_only_review": "Passed at the recorded source/test hashes; reviewer did not rerun tests.",
+    "real_features_results_or_fits_used": false
   },
   "limits": [
     "Artificial fixtures establish bounded reporting behavior, not experimental success.",
