@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-model-controls-v2",
+  "status": "feature_extraction_running",
+  "observed_at_utc": "2026-10-11T05:13:57.877334+00:00",
+  "release_commit": "c14771afc455c588ad9a19854161b9bc2c60b63e",
+  "outer_release_sha256": "caf5dbb25b1b769526dd3b36c4e9afffb735ca451a8cc447afc03788f56da674",
+  "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
+  "extraction_lock_sha256": "d9a816a20390dd53a480c3d5e12904f5d279e47f5bc1ae57b525283b97765250",
+  "added_extractions_required": 10,
+  "added_extractions_complete": 2,
+  "running": {
+    "model": "moco",
+    "split": "train2014",
+    "attempt": 1,
+    "started_at_utc": "2026-10-11T05:13:15.786968+00:00",
+    "durable_rows_observed": 3128,
+    "expected_rows": 82783,
+    "completion_marker_observed": false
+  },
+  "alignment_cells_complete": 0,
+  "method_results_complete": 0,
+  "required_model_cells": 60,
+  "required_method_results": 300,
+  "scope": "Both DINO extractions are complete and accepted: two of ten added extractions. MoCo training-image extraction is running under the same published release. This is preparation for alignment; no model-comparison result is available. These are observations at the stated time, not a live counter.",
+  "next_steps": [
+    "Verify all ten sequential extractions and all fourteen feature entries.",
+    "Bind the complete execution release and run all five reference replay cells.",
+    "Require agreement with our preserved baseline before expanded model fitting.",
+    "Finish the separate 23-set source-removal study and prospective fresh-data study."
+  ],
+  "completed_extractions": [
+    {
+      "model": "dino",
+      "split": "train2014",
+      "attempt": 1,
+      "row_count": 82783,
+      "shape": [
+        82783,
+        768
+      ],
+      "dtype": "float32",
+      "tensor_bytes": 254310953,
+      "feature_sha256": "3ea3b83abfb37b59eef08d4ae5c9f9cbd71efc0ea55bc395bc8a10e2db88863b",
+      "metadata_sha256": "b88367856bac51d2889a18d064444997a39c297ca11e16032c3eb7328714a0f0",
+      "complete_sha256": "50c8c56dd45c2e5ca9cae76b69043ef7caca4c387d31240a1ffb8bbf8ebe7c67",
+      "completed_at_utc": "2026-10-11T05:01:35.719628+00:00",
+      "successful_service_exit_and_quiescence_verified": true,
+      "acceptance_receipt_sha256": "b948372b16dd6e3c8d2a53479621d49a264d47b0074fa1b01508e855e9d94e55",
+      "verification": "Full artifact hashes, metadata, canonical row and caption order, contiguous row journal, and actual tensor shape/dtype. The required all14-feature builder will later check finite/nonzero entries across every tensor."
+    },
+    {
+      "model": "dino",
+      "split": "val2014",
+      "attempt": 1,
+      "row_count": 40504,
+      "shape": [
+        40504,
+        768
+      ],
+      "dtype": "float32",
+      "tensor_bytes": 124429865,
+      "feature_sha256": "3ae2f99e1058dfdc60228d8b65d42d7e9f64f5446b8e4bb37f0731cf4a6f9c24",
+      "metadata_sha256": "56b8e0f2a68f46a78ad174772fcde44f613ebe1b1b01d89ac494f362c8086880",
+      "complete_sha256": "0cf55573cc255684ea5a5946cb4b3d799c5abbe1caa1645c34cd3ef04febaee5",
+      "completed_at_utc": "2026-10-11T05:12:39.211954+00:00",
+      "successful_service_exit_and_quiescence_verified": true,
+      "acceptance_receipt_sha256": "475e1357cde377b246fc569b8f3ddde9b83103e21f60f21df13bb502a2992fb5",
+      "verification": "Full artifact hashes, metadata, canonical row and caption order, contiguous row journal, and actual tensor shape/dtype. The required all14-feature builder will later check finite/nonzero entries across every tensor."
+    }
+  ],
+  "private_acceptance_and_next_admission_observation_sha256": "e7adb4271bc38020ef2daa18a6e22f13f2526fe6fd4022e05040c4a016a858de"
+}
