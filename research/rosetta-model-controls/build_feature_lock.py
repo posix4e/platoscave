@@ -44,7 +44,8 @@ def path_leaves(value):
         runner.require(isinstance(value, str) and Path(value).is_absolute(), 'Private bindings must contain absolute paths only')
 
 
-def expand_bindings(inputs):
+def expand_bindings(inputs, bound=None):
+    bound = runner.BoundFiles() if bound is None else bound
     required = {'source_root', 'python_executable', 'locks', 'datasets', 'baseline_results', 'feature_inputs'}
     runner.require(required <= set(inputs) <= required | {'baseline_replays'}, 'Unexpected or missing private binding fields')
     path_leaves(inputs)
@@ -61,7 +62,7 @@ def expand_bindings(inputs):
             runner.require(path.is_file(), 'Released input must be a tensor file')
             result['features'][name] = {'tensor': str(path)}
         else:
-            runner.require(path.is_dir() and not (path / 'FAILED.json').exists(), 'Extraction must be an intact nonfailed directory')
+            bound.completed_attempt(path)
             result['features'][name] = {key: str(path / filename) for key, filename in
                                        (('tensor', 'features.pt'), ('metadata', 'features.json'), ('complete', 'COMPLETE.json'))}
     return result
@@ -119,7 +120,7 @@ def assemble(protocol_path, protocol_sha, inputs):
     bound.add(__file__, runner.digest(__file__))
     for name, expected in protocol['code_sha256'].items():
         bound.add(ROOT / name, expected)
-    bindings = expand_bindings(inputs)
+    bindings = expand_bindings(inputs, bound)
     extraction_lock = bound.json(bindings['locks']['extraction'], protocol['locks']['extraction'])
     runner.require(extraction_lock.get('schema_version') == 1 and extraction_lock.get('protocol_id') == runner.PROTOCOL_ID and
                    extraction_lock.get('status') == 'frozen_before_model_control_extraction', 'A final extraction lock is required')

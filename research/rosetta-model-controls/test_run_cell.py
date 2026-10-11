@@ -1,6 +1,8 @@
 """Synthetic interface checks; no corpus features or real Rosetta fits are used."""
 from pathlib import Path
 from types import SimpleNamespace
+import json
+import sys
 
 import pytest
 import torch
@@ -210,3 +212,78 @@ def test_validation_rejects_partial_caption_padding(tmp_path, api):
     torch.save(values, path)
     with pytest.raises(ValueError, match='padding'):
         runner.validate_tensor(path, {'modality': 'language', 'dtype': 'float32'}, [2, 7, 3], [2, 2], api)
+
+
+def test_baseline_replay_gate_rejects_initial_and_late_conflicting_or_partial_markers(tmp_path):
+    paths, references = {}, {}
+    for seed in runner.SEEDS:
+        root=tmp_path/str(seed); root.mkdir(); paths[str(seed)]=str(root)
+        binding={'status':'complete','protocol_sha256':'a'*64,'feature_lock_sha256':'b'*64,
+                 'vision':'dinov2','text':'mpnet','seed':seed}
+        metrics={'foscttm':.1,'mean_rank':4051.3,'num_validation_samples':runner.COUNTS['validation']}
+        references[seed]={'sha256':'c'*64,'metrics':metrics}
+        runner.write_json_new(root/'cell.json',binding)
+        for method in runner.METHODS:
+            folder=root/method; folder.mkdir()
+            for name in ('map.pt','ranks.pt'): (folder/name).write_bytes(b'artificial bytes')
+            result={**binding,'method':method,'metrics':metrics,
+                    'map_sha256':runner.digest(folder/'map.pt'),'ranks_sha256':runner.digest(folder/'ranks.pt')}
+            if method=='rosetta': result['baseline_replay']=runner.replay_comparison(metrics,references[seed])
+            runner.write_json_new(folder/'result.json',result)
+        runner.write_json_new(root/'COMPLETE.json',{**binding,'files':{str(p.relative_to(root)):runner.digest(p) for p in root.rglob('*') if p.is_file()}})
+    for name in ('FAILED.json','COMPLETE.json.partial','FAILED.json.partial'):
+        bound=runner.BoundFiles()
+        runner.require_baseline_replays(paths,'a'*64,'b'*64,references,bound)
+        marker=Path(paths[str(runner.SEEDS[0])])/name; marker.write_text('{"interrupted":')
+        with pytest.raises(ValueError,match='Conflicting or partial'):
+            bound.recheck()
+        with pytest.raises(ValueError,match='Conflicting or partial'):
+            runner.require_baseline_replays(paths,'a'*64,'b'*64,references,runner.BoundFiles())
+        marker.unlink()
+
+
+def reviewed_record(binding):
+    return {**binding,'previous_attempt':'attempt-01','previous_artifacts':{'FAILED.json':'d'*64},
+            'reviewed':True,'source_or_numerics_changed':False,'reason_kind':'external_execution_failure',
+            'reason':'Artificial reviewed interruption; this test never fits a model.'}
+
+
+def test_retry_review_is_copied_and_bound_before_model_preflight(tmp_path,monkeypatch):
+    out=tmp_path/'attempt-02'; private=tmp_path/'private-02'
+    binding={'schema_version':1,'protocol_id':runner.PROTOCOL_ID,'protocol_sha256':'a'*64,'feature_lock_sha256':'b'*64,
+             'vision':'dinov2','text':'mpnet','seed':runner.SEEDS[0]}
+    review=tmp_path/'approved.json'; review.write_text(json.dumps(reviewed_record(binding),indent=4)+'\n')
+    digest=runner.digest(review); calls=[]
+    def stop(args,bound):
+        calls.append(True)
+        assert (out/'retry-review.json').read_bytes()==review.read_bytes()
+        assert bound.files[(out/'retry-review.json').resolve()]==digest
+        raise ValueError('artificial preflight stop')
+    monkeypatch.setattr(runner,'locked_inputs',stop)
+    monkeypatch.setattr(sys,'argv',['run_cell.py','--protocol',str(tmp_path/'p'),'--protocol-sha256','a'*64,
+        '--feature-lock',str(tmp_path/'f'),'--feature-lock-sha256','b'*64,'--bindings',str(tmp_path/'b'),
+        '--out',str(out),'--private-log-dir',str(private),'--vision','dinov2','--text','mpnet','--seed',str(runner.SEEDS[0]),
+        '--retry-review',str(review),'--retry-review-sha256',digest])
+    with pytest.raises(ValueError,match='artificial preflight stop'): runner.main()
+    assert calls and (out/'FAILED.json').is_file()
+    assert (out/'retry-review.json').read_bytes()==review.read_bytes()
+
+
+@pytest.mark.parametrize('mutation',['pair','digest','binding','unreviewed','changed_numerics','reason','counter','predecessor_hash'])
+def test_retry_hook_rejects_unreviewed_or_wrongly_bound_records(tmp_path,mutation):
+    binding={'schema_version':1,'protocol_id':runner.PROTOCOL_ID,'protocol_sha256':'a'*64,'feature_lock_sha256':'b'*64,
+             'vision':'dinov2','text':'mpnet','seed':runner.SEEDS[0]}
+    record=reviewed_record(binding)
+    if mutation=='binding': record['protocol_sha256']='c'*64
+    if mutation=='unreviewed': record['reviewed']=False
+    if mutation=='changed_numerics': record['source_or_numerics_changed']=True
+    if mutation=='reason': record['reason_kind']='unfavorable_score'
+    if mutation=='counter': record['previous_attempt']='attempt-03'
+    if mutation=='predecessor_hash': record['previous_artifacts']['FAILED.json']='bad'
+    path=tmp_path/'approved.json'; runner.write_json_new(path,record)
+    args=SimpleNamespace(retry_review=path,retry_review_sha256=None if mutation=='pair' else '0'*64 if mutation=='digest' else runner.digest(path))
+    attempt=runner.Attempt(tmp_path/'attempt-02',tmp_path/'private',binding)
+    try:
+        with pytest.raises(ValueError): runner.install_retry_review(args,attempt,runner.BoundFiles())
+        assert not (attempt.out/'retry-review.json').exists()
+    finally: attempt.journal.close()

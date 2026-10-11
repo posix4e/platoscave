@@ -94,7 +94,7 @@
   },
   "new_rosetta_fits": 60,
   "code_sha256": {
-    "run_cell.py": "f55bebcb0d0e73876b6ac269ef6f021a9e91b7e9e2f5244ac421a0f0e5dc32bc",
+    "run_cell.py": "611aad8867cf174e5c03fc7a534d6edc8215fe9f08bcd056f5cd19943fe2c10a",
     "control_primitives.py": "32632eeda161423ea954b179c0dea9626dab915c4895265b681a39fb59cb2dc6",
     "extract_features.py": "2437693c5579b08941517b5b280403112e4d0350cf1e9e9283b1091e40aacb05"
   },
@@ -270,7 +270,8 @@
           "input_failure"
         ],
         "reason": "Nonempty public explanation, reviewed:true, source_or_numerics_changed:false.",
-        "previous_artifacts": "Hash of predecessor FAILED.json, or started.json only when there is no terminal marker."
+        "previous_artifacts": "Hash of predecessor FAILED.json, or started.json only when there is no terminal marker.",
+        "installation": "Paired --retry-review and --retry-review-sha256 arguments copy and bind an existing reviewed record before preflight. The launcher must separately verify the predecessor's actual artifact bytes and stopped state; the runner neither approves nor automatically dispatches a retry."
       },
       "selection": "Earliest eligible method by attempt counter. Every later eligible repetition must have exact identical FOSCTTM/mean_rank and canonical COCO-ID-sorted per-query midrank hash. Any conflict, undocumented retry chain or multiple fully COMPLETE cells makes the affected comparison unavailable. No choice by score.",
       "terminal_markers": "Exactly one valid terminal manifest, no conflicting, partial or late-added terminal artifact. Partial/conflicting predecessors cannot authorize retries."

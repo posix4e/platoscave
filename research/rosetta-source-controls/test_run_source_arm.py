@@ -276,3 +276,27 @@ def test_full_preflight_composes_all_locks_masks_features_and_runtime_gates(tmp_
     Path(feature_paths["train_x"]).write_bytes(b"changed")
     with pytest.raises(ValueError, match="hash differs"):
         runner.preflight(args, runner.r.BoundFiles())
+
+
+def test_reviewed_retry_bytes_are_installed_before_source_preflight_and_terminal_bound(tmp_path,monkeypatch):
+    args=args_fixture(tmp_path)
+    args.out=tmp_path/'attempt-02'
+    binding={'schema_version':1,'protocol_id':runner.PROTOCOL_ID,'protocol_sha256':args.protocol_sha256,
+             'masks_sha256':args.masks_sha256,'mask':args.mask,'seed':args.seed}
+    record={**binding,'previous_attempt':'attempt-01','previous_artifacts':{'started.json':'d'*64},
+            'reviewed':True,'source_or_numerics_changed':False,'reason_kind':'input_failure',
+            'reason':'Artificial reviewed missing-input interruption; no fitting is attempted.'}
+    args.retry_review=tmp_path/'review.json'; args.retry_review.write_text(json.dumps(record,indent=4)+'\n')
+    args.retry_review_sha256=runner.r.digest(args.retry_review)
+    calls=[]
+    def stop(args,bound):
+        calls.append(True)
+        target=args.out/'retry-review.json'
+        assert target.read_bytes()==args.retry_review.read_bytes()
+        assert bound.files[target.resolve()]==args.retry_review_sha256
+        raise ValueError('artificial source preflight stop')
+    monkeypatch.setattr(runner,'preflight',stop)
+    with pytest.raises(ValueError,match='artificial source preflight stop'): runner.run(args)
+    assert calls
+    marker=runner.r.read_json(args.out/'FAILED.json')
+    assert marker['files']['retry-review.json']==args.retry_review_sha256

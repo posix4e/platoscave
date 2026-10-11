@@ -64,8 +64,8 @@
     ]
   },
   "code_sha256": {
-    "run_cell.py": "f55bebcb0d0e73876b6ac269ef6f021a9e91b7e9e2f5244ac421a0f0e5dc32bc",
-    "run_source_arm.py": "eba2a216f4d95cc34804ef8a585a4713964dc9888df326eb28b389f2bd71df58",
+    "run_cell.py": "611aad8867cf174e5c03fc7a534d6edc8215fe9f08bcd056f5cd19943fe2c10a",
+    "run_source_arm.py": "6dbf7c3132a75607d5d7912759a88feba3ef943deeb89f3c6d81afcc045648af",
     "source_masks.py": "102dbbe8c4cab20ff2109af722edd09debc638f5e778a986d72165c5ad022c7b",
     "source_primitives.py": "75446992c5c0c6c969e0e37e50da1fc8e655c316b5f44c429dd59612dd3e9de4"
   },
@@ -171,7 +171,7 @@
       "inference": "Descriptive conditional variability only. No p-values, equivalence verdict, achieved-power claim, best seed/mask or naive query-level confidence interval. Masks share sources and are not independent corpora.",
       "implementation": {
         "source": "summarize_source.py",
-        "sha256": "8dc998ce495433ec4ebbb691b4701277fe7bd3abe7dc55378263777a48902c29",
+        "sha256": "1c59ca05f15df720bb66160934a725837cc9953481f71781c39a76ad567dcb85",
         "mask_budget": "All explicit protocol selection seeds; no hardcoded random-mask count.",
         "contrasts": "Four within-seed contrasts for each of the three fixed strata, on all six metrics.",
         "limits": "Saved-rank/order/tie/metric consistency, not a new scoring of fitted maps or independent verification of failure causes."
@@ -210,7 +210,8 @@
           "input_failure"
         ],
         "reason": "Nonempty public explanation, reviewed:true, source_or_numerics_changed:false.",
-        "previous_artifacts": "Predecessor FAILED.json hash, or started.json hash only when no terminal marker exists."
+        "previous_artifacts": "Predecessor FAILED.json hash, or started.json hash only when no terminal marker exists.",
+        "installation": "Paired --retry-review and --retry-review-sha256 arguments copy and bind an existing reviewed record before preflight. The launcher must separately verify the predecessor's actual artifact bytes and stopped state; the runner neither approves nor automatically dispatches a retry."
       }
     },
     "release_order": [

@@ -149,6 +149,12 @@ or multiple complete attempts remain unavailable. A reviewed execution/input
 retry needs a reason and predecessor hash inside its new attempt, bound by the
 final manifest; no retry follows a complete attempt or an unfavorable score.
 
+For an already reviewed retry, pass both `--retry-review` and
+`--retry-review-sha256`. The runner copies and binds that exact record before
+preflight. The launcher must first verify the previous attempt's actual hashes
+and establish that its process has stopped. The runner does not approve or
+automatically dispatch another attempt.
+
 This study evaluates retrieval. It does not reproduce all classification
 endpoints of the authors' cross-dataset experiment. It also leaves encoder
 pretraining untouched. In particular, removing SPC paragraphs cannot remove

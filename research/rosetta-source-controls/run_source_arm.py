@@ -51,7 +51,7 @@ import traceback
 from types import SimpleNamespace
 
 
-HELPER_SHA256 = "f55bebcb0d0e73876b6ac269ef6f021a9e91b7e9e2f5244ac421a0f0e5dc32bc"
+HELPER_SHA256 = "611aad8867cf174e5c03fc7a534d6edc8215fe9f08bcd056f5cd19943fe2c10a"
 HELPER_PATH = Path(__file__).resolve().parent.parent / "rosetta-model-controls" / "run_cell.py"
 if hashlib.sha256(HELPER_PATH.read_bytes()).hexdigest() != HELPER_SHA256:
     raise ValueError("Pinned shared runner utilities differ")
@@ -314,6 +314,7 @@ def run(args):
     attempt = Attempt(args.out, args.private_log_dir, binding)
     bound = r.BoundFiles()
     try:
+        r.install_retry_review(args, attempt, bound)
         data = preflight(args, bound)
         attempt.event("preflight_passed")
         result = execute(attempt, data, args.seed)
@@ -331,6 +332,8 @@ def main():
     for name in ("protocol-sha256", "masks-sha256", "mask"):
         parser.add_argument("--" + name, required=True)
     parser.add_argument("--seed", type=int, required=True)
+    parser.add_argument("--retry-review", type=Path)
+    parser.add_argument("--retry-review-sha256")
     print(json.dumps(run(parser.parse_args()), indent=2))
 
 

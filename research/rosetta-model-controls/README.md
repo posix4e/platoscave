@@ -160,6 +160,14 @@ per-query ranks when sorted by COCO ID. A disagreement, undocumented retry or
 multiple complete cells makes the affected comparison unavailable. A numerical
 change requires a separately identified amended protocol.
 
+For an already reviewed retry, pass both `--retry-review` and
+`--retry-review-sha256`. The runner copies and binds that exact record before
+preflight. This records a decision; it does not make one. The launcher must
+first establish that the previous process has stopped and verify its actual
+artifact hashes. Restarting a launcher must reconnect to an existing attempt;
+it cannot resume a cell halfway through its five methods. A reviewed new
+attempt repeats the whole cell and retains every earlier result.
+
 The summary checks every directory in the declared experiment tree. It verifies
 saved ranks, metrics and the original ID/randomness order, but does not rescore
 the fitted maps or independently prove the stated cause of a failed attempt.

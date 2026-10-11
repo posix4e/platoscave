@@ -34,7 +34,7 @@ import re
 import statistics
 from types import SimpleNamespace
 
-RUNNER_SHA256 = 'eba2a216f4d95cc34804ef8a585a4713964dc9888df326eb28b389f2bd71df58'
+RUNNER_SHA256 = '6dbf7c3132a75607d5d7912759a88feba3ef943deeb89f3c6d81afcc045648af'
 ROOT = Path(__file__).resolve().parent
 if hashlib.sha256((ROOT / 'run_source_arm.py').read_bytes()).hexdigest() != RUNNER_SHA256:
     raise ValueError('Pinned source runner differs')

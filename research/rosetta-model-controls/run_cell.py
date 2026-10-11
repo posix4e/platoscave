@@ -153,6 +153,7 @@ class BoundFiles:
     """Private paths, exact byte hashes, and a final unchanged-input check."""
     def __init__(self):
         self.files = {}
+        self.completed_attempts = set()
 
     def add(self, path, expected, size=None):
         path = Path(path).resolve(strict=True)
@@ -166,9 +167,57 @@ class BoundFiles:
     def json(self, path, expected):
         return read_json(self.add(path, expected))
 
+    def completed_attempt(self, path):
+        root = require_complete_attempt(path)
+        self.completed_attempts.add(root)
+        return root
+
     def recheck(self):
         for path, expected in self.files.items():
             require(digest(path) == expected, 'A bound file changed during execution')
+        for root in self.completed_attempts:
+            require_complete_attempt(root)
+
+
+def require_complete_attempt(path):
+    root = Path(path).resolve(strict=True)
+    require(root.is_dir() and (root / 'COMPLETE.json').is_file(), 'Completed attempt requires COMPLETE.json')
+    require(not any((root / name).exists() or (root / name).is_symlink() for name in
+                    ('FAILED.json', 'COMPLETE.json.partial', 'FAILED.json.partial')),
+            'Conflicting or partial completion markers cannot be consumed')
+    return root
+
+
+def install_retry_review(args, attempt, bound):
+    """Copy an existing reviewed record before preflight; never authorize a retry.
+
+    The launcher separately checks predecessor liveness, identity and actual
+    terminal/start bytes. This hook checks the record and binds its exact bytes.
+    """
+    path, expected = getattr(args, 'retry_review', None), getattr(args, 'retry_review_sha256', None)
+    require((path is None) == (expected is None), 'Retry review path and SHA256 must be supplied together')
+    if path is None:
+        return
+    record = bound.json(path, sha(expected))
+    no_local_paths(record)
+    fields = {'previous_attempt', 'previous_artifacts', 'reviewed', 'source_or_numerics_changed', 'reason_kind', 'reason'}
+    require(isinstance(record, dict) and set(record) == set(attempt.binding) | fields and
+            all(record.get(k) == v for k, v in attempt.binding.items()), 'Retry review binding differs')
+    current = re.fullmatch(r'attempt-(0[1-9]|[1-9][0-9])', attempt.out.name)
+    require(current is not None and int(current[1]) > 1 and
+            record['previous_attempt'] == f'attempt-{int(current[1])-1:02d}', 'Retry predecessor counter differs')
+    previous = record['previous_artifacts']
+    require(isinstance(previous, dict) and set(previous) in ({'FAILED.json'}, {'started.json'}), 'Retry predecessor must bind one terminal/start artifact')
+    for value in previous.values():
+        sha(value)
+    require(record['reviewed'] is True and record['source_or_numerics_changed'] is False and
+            record['reason_kind'] in ('external_execution_failure', 'input_failure') and
+            isinstance(record['reason'], str) and bool(record['reason'].strip()), 'Retry requires reviewed external/input failure with unchanged source and numerics')
+    target = attempt.out / 'retry-review.json'
+    with target.open('xb') as stream:
+        stream.write(Path(path).read_bytes()); stream.flush(); os.fsync(stream.fileno())
+    bound.add(target, expected)
+    attempt.event('retry_review_installed')
 
 
 def normalized_versions(values):
@@ -301,7 +350,7 @@ def feature_paths(flock, bindings, rows, extraction_lock, baseline_inputs, bound
         else:
             require(path.name == 'features.pt' and Path(local['metadata']).resolve() == path.parent / 'features.json' and
                     Path(local['complete']).resolve() == path.parent / 'COMPLETE.json', 'Use one intact extraction attempt directory')
-            require(not (path.parent / 'FAILED.json').exists(), 'Failed extraction cannot be consumed')
+            bound.completed_attempt(path.parent)
             metadata = bound.json(local['metadata'], entry['metadata_sha256'])
             complete = bound.json(local['complete'], entry['complete_sha256'])
             binding = {'protocol_id': PROTOCOL_ID, 'model': model, 'split': split,
@@ -363,13 +412,13 @@ def replay_comparison(metrics, reference):
 def require_baseline_replays(paths, protocol_sha, feature_sha, references, bound):
     require(set(paths) == {str(seed) for seed in SEEDS}, 'All five completed baseline replays must precede expansion')
     for seed in SEEDS:
-        root = Path(paths[str(seed)]).resolve(strict=True)
+        root = bound.completed_attempt(paths[str(seed)])
         marker_path = root / 'COMPLETE.json'
         marker = read_json(marker_path)
         bound.add(marker_path, digest(marker_path))
         expected = {'status': 'complete', 'protocol_sha256': protocol_sha, 'feature_lock_sha256': feature_sha,
                     'vision': 'dinov2', 'text': 'mpnet', 'seed': seed}
-        require(all(marker.get(k) == v for k, v in expected.items()) and not (root / 'FAILED.json').exists(), 'Wrong or failed baseline replay')
+        require(all(marker.get(k) == v for k, v in expected.items()), 'Wrong or failed baseline replay')
         require('cell.json' in marker['files'] and all(f'{m}/result.json' in marker['files'] for m in METHODS), 'Incomplete baseline replay receipt')
         for name, expected_hash in marker['files'].items():
             path = (root / name).resolve(strict=True)
@@ -612,6 +661,8 @@ def main():
     parser.add_argument('--vision', choices=VISION, required=True)
     parser.add_argument('--text', choices=TEXT, required=True)
     parser.add_argument('--seed', type=int, choices=SEEDS, required=True)
+    parser.add_argument('--retry-review', type=Path)
+    parser.add_argument('--retry-review-sha256')
     args = parser.parse_args()
     sha(args.protocol_sha256); sha(args.feature_lock_sha256)
     require(not args.out.exists() and not args.out.is_symlink() and not args.private_log_dir.exists(), 'Fresh attempt and private log directories are required')
@@ -621,6 +672,7 @@ def main():
     attempt = Attempt(args.out, args.private_log_dir, binding)
     bound = BoundFiles()
     try:
+        install_retry_review(args, attempt, bound)
         protocol, api, rows, paths, references = locked_inputs(args, bound)
         bound.recheck()
         attempt.event('preflight_passed')

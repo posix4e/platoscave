@@ -7,11 +7,11 @@
     "test_source_masks.py": "4bfadabd23d3d5da0ba8db20953638a8bd25e80548b7b636d8f117779c6a3445",
     "source_primitives.py": "75446992c5c0c6c969e0e37e50da1fc8e655c316b5f44c429dd59612dd3e9de4",
     "test_source_primitives.py": "25edf67fd0035f70afe01cb7afd02717fe0c0abb1476ae0f9db3edb05ad2ffa3",
-    "run_source_arm.py": "eba2a216f4d95cc34804ef8a585a4713964dc9888df326eb28b389f2bd71df58",
-    "test_run_source_arm.py": "1122c2eb6d57aa1c22cefe13432fb7c8464f202b412719db5e251c90b32d97f3",
+    "run_source_arm.py": "6dbf7c3132a75607d5d7912759a88feba3ef943deeb89f3c6d81afcc045648af",
+    "test_run_source_arm.py": "9c3f549841a4a03f8f8c10ecc8a95ad97e32a6bb3aea17c5368a1d966c87bbc9",
     "prepare_masks.py": "ff63d0c397cc69d486962f09753fc1b98c7c787fbef45f3fc05018ed12858f97",
     "test_prepare_masks.py": "4b3560fe388d9e8f439e96e04429eb105e69466c6e53eb8be76df98db0beb43a",
-    "summarize_source.py": "8dc998ce495433ec4ebbb691b4701277fe7bd3abe7dc55378263777a48902c29",
+    "summarize_source.py": "1c59ca05f15df720bb66160934a725837cc9953481f71781c39a76ad567dcb85",
     "test_summarize_source.py": "7b9de99ac2d228e18b59925ca2e03409025d714651599fe76e5858a4b76d6428"
   },
   "checks": {
@@ -23,7 +23,9 @@
       "elapsed_seconds": 3.435,
       "receipt_sha256": "e92087809ece42111780cd04743183df17c50f6fa99331ed8ead2030cb737016",
       "evidence": "Original locked Pixi runtime XML receipt; root parsed exact copied bytes.",
-      "real_features_or_rosetta_fits": false
+      "real_features_or_rosetta_fits": false,
+      "evidence_classification": "historical_before_completion_guard_retry_hook_delta",
+      "revision_note": "Original test counts, timings and receipts retained; current dependency validation is in completion_guard_retry_hook_validation."
     },
     "test_run_source_arm.py": {
       "tests": 19,
@@ -33,7 +35,9 @@
       "elapsed_seconds": 2.047,
       "receipt_sha256": "ca135ad0ec09fec5c3c1ec246c8f741df9e96dd1f650c570bb90ca767ebdbc33",
       "evidence": "Original locked Pixi runtime XML receipt; root parsed exact copied bytes.",
-      "real_features_or_rosetta_fits": false
+      "real_features_or_rosetta_fits": false,
+      "evidence_classification": "historical_before_completion_guard_retry_hook_delta",
+      "revision_note": "Original test counts, timings and receipts retained; current dependency validation is in completion_guard_retry_hook_validation."
     },
     "test_source_masks.py": {
       "tests": 11,
@@ -45,7 +49,9 @@
       "synthetic_tests": 10,
       "read_only_existing_metadata_tests": 1,
       "archived_masks_validated": 13,
-      "new_real_masks_issued": false
+      "new_real_masks_issued": false,
+      "evidence_classification": "historical_before_completion_guard_retry_hook_delta",
+      "revision_note": "Original test counts, timings and receipts retained; current dependency validation is in completion_guard_retry_hook_validation."
     },
     "test_prepare_masks.py": {
       "tests": 12,
@@ -56,7 +62,9 @@
       "evidence": "Recorded implementation-agent tool output; independent read-only source/test review. No standalone XML receipt.",
       "runtime": "Python3.14.8 standard library, no Torch import.",
       "synthetic_zip_fixtures": true,
-      "new_real_masks_issued": false
+      "new_real_masks_issued": false,
+      "evidence_classification": "historical_before_completion_guard_retry_hook_delta",
+      "revision_note": "Original test counts, timings and receipts retained; current dependency validation is in completion_guard_retry_hook_validation."
     },
     "test_summarize_source.py": {
       "tests": 16,
@@ -67,7 +75,9 @@
       "receipt_sha256": "f015f44632b60bb23d372a59216673c6c71cec8904cfbac2211a5ac5b9b14fe3",
       "evidence": "Original locked Pixi runtime XML copied and parsed by root.",
       "real_features_results_or_fits_used": false,
-      "independent_review": "passed_no_substantive_blocker_identified"
+      "independent_review": "passed_no_substantive_blocker_identified",
+      "evidence_classification": "historical_before_completion_guard_retry_hook_delta",
+      "revision_note": "Original test counts, timings and receipts retained; current dependency validation is in completion_guard_retry_hook_validation."
     }
   },
   "independent_read_only_review": {
@@ -81,7 +91,9 @@
       "Complete schedule, original training/evaluation permutations, canonical COCO ranks/ties, all six metrics, complete-mask/complete-seed descriptive contrasts and reviewed retry history.",
       "Stable, partial, conflicting or newly appearing terminal artifacts disable eligibility; no silent successful-subset aggregation."
     ],
-    "limits": "Source review and artificial execution, not end-to-end full-size fitting or proof of correctness."
+    "limits": "Source review and artificial execution, not end-to-end full-size fitting or proof of correctness.",
+    "evidence_classification": "historical_before_completion_guard_retry_hook_delta",
+    "revision_note": "Preserved earlier evidence; see historical_source_sha256_before_completion_guard_delta. This entry was not rerun or re-reviewed on the current changed code bytes."
   },
   "original_environment_smoke_check": {
     "status": "passed",
@@ -98,7 +110,9 @@
     "torch_interop_threads": 16,
     "original_source_unchanged": true,
     "real_feature_loads": 0,
-    "fits": 0
+    "fits": 0,
+    "evidence_classification": "historical_before_completion_guard_retry_hook_delta",
+    "revision_note": "Preserved earlier evidence; see historical_source_sha256_before_completion_guard_delta. This entry was not rerun or re-reviewed on the current changed code bytes."
   },
   "remaining_gates": [
     "Finalize proposed mask budget using completed full-setting resource evidence before masks/fits.",
@@ -114,5 +128,151 @@
     "An ambiguous or incomplete terminal marker cannot count as success.",
     "Neither source removal nor these checks certify uncontaminated pretrained encoders.",
     "Reporting reconstructs saved-rank metrics; it does not rescore fitted maps or independently prove declared retry reasons."
-  ]
+  ],
+  "historical_source_sha256_before_completion_guard_delta": {
+    "source_masks.py": "102dbbe8c4cab20ff2109af722edd09debc638f5e778a986d72165c5ad022c7b",
+    "test_source_masks.py": "4bfadabd23d3d5da0ba8db20953638a8bd25e80548b7b636d8f117779c6a3445",
+    "source_primitives.py": "75446992c5c0c6c969e0e37e50da1fc8e655c316b5f44c429dd59612dd3e9de4",
+    "test_source_primitives.py": "25edf67fd0035f70afe01cb7afd02717fe0c0abb1476ae0f9db3edb05ad2ffa3",
+    "run_source_arm.py": "eba2a216f4d95cc34804ef8a585a4713964dc9888df326eb28b389f2bd71df58",
+    "test_run_source_arm.py": "1122c2eb6d57aa1c22cefe13432fb7c8464f202b412719db5e251c90b32d97f3",
+    "prepare_masks.py": "ff63d0c397cc69d486962f09753fc1b98c7c787fbef45f3fc05018ed12858f97",
+    "test_prepare_masks.py": "4b3560fe388d9e8f439e96e04429eb105e69466c6e53eb8be76df98db0beb43a",
+    "summarize_source.py": "8dc998ce495433ec4ebbb691b4701277fe7bd3abe7dc55378263777a48902c29",
+    "test_summarize_source.py": "7b9de99ac2d228e18b59925ca2e03409025d714651599fe76e5858a4b76d6428"
+  },
+  "shared_code_sha256": {
+    "run_cell.py": "611aad8867cf174e5c03fc7a534d6edc8215fe9f08bcd056f5cd19943fe2c10a"
+  },
+  "completion_guard_retry_hook_validation": {
+    "recorded_at_utc": "2026-10-11T00:54:26.958217+00:00",
+    "status": "passed_synthetic_tests_and_independent_read_only_review",
+    "change_scope": "Metadata and lifecycle only: completed feature/replay directories reject FAILED and partial terminal markers both initially and during final bound rechecks; both fit runners copy, fsync and bind an existing reviewed retry record before preflight. No numerical, RNG, model, dataset or mask-selection change.",
+    "tested_source_sha256": {
+      "rosetta-model-controls/run_cell.py": "611aad8867cf174e5c03fc7a534d6edc8215fe9f08bcd056f5cd19943fe2c10a",
+      "rosetta-model-controls/test_run_cell.py": "ff89a115c635281baff65bc9833939ebd881e277b98489405df28c4258d486b9",
+      "rosetta-model-controls/build_feature_lock.py": "fe3bd25481900afda61e6d7d0f087ddaa70a2c7958d4bca87526eb3fb6e1b077",
+      "rosetta-model-controls/test_build_feature_lock.py": "5c7bfdb420fb7a28ff75722f3b4a9342f119ab7d81db3e0e1d01ebe74e0dea56",
+      "rosetta-model-controls/summarize_panel.py": "906d5819d92409c1a2a3b73ca325695e29be9903c58e8b75710db27050cd7e32",
+      "rosetta-model-controls/test_summarize_panel.py": "d250121e5f4662a7befa60ade2e73beaf3de8ebdf26a0db37948af553ef2764a",
+      "rosetta-model-controls/control_primitives.py": "32632eeda161423ea954b179c0dea9626dab915c4895265b681a39fb59cb2dc6",
+      "rosetta-model-controls/extract_features.py": "2437693c5579b08941517b5b280403112e4d0350cf1e9e9283b1091e40aacb05",
+      "rosetta-source-controls/run_source_arm.py": "6dbf7c3132a75607d5d7912759a88feba3ef943deeb89f3c6d81afcc045648af",
+      "rosetta-source-controls/test_run_source_arm.py": "9c3f549841a4a03f8f8c10ecc8a95ad97e32a6bb3aea17c5368a1d966c87bbc9",
+      "rosetta-source-controls/summarize_source.py": "1c59ca05f15df720bb66160934a725837cc9953481f71781c39a76ad567dcb85",
+      "rosetta-source-controls/test_summarize_source.py": "7b9de99ac2d228e18b59925ca2e03409025d714651599fe76e5858a4b76d6428",
+      "rosetta-source-controls/source_primitives.py": "75446992c5c0c6c969e0e37e50da1fc8e655c316b5f44c429dd59612dd3e9de4",
+      "rosetta-source-controls/source_masks.py": "102dbbe8c4cab20ff2109af722edd09debc638f5e778a986d72165c5ad022c7b"
+    },
+    "runtime": {
+      "description": "Unmodified original locked baseline Pixi runtime; staged candidate helpers only.",
+      "python_version": "3.14.7",
+      "environment_receipt_sha256": "7ced0256181037bf33d12fe8905c314d64a023786ebadb394f7fefa3eabb6f0c",
+      "activation": {
+        "ATEN_CPU_CAPABILITY": "avx2",
+        "MKL_CBWR": "AVX2,STRICT"
+      }
+    },
+    "receipt_verification": "All five XML files copied from the exact candidate test directory; local SHA256 matched the independently reported remote file SHA256; parsed failures/errors/skipped were zero. Private paths and hostnames are omitted.",
+    "suites": {
+      "test_run_cell.py": {
+        "receipt_sha256": "3dadebe998966a81b7ba5604a7298baeae7aad1cb15114af550122dce14724ee",
+        "receipt_bytes": 5474,
+        "receipt_format": "pytest JUnit XML",
+        "recorded_at_utc": "2026-10-11T00:48:25.706796+00:00",
+        "tests_reported_in_xml": 19,
+        "testcase_elements": 19,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "elapsed_seconds": 3.655,
+        "command": "python -m pytest test_run_cell.py -q --junitxml=<private receipt>"
+      },
+      "test_build_feature_lock.py": {
+        "receipt_sha256": "514563a008371fed526c0828f99387df0da95b58bb1eea5cb11e2c7e0ba2bbd7",
+        "receipt_bytes": 3000,
+        "receipt_format": "pytest JUnit XML",
+        "recorded_at_utc": "2026-10-11T00:48:32.099079+00:00",
+        "tests_reported_in_xml": 20,
+        "testcase_elements": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "elapsed_seconds": 0.136,
+        "command": "python -m pytest test_build_feature_lock.py -q --junitxml=<private receipt>",
+        "count_note": "Pytest reported 10 test functions plus 10 passing unittest subtests; XML tests=20 with 10 testcase elements."
+      },
+      "test_run_source_arm.py": {
+        "receipt_sha256": "5a4564e5e6a5cada8ebd18bdba7f1b5a681b55c48831ad0ab1d5e281e12d1219",
+        "receipt_bytes": 5888,
+        "receipt_format": "pytest JUnit XML",
+        "recorded_at_utc": "2026-10-11T00:48:33.738223+00:00",
+        "tests_reported_in_xml": 20,
+        "testcase_elements": 20,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "elapsed_seconds": 2.111,
+        "command": "python -m pytest test_run_source_arm.py -q --junitxml=<private receipt>"
+      },
+      "test_summarize_panel.py": {
+        "receipt_sha256": "7f45dd37f2d874fa9c2f1c13d2e97e9e1cd8df32ec3ac7cd618cccf8f55e0413",
+        "receipt_bytes": 4094,
+        "receipt_format": "pytest JUnit XML",
+        "recorded_at_utc": "2026-10-11T00:48:37.920487+00:00",
+        "tests_reported_in_xml": 14,
+        "testcase_elements": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "elapsed_seconds": 2.635,
+        "command": "python -m pytest test_summarize_panel.py -q --junitxml=<private receipt>"
+      },
+      "test_summarize_source.py": {
+        "receipt_sha256": "95e408db5726ba77c1d24ebd5260807e80490d3dc7164987702f1095562210c3",
+        "receipt_bytes": 4802,
+        "receipt_format": "pytest JUnit XML",
+        "recorded_at_utc": "2026-10-11T00:48:42.636579+00:00",
+        "tests_reported_in_xml": 16,
+        "testcase_elements": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "elapsed_seconds": 2.236,
+        "command": "python -m pytest test_summarize_source.py -q --junitxml=<private receipt>"
+      }
+    },
+    "totals": {
+      "test_functions": 79,
+      "additional_passing_builder_subtests": 10,
+      "tests_reported_in_xml": 89,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "independent_read_only_review": {
+      "status": "passed_no_substantive_blocker_identified",
+      "reviewed_source_sha256": {
+        "rosetta-model-controls/run_cell.py": "611aad8867cf174e5c03fc7a534d6edc8215fe9f08bcd056f5cd19943fe2c10a",
+        "rosetta-model-controls/build_feature_lock.py": "fe3bd25481900afda61e6d7d0f087ddaa70a2c7958d4bca87526eb3fb6e1b077",
+        "rosetta-source-controls/run_source_arm.py": "6dbf7c3132a75607d5d7912759a88feba3ef943deeb89f3c6d81afcc045648af",
+        "rosetta-source-controls/summarize_source.py": "1c59ca05f15df720bb66160934a725837cc9953481f71781c39a76ad567dcb85"
+      },
+      "evidence": "Separate reviewer reported final read-only delta review in the task, at these exact source hashes. No standalone signed review artifact.",
+      "scope": [
+        "Same completion-state guard retained from consumption through final bound recheck.",
+        "Initially present and late FAILED/COMPLETE.json.partial/FAILED.json.partial markers cannot be consumed.",
+        "Retry-review exact source and copied bytes are verified, fsynced and bound before preflight.",
+        "Runner-owned fresh attempt directories are preserved; no automatic retry, reason generation or numerical change."
+      ],
+      "limits": "Reviewer did not rerun tests or inspect actual scientific outputs. Actual predecessor liveness, terminal/start hashes and reviewed authorization remain outer-launcher responsibilities."
+    },
+    "real_benchmark_features_or_results_read": false,
+    "new_real_masks_generated": false,
+    "real_rosetta_fits_performed": false,
+    "encoder_inference_performed": false,
+    "tiny_synthetic_original_paired_map_fits_performed": true,
+    "historical_evidence_note": "This dated record is the new exact-byte validation. Earlier smoke/tests/reviews below remain historical and were not silently relabelled as runs against these changed source bytes."
+  },
+  "evidence_interpretation": "source_sha256 records current file bytes. Historical evidence remains tied to earlier revisions; only the separately dated completion_guard_retry_hook_validation record describes the new affected-suite runs and delta review."
 }

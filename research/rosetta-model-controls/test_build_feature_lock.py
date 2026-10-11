@@ -108,6 +108,23 @@ class BuilderTest(unittest.TestCase):
         (folder/'COMPLETE.json').unlink()
         with self.assertRaises(FileNotFoundError): self.candidate()
 
+    def test_partial_and_late_failure_markers_block_builder_and_feature_consumers(self):
+        folder=Path(self.inputs['feature_inputs']['dino/train2014'])
+        for marker in ('FAILED.json','COMPLETE.json.partial','FAILED.json.partial'):
+            with self.subTest(marker=marker):
+                candidate=self.candidate()
+                assembled=r.BoundFiles(); builder.expand_bindings(self.inputs,assembled)
+                downstream=r.BoundFiles()
+                with patch.object(r,'validate_tensor'):
+                    r.feature_paths(candidate,self.bindings['features'],self.rows,self.extraction_lock,self.publisher,
+                                    downstream,SimpleNamespace(extraction=x))
+                (folder/marker).write_text('{"interrupted":')
+                with self.assertRaisesRegex(ValueError,'Conflicting or partial'): builder.expand_bindings(self.inputs)
+                with self.assertRaisesRegex(ValueError,'Conflicting or partial'): self.validate_identities(candidate)
+                with self.assertRaisesRegex(ValueError,'Conflicting or partial'): assembled.recheck()
+                with self.assertRaisesRegex(ValueError,'Conflicting or partial'): downstream.recheck()
+                (folder/marker).unlink()
+
     def test_completion_metadata_and_dataset_identity_guards(self):
         folder=Path(self.inputs['feature_inputs']['dino/train2014'])
         original_metadata=r.read_json(folder/'features.json'); original_marker=r.read_json(folder/'COMPLETE.json')
