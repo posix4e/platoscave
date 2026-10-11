@@ -1,7 +1,7 @@
 # Does known source overlap account for the result?
 
-**Design draft. This study has not run.** It is separate from the disjoint-half
-COCO reproduction and the model comparison. It uses the original released
+**Scientific protocol fixed; no source fits have run.** It is separate from the
+disjoint-half COCO reproduction and the model comparison. It uses the original released
 DINOv2-B/14 mean image features and MPNet text features throughout.
 
 The question is whether removing known shared sources hurts retrieval more than
@@ -11,7 +11,7 @@ comparison must expose both effects rather than treating every change as proof
 of memorization.
 
 The earlier 15 reduced fits and their protocol remain unchanged. Their scores
-are already known. This new proposal uses complete fitting populations, the
+are already known. This study uses complete fitting populations, the
 authors' full algorithm settings and the entire validation gallery. It is a
 descriptive follow-up; it does not inherit the earlier proposal's unaccepted
 effect margin, confirmatory tests or power claims.
@@ -34,7 +34,7 @@ precedence over Visual Genome IDs where the metadata supplies a mapping. This
 also joins two cases in which different Visual Genome IDs refer to the same
 COCO source. Unmapped sources retain their Visual Genome identity.
 
-The proposed sampler follows the earlier audit: order whole source groups by a
+The sampler follows the earlier audit: order whole source groups by a
 seeded SHA-256 value, retain groups that fit the remaining row budget, and restore
 original paragraph-row order. It is not uniform sampling of all possible row
 subsets. Record this rule, each actual mask and its hash, group sizes, known
@@ -64,13 +64,15 @@ conversion. Estimate centering from each arm's own fitting rows. Retaining the
 original arm's mean after removing sources would leave information from those
 sources in the cleaned arm.
 
-The proposed allocation is ten Rv masks and ten Rp masks, each crossed with
+The fixed allocation is ten Rv masks and ten Rp masks, each crossed with
 all five algorithm seeds, plus five fits each for O, C and D: **115 fits**.
-Proposed selection seeds are 1000–1009 for Rv and 2000–2009 for Rp. They are
+Selection seeds are 1000–1009 for Rv and 2000–2009 for Rp. They are
 separate from fitting randomness. This allocation favors repeated deletions
 while retaining the authors' five seeds. It is a practical exploratory budget,
-not a power calculation. Check its resource cost against completed full-run
-timings before freezing it. Any change must precede fitting and remain visible.
+not a power calculation. The [resource decision](resource-decision.json) uses
+the first two completed full-setting runtimes and available memory and storage.
+Different source-bank geometry may cost more. Keep all 115 fits; a resource
+shortfall delays work rather than removing masks or seeds.
 
 ## Keep the exposed queries in the evaluation
 
@@ -102,20 +104,21 @@ stratum, calculate:
 
 Also report `F(C) − F(O)` and `F(D) − F(C)`. Positive targeted-minus-random
 differences mean the targeted removal hurt more than its row-count control.
-Report all five contrasts, their mean and spread, and every mask's score. Do
-not count fifty mask/seed combinations as fifty independent datasets. Missing
+Report each contrast for all five seeds, its mean and spread, and every mask's
+score. Do not count fifty mask/seed combinations as fifty independent datasets. Missing
 fits remain missing rather than disappearing from the average.
 
 These are conditional, descriptive comparisons. There is no significance test,
-equivalence margin or claim of adequate power in this draft. Row-count controls
+equivalence margin or claim of adequate power. Row-count controls
 do not automatically match categories, paragraph style, group sizes or mapping
 coverage. The effects cannot isolate memorization from those changes.
 
 ## What must happen before execution
 
-The original published-result reproduction and model panel remain earlier work
-in the plan. This directory prepares source grouping and evaluation code while
-they run. It has no final execution lock or released run schedule.
+The original published-result reproduction and model panel remain before source
+fitting in the plan. Metadata preparation can proceed while the reproduction
+runs: it reads public source archives and loads no feature tensors. The final
+combined execution lock is still required before fitting.
 
 Before a real fit, verify the original four tensors and complete source metadata;
 freeze all actual masks, fixed query strata, gallery IDs, source/runtime/code
@@ -123,10 +126,10 @@ identities and reporting rules; and test the new wrapper against the authors'
 cross-dataset loading and randomness. Publish that complete release before
 running it. Preserve every attempt, failure and numerical result.
 
-The [draft protocol](protocol.json) records the full populations and proposed
+The [fixed protocol](protocol.json) records the full populations and 115-fit
 budget. The [four-input lock](inputs-lock.json) and
 [metadata record](metadata-provenance.json) identify the existing public data.
-Neither enables execution while the protocol has draft status.
+These records do not replace the later combined execution release.
 
 `source_masks.py` keeps source groups intact. `source_primitives.py` preserves
 the authors' loading, randomness and full-gallery evaluation. `run_source_arm.py`
@@ -134,7 +137,9 @@ checks the release and runs one prescribed mask/seed attempt. `prepare_masks.py`
 requires a final code release, independently rebuilds source identities from the
 three archives and writes every declared mask and the complete schedule before
 fitting. A later execution lock must bind both this bundle and the scientific
-protocol. No new real masks have been constructed for this draft.
+protocol. The [preparation release](preparation-release.json) binds the exact
+helper code before actual masks are constructed; its validation uses artificial
+ZIP fixtures and does not establish a scientific result.
 
 `summarize_source.py` checks every declared mask and seed, reconstructs the
 metrics from canonical ranks and tie counts, and preserves incomplete attempts.

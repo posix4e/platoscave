@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-source-controls-v1",
+  "status": "frozen_before_source_control_fits",
+  "protocol_sha256": "75076af19cdeeefd3d839e9eb2db9a33af2c47e17a7a0600339763b95b90eeae",
+  "code_sha256": {
+    "prepare_masks.py": "ff63d0c397cc69d486962f09753fc1b98c7c787fbef45f3fc05018ed12858f97",
+    "run_source_arm.py": "6dbf7c3132a75607d5d7912759a88feba3ef943deeb89f3c6d81afcc045648af",
+    "source_primitives.py": "75446992c5c0c6c969e0e37e50da1fc8e655c316b5f44c429dd59612dd3e9de4",
+    "source_masks.py": "102dbbe8c4cab20ff2109af722edd09debc638f5e778a986d72165c5ad022c7b",
+    "run_cell.py": "611aad8867cf174e5c03fc7a534d6edc8215fe9f08bcd056f5cd19943fe2c10a"
+  },
+  "recorded_at_utc": "2026-10-11T01:36:16.421421+00:00",
+  "operation": "prepare_all_declared_source_masks_only",
+  "supporting_sha256": {
+    "resource-decision.json": "47975738844a60e05f5c8c254a43bf95150347a046498c674928761380f20854",
+    "preparation-readiness.json": "efabccda2e57dd03d56fc06fda7050cdbe005dea0276427d951868bde5f1b95f",
+    "implementation-readiness.json": "4c75c2c6fd317a9ac4a6ac4685713a8452d00884e594dc0a259a8e2771bfdf69",
+    "inputs-lock.json": "f78d32abca45a4492a9646b188f88a1d4f5cb91fb74ded7e820643a9b9aa1132",
+    "metadata-provenance.json": "bad6a77cfa049a18f65404c0e5af2e0c8064a51e0f554a2ff5acb6d974f9a297"
+  },
+  "fits_authorized": false,
+  "scope": "Freeze scientific choices and the exact metadata preparation helper. Only public archive joins and complete mask/stratum/composition/intersection/schedule construction may follow. A separate combined execution release, earlier reproduction and model-panel completion remain required before source fits.",
+  "dependency_order": "This preparation release binds an already-fixed protocol; later masks bind that protocol. No hash of future masks or execution release is stored in the protocol or this preparation release."
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": 1,
+  "status": "frozen_before_source_control_masks_and_fits",
+  "recorded_at_utc": "2026-10-11T01:36:16.421421+00:00",
+  "decision": {
+    "algorithm_seeds_per_mask": 5,
+    "basis": "Two completed full author runs, full second-run sampled resources, partial third initialization, current disk and source-derived artifact payloads.",
+    "maximum_concurrent_fits": 1,
+    "no_mask_or_seed_trimming": true,
+    "order": "O,C,D,Rv in declared order,Rp in declared order; original five algorithm seeds within mask",
+    "random_masks_Rp": 10,
+    "random_masks_Rv": 10,
+    "remaining_baseline_seeds": "All five still required for baseline completeness and replay gates; remaining three are not required to fix this resource allocation. No scientific launch is authorized by this receipt.",
+    "targeted_masks": 3,
+    "total_fits": 115
+  },
+  "private_evidence_sha256": "6ff90dad8459293755836038def1c23180935e1a63f9e2418f02e90b2584d85d",
+  "timings": [
+    {
+      "field": "metrics.fit_and_evaluation_seconds",
+      "provenance": "Local byte-identical copies of completed original author result files; only timing field extracted for this decision.",
+      "result_filename": "85b7359f5e715b51.json",
+      "seconds": 3166.930678129196,
+      "sha256": "1221924862de19cf10aa60938deea49f80c08836a07689ecb26d9d1b343e8805",
+      "size_bytes": 1174
+    },
+    {
+      "field": "metrics.fit_and_evaluation_seconds",
+      "provenance": "Local byte-identical copies of completed original author result files; only timing field extracted for this decision.",
+      "result_filename": "3f3b8cfa49d20fae.json",
+      "seconds": 3045.026193857193,
+      "sha256": "22bd30ab8958854a4e7308ac14e7fbd66de9c2e3bf7b0a7ff04a7c3e704c263c",
+      "size_bytes": 1172
+    }
+  ],
+  "observed_resources": {
+    "second_run": {
+      "author_lifetime_hwm_max_kib": 7401872,
+      "count": 609,
+      "end_utc": "2026-10-11T01:21:09.375810+00:00",
+      "guest_memavailable_min_at_utc": "2026-10-11T00:35:09.380656+00:00",
+      "guest_memavailable_min_kib": 53718460,
+      "maximum_processes": 8,
+      "maximum_threads": 162,
+      "sample_first": 171,
+      "sample_last": 779,
+      "skipped_process_entries": 0,
+      "start_utc": "2026-10-11T00:30:29.385141+00:00",
+      "tree_rss_max_at_utc": "2026-10-11T00:34:04.385949+00:00",
+      "tree_rss_max_kib": 6977916
+    },
+    "partial_third_run": {
+      "author_lifetime_hwm_max_kib": 7441580,
+      "count": 121,
+      "end_utc": "2026-10-11T01:31:14.379885+00:00",
+      "guest_memavailable_min_at_utc": "2026-10-11T01:25:14.380902+00:00",
+      "guest_memavailable_min_kib": 53758744,
+      "maximum_processes": 8,
+      "maximum_threads": 162,
+      "sample_first": 780,
+      "sample_last": 900,
+      "skipped_process_entries": 0,
+      "start_utc": "2026-10-11T01:21:14.384909+00:00",
+      "tree_rss_max_at_utc": "2026-10-11T01:22:14.385390+00:00",
+      "tree_rss_max_kib": 7127896
+    },
+    "sample_interval_seconds": 5,
+    "frozen_sample_prefix_sha256": "92476209957fb2f0728a673c27c866f6f96efc24c13987eac8b966d1e1b3cf9b",
+    "memory_interpretation": {
+      "allowance_is_measured_bound": false,
+      "guest_swap_total_kib": 0,
+      "guest_total_kib": 65836688,
+      "limits": [
+        "Observed RSS may double-count shared pages.",
+        "Five-second snapshots miss transient peaks and are not atomic.",
+        "Individual lifetime VmHWM is not simultaneous whole-tree peak.",
+        "First seed initialization was missed; second run was sampled throughout.",
+        "Source-bank geometry differs; additional original seeds do not prove its worst-case allocation."
+      ],
+      "logical_cpus": 16,
+      "serial_fit_allowance_gib": 20
+    },
+    "disk": {
+      "at_utc": "2026-10-11T01:34:47.656926+00:00",
+      "available_blocks": 6068634,
+      "available_bytes": 24857124864,
+      "block_bytes": 4096,
+      "filesystem_scope": "existing replication project filesystem"
+    }
+  },
+  "artifact_arithmetic": {
+    "inputs": {
+      "float32_bytes": 4,
+      "int64_or_float64_bytes": 8,
+      "text_slots": 7,
+      "train_rows": 82783,
+      "validation_rows": 40504
+    },
+    "limits": "Logical tensor payload arithmetic excludes serialization headers, metadata, journals, masks, failed attempts and copies; allowances are planning reserves, not proven limits. Assumes raw corpora, checkpoints and environments are already staged, no duplicate input copies. Hard-link publication does not duplicate tensor file data.",
+    "model_results": {
+      "allowance_gib": 2,
+      "formula_maps": "25*4*(4352*2092+3*4352+4*2092)",
+      "formula_ranks": "300*40504*6*8",
+      "formula_splits": "60*(2*82783+2*40504)*8",
+      "maps_tensor_payload_bytes": 912580800,
+      "ranks_tensor_payload_bytes": 583257600,
+      "split_tensor_payload_bytes": 118355520
+    },
+    "new_model_features": {
+      "allowance_gib": 6.4,
+      "formula": "4*(82783+40504)*((768+2048+768)+7*(300+1024))",
+      "tensor_payload_bytes": 6337938096
+    },
+    "remaining_disk_after_allowances_gib": 13.750001525878906,
+    "source_hashes": {
+      "research/rosetta-model-controls/extract_features.py": "2437693c5579b08941517b5b280403112e4d0350cf1e9e9283b1091e40aacb05",
+      "research/rosetta-model-controls/run_cell.py": "611aad8867cf174e5c03fc7a534d6edc8215fe9f08bcd056f5cd19943fe2c10a",
+      "research/rosetta-source-controls/run_source_arm.py": "6dbf7c3132a75607d5d7912759a88feba3ef943deeb89f3c6d81afcc045648af"
+    },
+    "source_results": {
+      "allowance_gib": 1,
+      "formula": "115*(4*(768*768+2*768)+8*82783+7*40504*8)+16*(5*19561+55*16224+55*9963)",
+      "tensor_payload_bytes": 633641160
+    }
+  },
+  "runtime_scenarios": {
+    "limits": "Scenarios are arithmetic, not a deadline or confidence bound. Original timings include load, fit, retrieval and classification; source controls use different text populations and retrieval only. Excludes prior model panel, extraction, preflight hashing, persistence overhead and retained failures/retries.",
+    "reference_rate_serial_hours": [
+      101.16584110690488,
+      97.27167008154922
+    ],
+    "scenarios": [
+      {
+        "hours_per_fit": 1,
+        "serial_days": 4.791666666666667,
+        "serial_hours": 115
+      },
+      {
+        "hours_per_fit": 1.5,
+        "serial_days": 7.1875,
+        "serial_hours": 172.5
+      },
+      {
+        "hours_per_fit": 2,
+        "serial_days": 9.583333333333334,
+        "serial_hours": 230
+      }
+    ],
+    "two_run_mean_serial_hours": 99.21875559422705
+  },
+  "allocation_reason": "Retain the previously proposed ten whole-source random removals in each family, crossed with every original seed. The completed full-run timings and available capacity support a serial practical budget; no score was used to select the allocation.",
+  "scientific_scores_used": false,
+  "power_calculation": false,
+  "change_from_proposed_mask_or_seed_counts": false,
+  "resource_shortfall_policy": "Preserve every prescribed mask, seed and attempt. Recheck available resources before execution; a detected shortfall delays admission or requires additional capacity, never smaller banks, fewer seeds, mask selection or a shorter algorithm.",
+  "scope": "Resource allocation and metadata preparation only. Original five-seed completion, model-panel gates and the complete combined execution release remain necessary before source fits."
+}

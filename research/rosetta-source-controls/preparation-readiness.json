@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "status": "preparation_code_checked_before_actual_masks",
+  "source_sha256": {
+    "rosetta-source-controls/prepare_masks.py": "ff63d0c397cc69d486962f09753fc1b98c7c787fbef45f3fc05018ed12858f97",
+    "rosetta-source-controls/source_masks.py": "102dbbe8c4cab20ff2109af722edd09debc638f5e778a986d72165c5ad022c7b",
+    "rosetta-source-controls/source_primitives.py": "75446992c5c0c6c969e0e37e50da1fc8e655c316b5f44c429dd59612dd3e9de4",
+    "rosetta-source-controls/run_source_arm.py": "6dbf7c3132a75607d5d7912759a88feba3ef943deeb89f3c6d81afcc045648af",
+    "rosetta-model-controls/run_cell.py": "611aad8867cf174e5c03fc7a534d6edc8215fe9f08bcd056f5cd19943fe2c10a",
+    "rosetta-source-controls/test_prepare_masks.py": "4b3560fe388d9e8f439e96e04429eb105e69466c6e53eb8be76df98db0beb43a"
+  },
+  "candidate_manifest_sha256": "e4b0bb370677eee14042b8ae37115cf07d0bfe95121369952d4563c83f4cfc57",
+  "closure_sha256": "6f880e9df4945739a46cd8994a427443d908629923ef0e2c1ce2979671bd83a5",
+  "validation": {
+    "status": "passed",
+    "finished_at_utc": "2026-10-11T01:32:18.841980+00:00",
+    "runtime": "Original baseline Pixi Python3.14.7",
+    "command": "python -m pytest rosetta-source-controls/test_prepare_masks.py -q --junitxml=<private receipt>",
+    "validation_receipt_sha256": "87742872098cfbb86ecb7c7913ca53360a51db80c3fb529cb246994b5b7aee75",
+    "xml_receipt_sha256": "794f78479e010fd7d9227c9e4f9dfc4dbb7b36db8d5d2c56e385a9af704ca37a",
+    "xml_receipt_bytes": 1889,
+    "cases": 12,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "elapsed_seconds": 0.257,
+    "root_verification": "Current public code hashes equal staged candidate hashes; copied XML hash and twelve passing cases independently parsed by root.",
+    "scope": "Twelve artificial source-mask preparation tests only. No real source archives, feature tensors, real masks, fits or public protocol edits."
+  },
+  "code_review": "Preparation helper was independently reviewed before this run. Its source hash is unchanged; current shared dependencies passed the later lifecycle review and the twelve preparation fixtures above.",
+  "limits": [
+    "Artificial archives establish checked behavior, not correctness of the later actual metadata join.",
+    "No features loaded, source-control fits run or experimental effect measured.",
+    "A successful actual preparation must be independently checked and included in the combined execution release before fitting."
+  ]
+}

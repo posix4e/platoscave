@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "protocol_id": "rosetta-source-controls-v1",
-  "status": "draft_before_source_control_masks_and_fits",
+  "status": "frozen_before_source_control_fits",
   "objective": "Measure whether removing known shared sources from the SPC fitting text bank changes COCO retrieval more than removing the same number of rows by a fixed whole-source random rule, with encoders unchanged.",
   "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
   "seeds": [
@@ -102,12 +102,17 @@
   "research_design": {
     "stage": "Exploratory full-bank follow-up. Earlier reduced-pilot outcomes are known. This is not a confirmatory preregistration or the complete published cross-dataset classification experiment.",
     "budget": {
-      "status": "proposed_pending_completed_full_run_resource_evidence",
+      "status": "frozen_before_source_control_masks_and_fits",
       "targeted_masks": 3,
       "random_masks_per_arm": 10,
       "algorithm_seeds_per_mask": 5,
       "fits": 115,
-      "basis": "Practical repeated-deletion allocation, not a power calculation. Finalize from resource evidence before new masks or fits, never from desired outcomes."
+      "basis": "Practical repeated-deletion allocation, not a power calculation. Fixed from completed full-setting timing/resource observations before actual masks or source fits; no scientific scores used. All originally proposed masks and algorithm seeds retained.",
+      "finalized_at_utc": "2026-10-11T01:36:16.421421+00:00",
+      "resource_decision": {
+        "file": "resource-decision.json",
+        "sha256": "47975738844a60e05f5c8c254a43bf95150347a046498c674928761380f20854"
+      }
     },
     "arms": {
       "O": "All original SPC paragraphs; known source overlap retained as a diagnostic.",
@@ -223,10 +228,10 @@
     ],
     "privacy": "Only public COCO/SPC inputs and IDs. Exclude private photographs, capture metadata, raw private features, private manifests and machine paths from publications.",
     "remaining_goal": "Prospective collection after a complete pre-capture lock, with fresh unpaired fitting and separate final evaluation.",
-    "draft_pending": [
-      "Completed full-run cost evidence and final budget",
-      "Final protocol/code release and outer execution lock",
-      "Every actual mask and complete schedule"
+    "remaining_gates": [
+      "Construct and independently verify every actual mask and complete schedule from the frozen preparation release.",
+      "Complete earlier original reproduction and model panel; publish the combined execution lock before source fits.",
+      "Run all 115 full fits and independently reconstruct summaries from saved ranks."
     ]
   }
 }
