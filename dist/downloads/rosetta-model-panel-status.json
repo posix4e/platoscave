@@ -1,30 +1,23 @@
 {
   "schema_version": 1,
   "protocol_id": "rosetta-model-controls-v2",
-  "status": "feature_extraction_running",
-  "observed_at_utc": "2026-10-11T06:03:41.668853+00:00",
+  "status": "waiting_for_vm_availability",
+  "observed_at_utc": "2026-10-11T06:19:47.783596+00:00",
   "release_commit": "c14771afc455c588ad9a19854161b9bc2c60b63e",
   "outer_release_sha256": "caf5dbb25b1b769526dd3b36c4e9afffb735ca451a8cc447afc03788f56da674",
   "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
   "extraction_lock_sha256": "d9a816a20390dd53a480c3d5e12904f5d279e47f5bc1ae57b525283b97765250",
   "added_extractions_required": 10,
   "added_extractions_complete": 5,
-  "running": {
-    "model": "mae",
-    "split": "val2014",
-    "attempt": 1,
-    "started_at_utc": "2026-10-11T06:03:13.076986+00:00",
-    "durable_rows_observed": 1640,
-    "expected_rows": 40504,
-    "completion_marker_observed": false
-  },
+  "running": null,
   "alignment_cells_complete": 0,
   "method_results_complete": 0,
   "required_model_cells": 60,
   "required_method_results": 300,
-  "scope": "Both DINO and both MoCo extractions, plus MAE training extraction, are complete and accepted: five of ten added extractions. MAE validation-image extraction is running under the same published release. This is preparation for alignment; no model-comparison result is available. These are observations at the stated time, not a live counter.",
+  "scope": "Six of ten added extractions have generated outputs; five have been accepted. MAE validation extraction finished, but its acceptance and the next GloVe admission await an available VM. No Rosetta extraction is running. No model-comparison fit or result is available. This is a dated observation, not a live counter.",
   "next_steps": [
-    "Verify all ten sequential extractions and all fourteen feature entries.",
+    "Resolve the VM scheduling conflict before admitting another extraction.",
+    "Finish and accept all ten sequential extractions, then verify all fourteen feature entries.",
     "Bind the complete execution release and run all five reference replay cells.",
     "Require agreement with our preserved baseline before expanded model fitting.",
     "Finish the separate 23-set source-removal study and prospective fresh-data study."
@@ -126,5 +119,36 @@
       "verification": "Full artifact hashes, metadata, canonical row and caption order, contiguous row journal, and actual tensor shape/dtype. The required all14-feature builder will later check finite/nonzero entries across every tensor."
     }
   ],
-  "private_acceptance_and_next_admission_observation_sha256": "0dc31961fbd50d581dc573f71504f0ba97733dfa99daee93c55dc4017dcf4d18"
+  "private_acceptance_and_next_admission_observation_sha256": "0dc31961fbd50d581dc573f71504f0ba97733dfa99daee93c55dc4017dcf4d18",
+  "added_extractions_generated": 6,
+  "added_extractions_accepted": 5,
+  "count_definitions": {
+    "added_extractions_generated": "Extraction completion marker and successful service exit observed.",
+    "added_extractions_complete": "Accepted extractions only; retained meaning of the earlier snapshots.",
+    "added_extractions_accepted": "Acceptance receipt recorded; the complete fourteen-feature numerical audit is still required before fitting."
+  },
+  "awaiting_acceptance": {
+    "model": "mae",
+    "split": "val2014",
+    "attempt": 1,
+    "row_count": 40504,
+    "reported_shape": [
+      40504,
+      768
+    ],
+    "completed_at_utc": "2026-10-11T06:12:04.442376+00:00",
+    "complete_sha256": "27f2c71499cb629e4fef2729aebb3055d0696ca75fc89dde6e946fa45554858d",
+    "reported_feature_sha256": "ca3741e047bbed46836ab879a5fe82d4b91de85245aed517f80e81dcf9b3b32d",
+    "metadata_sha256": "6d31a6b446a5f5aac10fc8a381ba7d8b55b332c03892d1ffce03ac4df5c4e5ec",
+    "successful_service_exit_observed": true,
+    "acceptance_receipt_recorded": false,
+    "verification": "Completion and metadata file hashes, completion record, and successful service exit observed. This record does not claim a full tensor numerical audit or formal extraction acceptance."
+  },
+  "next_extraction": {
+    "model": "glove",
+    "split": "train2014",
+    "admitted": false,
+    "reason": "Other experiment processes are running in the same VM. The next-job availability check rejected admission before any GloVe attempt was created."
+  },
+  "private_generation_and_blocked_admission_observation_sha256": "50cd7382f22c9ff24d434dc219dc1caf0980cf39c7999c525e4c345cf367dbc4"
 }
