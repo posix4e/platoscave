@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-model-controls-v2",
+  "status": "feature_extraction_running",
+  "observed_at_utc": "2026-10-11T04:43:10.481774+00:00",
+  "release_commit": "c14771afc455c588ad9a19854161b9bc2c60b63e",
+  "outer_release_sha256": "caf5dbb25b1b769526dd3b36c4e9afffb735ca451a8cc447afc03788f56da674",
+  "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
+  "extraction_lock_sha256": "d9a816a20390dd53a480c3d5e12904f5d279e47f5bc1ae57b525283b97765250",
+  "added_extractions_required": 10,
+  "added_extractions_complete": 0,
+  "running": {
+    "model": "dino",
+    "split": "train2014",
+    "attempt": 1,
+    "started_at_utc": "2026-10-11T04:42:10.635577+00:00",
+    "durable_rows_observed": 4625,
+    "expected_rows": 82783,
+    "completion_marker_observed": false
+  },
+  "alignment_cells_complete": 0,
+  "method_results_complete": 0,
+  "required_model_cells": 60,
+  "required_method_results": 300,
+  "scope": "DINO training-image feature extraction has started under the published release. This is preparation for alignment; no model-comparison result is available. These are observations at the stated time, not a live counter.",
+  "next_steps": [
+    "Verify all ten sequential extractions and all fourteen feature entries.",
+    "Bind the complete execution release and run all five reference replay cells.",
+    "Require agreement with our preserved baseline before expanded model fitting.",
+    "Finish the separate 23-set source-removal study and prospective fresh-data study."
+  ],
+  "private_admission_observation_sha256": "6bd67d101e975db47174058e7ff2fdae1a12c0fc323c2c806597027544a2473e"
+}
