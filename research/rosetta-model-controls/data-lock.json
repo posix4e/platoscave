@@ -1,0 +1,451 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-model-controls-v2",
+  "status": "verified_public_data_before_model_control_extraction",
+  "recorded_at_utc": "2026-10-10T23:56:50.991485+00:00",
+  "dataset": "MS COCO 2014 complete train and validation images with all original human captions",
+  "hash_basis": "SHA256 values lock bytes observed during HTTPS acquisition; they are not publisher-authenticated SHA256 values. ZIP CRC and ETag are consistency evidence, not training-provenance evidence.",
+  "source_baseline_provenance": {
+    "upstream_url": "https://github.com/dominik-schnaus/unpaired-rosetta/tree/fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+    "existing_baseline_locks": {
+      "source-lock.json": {
+        "path": "../rosetta-replication/source-lock.json",
+        "sha256": "223c1b4e9de79386c50c4f326d2b73c02002abb8d963e23ba826279740e43a0b"
+      },
+      "inputs-lock.json": {
+        "path": "../rosetta-replication/inputs-lock.json",
+        "sha256": "85105b3ea186a5cb730dc2a9e9d6a96dfaa9d5dece00cbee91b98915586d1962"
+      },
+      "protocol.json": {
+        "path": "../rosetta-replication/protocol.json",
+        "sha256": "5c97f9b899566a39f911c5cb5fa9ffd65f8be2ba09c567a2499aa3b41d8c4dba"
+      },
+      "reference.json": {
+        "path": "../rosetta-replication/reference.json",
+        "sha256": "0aa18eaa121ef4b7bb3421ff1b6f2eb53a7019efe3978a1562074c8d43a50302"
+      }
+    },
+    "loader_source": {
+      "commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+      "source_file": "modalities/image_captions/datasets.py",
+      "source_sha256": "76cd80132707b368c8180bb47c50283a933e2dfca2703086a7d023d951a20a7d",
+      "function": "coco_captions",
+      "method": "Executed original AST function with raw_root bound to new annotation directory and network download stub that raises; independently compared every image row and caption sequence.",
+      "image_order": "ascending original image ID",
+      "caption_order": "original annotations list order within image",
+      "cache_embedding_row_content_independently_authenticated": false,
+      "limitation": "Matches published loader ordering contract, not an independent re-extraction or semantic authentication of released feature rows."
+    }
+  },
+  "annotation_archive": {
+    "acquisition_receipt_sha256": "ae2c8aa1edc5af62b14b306378e5373472765acb816536c8991a20fd65faf344",
+    "acquisition": {
+      "status": "complete",
+      "started_at_utc": "2026-10-10T23:32:55.113555+00:00",
+      "download_completed_at_utc": "2026-10-10T23:33:02.537028+00:00",
+      "original_upstream_url": "http://images.cocodataset.org/annotations/annotations_trainval2014.zip",
+      "requested_url": "https://s3.amazonaws.com/images.cocodataset.org/annotations/annotations_trainval2014.zip",
+      "final_url": "https://s3.amazonaws.com/images.cocodataset.org/annotations/annotations_trainval2014.zip",
+      "redirect_observed": false,
+      "http_status": 200,
+      "expected_bytes": 252872794,
+      "observed_bytes": 252872794,
+      "expected_etag": "\"0a379cfc70b0e71301e0f377548639bd\"",
+      "response_headers": {
+        "Content-Length": "252872794",
+        "ETag": "\"0a379cfc70b0e71301e0f377548639bd\"",
+        "Last-Modified": "Tue, 10 Jul 2018 17:58:17 GMT",
+        "Content-Type": "application/zip",
+        "Date": "Sat, 10 Oct 2026 23:32:55 GMT",
+        "Server": "AmazonS3"
+      },
+      "sha256": "031296bbc80c45a1d1f76bf9a90ead27e94e99ec629208449507a4917a3bf009",
+      "md5": "0a379cfc70b0e71301e0f377548639bd",
+      "download_seconds": 7.423304711999663,
+      "zip_all_member_crc_check_passed": true,
+      "zip_members": [
+        {
+          "member": "annotations/instances_train2014.json",
+          "bytes": 332556225,
+          "compressed_bytes": 107297879,
+          "crc32": "3cd50ca9"
+        },
+        {
+          "member": "annotations/instances_val2014.json",
+          "bytes": 160682675,
+          "compressed_bytes": 51955093,
+          "crc32": "264f83bf"
+        },
+        {
+          "member": "annotations/person_keypoints_train2014.json",
+          "bytes": 170733465,
+          "compressed_bytes": 50041387,
+          "crc32": "23466a04"
+        },
+        {
+          "member": "annotations/person_keypoints_val2014.json",
+          "bytes": 81637509,
+          "compressed_bytes": 23951481,
+          "crc32": "6976f7d7"
+        },
+        {
+          "member": "annotations/captions_train2014.json",
+          "bytes": 66782097,
+          "compressed_bytes": 13124596,
+          "crc32": "35a1fcdb"
+        },
+        {
+          "member": "annotations/captions_val2014.json",
+          "bytes": 32421077,
+          "compressed_bytes": 6501124,
+          "crc32": "8ef135f3"
+        }
+      ],
+      "hash_attribution": "SHA256 is a first-download byte lock. Equal ETag and CRC establish consistency, not independent SHA256 authentication or training provenance."
+    },
+    "extracted_members_receipt_sha256": "878023dcce5da318223f13a41606d0157e07b35d0f06cf65d7215011ab4c941b"
+  },
+  "datasets": {
+    "train2014": {
+      "images": 82783,
+      "captions": 414113,
+      "annotation": {
+        "relative_path": "annotations/captions_train2014.json",
+        "bytes": 66782097,
+        "sha256": "dd8c9636dc11740f956e36728866ea0c4ebe4988dcbdc5e712b7c2267f152d12"
+      },
+      "image_manifest": {
+        "relative_path": "train2014-images.json",
+        "bytes": 21069363,
+        "sha256": "dea32f627c713a8b2d43b3764955a2658035ff4b23005ba14b99f77cf4b1c553",
+        "schema_version": 1,
+        "row_order": "ascending image ID, as authors loader",
+        "fields": [
+          "row",
+          "image_id",
+          "file",
+          "bytes",
+          "sha256",
+          "zip_crc32"
+        ]
+      },
+      "image_acquisition_receipt_sha256": "0fb0ad79be6300a081672c69e082ae0257412571cc3326dc6c598f4967c1e98b",
+      "image_acquisition": {
+        "all_crc_and_disk_hashes_verified": true,
+        "annotation_sha256": "dd8c9636dc11740f956e36728866ea0c4ebe4988dcbdc5e712b7c2267f152d12",
+        "archive_bytes": 13510573713,
+        "archive_sha256": "ede4087e640bddba550e090eae701092534b554b42b05ac33f0300b984b31775",
+        "completed_at_utc": "2026-10-10T23:39:13.234297+00:00",
+        "content_length": 13510573713,
+        "download_finished_at_utc": "2026-10-10T23:38:17.138589+00:00",
+        "etag": "\"289af3433b84b5b8622626b10146c1bc-1611\"",
+        "expected_images": 82783,
+        "final_url": "https://s3.amazonaws.com/images.cocodataset.org/zips/train2014.zip",
+        "generated_archive_removed_after_verification": true,
+        "hash_basis": "Observed download and member hashes; no publisher SHA-256 claim.",
+        "image_manifest_sha256": "dea32f627c713a8b2d43b3764955a2658035ff4b23005ba14b99f77cf4b1c553",
+        "images": 82783,
+        "last_modified": "Wed, 11 Jul 2018 04:59:54 GMT",
+        "retrieval_url": "https://s3.amazonaws.com/images.cocodataset.org/zips/train2014.zip",
+        "schema_version": 1,
+        "scope": "Public data acquisition only; no feature extraction or fitting.",
+        "script_sha256": "3da8c1e44286c4ac6f51cc2c296d61a0019925be0eaaeb1213ca093ada0c0779",
+        "split": "train2014",
+        "started_at_utc": "2026-10-10T23:34:53.441312+00:00",
+        "status": "complete",
+        "uncompressed_bytes": 13492512057,
+        "upstream_url": "http://images.cocodataset.org/zips/train2014.zip"
+      },
+      "caption_count_histogram": {
+        "5": 82586,
+        "6": 196,
+        "7": 1
+      },
+      "ordered_census_digests": {
+        "ordered_image_manifest_sha256": "a1893a5c0b371b96afb2de18a05f70cafde0172b0f1e93ed8d60d4a930586307",
+        "ordered_caption_manifest_sha256": "634b784035dc6f9d1a4a3912f8cbef9ae4a05c63648ce6663bcbbd912c9a94e5",
+        "ordered_token_manifest_sha256": "210fddf30051fc7a2d8a9c883a59d59add2a1862c8b20cc2efd475a8625fbc63"
+      },
+      "caption_census_counts": {
+        "images": 82783,
+        "image_filename_identity_matches": 82783,
+        "images_without_captions": 0,
+        "captions": 414113,
+        "empty_or_whitespace_captions": 0,
+        "empty_token_sequences": 0,
+        "token_occurrences": 4334916,
+        "maximum_tokens_per_caption": 50,
+        "maximum_token_utf8_bytes": 18,
+        "overlong_elmo_token_occurrences": 0,
+        "captions_with_overlong_elmo_tokens": 0,
+        "elmo_tokenizer_passes_and_matches_glove_sequence": 414113,
+        "glove_known_token_occurrences": 4324008,
+        "glove_unknown_token_occurrences": 10908,
+        "glove_captions_with_oov": 10580,
+        "glove_captions_without_known_tokens": 0,
+        "nonstring_captions": 0,
+        "elmo_tokenizer_rejections": 0
+      },
+      "caption_token_length_histogram": {
+        "5": 1,
+        "6": 9,
+        "7": 3228,
+        "8": 68104,
+        "9": 90189,
+        "10": 88969,
+        "11": 63992,
+        "12": 40710,
+        "13": 23631,
+        "14": 13415,
+        "15": 7704,
+        "16": 4676,
+        "17": 2893,
+        "18": 1900,
+        "19": 1292,
+        "20": 867,
+        "21": 634,
+        "22": 463,
+        "23": 327,
+        "24": 235,
+        "25": 178,
+        "26": 136,
+        "27": 109,
+        "28": 58,
+        "29": 51,
+        "30": 37,
+        "31": 44,
+        "32": 28,
+        "33": 35,
+        "34": 31,
+        "35": 26,
+        "36": 14,
+        "37": 16,
+        "38": 13,
+        "39": 15,
+        "40": 13,
+        "41": 14,
+        "42": 6,
+        "43": 14,
+        "44": 11,
+        "45": 11,
+        "46": 4,
+        "47": 5,
+        "48": 1,
+        "49": 3,
+        "50": 1
+      }
+    },
+    "val2014": {
+      "images": 40504,
+      "captions": 202654,
+      "annotation": {
+        "relative_path": "annotations/captions_val2014.json",
+        "bytes": 32421077,
+        "sha256": "7da4cc45cb76ee1642d163e846e1e0a33feffac2e841c9c426d585ea499165a4"
+      },
+      "image_manifest": {
+        "relative_path": "val2014-images.json",
+        "bytes": 10141195,
+        "sha256": "3e520c9434baae78d8ccc9211b6a387f4ebfe243e6b50c7f06d9721b244ddabe",
+        "schema_version": 1,
+        "row_order": "ascending image ID, as authors loader",
+        "fields": [
+          "row",
+          "image_id",
+          "file",
+          "bytes",
+          "sha256",
+          "zip_crc32"
+        ]
+      },
+      "image_acquisition_receipt_sha256": "027cc41b0af44a2cf8cb0b3ee8a7458c070434c60c87d88bd7afa7076da6f5e1",
+      "image_acquisition": {
+        "all_crc_and_disk_hashes_verified": true,
+        "annotation_sha256": "7da4cc45cb76ee1642d163e846e1e0a33feffac2e841c9c426d585ea499165a4",
+        "archive_bytes": 6645013297,
+        "archive_sha256": "fe9be816052049c34717e077d9e34aa60814a55679f804cd043e3cbee3b9fde0",
+        "completed_at_utc": "2026-10-10T23:41:15.834135+00:00",
+        "content_length": 6645013297,
+        "download_finished_at_utc": "2026-10-10T23:40:49.844296+00:00",
+        "etag": "\"3925cc4d50eb68d47bf2d6324a012d20-793\"",
+        "expected_images": 40504,
+        "final_url": "https://s3.amazonaws.com/images.cocodataset.org/zips/val2014.zip",
+        "generated_archive_removed_after_verification": true,
+        "hash_basis": "Observed download and member hashes; no publisher SHA-256 claim.",
+        "image_manifest_sha256": "3e520c9434baae78d8ccc9211b6a387f4ebfe243e6b50c7f06d9721b244ddabe",
+        "images": 40504,
+        "last_modified": "Wed, 11 Jul 2018 05:04:19 GMT",
+        "retrieval_url": "https://s3.amazonaws.com/images.cocodataset.org/zips/val2014.zip",
+        "schema_version": 1,
+        "scope": "Public data acquisition only; no feature extraction or fitting.",
+        "script_sha256": "3da8c1e44286c4ac6f51cc2c296d61a0019925be0eaaeb1213ca093ada0c0779",
+        "split": "val2014",
+        "started_at_utc": "2026-10-10T23:39:14.169018+00:00",
+        "status": "complete",
+        "uncompressed_bytes": 6636659503,
+        "upstream_url": "http://images.cocodataset.org/zips/val2014.zip"
+      },
+      "caption_count_histogram": {
+        "5": 40373,
+        "6": 128,
+        "7": 3
+      },
+      "ordered_census_digests": {
+        "ordered_image_manifest_sha256": "4f9c7ac6247f0b95e31efcc07c6c70932d7d0a910c3d98f565eee8a8a09159bd",
+        "ordered_caption_manifest_sha256": "f576acdacfbc62df542fb8921df4231f9d1979dfac41090f98f2a26259cba9d9",
+        "ordered_token_manifest_sha256": "80a91919b3d8930c7bd68fd688b060718fd2fd18bf4fb162da92673c774e4c76"
+      },
+      "caption_census_counts": {
+        "images": 40504,
+        "image_filename_identity_matches": 40504,
+        "images_without_captions": 0,
+        "captions": 202654,
+        "empty_or_whitespace_captions": 0,
+        "empty_token_sequences": 0,
+        "token_occurrences": 2120294,
+        "maximum_tokens_per_caption": 49,
+        "maximum_token_utf8_bytes": 18,
+        "overlong_elmo_token_occurrences": 0,
+        "captions_with_overlong_elmo_tokens": 0,
+        "elmo_tokenizer_passes_and_matches_glove_sequence": 202654,
+        "glove_known_token_occurrences": 2114892,
+        "glove_unknown_token_occurrences": 5402,
+        "glove_captions_with_oov": 5232,
+        "glove_captions_without_known_tokens": 0,
+        "nonstring_captions": 0,
+        "elmo_tokenizer_rejections": 0
+      },
+      "caption_token_length_histogram": {
+        "6": 5,
+        "7": 1623,
+        "8": 33146,
+        "9": 44315,
+        "10": 43571,
+        "11": 31206,
+        "12": 19951,
+        "13": 11632,
+        "14": 6647,
+        "15": 3771,
+        "16": 2266,
+        "17": 1421,
+        "18": 863,
+        "19": 626,
+        "20": 440,
+        "21": 296,
+        "22": 206,
+        "23": 174,
+        "24": 94,
+        "25": 82,
+        "26": 57,
+        "27": 50,
+        "28": 37,
+        "29": 24,
+        "30": 16,
+        "31": 22,
+        "32": 13,
+        "33": 13,
+        "34": 12,
+        "35": 9,
+        "36": 6,
+        "37": 9,
+        "38": 7,
+        "39": 5,
+        "40": 7,
+        "41": 7,
+        "42": 5,
+        "43": 5,
+        "44": 7,
+        "45": 3,
+        "46": 1,
+        "47": 2,
+        "48": 1,
+        "49": 1
+      }
+    }
+  },
+  "text_census": {
+    "original_vm_receipt_sha256": "e24615d8e4d528891da17407ef0f4df4ab58312c01767e96f1cb89dd96cf6851",
+    "sanitized_inventory_sha256": "5cda86c423613f48e0176d7fa3a11dab2d7e494c32710f468860bb7615010d3c",
+    "tokenizer_contract": {
+      "recipe": "Unicode NFKC; lowercase; [a-z]+(?:apostrophe [a-z]+)? or [0-9]+",
+      "actual_regex": "[a-z]+(?:'[a-z]+)?|[0-9]+",
+      "glove_source_sha256": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+      "elmo_source_sha256": "0fff41c3740a7ece2f89a4b9ba4b50d2d370606357f2ff57cce310a12e3d09ce",
+      "method": "Original tokenizer functions executed in stdlib-only namespaces; no model inference.",
+      "elmo_payload_limit_utf8_bytes": 48,
+      "glove_vocabulary": {
+        "archive_sha256": "6471382cdd837544bf3ac72497a38715e845897d265b2b424b4761832009c837",
+        "member": "glove.6B.300d.txt",
+        "member_sha256": "a12599d41e3589c7160be27fffe5b0080eccd0f0c75f46666c59f90188093c40",
+        "rows": 400001,
+        "distinct_tokens": 400001,
+        "vector_values_parsed_or_used": false
+      }
+    },
+    "cross_split_identity": {
+      "overlapping_image_ids": 0,
+      "overlapping_annotation_ids": 0
+    },
+    "scope": "All public captions and token identities inspected without encoder inference; original author loader order matched independently. No private photographs."
+  },
+  "release_reverification": {
+    "recorded_at_utc": "2026-10-10T23:54:50.926517+00:00",
+    "source_sha256": "2437693c5579b08941517b5b280403112e4d0350cf1e9e9283b1091e40aacb05",
+    "scope": "Annotation, image-manifest and ordered text census verification only; no image decoding, feature inference or fitting.",
+    "per_image_byte_rehash_during_this_check": false,
+    "image_acquisition_receipts_record_all_member_crc_and_disk_hash_checks": true,
+    "splits": {
+      "train2014": {
+        "annotation_sha256": "dd8c9636dc11740f956e36728866ea0c4ebe4988dcbdc5e712b7c2267f152d12",
+        "image_manifest_sha256": "dea32f627c713a8b2d43b3764955a2658035ff4b23005ba14b99f77cf4b1c553",
+        "ordered_image_manifest_sha256": "a1893a5c0b371b96afb2de18a05f70cafde0172b0f1e93ed8d60d4a930586307",
+        "ordered_caption_manifest_sha256": "634b784035dc6f9d1a4a3912f8cbef9ae4a05c63648ce6663bcbbd912c9a94e5",
+        "ordered_token_manifest_sha256": "210fddf30051fc7a2d8a9c883a59d59add2a1862c8b20cc2efd475a8625fbc63",
+        "images": 82783,
+        "captions": 414113,
+        "caption_count_histogram": {
+          "5": 82586,
+          "6": 196,
+          "7": 1
+        },
+        "token_occurrences": 4334916,
+        "all_ordered_census_digests_match": true,
+        "extractor_verified_dataset_passed": true
+      },
+      "val2014": {
+        "annotation_sha256": "7da4cc45cb76ee1642d163e846e1e0a33feffac2e841c9c426d585ea499165a4",
+        "image_manifest_sha256": "3e520c9434baae78d8ccc9211b6a387f4ebfe243e6b50c7f06d9721b244ddabe",
+        "ordered_image_manifest_sha256": "4f9c7ac6247f0b95e31efcc07c6c70932d7d0a910c3d98f565eee8a8a09159bd",
+        "ordered_caption_manifest_sha256": "f576acdacfbc62df542fb8921df4231f9d1979dfac41090f98f2a26259cba9d9",
+        "ordered_token_manifest_sha256": "80a91919b3d8930c7bd68fd688b060718fd2fd18bf4fb162da92673c774e4c76",
+        "images": 40504,
+        "captions": 202654,
+        "caption_count_histogram": {
+          "5": 40373,
+          "6": 128,
+          "7": 3
+        },
+        "token_occurrences": 2120294,
+        "all_ordered_census_digests_match": true,
+        "extractor_verified_dataset_passed": true
+      }
+    },
+    "cross_split_image_id_overlap": 0,
+    "cross_split_annotation_id_overlap": 0,
+    "passed": true
+  },
+  "scope": {
+    "corpus_features_extracted": false,
+    "alignment_or_training_performed": false,
+    "private_photographs_accessed": false,
+    "old_locks_modified": false,
+    "pretraining_cleanliness_established": false,
+    "fresh_post_model_freeze_collection": false
+  },
+  "limitations": [
+    "This is public COCO; the annotations and images existed before the models. This lock does not establish absence of pretraining overlap.",
+    "Matching filenames and ordered annotation digests does not independently authenticate the semantic contents of the authors released cached feature rows.",
+    "No visual near-duplicate or cross-dataset contamination census has been performed."
+  ]
+}

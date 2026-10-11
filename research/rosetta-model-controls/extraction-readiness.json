@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-model-controls-v2",
+  "status": "artificial_readiness_passed_not_a_corpus_release",
+  "recorded_at_utc": "2026-10-10T23:56:50.991485+00:00",
+  "extractor": {
+    "file": "extract_features.py",
+    "sha256": "2437693c5579b08941517b5b280403112e4d0350cf1e9e9283b1091e40aacb05"
+  },
+  "scope": {
+    "real_corpus_inference_performed": false,
+    "private_photographs_accessed": false,
+    "training_or_alignment_performed": false,
+    "scope_of_model_inputs": "Three generated pixel arrays and four fixed artificial word sequences only."
+  },
+  "synthetic_fixtures": {
+    "vision_sizes": [
+      [
+        224,
+        224
+      ],
+      [
+        351,
+        229
+      ],
+      [
+        231,
+        349
+      ]
+    ],
+    "text_token_counts": [
+      5,
+      10,
+      20,
+      50
+    ],
+    "repetitions_after_warmup": 5,
+    "source": "benchmark() in the bound extractor source"
+  },
+  "self_tests": {
+    "gpu": {
+      "attempt_failure_success_publication": true,
+      "status": "passed",
+      "ordering": true,
+      "padding": true,
+      "invalid_annotation_cases_rejected": 5,
+      "missing_lock_rejected": true,
+      "real_data_accessed": false
+    },
+    "elmo": {
+      "attempt_failure_success_publication": true,
+      "status": "passed",
+      "ordering": true,
+      "padding": true,
+      "invalid_annotation_cases_rejected": 5,
+      "missing_lock_rejected": true,
+      "real_data_accessed": false
+    }
+  },
+  "release_gate_tests": {
+    "source_sha256": "2437693c5579b08941517b5b280403112e4d0350cf1e9e9283b1091e40aacb05",
+    "scope": "Artificial lock JSON and existing-output sentinel only; no corpus or model access",
+    "checks": {
+      "valid_future_schema": true,
+      "draft_status": true,
+      "wrong_source": true,
+      "missing_model": true,
+      "changed_readout": true,
+      "wrong_vision_environment": true,
+      "missing_artifact": true,
+      "missing_split": true,
+      "wrong_runtime": true,
+      "wrong_lock_sha": true,
+      "existing_output_refused_before_input_access": true
+    },
+    "passed": true
+  },
+  "models": {
+    "mae": {
+      "runtime_versions": {
+        "python": "3.12.3",
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "numpy": "2.5.3",
+        "Pillow": "12.3.0"
+      },
+      "batch_size": 1,
+      "synthetic_feature_sha256": "a759e768e56b9b61490c410ed14909dbf0f6f10c55ba123ed1e17ac4b8d8525c",
+      "repeat_bitwise_equal": true,
+      "reorder_bitwise_equal": true,
+      "finite_unit_vectors": true,
+      "throughput": [
+        {
+          "fixture_size": "224x224",
+          "repetitions": 5,
+          "seconds": 0.03841728799670818,
+          "seconds_per_item": 0.0076834575993416365
+        },
+        {
+          "fixture_size": "351x229",
+          "repetitions": 5,
+          "seconds": 0.03952083100011805,
+          "seconds_per_item": 0.00790416620002361
+        },
+        {
+          "fixture_size": "231x349",
+          "repetitions": 5,
+          "seconds": 0.039582531000633026,
+          "seconds_per_item": 0.007916506200126605
+        }
+      ],
+      "input_hashes": {
+        "fresh_helper": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+        "vision_helper": "68278d4d0827acf748dc1a254b18ff39bb918c878311ef6caabcb1453eedc1a6",
+        "author_encoders": "54cc1ec028a35138edf2bb06a76b484db3c7bdbc6ed49b31e8eeb538db01c48a",
+        "mae_checkpoint": "aec5f0b68e5f3193a00b07bc65a37440db549c15b36b8bea242606cc40c4bc5d",
+        "mae_vit": "6770ed2226d46ab8ba2b1ebc6662cc353dabf759679569acd004f6b3ac868154",
+        "mae_license": "ffe3b1e0b58c1f1250ce48f84d8c37328f9a1ff59bb77b63bc97480cf2778b64",
+        "timm_wheel": "c1598ef61c246e38835a6b834811dcb8d62ae56b644cd54dc3ef9565c8387875"
+      },
+      "synthetic_tensor_sha256": [
+        "b99a831cb5fd1a91c59289053129dda61a559d8e141672b6e969bc84f3a63324",
+        "af45e751eda6efbc1b617bc85c60a17014053bf072da5fa44745603ba39c4270",
+        "af3d2eebbd40d34f8740c99eeacff101872a6f5ee2a426f9b3f987b9ac4250ee"
+      ],
+      "runtime_environment": {
+        "ATEN_CPU_CAPABILITY": "avx2",
+        "MKL_CBWR": "AVX2,STRICT"
+      },
+      "cpu_capability": "AVX2"
+    },
+    "dino": {
+      "runtime_versions": {
+        "python": "3.12.3",
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "numpy": "2.5.3",
+        "Pillow": "12.3.0"
+      },
+      "batch_size": 1,
+      "synthetic_feature_sha256": "5e382870ad1946cbf8353f75f017bbe40aa88da7375dd41784c61086ba9bc32d",
+      "repeat_bitwise_equal": true,
+      "reorder_bitwise_equal": true,
+      "finite_unit_vectors": true,
+      "throughput": [
+        {
+          "fixture_size": "224x224",
+          "repetitions": 5,
+          "seconds": 0.04936161300065578,
+          "seconds_per_item": 0.009872322600131156
+        },
+        {
+          "fixture_size": "351x229",
+          "repetitions": 5,
+          "seconds": 0.05058346599980723,
+          "seconds_per_item": 0.010116693199961446
+        },
+        {
+          "fixture_size": "231x349",
+          "repetitions": 5,
+          "seconds": 0.05016778899880592,
+          "seconds_per_item": 0.010033557799761183
+        }
+      ],
+      "input_hashes": {
+        "fresh_helper": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+        "vision_helper": "68278d4d0827acf748dc1a254b18ff39bb918c878311ef6caabcb1453eedc1a6",
+        "author_encoders": "54cc1ec028a35138edf2bb06a76b484db3c7bdbc6ed49b31e8eeb538db01c48a",
+        "dino_checkpoint": "bf34ad0f424b9029b593e8dc3ed553bf26e88bcba0d32bf3e62a6209cb64c85e",
+        "dino_vit": "b1f998d5f49ab43666b9fc6d007c5f6540c3ead2e8645e144f74045f63ff44d7",
+        "dino_utils": "962a97e1acda1c986dfd921275325e4083f9016dddadcf018f1ccf03fa600eab"
+      },
+      "synthetic_tensor_sha256": [
+        "b99a831cb5fd1a91c59289053129dda61a559d8e141672b6e969bc84f3a63324",
+        "af45e751eda6efbc1b617bc85c60a17014053bf072da5fa44745603ba39c4270",
+        "af3d2eebbd40d34f8740c99eeacff101872a6f5ee2a426f9b3f987b9ac4250ee"
+      ],
+      "runtime_environment": {
+        "ATEN_CPU_CAPABILITY": "avx2",
+        "MKL_CBWR": "AVX2,STRICT"
+      },
+      "cpu_capability": "AVX2"
+    },
+    "elmo": {
+      "runtime_versions": {
+        "python": "3.10.19",
+        "torch": "1.12.1+cpu",
+        "torchvision": "0.13.1+cpu",
+        "numpy": "1.23.5",
+        "Pillow": "12.3.0",
+        "allennlp": "2.10.1",
+        "h5py": "3.8.0"
+      },
+      "batch_size": 1,
+      "synthetic_feature_sha256": "a9ec82fe5fc505038e50d93da8764d2060a8ce2e136b80ba40c7480242c8edaa",
+      "repeat_bitwise_equal": true,
+      "reorder_bitwise_equal": true,
+      "finite_unit_vectors": true,
+      "throughput": [
+        {
+          "fixture_size": 5,
+          "repetitions": 5,
+          "seconds": 0.22240326599785476,
+          "seconds_per_item": 0.04448065319957095
+        },
+        {
+          "fixture_size": 10,
+          "repetitions": 5,
+          "seconds": 0.3399496290003299,
+          "seconds_per_item": 0.06798992580006598
+        },
+        {
+          "fixture_size": 20,
+          "repetitions": 5,
+          "seconds": 0.5682203229989682,
+          "seconds_per_item": 0.11364406459979363
+        },
+        {
+          "fixture_size": 50,
+          "repetitions": 5,
+          "seconds": 1.2485245269999723,
+          "seconds_per_item": 0.24970490539999446
+        }
+      ],
+      "input_hashes": {
+        "fresh_helper": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+        "elmo_helper": "0fff41c3740a7ece2f89a4b9ba4b50d2d370606357f2ff57cce310a12e3d09ce",
+        "elmo_weights": "a6b92b9ccbb13fe489faacd2221c795d4bebe84b75f8aded9d85ea464fa5c994",
+        "elmo_options": "86cb4c1a7e2f25e3867d06810e33ae27fbbd511ac77ca377be5fb7405a7085b1"
+      }
+    },
+    "glove": {
+      "runtime_versions": {
+        "python": "3.12.3",
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "numpy": "2.5.3",
+        "Pillow": "12.3.0"
+      },
+      "batch_size": 1,
+      "synthetic_feature_sha256": "dfb7e2afda43f11a91e014f2dabd2025241a2c9b0f38da162d9f2890398841bb",
+      "repeat_bitwise_equal": true,
+      "reorder_bitwise_equal": true,
+      "finite_unit_vectors": true,
+      "throughput": [
+        {
+          "fixture_size": 5,
+          "repetitions": 5,
+          "seconds": 0.00021475899848155677,
+          "seconds_per_item": 4.295179969631136e-05
+        },
+        {
+          "fixture_size": 10,
+          "repetitions": 5,
+          "seconds": 0.00021800900140078738,
+          "seconds_per_item": 4.3601800280157475e-05
+        },
+        {
+          "fixture_size": 20,
+          "repetitions": 5,
+          "seconds": 0.00025427999935345724,
+          "seconds_per_item": 5.085599987069145e-05
+        },
+        {
+          "fixture_size": 50,
+          "repetitions": 5,
+          "seconds": 0.00034333700023125857,
+          "seconds_per_item": 6.866740004625171e-05
+        }
+      ],
+      "input_hashes": {
+        "fresh_helper": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+        "glove_zip": "6471382cdd837544bf3ac72497a38715e845897d265b2b424b4761832009c837"
+      }
+    },
+    "moco": {
+      "runtime_versions": {
+        "python": "3.12.3",
+        "torch": "2.7.1+cu128",
+        "torchvision": "0.22.1+cu128",
+        "numpy": "2.5.3",
+        "Pillow": "12.3.0"
+      },
+      "batch_size": 1,
+      "synthetic_feature_sha256": "060aec4562adac2f0b2b47673471c220f12a2cd22ee101e0ed8b78a38716aab1",
+      "repeat_bitwise_equal": true,
+      "reorder_bitwise_equal": true,
+      "finite_unit_vectors": true,
+      "throughput": [
+        {
+          "fixture_size": "224x224",
+          "repetitions": 5,
+          "seconds": 0.029730465001193807,
+          "seconds_per_item": 0.005946093000238762
+        },
+        {
+          "fixture_size": "351x229",
+          "repetitions": 5,
+          "seconds": 0.029714168998907553,
+          "seconds_per_item": 0.005942833799781511
+        },
+        {
+          "fixture_size": "231x349",
+          "repetitions": 5,
+          "seconds": 0.030068415999267017,
+          "seconds_per_item": 0.0060136831998534035
+        }
+      ],
+      "input_hashes": {
+        "fresh_helper": "3e8445f22a8f255dcf47af89ac0b8c45461ba98046549702abc7b09b6b59a624",
+        "vision_helper": "68278d4d0827acf748dc1a254b18ff39bb918c878311ef6caabcb1453eedc1a6",
+        "author_encoders": "54cc1ec028a35138edf2bb06a76b484db3c7bdbc6ed49b31e8eeb538db01c48a",
+        "moco_checkpoint": "5e4a3fd7178a95837c0ad71c265ed5f477d271e753ba505b6b6a5e86829eeb7e"
+      },
+      "synthetic_tensor_sha256": [
+        "b99a831cb5fd1a91c59289053129dda61a559d8e141672b6e969bc84f3a63324",
+        "af45e751eda6efbc1b617bc85c60a17014053bf072da5fa44745603ba39c4270",
+        "af3d2eebbd40d34f8740c99eeacff101872a6f5ee2a426f9b3f987b9ac4250ee"
+      ],
+      "runtime_environment": {
+        "ATEN_CPU_CAPABILITY": "avx2",
+        "MKL_CBWR": "AVX2,STRICT"
+      },
+      "cpu_capability": "AVX2"
+    }
+  },
+  "independent_transform_review": {
+    "sha256": "f862b914732a28e5ff1970fcc6ebfca1738a0403c9db2dc1b45824a45eb38b17",
+    "receipt": {
+      "recorded_at_utc": "2026-10-10T23:50:29.390735+00:00",
+      "extractor_sha256": "2437693c5579b08941517b5b280403112e4d0350cf1e9e9283b1091e40aacb05",
+      "artificial_only": true,
+      "fixture_count": 10,
+      "all_byte_identical": true,
+      "authors_receipt_sha256": "8274983178fa668e1fd75cdce4485b3e1020e150b6dc0a8926b45a6342e5e692",
+      "candidate_receipt_sha256": "3cd3e80109b0f95238686e3dd46064ae029194c50a8b2949ac3a960132dbe766",
+      "fixture_manifest_sha256": "9777014c2142b593b7034e7fbd8808e21364ecc9c851757dd93ec1728aef0291",
+      "candidate_process_began_without_dispatch_flags": true,
+      "candidate_sets_dispatch_flags_before_torch_import": true,
+      "scope": "Exact CPU preprocessing tensor comparison only. No encoder forward calls, checkpoint loads, real corpus images or private photographs. Ten fixed fixtures establish equality here, not universal pipeline equivalence.",
+      "fixtures": [
+        {
+          "name": "rgb_square",
+          "byte_identical": true,
+          "different_elements": 0,
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "name": "rgb_odd_wide",
+          "byte_identical": true,
+          "different_elements": 0,
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "name": "rgb_odd_tall",
+          "byte_identical": true,
+          "different_elements": 0,
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "name": "gray_odd",
+          "byte_identical": true,
+          "different_elements": 0,
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "name": "rgba_odd",
+          "byte_identical": true,
+          "different_elements": 0,
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "name": "tiny_rgb",
+          "byte_identical": true,
+          "different_elements": 0,
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "name": "tiny_gray",
+          "byte_identical": true,
+          "different_elements": 0,
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "name": "rgba_wide",
+          "byte_identical": true,
+          "different_elements": 0,
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "name": "rgb_jpeg",
+          "byte_identical": true,
+          "different_elements": 0,
+          "maximum_absolute_difference": 0.0
+        },
+        {
+          "name": "rgb_exif6",
+          "byte_identical": true,
+          "different_elements": 0,
+          "maximum_absolute_difference": 0.0
+        }
+      ]
+    }
+  },
+  "independent_source_disposition": "Reviewer rechecked current source after amendments: previous dispatch and journal/publication findings resolved; no further extractor blocker identified. Downstream consumers must enforce COMPLETE and both output hashes.",
+  "findings_and_fixes": [
+    {
+      "finding": "Uncontrolled CPU worker counts made the first artificial vision throughput measurements slow.",
+      "resolution": "Pinned vision intra-op and inter-op threads to one, matching the existing DINO helper precedent. Repeated synthetic checks; no model selection used corpus outcomes.",
+      "superseded_source_sha256": "7826c6e616aa5ba62d038fb36a49ed311552b48c353b2cfeccd54cb3165c2ef8"
+    },
+    {
+      "finding": "Default AVX512 versus reference AVX2 dispatch changed resize output on 8 of 10 artificial fixtures, by up to 0.0175073 in normalized pixels.",
+      "resolution": "Set process-local ATEN_CPU_CAPABILITY=avx2 and MKL_CBWR=AVX2,STRICT before importing Torch; assert actual AVX2 and pin both flags in vision contracts. No installed packages or frozen helper files changed. Current source matches every tensor byte on all ten independent fixtures.",
+      "superseded_source_sha256": "1d177ff8a8fa2c0550e7baabedcfb28f8cc56c56318bf85462a6bc317ea156d3",
+      "limit": "Fixture equality does not establish universal numerical equivalence or authenticate pixels behind the released cached embeddings."
+    },
+    {
+      "finding": "The earlier draft reserved its destination only after inference and could leave an apparently final tensor before final verification.",
+      "resolution": "Reserve attempt directory and started receipt before inference; fsync each completed row; preserve FAILED receipts; publish COMPLETE.json atomically only after source and output checks. Artificial inference-failure and final-recheck-failure tests pass in both runtimes.",
+      "retry_policy": "From scratch in a new attempt directory only; consumers require COMPLETE and both output hashes, and reject FAILED or absent COMPLETE."
+    }
+  ],
+  "timing_limitations": "Artificial timings include encoder calls and vision preprocessing but exclude corpus JPEG decoding, source verification, row journals and output serialization. VM load can change. They are not guaranteed corpus throughput.",
+  "scientific_limitations": [
+    "The panel compares fixed encoder pipelines, including different readouts, dimensions, training and stored precision.",
+    "Original cached DINOv2/MPNet features retain their BF16 reduction semantics; added encoders save FP32.",
+    "A shared square224 recipe has been tested; no native-preprocessing sensitivity analysis has been performed."
+  ],
+  "release_requirement": "Publish a reviewed scientific protocol, extraction lock and outer release manifest before any real feature extraction. This readiness record enables no corpus run."
+}

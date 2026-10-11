@@ -1,0 +1,117 @@
+{
+  "independent_read_only_review": {
+    "final_reviewed_source_sha256": {
+      "control_primitives.py": "32632eeda161423ea954b179c0dea9626dab915c4895265b681a39fb59cb2dc6",
+      "run_cell.py": "f55bebcb0d0e73876b6ac269ef6f021a9e91b7e9e2f5244ac421a0f0e5dc32bc"
+    },
+    "limits": "Read-only source review, not an end-to-end real-data execution or a proof of correctness.",
+    "reviewer_role": "Separate implementation review agent; did not edit reviewed files or run fits.",
+    "scope": [
+      "Original split/loading precision and advanced training RNG.",
+      "Fresh evaluation RNG, full subset draw, independent shuffles and restored thread context.",
+      "Rosetta disjoint-bank information boundary versus declared full paired counterparts.",
+      "All14 feature identity, source/runtime, completion, padding and byte-binding checks.",
+      "Five original-result baseline replay comparisons before expanded fits.",
+      "Independent method failures, final unchanged-input checks and completion suppression.",
+      "Final diagnostic-failure cleanup preserves valid numerical outputs without retrying the diagnostic.",
+      "Saved ranks use original validation-subset order with COCO IDs; sorted public export is a later reporting step."
+    ],
+    "status": "passed_no_substantive_blocker_identified",
+    "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49"
+  },
+  "limitations": [
+    "No real-data cell execution or full-size memory/time validation was performed.",
+    "No scientific conclusion about the paper, model-choice effects or contamination follows from readiness tests.",
+    "The pseudoinverse diagnostic is computed once per cell and shared within its two linear controls; cross-cell caching is not implemented.",
+    "Readiness is evidence of bounded implementation checks, not permission to bypass missing locks."
+  ],
+  "original_environment_smoke_check": {
+    "activation": {
+      "ATEN_CPU_CAPABILITY": "avx2",
+      "MKL_CBWR": "AVX2,STRICT"
+    },
+    "all_source_hashes_match": true,
+    "complete_installed_distribution_versions_match": true,
+    "environment_receipt_sha256": "7ced0256181037bf33d12fe8905c314d64a023786ebadb394f7fefa3eabb6f0c",
+    "extra_original_package_python_files_absent": true,
+    "feature_tensors_loaded": false,
+    "fits_performed": false,
+    "git_head_matches_pinned_upstream": true,
+    "global_torch_threads": 16,
+    "original_fit_context_threads": 4,
+    "original_pixi_python_path_and_prefix_match": true,
+    "original_source_files_checked": 228,
+    "python_version": "3.14.7",
+    "runner_sha256": "f55bebcb0d0e73876b6ac269ef6f021a9e91b7e9e2f5244ac421a0f0e5dc32bc",
+    "source_lock_sha256": "223c1b4e9de79386c50c4f326d2b73c02002abb8d963e23ba826279740e43a0b",
+    "status": "passed",
+    "torch_cpu_capability": "AVX2",
+    "torch_interop_threads": 16,
+    "tracked_source_unchanged": true
+  },
+  "protocol_id": "rosetta-model-controls-v2",
+  "remaining_gates": [
+    "Complete original baseline and bind all five untouched raw results.",
+    "Freeze and publish final scientific/code/model/runtime/data/extraction locks; current protocol remains disabled draft.",
+    "Extract and byte-bind ten added model/split artifacts, together with four unchanged publisher feature files.",
+    "Validate the complete feature-lock and full real-data interface before fitting.",
+    "Run all five new baseline replay cells and require numerical agreement before expanded cells.",
+    "Preserve all300 method outcomes; independent complete-panel aggregation and sorted public rank export remain later work."
+  ],
+  "schema_version": 1,
+  "source_sha256": {
+    "control_primitives.py": "32632eeda161423ea954b179c0dea9626dab915c4895265b681a39fb59cb2dc6",
+    "extract_features.py": "2437693c5579b08941517b5b280403112e4d0350cf1e9e9283b1091e40aacb05",
+    "run_cell.py": "f55bebcb0d0e73876b6ac269ef6f021a9e91b7e9e2f5244ac421a0f0e5dc32bc",
+    "test_control_primitives.py": "ddd184d21d1cd18aabed26983e1f4b3d9c9f304f2cd303f14b9e9829581089c3",
+    "test_run_cell.py": "647a9e9c2b2dc475acc9da0899c7976ef2d9240bc28bdc9a2da45857fb534348"
+  },
+  "status": "draft_implementation_checked_not_released",
+  "synthetic_tests": {
+    "benchmark_features_loaded": false,
+    "elapsed_seconds": 3.699,
+    "encoder_inference_performed": false,
+    "errors": 0,
+    "failures": 0,
+    "lifecycle_checks": {
+      "baseline_disagreement_preserved": true,
+      "changed_bound_file_rejected": true,
+      "complete_marker_artifact_hashes_verified": true,
+      "deliberate_rosetta_fit_failure_preserved": true,
+      "diagnostic_failure_stage_explicit": "shared_post_fit_svd_diagnostic",
+      "diagnostic_only_failure_retains_valid_fit_evaluation_metrics_maps_and_ranks": true,
+      "draft_or_reduced_protocol_rejected": true,
+      "existing_attempt_not_overwritten": true,
+      "failed_shared_diagnostic_not_retried": true,
+      "failure_suppresses_complete_marker": true,
+      "missing_five_replay_gate_rejected": true,
+      "other_four_synthetic_controls_complete_after_failed_method": true,
+      "partial_nan_caption_padding_rejected": true,
+      "shared_diagnostic_attempts_per_cell": 1,
+      "success_marker_atomically_published_after_outputs": true,
+      "wrong_seed_algorithm_thread_or_missing_hash_rejected": true
+    },
+    "oracle_checks": [
+      "Exact metric and RNG-state agreement against original untouched retrieval_metrics.",
+      "Hand-computable tied ranks, all-tie chance, rectangular feature dimensions and independent presentation shuffles.",
+      "Planted paired maps recover unseen synthetic rows while shared shuffled-pair controls fail.",
+      "Original OrthogonalMap and LinearMap centering and fitted weights remain unchanged.",
+      "Original load_training_data and load_validation_data match split, row order, stored-BF16 reduction and advanced RNG state.",
+      "Spy verifies Rosetta receives the original defaults, advanced training RNG and no paired arguments without executing Rosetta fitting.",
+      "Known nonzero singular directions above and below the default pseudoinverse cutoff verify retained rank and actual original fitted maps.",
+      "Zero-rank diagnostic remains finite and serializable."
+    ],
+    "private_user_photographs_loaded": false,
+    "real_rosetta_fits_performed": false,
+    "runtime": "Unmodified original frozen Pixi environment, with the separately imported draft runner and controls.",
+    "skipped": 0,
+    "status": "passed",
+    "suites": {
+      "test_control_primitives.py": 19,
+      "test_run_cell.py": 9
+    },
+    "tests": 28,
+    "tiny_synthetic_original_paired_map_fits_performed": true
+  },
+  "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49"
+}

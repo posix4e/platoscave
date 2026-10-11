@@ -123,8 +123,15 @@ and the frozen comparison are required before a reproduction verdict. Report
 paper-rounded agreement separately from available full-precision agreement.
 Released embeddings test alignment, not encoder pretraining or feature extraction.
 
-After that baseline, compare fixed encoder pipelines with paired and shuffled
-controls. The paired controls need extra training counterparts because the
+The [next model-panel draft](research/rosetta-model-controls/README.md) specifies
+four image pipelines crossed with three language pipelines, five original seeds
+and five methods: Rosetta plus correct-pair and shuffled-pair orthogonal and
+linear controls. All 12 cells remain in the plan. The complete public COCO data
+is acquired and the added extractors have passed artificial-input checks; no
+added corpus features or model-panel fits have run. The draft cannot authorize
+execution while the baseline and final release remain incomplete.
+
+The paired controls need extra training counterparts because the
 unpaired banks are disjoint; their advantage cannot be attributed solely to
 revealing pair identities. Study source overlap separately with unchanged
 encoders and size-matched random removal. A later fresh collection requires a

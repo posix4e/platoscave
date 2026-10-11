@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-model-controls-v2",
+  "status": "draft_builder_checked_not_a_feature_release",
+  "source_sha256": {
+    "build_feature_lock.py": "ff1e12a619b22a256218feae1cade167037ba10a1ceabc51db1c79073bfa2e8e",
+    "test_build_feature_lock.py": "0127d05cf54809aff495d3e95be8539c04a3754b34508154e89e49ca548efca7"
+  },
+  "synthetic_tests": {
+    "tests": 9,
+    "failures": 0,
+    "errors": 0,
+    "command": "python3 -m unittest discover -s research/rosetta-model-controls -p test_build_feature_lock.py -v",
+    "scope": "Temporary artificial byte strings and small row-count fixtures; tensor numerical inspection stubbed in tests. Identity, draft/incomplete/failed artifact, overwrite, and publication-after-preflight checks.",
+    "production_bypass_exists": false,
+    "real_features_loaded": false,
+    "real_inference_or_fits_performed": false
+  },
+  "independent_review": {
+    "reviewer": "Runner implementer, plus root source review",
+    "status": "No schema blocker identified",
+    "scope": "Reads final source and verifies use of runner.locked_inputs before output publication; not a full-data execution."
+  },
+  "publication_rules": "Outer immutable release manifest must bind builder and test bytes before use. An embedded self-hash is provenance, not authorization. Private paths stay outside the repository.",
+  "remaining_gate": "All final protocol/extraction locks, completed original baseline and all14 feature artifacts must exist and pass the exact runner preflight; none are invented by this helper."
+}

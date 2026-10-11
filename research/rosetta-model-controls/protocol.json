@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-model-controls-v2",
+  "status": "draft_before_model_control_extraction_and_fits",
+  "objective": "Measure dependence of full COCO unpaired alignment on a selected panel of complete encoder pipelines, with correct-pair and shuffled-pair map controls. This is an exploratory extension, not the full published classification panel or a certificate of uncontaminated pretraining.",
+  "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+  "seeds": [
+    734796314,
+    576165995,
+    2197670066,
+    839703249,
+    2584932063
+  ],
+  "vision_models": [
+    "dinov2",
+    "dino",
+    "moco",
+    "mae"
+  ],
+  "text_models": [
+    "mpnet",
+    "glove",
+    "elmo"
+  ],
+  "methods": [
+    "rosetta",
+    "orthogonal_paired",
+    "orthogonal_shuffled",
+    "linear_paired",
+    "linear_shuffled"
+  ],
+  "models": {
+    "dinov2": {
+      "modality": "vision",
+      "dimension": 768,
+      "dtype": "bfloat16",
+      "kind": "released",
+      "source_model_id": "dinov2_vit-b14@224_mean"
+    },
+    "dino": {
+      "modality": "vision",
+      "dimension": 768,
+      "dtype": "float32",
+      "kind": "extracted",
+      "source_model_id": "dino"
+    },
+    "moco": {
+      "modality": "vision",
+      "dimension": 2048,
+      "dtype": "float32",
+      "kind": "extracted",
+      "source_model_id": "moco"
+    },
+    "mae": {
+      "modality": "vision",
+      "dimension": 768,
+      "dtype": "float32",
+      "kind": "extracted",
+      "source_model_id": "mae"
+    },
+    "mpnet": {
+      "modality": "language",
+      "dimension": 768,
+      "dtype": "bfloat16",
+      "kind": "released",
+      "source_model_id": "mpnet"
+    },
+    "glove": {
+      "modality": "language",
+      "dimension": 300,
+      "dtype": "float32",
+      "kind": "extracted",
+      "source_model_id": "glove"
+    },
+    "elmo": {
+      "modality": "language",
+      "dimension": 1024,
+      "dtype": "float32",
+      "kind": "extracted",
+      "source_model_id": "elmo"
+    }
+  },
+  "counts": {
+    "train": 82783,
+    "fit_x": 41391,
+    "fit_y": 41392,
+    "validation": 40504
+  },
+  "algorithm_defaults": {
+    "num_clusters": 30,
+    "num_restarts": 30,
+    "batch_size": 10000,
+    "num_iterations": 100
+  },
+  "new_rosetta_fits": 60,
+  "code_sha256": {
+    "run_cell.py": "f55bebcb0d0e73876b6ac269ef6f021a9e91b7e9e2f5244ac421a0f0e5dc32bc",
+    "control_primitives.py": "32632eeda161423ea954b179c0dea9626dab915c4895265b681a39fb59cb2dc6",
+    "extract_features.py": "2437693c5579b08941517b5b280403112e4d0350cf1e9e9283b1091e40aacb05"
+  },
+  "locks": {
+    "source": "223c1b4e9de79386c50c4f326d2b73c02002abb8d963e23ba826279740e43a0b",
+    "environment": "7ced0256181037bf33d12fe8905c314d64a023786ebadb394f7fefa3eabb6f0c",
+    "baseline_inputs": "85105b3ea186a5cb730dc2a9e9d6a96dfaa9d5dece00cbee91b98915586d1962",
+    "baseline_protocol": "5c97f9b899566a39f911c5cb5fa9ffd65f8be2ba09c567a2499aa3b41d8c4dba",
+    "extraction": null,
+    "baseline_results": null
+  },
+  "execution": {
+    "num_workers": 4,
+    "num_threads": 4,
+    "device": "cpu",
+    "evaluation_block_size": 4096,
+    "torch_threads": 16,
+    "torch_interop_threads": 16
+  },
+  "baseline_replay": {
+    "vision": "dinov2",
+    "text": "mpnet",
+    "absolute_tolerance": 1e-10,
+    "require_all_five_before_expansion": true
+  },
+  "research_design": {
+    "stage": "selected exploratory model panel fixed before any added COCO feature extraction",
+    "prior_information": "The selected DINO, MoCo, MAE, GloVe and ELMo pipelines were previously compared on five private photographs using another matching rule. Those outcomes are known. This is not a prospective choice of model families or a random sample of encoders.",
+    "scope": {
+      "cells": 12,
+      "seeds_per_cell": 5,
+      "methods_per_cell": 5,
+      "method_evaluations": 300,
+      "new_rosetta_fits": 60,
+      "control_fits": 240,
+      "classification_extension": false,
+      "encoder_training": false
+    },
+    "interpretation_unit": "Complete frozen encoder pipeline, including representation, readout, precision and runtime. Neither architecture, learning objective nor pretraining data is varied independently.",
+    "data": {
+      "training": "all original coco_train2014 items",
+      "validation": "all original coco_val2014 items",
+      "row_order": "ascending original COCO image ID",
+      "caption_order": "original annotation-list order within image ID",
+      "caption_slots": 7,
+      "captions": "All original human captions; no generated, rewritten or selected alternatives.",
+      "datasets_disjoint_by": "original image IDs and caption annotation IDs; not a near-duplicate certification",
+      "public_data_lock": "data-lock.json"
+    },
+    "split": {
+      "function": "original unpaired_rosetta.evaluation.disjoint_split",
+      "randomness": "fresh original Randomness(seed), then its full training permutation; retain consumed RNG state for Rosetta.fit",
+      "shared_across": "every model and method for that seed",
+      "disjoint_ids": true,
+      "caps": null
+    },
+    "representations": {
+      "reference": "Use unchanged published DINOv2 mean and MPNet BF16 tensors. Preserve original load_rows/reduce_texts, including BF16 normalization and caption averaging before conversion to float32.",
+      "added_vision": "DINO final CLS 768d, MoCo query-backbone average pool 2048d, MAE unmasked final CLS 768d. Original frozen helper code and checkpoints. Authors square224 RGB conversion without EXIF transposition; process AVX2/MKL flags before Torch import; FP32 CUDA batch1; intra/inter-op threads1.",
+      "added_text": "GloVe300 mean known-token vectors and ELMo1024 final-contextual real-token mean with fresh state per caption. Freeze tokenizer and all original captions. Normalize each caption before NaN padding; use original reduction in FP32.",
+      "precision_difference_disclosed": true,
+      "native_preprocessing_sensitivity_included": false,
+      "no_outcome_based_choices": [
+        "checkpoint",
+        "readout",
+        "crop",
+        "tokenizer",
+        "caption variant",
+        "dimensionality reduction",
+        "feature scaling",
+        "seed",
+        "hyperparameter",
+        "stopping iteration",
+        "validation subset"
+      ]
+    },
+    "paired_controls": {
+      "implementations": [
+        "original OrthogonalMap",
+        "original LinearMap"
+      ],
+      "paired_training_identities": 82783,
+      "centering": "Use original unpaired disjoint X and Y banks for means; pass the full sorted paired training corpus as known pairs.",
+      "extra_information": "Controls additionally receive missing modality counterparts for every training identity; differences do not isolate pair-label disclosure alone.",
+      "permutation": "Uniform torch.randperm with an independent CPU Generator. Seed is the first 8 SHA256 bytes as unsigned big-endian integer from compact sorted-key UTF8 JSON of domain=rosetta-training-partner-permutation-v1, protocol_id, split_seed.",
+      "shared_permutation": "One permutation per original split seed, used across all model cells and both shuffled maps. Preserve and report accidental fixed points; no forced derangement or selection.",
+      "default_pinv": "Keep the original default torch.linalg.pinv calculation. Separately report its max(rows,columns)*FP32-epsilon relative cutoff, singular spectrum, effective-rank diagnostic and nearest cutoff margin; no tuning.",
+      "validation_pairing": "Never shuffled as training data. Only the evaluation uses the original independent presentation shuffles and known partner mapping."
+    },
+    "evaluation": {
+      "primary_metric": "foscttm",
+      "direction": "lower is better",
+      "range": [
+        0,
+        1
+      ],
+      "exchangeable_random_rank_expectation": 0.5,
+      "secondary": [
+        "mean_rank",
+        "per_query_midranks_with_COCO_ID_and_validation_subset_index"
+      ],
+      "mean_rank_relation": "mean_rank = 1 + (40504-1)*foscttm; not an independent endpoint.",
+      "ties": "Original midranks: higher scores count1 and other exactly tied keys count0.5.",
+      "rng": "Original fresh Randomness(seed), full validation subset permutation, then independent X and Y presentation permutations. Identical flow for every method.",
+      "rank_recorder_gate": "Must match original untouched retrieval_metrics on independent synthetic fixtures, including ties, unequal representation widths and row permutations. Full baseline replays must match original aggregate metrics within 1e-10.",
+      "gallery": "All 40,504 candidates for every query; no shortlist, candidate filtering or query-dependent tuning.",
+      "rank_artifact_order": "Saved ranks follow the original validation-subset permutation and include the corresponding public COCO image IDs and source-row indices. Public per-query tables will sort by image ID without changing the metric reduction order."
+    },
+    "reporting": {
+      "all_seeds_required": true,
+      "aggregates": "Arithmetic mean and sample standard deviation ddof=1. Retain all five individual scores.",
+      "primary_contrasts": "For each method and seed: DINOv2/GloVe minus DINOv2/MPNet; DINOv2/ELMo minus DINOv2/MPNet; each of DINO,MoCo,MAE with MPNet minus DINOv2/MPNet.",
+      "crossing_interactions": "For each added image v and text t: score(v,t)-score(v,MPNet)-score(DINOv2,t)+score(DINOv2,MPNet), per method and seed; six interactions. Report all.",
+      "within_cell_controls": "Orthogonal_paired minus orthogonal_shuffled, linear_paired minus linear_shuffled, Rosetta minus orthogonal_paired, Rosetta minus linear_paired, per seed. Positive FOSCTTM differences mean worse retrieval.",
+      "inference": "Descriptive only. No significance tests, success/failure score threshold, model ranking as a universal quality claim, or generalization beyond these pipelines and data.",
+      "dependence": "Seeds share fixed data and pretrained encoders. Queries are not automatically independent population samples; no naive query-level confidence interval is planned.",
+      "missing": "Report every failed or incomplete attempt. Five-seed summaries and contrasts requiring missing entries stay unavailable; never average a selected successful subset.",
+      "metrics_are_not_contamination_test": true
+    },
+    "ordering": {
+      "extraction_models": [
+        "dino",
+        "moco",
+        "mae",
+        "glove",
+        "elmo"
+      ],
+      "extraction_splits": [
+        "train2014",
+        "val2014"
+      ],
+      "fits": "First all five complete reference replay cells. Then vision-major and text-minor panel order, skipping the already replayed reference; original seed order within each cell. Methods in declared order. One cell process at a time."
+    },
+    "gates": [
+      "Complete faithful baseline, independent numerical comparison and investigation of any unexplained mismatch before release for new extraction.",
+      "Review code and synthetic tests; freeze all scientific/model/runtime/data choices and publish an outer release-lock containing the final protocol and extraction-lock hashes before any added corpus inference.",
+      "Every extraction has a fresh attempt directory, exact locked source/weight/runtime/data identities, durable rows and a final COMPLETE marker with verified hashes.",
+      "After extraction, bind all 14 model/split feature entries, original source IDs and caption-ID order in a separate feature-lock tied to the immutable protocol. This records generated outputs without revising choices.",
+      "Verify all five reference replays against untouched original results before any expanded cell fit.",
+      "Retain all 300 method attempts and compare complete results independently before publishing interpretation."
+    ],
+    "failure_policy": {
+      "no_overwrite": true,
+      "fresh_attempt_before_inference": true,
+      "completion_marker_required": true,
+      "retain_progress_and_failures": true,
+      "retries": "Only for documented execution/input failures after review, in a new attempt directory. Keep and disclose the original attempt and reason. No retry because of an unfavorable score.",
+      "changed_numerics": "A separately named amended protocol; never relabel it as this frozen run."
+    },
+    "privacy": "Publish code, public COCO provenance, locks, aggregate scores and COCO-indexed ranks. Private user photographs, capture metadata, private manifests, paths and raw private features are neither inputs nor publication artifacts.",
+    "remaining_goal": "Separate fixed-encoder COCO×SPC source-removal study, then a genuinely fresh collection after a complete pre-capture lock with fresh unpaired fitting and separate final evaluation. This panel completes neither.",
+    "draft_pending": [
+      "Complete baseline result lock and numerical comparison",
+      "Final extraction lock",
+      "Outer release publication",
+      "All 14 generated and verified feature bindings"
+    ]
+  }
+}
