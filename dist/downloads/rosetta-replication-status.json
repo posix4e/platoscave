@@ -2,7 +2,7 @@
   "schema_version": 1,
   "protocol_id": "rosetta-published-coco-baseline-v1",
   "status": "running",
-  "observed_at_utc": "2026-10-11T01:25:20.603458+00:00",
+  "observed_at_utc": "2026-10-11T02:14:36.102108+00:00",
   "started_at_utc": "2026-10-10T23:37:36.306739+00:00",
   "source_release_commit": "e064d49158ae244bf5c2d4ab38e38140798e24c9",
   "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
@@ -17,9 +17,10 @@
   ],
   "completed_seeds": [
     734796314,
-    576165995
+    576165995,
+    2197670066
   ],
-  "completed_runs": 2,
+  "completed_runs": 3,
   "expected_runs": 5,
   "complete_reproduction_result_available": false,
   "upstream_tests_passed": 42,
@@ -63,7 +64,7 @@
     "num_iterations": 100
   },
   "scope": "One complete original five-seed configuration; not the whole paper. Released embeddings test alignment, not pretraining history or feature extraction.",
-  "snapshot_note": "Two checked seeds have finished. The first agrees exactly with the available same-seed retrieval reference; no individual author value for the second is present in the frozen reference. This dated snapshot is not a live feed. All five outputs and the frozen comparison remain required for a configuration verdict.",
+  "snapshot_note": "Three checked seeds have finished. The first agrees exactly with the available same-seed retrieval reference; no individual author values for the second or third are present in the frozen reference. This dated snapshot is not a live feed. All five outputs and the frozen comparison remain required for a configuration verdict.",
   "completed_results": [
     {
       "seed": 734796314,
@@ -80,9 +81,17 @@
       "status": "independently_checked_interim",
       "named_seed_reference_status": "unavailable_in_frozen_reference",
       "named_seed_foscttm_agrees_exactly": null
+    },
+    {
+      "seed": 2197670066,
+      "result_id": "8dfed73356bd9c25",
+      "raw_result_sha256": "e4a35f10a5ce742c80013e5fa3b2f62df712a5301c540889315134dfbc9a5db6",
+      "status": "independently_checked_interim",
+      "named_seed_reference_status": "unavailable_in_frozen_reference",
+      "named_seed_foscttm_agrees_exactly": null
     }
   ],
   "interim_record": "rosetta-replication-progress.json",
-  "interim_record_sha256": "e801b9e9f2de27c6d15168558c7f3a1c661ca3dcd02dc0bffb986acb7a66db1e",
+  "interim_record_sha256": "172ddb3744e38eb1af0e9b58c868ebe60222d7074dbc19d67a8fd9bdb709b7aa",
   "preserved_first_seed_record": "rosetta-replication-first-seed.json"
 }

@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "protocol_id": "rosetta-published-coco-baseline-v1",
-  "status": "interim_two_of_five_checked",
-  "observed_at_utc": "2026-10-11T01:25:20.603458+00:00",
+  "status": "interim_three_of_five_checked",
+  "observed_at_utc": "2026-10-11T02:17:11.270828+00:00",
   "source_release_commit": "e064d49158ae244bf5c2d4ab38e38140798e24c9",
   "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
   "release_lock_sha256": "3d52418723d5da4b3a208f5f2078656b35e508a322c555d07d7aacc822da9c36",
@@ -17,12 +17,12 @@
   ],
   "completed_seeds": [
     734796314,
-    576165995
+    576165995,
+    2197670066
   ],
-  "completed_runs": 2,
+  "completed_runs": 3,
   "expected_runs": 5,
   "remaining_seeds": [
-    2197670066,
     839703249,
     2584932063
   ],
@@ -157,6 +157,70 @@
         "duration_consistency": "passed",
         "independent_read_only_check": "passed"
       }
+    },
+    {
+      "seed": 2197670066,
+      "result_id": "8dfed73356bd9c25",
+      "raw_result_sha256": "e4a35f10a5ce742c80013e5fa3b2f62df712a5301c540889315134dfbc9a5db6",
+      "status": "independently_checked_interim",
+      "config": {
+        "dataset": "coco_train2014",
+        "model_x": "dinov2_vit-b14@224_mean",
+        "model_y": "mpnet",
+        "seed": 2197670066,
+        "method": "ours",
+        "modality_x": "vision",
+        "modality_y": "language",
+        "dataset_y": null,
+        "num_pairs": 0,
+        "pairs_dataset": null,
+        "validation": "coco_val2014",
+        "holdout": 0,
+        "train_size": null,
+        "validation_size": null,
+        "classification": [
+          "CIFAR-10",
+          "CIFAR-100",
+          "ImageNet-100"
+        ],
+        "labels": null
+      },
+      "metrics": {
+        "foscttm": 0.01064814456530285,
+        "mean_rank": 432.2817993284614,
+        "num_validation_samples": 40504,
+        "CIFAR-10_top1": 0.7749000191688538,
+        "CIFAR-10_top5": 0.9959200024604797,
+        "CIFAR-100_top1": 0.29016000032424927,
+        "CIFAR-100_top5": 0.5734800100326538,
+        "ImageNet-100_top1": 0.26759999990463257,
+        "ImageNet-100_top5": 0.5350000262260437,
+        "fit_and_evaluation_seconds": 3165.9039266109467
+      },
+      "recorded_versions": {
+        "torch": "2.14.0+cu130",
+        "numpy": "2.5.3",
+        "scipy": "1.18.0",
+        "scikit-learn": "1.9.1",
+        "pylibmgm": "1.1.2"
+      },
+      "named_seed_comparison": {
+        "status": "unavailable_in_frozen_reference",
+        "metric": "foscttm",
+        "reference": null,
+        "strict_numerical_agreement": null,
+        "reason": "The frozen reference contains a five-seed aggregate and one named seed, 734796314; no individual author value for this third seed is available there."
+      },
+      "verification": {
+        "configuration_filename_seed_source_commit_recorded_versions": "passed",
+        "required_metrics_finite_and_in_range": "passed",
+        "classification_top1_not_above_top5": "passed",
+        "full_validation_count": 40504,
+        "foscttm_mean_rank_relation_residual": 1.734723475976807e-18,
+        "foscttm_mean_rank_relation_absolute_tolerance": 1e-12,
+        "duration_consistency": "passed",
+        "independent_read_only_check": "passed"
+      }
     }
   ],
   "five_seed_aggregates": null,
@@ -166,10 +230,10 @@
     "sha256": "489a0474c3a6c24c6b0ecbdf5bde5055a20b27475783e4477d6f1368739e3852",
     "bytes_unchanged": true
   },
-  "verification_scope": "Read-only validation of the two original result JSON records and all 12 frozen release files. Configuration, result IDs, recorded versions, finite values, ranges, full validation count and scalar rank relation checked. Per-query ranks are not saved by this original runner, so these checks do not independently recompute retrieval from ranks.",
-  "reference_limits": "Only seed 734796314 has an individual published retrieval value in the frozen reference. No individual published classification values are available there. The second result is checked for consistency, not declared an individual numerical reproduction.",
+  "verification_scope": "Read-only validation of the three original result JSON records and all 12 frozen release files. Configuration, result IDs, recorded versions, finite values, ranges, full validation count and scalar rank relation checked. Per-query ranks are not saved by this original runner, so these checks do not independently recompute retrieval from ranks.",
+  "reference_limits": "Only seed 734796314 has an individual published retrieval value in the frozen reference. No individual published classification values are available there. The second and third results are checked for consistency, not declared individual numerical reproductions.",
   "remaining": [
-    "Three original seeds.",
+    "Two original seeds.",
     "Five-seed mean and sample SD comparisons against the full-precision retrieval and paper-rounded references.",
     "Final post-run source/input/runtime checks."
   ],

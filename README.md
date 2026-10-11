@@ -117,10 +117,10 @@ items and the three classification evaluations. The unchanged authors' software
 passed all 42 method/evaluation tests; all 13 input hashes and 228 source files
 passed preflight.
 
-Two of five runs have finished. The first [named-seed retrieval score](dist/downloads/rosetta-replication-first-seed.json)
+Three of five runs have finished. The first [named-seed retrieval score](dist/downloads/rosetta-replication-first-seed.json)
 agrees exactly with the published reference; the fixed reference record has no
-individual author value for the second seed. The [progress record](dist/downloads/rosetta-replication-progress.json)
-contains both results and their checks. The [status snapshot](dist/downloads/rosetta-replication-status.json)
+individual author values for the second and third seeds. The [progress record](dist/downloads/rosetta-replication-progress.json)
+contains all three results and their checks. The [status snapshot](dist/downloads/rosetta-replication-status.json)
 records its observation time; it is not a live feed. All five outputs and the
 frozen comparison are required before a verdict on this configuration. Report
 paper-rounded agreement separately from available full-precision agreement.
