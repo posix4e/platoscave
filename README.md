@@ -107,7 +107,7 @@ to `platoscave.pages.dev`. Namecheap has the Cloudflare nameservers saved:
 Delegation and certificate validation completed on 10 October 2026. Deployment
 records should still include a current HTTPS check for the custom domain.
 
-## Full reproduction in progress
+## Original reproduction and expanded controls
 
 The [full reproduction protocol](research/rosetta-replication/) was published at
 [`e064d49`](https://github.com/posix4e/platoscave/commit/e064d49158ae244bf5c2d4ab38e38140798e24c9)
@@ -117,22 +117,27 @@ items and the three classification evaluations. The unchanged authors' software
 passed all 42 method/evaluation tests; all 13 input hashes and 228 source files
 passed preflight.
 
-Three of five runs have finished. The first [named-seed retrieval score](dist/downloads/rosetta-replication-first-seed.json)
-agrees exactly with the published reference; the fixed reference record has no
-individual author values for the second and third seeds. The [progress record](dist/downloads/rosetta-replication-progress.json)
-contains all three results and their checks. The [status snapshot](dist/downloads/rosetta-replication-status.json)
-records its observation time; it is not a live feed. All five outputs and the
-frozen comparison are required before a verdict on this configuration. Report
-paper-rounded agreement separately from available full-precision agreement.
-Released embeddings test alignment, not encoder pretraining or feature extraction.
+All five predetermined runs have finished, including retrieval and all three
+classification evaluations. The [preserved comparison](research/rosetta-replication-results/2026-10-11/)
+reports close agreement with differences retained: retrieval prints as the
+paper's 0.04 ± 0.05 but misses our fixed 1e-10 tolerance, and CIFAR-10 prints as
+71 ± 10 versus the paper's 70 ± 10. CIFAR-100 and ImageNet-100 match at the
+paper's displayed precision. The available named-seed retrieval score agrees
+exactly. Four individual author retrieval scores and unrounded classification
+references are unavailable. The [discrepancy review](research/rosetta-replication-results/2026-10-11/discrepancy-review.json)
+found no demonstrated cause. This does not establish exact reproduction or
+disprove Rosetta. Released embeddings test alignment, not encoder pretraining
+or feature extraction.
 
-The [next model-panel draft](research/rosetta-model-controls/README.md) specifies
+The [model-panel protocol](research/rosetta-model-controls/README.md) specifies
 four image pipelines crossed with three language pipelines, five original seeds
 and five methods: Rosetta plus correct-pair and shuffled-pair orthogonal and
-linear controls. All 12 cells remain in the plan. The complete public COCO data
-is acquired and the added extractors have passed artificial-input checks; no
-added corpus features or model-panel fits have run. The draft cannot authorize
-execution while the baseline and final release remain incomplete.
+linear controls. All 12 model pairings remain in the plan. The extraction release
+was published before added corpus inference. As recorded in the [dated status snapshot](dist/downloads/rosetta-model-panel-status.json),
+nine of ten added extractions are complete and accepted; ELMo's validation-caption
+extraction is running. All fourteen feature entries still require the complete
+numerical audit, followed by the combined execution release and five reference
+replays against our preserved baseline. No model-panel fit or result is available.
 
 The paired controls need extra training counterparts because the
 unpaired banks are disjoint; their advantage cannot be attributed solely to
