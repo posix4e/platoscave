@@ -1,0 +1,308 @@
+{
+  "schema_version": 1,
+  "protocol_id": "rosetta-published-coco-baseline-v1",
+  "status": "interim_four_of_five_checked",
+  "observed_at_utc": "2026-10-11T03:20:25.257799+00:00",
+  "source_release_commit": "e064d49158ae244bf5c2d4ab38e38140798e24c9",
+  "upstream_commit": "fdfad84ea488f29702a61a455be71622c4ff5d49",
+  "release_lock_sha256": "3d52418723d5da4b3a208f5f2078656b35e508a322c555d07d7aacc822da9c36",
+  "protocol_sha256": "5c97f9b899566a39f911c5cb5fa9ffd65f8be2ba09c567a2499aa3b41d8c4dba",
+  "reference_sha256": "0aa18eaa121ef4b7bb3421ff1b6f2eb53a7019efe3978a1562074c8d43a50302",
+  "expected_seeds": [
+    734796314,
+    576165995,
+    2197670066,
+    839703249,
+    2584932063
+  ],
+  "completed_seeds": [
+    734796314,
+    576165995,
+    2197670066,
+    839703249
+  ],
+  "completed_runs": 4,
+  "expected_runs": 5,
+  "remaining_seeds": [
+    2584932063
+  ],
+  "results": [
+    {
+      "seed": 734796314,
+      "result_id": "85b7359f5e715b51",
+      "raw_result_sha256": "1221924862de19cf10aa60938deea49f80c08836a07689ecb26d9d1b343e8805",
+      "status": "independently_checked_interim",
+      "config": {
+        "dataset": "coco_train2014",
+        "model_x": "dinov2_vit-b14@224_mean",
+        "model_y": "mpnet",
+        "seed": 734796314,
+        "method": "ours",
+        "modality_x": "vision",
+        "modality_y": "language",
+        "dataset_y": null,
+        "num_pairs": 0,
+        "pairs_dataset": null,
+        "validation": "coco_val2014",
+        "holdout": 0,
+        "train_size": null,
+        "validation_size": null,
+        "classification": [
+          "CIFAR-10",
+          "CIFAR-100",
+          "ImageNet-100"
+        ],
+        "labels": null
+      },
+      "metrics": {
+        "foscttm": 0.016328599083198735,
+        "mean_rank": 662.3572486667983,
+        "num_validation_samples": 40504,
+        "CIFAR-10_top1": 0.5524600148200989,
+        "CIFAR-10_top5": 0.9788600206375122,
+        "CIFAR-100_top1": 0.2528199851512909,
+        "CIFAR-100_top5": 0.5070199966430664,
+        "ImageNet-100_top1": 0.23839999735355377,
+        "ImageNet-100_top5": 0.4943999946117401,
+        "fit_and_evaluation_seconds": 3166.930678129196
+      },
+      "recorded_versions": {
+        "torch": "2.14.0+cu130",
+        "numpy": "2.5.3",
+        "scipy": "1.18.0",
+        "scikit-learn": "1.9.1",
+        "pylibmgm": "1.1.2"
+      },
+      "named_seed_comparison": {
+        "status": "available",
+        "metric": "foscttm",
+        "observed": 0.016328599083198735,
+        "reference": 0.016328599083198735,
+        "signed_error": 0.0,
+        "absolute_error": 0.0,
+        "absolute_tolerance": 1e-10,
+        "strict_numerical_agreement": true
+      },
+      "verification": {
+        "configuration_filename_seed_source_commit_recorded_versions": "passed",
+        "required_metrics_finite_and_in_range": "passed",
+        "classification_top1_not_above_top5": "passed",
+        "full_validation_count": 40504,
+        "foscttm_mean_rank_relation_residual": 0.0,
+        "foscttm_mean_rank_relation_absolute_tolerance": 1e-12,
+        "duration_consistency": "passed",
+        "independent_read_only_check": "passed"
+      }
+    },
+    {
+      "seed": 576165995,
+      "result_id": "3f3b8cfa49d20fae",
+      "raw_result_sha256": "22bd30ab8958854a4e7308ac14e7fbd66de9c2e3bf7b0a7ff04a7c3e704c263c",
+      "status": "independently_checked_interim",
+      "config": {
+        "dataset": "coco_train2014",
+        "model_x": "dinov2_vit-b14@224_mean",
+        "model_y": "mpnet",
+        "seed": 576165995,
+        "method": "ours",
+        "modality_x": "vision",
+        "modality_y": "language",
+        "dataset_y": null,
+        "num_pairs": 0,
+        "pairs_dataset": null,
+        "validation": "coco_val2014",
+        "holdout": 0,
+        "train_size": null,
+        "validation_size": null,
+        "classification": [
+          "CIFAR-10",
+          "CIFAR-100",
+          "ImageNet-100"
+        ],
+        "labels": null
+      },
+      "metrics": {
+        "foscttm": 0.008204032652519202,
+        "mean_rank": 333.2879345249852,
+        "num_validation_samples": 40504,
+        "CIFAR-10_top1": 0.8102999925613403,
+        "CIFAR-10_top5": 0.9916200041770935,
+        "CIFAR-100_top1": 0.2972399890422821,
+        "CIFAR-100_top5": 0.5802599787712097,
+        "ImageNet-100_top1": 0.2655999958515167,
+        "ImageNet-100_top5": 0.5424000024795532,
+        "fit_and_evaluation_seconds": 3045.026193857193
+      },
+      "recorded_versions": {
+        "torch": "2.14.0+cu130",
+        "numpy": "2.5.3",
+        "scipy": "1.18.0",
+        "scikit-learn": "1.9.1",
+        "pylibmgm": "1.1.2"
+      },
+      "named_seed_comparison": {
+        "status": "unavailable_in_frozen_reference",
+        "metric": "foscttm",
+        "reference": null,
+        "strict_numerical_agreement": null,
+        "reason": "The frozen reference contains a five-seed aggregate and one named seed, 734796314; no individual author value for this second seed is available there."
+      },
+      "verification": {
+        "configuration_filename_seed_source_commit_recorded_versions": "passed",
+        "required_metrics_finite_and_in_range": "passed",
+        "classification_top1_not_above_top5": "passed",
+        "full_validation_count": 40504,
+        "foscttm_mean_rank_relation_residual": 1.734723475976807e-18,
+        "foscttm_mean_rank_relation_absolute_tolerance": 1e-12,
+        "duration_consistency": "passed",
+        "independent_read_only_check": "passed"
+      }
+    },
+    {
+      "seed": 2197670066,
+      "result_id": "8dfed73356bd9c25",
+      "raw_result_sha256": "e4a35f10a5ce742c80013e5fa3b2f62df712a5301c540889315134dfbc9a5db6",
+      "status": "independently_checked_interim",
+      "config": {
+        "dataset": "coco_train2014",
+        "model_x": "dinov2_vit-b14@224_mean",
+        "model_y": "mpnet",
+        "seed": 2197670066,
+        "method": "ours",
+        "modality_x": "vision",
+        "modality_y": "language",
+        "dataset_y": null,
+        "num_pairs": 0,
+        "pairs_dataset": null,
+        "validation": "coco_val2014",
+        "holdout": 0,
+        "train_size": null,
+        "validation_size": null,
+        "classification": [
+          "CIFAR-10",
+          "CIFAR-100",
+          "ImageNet-100"
+        ],
+        "labels": null
+      },
+      "metrics": {
+        "foscttm": 0.01064814456530285,
+        "mean_rank": 432.2817993284614,
+        "num_validation_samples": 40504,
+        "CIFAR-10_top1": 0.7749000191688538,
+        "CIFAR-10_top5": 0.9959200024604797,
+        "CIFAR-100_top1": 0.29016000032424927,
+        "CIFAR-100_top5": 0.5734800100326538,
+        "ImageNet-100_top1": 0.26759999990463257,
+        "ImageNet-100_top5": 0.5350000262260437,
+        "fit_and_evaluation_seconds": 3165.9039266109467
+      },
+      "recorded_versions": {
+        "torch": "2.14.0+cu130",
+        "numpy": "2.5.3",
+        "scipy": "1.18.0",
+        "scikit-learn": "1.9.1",
+        "pylibmgm": "1.1.2"
+      },
+      "named_seed_comparison": {
+        "status": "unavailable_in_frozen_reference",
+        "metric": "foscttm",
+        "reference": null,
+        "strict_numerical_agreement": null,
+        "reason": "The frozen reference contains a five-seed aggregate and one named seed, 734796314; no individual author value for this third seed is available there."
+      },
+      "verification": {
+        "configuration_filename_seed_source_commit_recorded_versions": "passed",
+        "required_metrics_finite_and_in_range": "passed",
+        "classification_top1_not_above_top5": "passed",
+        "full_validation_count": 40504,
+        "foscttm_mean_rank_relation_residual": 1.734723475976807e-18,
+        "foscttm_mean_rank_relation_absolute_tolerance": 1e-12,
+        "duration_consistency": "passed",
+        "independent_read_only_check": "passed"
+      }
+    },
+    {
+      "seed": 839703249,
+      "result_id": "1a6d12b0da6a4f3a",
+      "raw_result_sha256": "b866a6c4e7eb88e2817c8b6d541a3e62f5cca4c9841de4fc200dbb9c7ffb34b8",
+      "status": "independently_checked_interim",
+      "config": {
+        "dataset": "coco_train2014",
+        "model_x": "dinov2_vit-b14@224_mean",
+        "model_y": "mpnet",
+        "seed": 839703249,
+        "method": "ours",
+        "modality_x": "vision",
+        "modality_y": "language",
+        "dataset_y": null,
+        "num_pairs": 0,
+        "pairs_dataset": null,
+        "validation": "coco_val2014",
+        "holdout": 0,
+        "train_size": null,
+        "validation_size": null,
+        "classification": [
+          "CIFAR-10",
+          "CIFAR-100",
+          "ImageNet-100"
+        ],
+        "labels": null
+      },
+      "metrics": {
+        "foscttm": 0.0595615504256764,
+        "mean_rank": 2413.421476891171,
+        "num_validation_samples": 40504,
+        "CIFAR-10_top1": 0.7279599905014038,
+        "CIFAR-10_top5": 0.9785599708557129,
+        "CIFAR-100_top1": 0.17725999653339386,
+        "CIFAR-100_top5": 0.3541800081729889,
+        "ImageNet-100_top1": 0.16279999911785126,
+        "ImageNet-100_top5": 0.3962000012397766,
+        "fit_and_evaluation_seconds": 3855.1365213394165
+      },
+      "recorded_versions": {
+        "torch": "2.14.0+cu130",
+        "numpy": "2.5.3",
+        "scipy": "1.18.0",
+        "scikit-learn": "1.9.1",
+        "pylibmgm": "1.1.2"
+      },
+      "named_seed_comparison": {
+        "status": "unavailable_in_frozen_reference",
+        "metric": "foscttm",
+        "reference": null,
+        "strict_numerical_agreement": null,
+        "reason": "The frozen reference contains a five-seed aggregate and one named seed, 734796314; no individual author value for this fourth seed is available there."
+      },
+      "verification": {
+        "configuration_filename_seed_source_commit_recorded_versions": "passed",
+        "required_metrics_finite_and_in_range": "passed",
+        "classification_top1_not_above_top5": "passed",
+        "full_validation_count": 40504,
+        "foscttm_mean_rank_relation_residual": 6.938893903907228e-18,
+        "foscttm_mean_rank_relation_absolute_tolerance": 1e-12,
+        "duration_consistency": "passed",
+        "independent_read_only_check": "passed"
+      }
+    }
+  ],
+  "five_seed_aggregates": null,
+  "five_seed_verdict": "unavailable_until_all_five_results_and_frozen_comparison",
+  "preserved_first_seed_record": {
+    "file": "rosetta-replication-first-seed.json",
+    "sha256": "489a0474c3a6c24c6b0ecbdf5bde5055a20b27475783e4477d6f1368739e3852",
+    "bytes_unchanged": true
+  },
+  "verification_scope": "Read-only validation of the four original result JSON records and all 12 frozen release files. Configuration, result IDs, recorded versions, finite values, ranges, full validation count and scalar rank relation checked. Per-query ranks are not saved by this original runner, so these checks do not independently recompute retrieval from ranks.",
+  "reference_limits": "Only seed 734796314 has an individual published retrieval value in the frozen reference. No individual published classification values are available there. The second, third and fourth results are checked for consistency, not declared individual numerical reproductions.",
+  "remaining": [
+    "One original seed.",
+    "Five-seed mean and sample SD comparisons against the full-precision retrieval and paper-rounded references.",
+    "Final post-run source/input/runtime checks."
+  ],
+  "scope": "One fixed published COCO DINOv2 B/14 mean and MPNet configuration. No five-seed, whole-paper, model-choice or contamination verdict follows from this interim record.",
+  "frozen_comparison_modified": false,
+  "snapshot_note": "Dated snapshot, not a live feed. No mean or standard deviation is computed from a successful subset.",
+  "hostnames_and_private_paths_omitted": true
+}
