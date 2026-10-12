@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "operational_recovery_reviewed_before_execution",
+  "reviewed_at_utc": "2026-10-12T00:53:33.329555+00:00",
+  "execution_lock_sha256": "b7474d4df37bf2ce0d4faeb210d5cc5f784b3d5120dfd49be9c21c25e5a1800a",
+  "private_combined_bindings_sha256": "8737939aae74b9ed81e57cc913695933e590297068e5453f33ba703255c2db61",
+  "prior_execution_lock_sha256": "729ed354cc6382b8ede6bff0deb66719adde43f8a39faa2c5cc1ccbfc00151d8",
+  "prior_failure_record_sha256": "229c05f6151d1bb13b56d102855f6d87cd546638e788f065bedb61e1126c5421",
+  "controller_admission_helper_sha256": "fca1b3a210af95e0220d0108bd4e3ab6e73548e462d4aa841f2b2484687484cd",
+  "change": "The new outer controller receives the validated user runtime directory through XDG_RUNTIME_DIR so it can reach the user service manager. Scientific children retain their original clean environment.",
+  "preserved": [
+    "failed v1 controller and missing reader dispatch evidence",
+    "all scientific code and numerical settings",
+    "all model and data choices",
+    "all fourteen accepted feature entries",
+    "complete 60-model-job and 115-source-job schedule"
+  ],
+  "recovery": "The inactive global registry claim was explicitly retired after retaining its exact bytes. The new controller and private trace roots are unused; scientific attempt trees remain empty. The missing v1 reader ticket is not redispatched.",
+  "validation": {
+    "status": "release_validated",
+    "jobs": 175,
+    "dispatches": 0
+  },
+  "private_final_validation_receipt_sha256": "4c39fad3770e5b1d9b29007be76c2d10e4bf839300a937694340efea5dcce37c",
+  "scientific_result": false
+}

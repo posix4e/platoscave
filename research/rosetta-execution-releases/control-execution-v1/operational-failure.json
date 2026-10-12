@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "status": "controller_failed_before_first_reader",
+  "observed_at_utc": "2026-10-12T00:45:17.875138+00:00",
+  "execution_lock_sha256": "729ed354cc6382b8ede6bff0deb66719adde43f8a39faa2c5cc1ccbfc00151d8",
+  "public_release_commit": "70ffa33f0f62803a336d27dd9c22c7cf4816452b",
+  "controller_exit_status": 1,
+  "controller_successfully_quiescent": false,
+  "controller_quiescent": true,
+  "first_reader_service": "absent_or_unloaded",
+  "first_reader_output_created": false,
+  "model_attempts": 0,
+  "source_attempts": 0,
+  "private_diagnosis_sha256": "7f223f03ad9718b38d592d85e8c449f35909c9d86d1536ef78db63f8fff36dfb",
+  "private_bus_diagnosis_sha256": "1217b678869aabb4fd5ef624d56cc84f624ce5b6a270caf7d58889cb9409e9e7",
+  "cause": "The outer controller environment omitted the user runtime directory needed to connect to the user service manager. A read-only connectivity check failed with the original environment and succeeded when that one setting was added.",
+  "resolution_plan": "Preserve the failed controller and unresolved reader ticket. Use a separately reviewed execution release and new controller root; restore only the outer controller service-manager connection setting. Keep all scientific code, child numerical settings, models, data and schedule unchanged.",
+  "scientific_result": false
+}
