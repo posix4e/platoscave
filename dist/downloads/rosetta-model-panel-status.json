@@ -2,7 +2,7 @@
   "schema_version": 1,
   "protocol_id": "rosetta-model-controls-v2",
   "status": "reference_replays_running",
-  "observed_at_utc": "2026-10-12T01:11:48.777418+00:00",
+  "observed_at_utc": "2026-10-12T01:59:09.503140+00:00",
   "release_commit": "c14771afc455c588ad9a19854161b9bc2c60b63e",
   "outer_release_sha256": "caf5dbb25b1b769526dd3b36c4e9afffb735ca451a8cc447afc03788f56da674",
   "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
@@ -10,11 +10,11 @@
   "added_extractions_required": 10,
   "added_extractions_complete": 10,
   "running": null,
-  "alignment_cells_complete": 0,
-  "method_results_complete": 0,
+  "alignment_cells_complete": 2,
+  "method_results_complete": 10,
   "required_model_cells": 60,
   "required_method_results": 300,
-  "scope": "All ten added extractions are accepted and all fourteen feature entries passed the required audit. The controller accepted its model and source input checks, and the first two of five reference replay cells were observed running. Its latest saved progress records two running jobs and 173 pending. These replay cells check the new runner against our preserved retrieval results; the original comparison with the authors and its numerical differences remain unchanged. No completed model-comparison or source-study result is available. This is a dated observation, not a live counter.",
+  "scope": "All ten added extractions are accepted and all fourteen feature entries passed the required audit. Two of five reference replay cells are accepted, with ten available method results across those two cells. Their Rosetta retrieval scores equal our preserved scores. The next two replay cells were observed running and the fifth remained pending. Saved progress records two completed jobs, two running and 171 pending. The five-seed replay gate is still pending. The original comparison with the authors and its numerical differences remain unchanged. Expanded-model comparisons and final panel interpretation remain pending; source fitting has not begun. This is a dated observation, not a live counter.",
   "next_steps": [
     "Finish all five reference replay cells and their required full-reader checks.",
     "Require agreement with our preserved baseline before expanded model fitting.",
@@ -222,7 +222,9 @@
   "count_definitions": {
     "added_extractions_generated": "Extraction completion marker and successful service exit observed.",
     "added_extractions_complete": "Accepted extractions only; retained meaning of the earlier snapshots.",
-    "added_extractions_accepted": "Acceptance receipt recorded; extraction acceptance alone does not establish completion of the required fourteen-feature numerical audit."
+    "added_extractions_accepted": "Acceptance receipt recorded; extraction acceptance alone does not establish completion of the required fourteen-feature numerical audit.",
+    "alignment_cells_complete": "Controller-accepted complete model cells, including the five reference replay cells in the planned sixty.",
+    "method_results_complete": "Available method results in the accepted full-reader summary; this count does not establish a completed five-seed series or a final scientific conclusion."
   },
   "private_generation_and_blocked_admission_observation_sha256": "50cd7382f22c9ff24d434dc219dc1caf0980cf39c7999c525e4c345cf367dbc4",
   "scheduling_block_cleared": true,
@@ -238,7 +240,7 @@
       "sha256": "af08634ac0b667796c89f50d213c48a2ca7298ad5d077b978fd368432d35cd4d"
     }
   ],
-  "observation_scope": "The controller and first two reference replay services were observed running at the stated time. The latest saved progress records two running jobs and 173 pending; no completed result is claimed. Initial model and source reader acceptance receipts were observed.",
+  "observation_scope": "Two completed reference cells have successful quiescent service records and an accepted full-reader check. The controller and next two reference replay services were observed running at the stated time. Counts describe the saved progress at 01:57 UTC; acceptance does not establish the full five-seed replay gate or a final independent numerical audit. Accepted evidence was inspected afterward; retained terminal observations keep their own timestamps below.",
   "private_final_acceptance_and_audit_admission_observation_sha256": "d0e34d47c3042afcda6715c155c158920ac27bda4dd375f177d0dfcca276f31f",
   "feature_audit": {
     "status": "passed",
@@ -269,12 +271,13 @@
     "accepted_feature_lock_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/feature-lock.json",
     "controller_dispatched_at_utc": "2026-10-12T00:55:09.318423+00:00",
     "controller_observed_state": "running",
-    "controller_observed_at_utc": "2026-10-12T01:11:48.777418+00:00",
+    "controller_observed_at_utc": "2026-10-12T01:59:09.503140+00:00",
     "latest_saved_phase": "in_progress",
-    "latest_saved_progress_at_utc": "2026-10-12T00:56:10.515217+00:00",
+    "latest_saved_progress_at_utc": "2026-10-12T01:57:25.397345+00:00",
     "latest_saved_job_counts": {
-      "pending": 173,
-      "running": 2
+      "complete": 2,
+      "running": 2,
+      "pending": 171
     },
     "scheduled_jobs": {
       "total": 175,
@@ -283,12 +286,12 @@
       "reference_gate": 5
     },
     "private_initial_observation_sha256": "d8e5f4eb4a29359fae71e02c4aa1d0d15153a0c0e998d5f6adc829049d82be1d",
-    "saved_progress_sha256": "b598384d6218349fea8bc3872da520094a6cf77ab6e6720f784fdb1ff4919627",
+    "saved_progress_sha256": "9b4f6d64c3be89a16f3aafba4887f3993cfab651418d09c27fae07f35330f9d0",
     "prior_failure_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/operational-failure.json",
     "recovery_review_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/recovery-review.json",
     "prior_failure_scope": "The v1 controller failed before its first reader or any fit because its outer environment omitted a service-manager connection setting. The separately reviewed v2 recovery preserves scientific code, child numerical settings, all fourteen features and the complete schedule.",
-    "scope": "The first two reference replay services and their controller were observed running. Saved progress records two running jobs and 173 pending. The five replay jobs are included in the 60 model jobs; they are not additional jobs. This is a dated observation, not a live count.",
-    "private_latest_observation_sha256": "c88557615ec9b165442ca5036b57f53dfc7b098cb93d5d95d487d8b0f77d8015",
+    "scope": "Two reference replay cells are accepted. The next two were observed running, and the fifth remained pending. Saved progress records two completed jobs, two running and 171 pending. The five replay jobs are included in the sixty model jobs. This is a dated observation, not a live count.",
+    "private_latest_observation_sha256": "987a2e078d45821f30afec233e497b6f656035be026d48e124b4295aa109bb19",
     "input_check_receipts": {
       "preflight-model": {
         "receipt_sha256": "679d89355d0c9047b6bc8dd09be49347e7c3a66cfe751d133448bbaa9a8c10da",
@@ -304,9 +307,56 @@
     "reference_replays": {
       "required": 5,
       "observed_running": 2,
-      "accepted_complete": 0,
+      "accepted_complete": 2,
       "gate_observed": false,
-      "scope": "Retrieval replay against our own preserved five-seed baseline; classification is not rerun. Passing this gate would not resolve the original differences from the authors."
+      "scope": "Retrieval replay against our own preserved five-seed baseline; classification is not rerun. Passing this gate would not resolve the original differences from the authors.",
+      "pending": 1,
+      "accepted_cells": [
+        {
+          "seed": 734796314,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "093f5c46ffe91dfed07ef019f69cfeef116d82ed01c2d188dc71b8e67a1f3da4",
+          "complete_sha256": "4af963c0619289554ddae0b47151f1e048b497cc0b20f01f7c4d19629c12fd5f",
+          "cell_sha256": "c227b0028efcbf670594b9b206063a5bca15934f5e6c4004f576b02e0ab86f19",
+          "rosetta_result_sha256": "c82b4ec77fb3901196e26698790c8783200a759177f4c775c84306c4984e41ed",
+          "original_result_sha256": "1221924862de19cf10aa60938deea49f80c08836a07689ecb26d9d1b343e8805",
+          "rosetta_retrieval_metrics_agree_with_preserved_baseline": true,
+          "rosetta_retrieval_absolute_errors": {
+            "foscttm": 0.0,
+            "mean_rank": 0.0
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T02:00:26.826172+00:00"
+        },
+        {
+          "seed": 576165995,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "623ae32dfd9c9d95ef517523bb97cedf88431782ce30d6994572e46124ac7113",
+          "complete_sha256": "3c75140a62648c5848b7c966452e90a5a9f1d7a8f076fde54c524a36931b28e3",
+          "cell_sha256": "9f5e94740b99dd424efffaeea08d6ae101292d07d7c2c84be2f1a26834fe4a20",
+          "rosetta_result_sha256": "50e753cd453a689bc7ce7051acaaab90cc8e1fb735d6a00a6d8d845aa2c1359a",
+          "original_result_sha256": "22bd30ab8958854a4e7308ac14e7fbd66de9c2e3bf7b0a7ff04a7c3e704c263c",
+          "rosetta_retrieval_metrics_agree_with_preserved_baseline": true,
+          "rosetta_retrieval_absolute_errors": {
+            "foscttm": 0.0,
+            "mean_rank": 0.0
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T02:00:26.894037+00:00"
+        }
+      ],
+      "accepted_reader": {
+        "summary_sha256": "edcd5d9707d7bbd3afcc4f800192e02dcf36e077793a87127eb0e4b89fb7478e",
+        "acceptance_sha256": "93ec343012b1e352e18db5aad3b141d98b06214ea8cd4ac56a49f8f4660eebd6",
+        "ticket_sha256": "d49933d59b2d61a79e5739f21d5b8e7c8bfeaf498f33f6e30318d11c8c3eedae",
+        "full_panel_status": "incomplete",
+        "inventory_findings": 0,
+        "independent_final_numerical_audit_complete": false,
+        "retained_terminal_observation_at_utc": "2026-10-12T01:57:24.689030+00:00"
+      },
+      "acceptance_evidence_reviewed_at_utc": "2026-10-12T02:03:46.331972+00:00"
     }
   }
 }
