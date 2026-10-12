@@ -137,9 +137,11 @@ was published before added corpus inference. As recorded in the [dated status sn
 all ten added extractions are complete and accepted, and all fourteen entries
 in the [accepted feature lock](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/feature-lock.json)
 passed the required audit. The [published v2 execution controller](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/execution-lock.json)
-launched and was observed running on 12 October 2026 at 00:56 UTC. Its latest
-saved progress, from 00:55 UTC, records input checks and all 175 scheduled jobs
-pending. An [earlier controller attempt failed before any fitting](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/operational-failure.json)
+accepted its initial model and source input checks. The first two of five
+reference replay cells were observed running on 12 October 2026 at 01:11 UTC.
+Its latest saved progress records two running jobs and 173 pending. These
+replays check the new runner against our own preserved retrieval results;
+the original comparison with the authors and its differences remain unchanged. An [earlier controller attempt failed before any fitting](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/operational-failure.json)
 because of a service-connection setting; the [reviewed recovery](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/recovery-review.json)
 preserves scientific code, child numerical settings, features and schedule.
 All five reference replays must agree with our preserved baseline before

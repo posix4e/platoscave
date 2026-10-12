@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "protocol_id": "rosetta-model-controls-v2",
-  "status": "control_execution_preflight",
-  "observed_at_utc": "2026-10-12T00:56:05.710948+00:00",
+  "status": "reference_replays_running",
+  "observed_at_utc": "2026-10-12T01:11:48.777418+00:00",
   "release_commit": "c14771afc455c588ad9a19854161b9bc2c60b63e",
   "outer_release_sha256": "caf5dbb25b1b769526dd3b36c4e9afffb735ca451a8cc447afc03788f56da674",
   "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
@@ -14,9 +14,9 @@
   "method_results_complete": 0,
   "required_model_cells": 60,
   "required_method_results": 300,
-  "scope": "All ten added extractions are accepted and all fourteen feature entries passed the required audit. The published v2 execution controller launched and was observed running; its latest saved phase is preflight, with all 175 scheduled jobs pending. The first controller attempt failed before any reader or fit; the reviewed operational recovery preserves scientific code, child numerical settings, features and schedule. No completed model-comparison or source-study result is available. This is a dated observation, not a live counter.",
+  "scope": "All ten added extractions are accepted and all fourteen feature entries passed the required audit. The controller accepted its model and source input checks, and the first two of five reference replay cells were observed running. Its latest saved progress records two running jobs and 173 pending. These replay cells check the new runner against our preserved retrieval results; the original comparison with the authors and its numerical differences remain unchanged. No completed model-comparison or source-study result is available. This is a dated observation, not a live counter.",
   "next_steps": [
-    "Complete the controller input checks and run all five reference replay cells.",
+    "Finish all five reference replay cells and their required full-reader checks.",
     "Require agreement with our preserved baseline before expanded model fitting.",
     "Finish the separate 23-set source-removal study and prospective fresh-data study."
   ],
@@ -238,7 +238,7 @@
       "sha256": "af08634ac0b667796c89f50d213c48a2ca7298ad5d077b978fd368432d35cd4d"
     }
   ],
-  "observation_scope": "Controller running state and latest saved progress observed at the stated time. Saved progress records the preflight input-check phase and all 175 scheduled jobs pending; it does not establish that any fit has started.",
+  "observation_scope": "The controller and first two reference replay services were observed running at the stated time. The latest saved progress records two running jobs and 173 pending; no completed result is claimed. Initial model and source reader acceptance receipts were observed.",
   "private_final_acceptance_and_audit_admission_observation_sha256": "d0e34d47c3042afcda6715c155c158920ac27bda4dd375f177d0dfcca276f31f",
   "feature_audit": {
     "status": "passed",
@@ -269,11 +269,12 @@
     "accepted_feature_lock_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/feature-lock.json",
     "controller_dispatched_at_utc": "2026-10-12T00:55:09.318423+00:00",
     "controller_observed_state": "running",
-    "controller_observed_at_utc": "2026-10-12T00:56:05.710948+00:00",
-    "latest_saved_phase": "preflight",
-    "latest_saved_progress_at_utc": "2026-10-12T00:55:09.579306+00:00",
+    "controller_observed_at_utc": "2026-10-12T01:11:48.777418+00:00",
+    "latest_saved_phase": "in_progress",
+    "latest_saved_progress_at_utc": "2026-10-12T00:56:10.515217+00:00",
     "latest_saved_job_counts": {
-      "pending": 175
+      "pending": 173,
+      "running": 2
     },
     "scheduled_jobs": {
       "total": 175,
@@ -282,10 +283,30 @@
       "reference_gate": 5
     },
     "private_initial_observation_sha256": "d8e5f4eb4a29359fae71e02c4aa1d0d15153a0c0e998d5f6adc829049d82be1d",
-    "saved_progress_sha256": "f82e3105b1e121eea97314dd3f42e208d2c1807bf04e7203a0a0749ae28501cd",
+    "saved_progress_sha256": "b598384d6218349fea8bc3872da520094a6cf77ab6e6720f784fdb1ff4919627",
     "prior_failure_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/operational-failure.json",
     "recovery_review_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/recovery-review.json",
     "prior_failure_scope": "The v1 controller failed before its first reader or any fit because its outer environment omitted a service-manager connection setting. The separately reviewed v2 recovery preserves scientific code, child numerical settings, all fourteen features and the complete schedule.",
-    "scope": "The controller was observed running while the latest saved state recorded input checks. All 175 jobs were pending in that saved state. This is neither a claim that fits are running nor a live completion count."
+    "scope": "The first two reference replay services and their controller were observed running. Saved progress records two running jobs and 173 pending. The five replay jobs are included in the 60 model jobs; they are not additional jobs. This is a dated observation, not a live count.",
+    "private_latest_observation_sha256": "c88557615ec9b165442ca5036b57f53dfc7b098cb93d5d95d487d8b0f77d8015",
+    "input_check_receipts": {
+      "preflight-model": {
+        "receipt_sha256": "679d89355d0c9047b6bc8dd09be49347e7c3a66cfe751d133448bbaa9a8c10da",
+        "summary_sha256": "93df9924333a4051b19e9b853f00a25fe3e10e154fbe4f0058fdaaa9c82514f3",
+        "ticket_sha256": "640a1f58d957232a5d73241845d1fc62a11979a8797426e991d102a680d9d5b7"
+      },
+      "preflight-source": {
+        "receipt_sha256": "a5173623f423875ecbce7d9ec9e389740b853c49f6bb775187c5f81656a1954f",
+        "summary_sha256": "9d59e4fea899d7c88e71c5b76926db0dde811dc5dd7893f4d56ac473a9a6d95b",
+        "ticket_sha256": "46a2620d9796cc0f9fc40f944050f47be967ac4d31282aa50be00035d7751183"
+      }
+    },
+    "reference_replays": {
+      "required": 5,
+      "observed_running": 2,
+      "accepted_complete": 0,
+      "gate_observed": false,
+      "scope": "Retrieval replay against our own preserved five-seed baseline; classification is not rerun. Passing this gate would not resolve the original differences from the authors."
+    }
   }
 }
