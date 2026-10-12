@@ -1,6 +1,7 @@
 """Bounded invented inputs only. No real scientific output or runner imports."""
 import copy
 from fractions import Fraction
+import hashlib
 import io
 import json
 import math
@@ -17,6 +18,20 @@ import audit_rank_summaries as a
 
 def encode(value):
     return (json.dumps(value, indent=2) + '\n').encode()
+
+
+# Fixed insertion order deliberately differs from the controller's sorted order.
+# Known answer checked against encoded()/object_hash() in frozen execution.py
+# SHA-256 332dec331fcfa58ee1fcbc2f30fbd7eee77406fd0992dbba6293338332a4d5fd.
+KNOWN_CONTROLLER_TICKET = {'study': 'model', 'preflight': False, 'final_audit': False,
+    'out': '/synthetic/verify-0001/summary.json', 'kind': 'verification'}
+KNOWN_CONTROLLER_TICKET_SHA256 = 'ff88ed7044779183135097e7cae7ad526c75b5fe1d9a15aff5fb8ddf00bac032'
+
+
+def fixture_controller_ticket_hash(value):
+    """Independent receipt writer; never use a reporting helper for this binding."""
+    serialized = json.dumps(value, sort_keys=True, indent=2, allow_nan=False) + '\n'
+    return hashlib.sha256(serialized.encode('utf-8')).hexdigest()
 
 
 def frozen_group(values, *, source=False, contrast=False, operands=None):
@@ -142,7 +157,7 @@ class AuditTests(unittest.TestCase):
         ticket={'study':self.args.study, 'preflight':False, 'out':str(self.args.summary)}
         (self.inputs/'ticket.json').write_bytes(encode(ticket))
         self.args.study_receipt.write_bytes(encode({'summary_path': str(self.args.summary), 'summary_sha256': self.args.summary_sha256,
-            'verification': str(self.inputs), 'ticket_sha256': a.object_hash(ticket)}))
+            'verification': str(self.inputs), 'ticket_sha256': fixture_controller_ticket_hash(ticket)}))
         self.args.study_receipt_sha256 = a.sha(self.args.study_receipt.read_bytes())
         return self.args
 
@@ -259,6 +274,39 @@ class AuditTests(unittest.TestCase):
         self.assertEqual(result['foscttm'],Fraction(13,24))
         self.assertAlmostEqual(float(a.stats([{'x':Fraction(1)},{'x':Fraction(3)}],['x'])['sample_sd']['x']),math.sqrt(2))
 
+    def test_controller_ticket_known_answer_and_separate_compact_hash(self):
+        canonical = (b'{\n  "final_audit": false,\n  "kind": "verification",\n'
+            b'  "out": "/synthetic/verify-0001/summary.json",\n'
+            b'  "preflight": false,\n  "study": "model"\n}\n')
+        self.assertEqual(hashlib.sha256(canonical).hexdigest(), KNOWN_CONTROLLER_TICKET_SHA256)
+        for ticket in (KNOWN_CONTROLLER_TICKET, dict(reversed(list(KNOWN_CONTROLLER_TICKET.items())))):
+            self.assertEqual(fixture_controller_ticket_hash(ticket), KNOWN_CONTROLLER_TICKET_SHA256)
+            self.assertEqual(a.controller_ticket_hash(ticket), KNOWN_CONTROLLER_TICKET_SHA256)
+            compact = hashlib.sha256(json.dumps(ticket, separators=(',', ':'), allow_nan=False).encode()).hexdigest()
+            self.assertEqual(a.object_hash(ticket), compact)
+            self.assertNotEqual(compact, KNOWN_CONTROLLER_TICKET_SHA256)
+
+    def test_reformatted_ticket_accepts_controller_hash_rejects_compact_hash(self):
+        self.prepare('model')
+        ticket = dict(reversed(list(KNOWN_CONTROLLER_TICKET.items())))
+        ticket_data = json.dumps(ticket, indent=4).encode()  # Different order, whitespace and no trailing newline.
+        (self.inputs/'ticket.json').write_bytes(ticket_data)
+        receipt = {'summary_path': ticket['out'], 'summary_sha256': self.args.summary_sha256,
+            'verification': str(Path(ticket['out']).parent), 'ticket_sha256': a.object_hash(ticket)}
+        self.args.study_receipt.write_bytes(encode(receipt))
+        self.args.study_receipt_sha256 = a.sha(self.args.study_receipt.read_bytes())
+        with self.assertRaisesRegex(ValueError, 'ticket'): a.audit(self.args)
+        self.assertFalse(self.args.out.exists())
+        receipt['ticket_sha256'] = KNOWN_CONTROLLER_TICKET_SHA256
+        self.args.study_receipt.write_bytes(encode(receipt))
+        self.args.study_receipt_sha256 = a.sha(self.args.study_receipt.read_bytes())
+        result = a.audit(self.args)
+        self.assertEqual(result['status'], 'comparison_generated')
+        output = json.loads(self.args.out.read_text())
+        self.assertEqual(output['inputs']['ticket_canonical_sha256'], KNOWN_CONTROLLER_TICKET_SHA256)
+        self.assertEqual(output['inputs']['ticket_sha256'], hashlib.sha256(ticket_data).hexdigest())
+        self.assertNotEqual(output['inputs']['ticket_sha256'], KNOWN_CONTROLLER_TICKET_SHA256)
+
     def test_missing_observation_and_missing_contrast_rejected(self):
         self.prepare('model'); original=copy.deepcopy(self.summary)
         del self.summary['observations'][next(iter(self.summary['observations']))]
@@ -289,7 +337,7 @@ class AuditTests(unittest.TestCase):
         self.prepare('model')
         ticket_path=self.inputs/'ticket.json'; ticket=json.loads(ticket_path.read_text()); ticket['preflight']=True
         ticket_path.write_bytes(encode(ticket))
-        receipt=json.loads(self.args.study_receipt.read_text()); receipt['ticket_sha256']=a.object_hash(ticket)
+        receipt=json.loads(self.args.study_receipt.read_text()); receipt['ticket_sha256']=fixture_controller_ticket_hash(ticket)
         self.args.study_receipt.write_bytes(encode(receipt)); self.args.study_receipt_sha256=a.sha(self.args.study_receipt.read_bytes())
         with self.assertRaisesRegex(ValueError,'ticket'): a.audit(self.args)
         self.refresh(); preflight=self.inputs/'preflight-model.json'; preflight.write_bytes(self.args.study_receipt.read_bytes())
@@ -309,7 +357,7 @@ class AuditTests(unittest.TestCase):
         (self.inputs/'ticket.json').write_bytes(encode(ticket))
         self.args.study_receipt=self.inputs/'final-audit-model.json'
         self.args.study_receipt.write_bytes(encode({'summary_path':ticket['out'],'summary_sha256':self.args.summary_sha256,
-            'verification':recorded,'ticket_sha256':a.object_hash(ticket)}))
+            'verification':recorded,'ticket_sha256':fixture_controller_ticket_hash(ticket)}))
         self.args.study_receipt_sha256=a.sha(self.args.study_receipt.read_bytes())
         result=a.audit(self.args)
         self.assertEqual(result['status'],'comparison_generated')

@@ -56,6 +56,11 @@ def object_hash(value):
     return sha(json.dumps(value, separators=(',', ':'), allow_nan=False).encode())
 
 
+def controller_ticket_hash(value):
+    """Match execution.py's ticket encoding; scientific object hashes stay compact."""
+    return sha((json.dumps(value, sort_keys=True, indent=2, allow_nan=False) + '\n').encode())
+
+
 def valid_sha(value):
     return isinstance(value, str) and re.fullmatch('[0-9a-f]{64}', value) is not None
 
@@ -448,7 +453,7 @@ def audit(args):
     # Compare recorded paths internally, so a byte-preserving local copy works.
     ticket_path = Path(args.acceptance).parent / 'ticket.json'
     ticket_data = ticket_path.read_bytes(); ticket = read_json(ticket_data)
-    need(object_hash(ticket) == study_receipt['ticket_sha256'] and ticket.get('study') == args.study and
+    need(controller_ticket_hash(ticket) == study_receipt['ticket_sha256'] and ticket.get('study') == args.study and
          ticket.get('preflight') is False and ticket.get('out') == study_receipt['summary_path'] and
          bool(ticket.get('final_audit')) == receipt_name.startswith('final-audit-'),
          'Controller reader ticket binding/type differs')

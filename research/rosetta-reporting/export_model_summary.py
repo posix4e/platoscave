@@ -26,6 +26,11 @@ DESCRIPTIVE_DIRECTION = 'Positive differences mean worse retrieval; mean_rank is
 DESCRIPTIVE_INFERENCE = 'Descriptive only; no significance tests, rankings, thresholds or confidence intervals.'
 
 
+def controller_ticket_hash(value):
+    """Match execution.py's ticket encoding; scientific object hashes stay compact."""
+    return digest((json.dumps(value, sort_keys=True, indent=2, allow_nan=False) + '\n').encode())
+
+
 def hash_value(value):
     need(isinstance(value, str) and re.fullmatch('[0-9a-f]{64}', value), 'Invalid SHA-256')
     return value
@@ -254,7 +259,7 @@ def export_summary(args):
     need(set(stage)=={'summary_path','summary_sha256','verification','ticket_sha256'} and stage['summary_sha256']==args.summary_sha256 and
          Path(stage['summary_path']).name=='summary.json' and Path(stage['summary_path']).parent==Path(stage['verification']), 'Model-stage receipt binding differs')
     ticket_path=paths['acceptance'].parent/'ticket.json'; ticket_data=ticket_path.read_bytes();ticket=ranks.read_json(ticket_data)
-    need(object_hash(ticket)==stage['ticket_sha256'] and ticket.get('kind')=='verification' and ticket.get('study')=='model' and
+    need(controller_ticket_hash(ticket)==stage['ticket_sha256'] and ticket.get('kind')=='verification' and ticket.get('study')=='model' and
          ticket.get('preflight') is False and ticket.get('final_audit') is False and ticket.get('out')==stage['summary_path'], 'Reader ticket type/binding differs')
     need(ticket.get('runner_bindings_sha256')==summary['input_hashes']['runner_bindings'] and
          ticket.get('summary_bindings_sha256')==summary['input_hashes']['private_bindings'], 'Reader input bindings differ')

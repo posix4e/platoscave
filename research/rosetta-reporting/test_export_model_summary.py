@@ -13,6 +13,7 @@ import export_model_summary as projection
 import test_audit_rank_summaries as audit_fixture
 
 encode = audit_fixture.encode
+fixture_controller_ticket_hash = audit_fixture.fixture_controller_ticket_hash
 
 
 class ModelSummaryTests(unittest.TestCase):
@@ -68,7 +69,7 @@ class ModelSummaryTests(unittest.TestCase):
             'argv':['private-command','--secret-path',recorded],'unit':'PRIVATE_PROCESS_SENTINEL'}
         self.ticket_data=encode(self.ticket);(self.inputs/'ticket.json').write_bytes(self.ticket_data)
         stage={'summary_path':self.ticket['out'],'summary_sha256':self.args.summary_sha256,'verification':recorded,
-            'ticket_sha256':ranks.object_hash(self.ticket)}
+            'ticket_sha256':fixture_controller_ticket_hash(self.ticket)}
         self.args.stage_receipt.write_bytes(encode(stage));self.args.stage_receipt_sha256=ranks.digest(self.args.stage_receipt.read_bytes())
         selected=[];partitions=[]
         for identity,o in self.summary['observations'].items():
@@ -153,6 +154,33 @@ class ModelSummaryTests(unittest.TestCase):
         self.assertNotIn('PRIVATE_PROCESS_SENTINEL',self.args.out.read_text())
         self.assertNotIn('validation_image_ids',self.args.out.read_text())
 
+    def test_controller_ticket_known_answer_and_separate_compact_hash(self):
+        for ticket in (audit_fixture.KNOWN_CONTROLLER_TICKET,
+                       dict(reversed(list(audit_fixture.KNOWN_CONTROLLER_TICKET.items())))):
+            self.assertEqual(projection.controller_ticket_hash(ticket), audit_fixture.KNOWN_CONTROLLER_TICKET_SHA256)
+            self.assertEqual(projection.object_hash(ticket), ranks.object_hash(ticket))
+            self.assertNotEqual(projection.object_hash(ticket), audit_fixture.KNOWN_CONTROLLER_TICKET_SHA256)
+
+    def test_reformatted_ticket_accepts_controller_hash_rejects_compact_hash(self):
+        self.ticket = dict(reversed(list(self.ticket.items())))
+        ticket_data = json.dumps(self.ticket, indent=4).encode()  # Preserve content, change bytes and key order.
+        (self.inputs/'ticket.json').write_bytes(ticket_data)
+        stage = json.loads(self.args.stage_receipt.read_text())
+        canonical = fixture_controller_ticket_hash(self.ticket)
+        for accepted_hash in (ranks.object_hash(self.ticket), canonical):
+            stage['ticket_sha256'] = accepted_hash
+            self.args.stage_receipt.write_bytes(encode(stage))
+            self.args.stage_receipt_sha256 = ranks.digest(self.args.stage_receipt.read_bytes())
+            self.audit_report['inputs'].update(study_receipt_sha256=self.args.stage_receipt_sha256,
+                ticket_sha256=ranks.digest(ticket_data), ticket_canonical_sha256=accepted_hash)
+            self.write_reports()
+            if accepted_hash != canonical:
+                with self.assertRaisesRegex(ValueError, 'ticket'): self.run_export()
+                self.assertFalse(self.args.out.exists())
+            else:
+                result, _ = self.run_export()
+                self.assertEqual(result['status'], 'projection_prepared')
+
     def test_failed_history_and_private_detail_omission(self):
         cell=f'dino/glove/{ranks.SEEDS[0]}';old=self.summary['attempts'][cell][0];new=copy.deepcopy(old)
         old.update(terminal_marker='FAILED.json',cell_status='failed')
@@ -218,7 +246,7 @@ class ModelSummaryTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'SHA-256'):projection.export_summary(self.args)
         self.write_inputs();self.ticket['preflight']=True
         ticket_data=encode(self.ticket);(self.inputs/'ticket.json').write_bytes(ticket_data)
-        stage=json.loads(self.args.stage_receipt.read_text());stage['ticket_sha256']=ranks.object_hash(self.ticket)
+        stage=json.loads(self.args.stage_receipt.read_text());stage['ticket_sha256']=fixture_controller_ticket_hash(self.ticket)
         self.args.stage_receipt.write_bytes(encode(stage));self.args.stage_receipt_sha256=ranks.digest(self.args.stage_receipt.read_bytes())
         with self.assertRaisesRegex(ValueError,'ticket'):projection.export_summary(self.args)
         self.write_inputs();(self.inputs/'ticket.json').unlink()
