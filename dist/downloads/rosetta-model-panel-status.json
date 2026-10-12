@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "protocol_id": "rosetta-model-controls-v2",
-  "status": "feature_audit_passed",
-  "observed_at_utc": "2026-10-12T00:37:53.850986+00:00",
+  "status": "control_execution_preflight",
+  "observed_at_utc": "2026-10-12T00:56:05.710948+00:00",
   "release_commit": "c14771afc455c588ad9a19854161b9bc2c60b63e",
   "outer_release_sha256": "caf5dbb25b1b769526dd3b36c4e9afffb735ca451a8cc447afc03788f56da674",
   "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
@@ -14,9 +14,9 @@
   "method_results_complete": 0,
   "required_model_cells": 60,
   "required_method_results": 300,
-  "scope": "All ten added training and validation extractions for DINO, MoCo, MAE, GloVe and ELMo are complete and accepted. All fourteen feature entries passed the mandatory numerical and identity audit and frozen full runner preflight. The combined execution release and five reference replays against our preserved baseline remain required before expanded model fitting. No model-comparison fit or result is available. This is a dated account of verified evidence, not a live counter.",
+  "scope": "All ten added extractions are accepted and all fourteen feature entries passed the required audit. The published v2 execution controller launched and was observed running; its latest saved phase is preflight, with all 175 scheduled jobs pending. The first controller attempt failed before any reader or fit; the reviewed operational recovery preserves scientific code, child numerical settings, features and schedule. No completed model-comparison or source-study result is available. This is a dated observation, not a live counter.",
   "next_steps": [
-    "Bind the complete execution release and run all five reference replay cells.",
+    "Complete the controller input checks and run all five reference replay cells.",
     "Require agreement with our preserved baseline before expanded model fitting.",
     "Finish the separate 23-set source-removal study and prospective fresh-data study."
   ],
@@ -238,7 +238,7 @@
       "sha256": "af08634ac0b667796c89f50d213c48a2ca7298ad5d077b978fd368432d35cd4d"
     }
   ],
-  "observation_scope": "Successful quiescent feature-audit completion observed, output hashes and all ten extraction acceptance links checked, and audit accepted for execution-release assembly at the stated time.",
+  "observation_scope": "Controller running state and latest saved progress observed at the stated time. Saved progress records the preflight input-check phase and all 175 scheduled jobs pending; it does not establish that any fit has started.",
   "private_final_acceptance_and_audit_admission_observation_sha256": "d0e34d47c3042afcda6715c155c158920ac27bda4dd375f177d0dfcca276f31f",
   "feature_audit": {
     "status": "passed",
@@ -261,5 +261,31 @@
     "private_bindings_sha256": "a3420c40d72361f799c40658d8bda71b822f124decd1b19c9e44dfdceadfb2ed",
     "private_terminal_observation_sha256": "007859a2316a2de0a2cc23893e159500c07428e000b57ceb8108fcd3601a0965",
     "acceptance_receipt_sha256": "69ef77131861ea79d31df891459b03135688dc21a848b563ac79f18bc9717aa9"
+  },
+  "execution": {
+    "release_commit": "77dae1a5833d9c5ddd0c73138f53e2fce34b0235",
+    "execution_lock_sha256": "b7474d4df37bf2ce0d4faeb210d5cc5f784b3d5120dfd49be9c21c25e5a1800a",
+    "execution_lock_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/execution-lock.json",
+    "accepted_feature_lock_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/feature-lock.json",
+    "controller_dispatched_at_utc": "2026-10-12T00:55:09.318423+00:00",
+    "controller_observed_state": "running",
+    "controller_observed_at_utc": "2026-10-12T00:56:05.710948+00:00",
+    "latest_saved_phase": "preflight",
+    "latest_saved_progress_at_utc": "2026-10-12T00:55:09.579306+00:00",
+    "latest_saved_job_counts": {
+      "pending": 175
+    },
+    "scheduled_jobs": {
+      "total": 175,
+      "model": 60,
+      "source": 115,
+      "reference_gate": 5
+    },
+    "private_initial_observation_sha256": "d8e5f4eb4a29359fae71e02c4aa1d0d15153a0c0e998d5f6adc829049d82be1d",
+    "saved_progress_sha256": "f82e3105b1e121eea97314dd3f42e208d2c1807bf04e7203a0a0749ae28501cd",
+    "prior_failure_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/operational-failure.json",
+    "recovery_review_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/recovery-review.json",
+    "prior_failure_scope": "The v1 controller failed before its first reader or any fit because its outer environment omitted a service-manager connection setting. The separately reviewed v2 recovery preserves scientific code, child numerical settings, all fourteen features and the complete schedule.",
+    "scope": "The controller was observed running while the latest saved state recorded input checks. All 175 jobs were pending in that saved state. This is neither a claim that fits are running nor a live completion count."
   }
 }

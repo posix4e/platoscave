@@ -134,13 +134,17 @@ four image pipelines crossed with three language pipelines, five original seeds
 and five methods: Rosetta plus correct-pair and shuffled-pair orthogonal and
 linear controls. All 12 model pairings remain in the plan. The extraction release
 was published before added corpus inference. As recorded in the [dated status snapshot](dist/downloads/rosetta-model-panel-status.json),
-all ten added extractions are complete and accepted. All fourteen feature entries
-have passed the mandatory numerical and identity audit and frozen full runner
-preflight. Successful audit completion, output hashes and extraction acceptance
-links were verified, and the audit was accepted on 12 October 2026 at 00:37 UTC.
-The combined execution release and five reference replays against our preserved
-baseline remain required before expanded model fitting. No model-panel fit or
-result is available.
+all ten added extractions are complete and accepted, and all fourteen entries
+in the [accepted feature lock](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/feature-lock.json)
+passed the required audit. The [published v2 execution controller](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/execution-lock.json)
+launched and was observed running on 12 October 2026 at 00:56 UTC. Its latest
+saved progress, from 00:55 UTC, records input checks and all 175 scheduled jobs
+pending. An [earlier controller attempt failed before any fitting](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/operational-failure.json)
+because of a service-connection setting; the [reviewed recovery](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/recovery-review.json)
+preserves scientific code, child numerical settings, features and schedule.
+All five reference replays must agree with our preserved baseline before
+expanded model fitting. No completed model-panel or source-study result is
+available in this dated snapshot.
 
 The paired controls need extra training counterparts because the
 unpaired banks are disjoint; their advantage cannot be attributed solely to
