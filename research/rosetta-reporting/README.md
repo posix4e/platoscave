@@ -3,6 +3,12 @@
 For the separate reconstruction of metrics, seed summaries and contrasts, see
 [Independent saved-rank numerical comparison](NUMERICAL_AUDIT.md).
 
+For the compact table of all frozen scores and contrasts, see
+[Compact model-panel projection](MODEL_SUMMARY.md). It requires the complete
+accepted model stage, independent comparison and rank manifest. It has only
+synthetic validation; preparing a projection does not approve its interpretation
+or publication.
+
 `export_rank_tables.py` is a local, presentation-only helper outside the frozen
 scientific releases. It has not been used on real run outputs. It requires an
 accepted **complete** model-reader summary, its controller `accepted.json`
