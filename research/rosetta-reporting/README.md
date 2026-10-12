@@ -1,5 +1,8 @@
 # Per-query rank presentation
 
+For the separate reconstruction of metrics, seed summaries and contrasts, see
+[Independent saved-rank numerical comparison](NUMERICAL_AUDIT.md).
+
 `export_rank_tables.py` is a local, presentation-only helper outside the frozen
 scientific releases. It has not been used on real run outputs. It requires an
 accepted **complete** model-reader summary, its controller `accepted.json`
