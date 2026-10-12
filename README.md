@@ -134,10 +134,10 @@ four image pipelines crossed with three language pipelines, five original seeds
 and five methods: Rosetta plus correct-pair and shuffled-pair orthogonal and
 linear controls. All 12 model pairings remain in the plan. The extraction release
 was published before added corpus inference. As recorded in the [dated status snapshot](dist/downloads/rosetta-model-panel-status.json),
-all ten added extractions are complete and accepted. The mandatory numerical and
-identity audit across all fourteen feature entries started on 12 October 2026
-at 00:21 UTC and was observed running at admission. Its completion has not yet
-been verified; the dated snapshot uses retained records collected at 00:27 UTC.
+all ten added extractions are complete and accepted. All fourteen feature entries
+have passed the mandatory numerical and identity audit and frozen full runner
+preflight. Successful audit completion, output hashes and extraction acceptance
+links were verified, and the audit was accepted on 12 October 2026 at 00:37 UTC.
 The combined execution release and five reference replays against our preserved
 baseline remain required before expanded model fitting. No model-panel fit or
 result is available.

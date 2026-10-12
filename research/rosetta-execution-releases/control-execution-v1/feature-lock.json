@@ -1,0 +1,256 @@
+{
+  "builder_sha256": "fe3bd25481900afda61e6d7d0f087ddaa70a2c7958d4bca87526eb3fb6e1b077",
+  "datasets": {
+    "train2014": {
+      "annotation_sha256": "dd8c9636dc11740f956e36728866ea0c4ebe4988dcbdc5e712b7c2267f152d12",
+      "caption_annotation_ids_sha256": "de62f2714bc69b354ec2bb19b674e63df7a0353cd99a557f9698ac0bd1d7d244",
+      "image_manifest_sha256": "dea32f627c713a8b2d43b3764955a2658035ff4b23005ba14b99f77cf4b1c553",
+      "row_ids_sha256": "7a840fc5ef39e4dbedf1daa2dff1f169d5ee3583b11331d88b0ba14918da56ca"
+    },
+    "val2014": {
+      "annotation_sha256": "7da4cc45cb76ee1642d163e846e1e0a33feffac2e841c9c426d585ea499165a4",
+      "caption_annotation_ids_sha256": "0190480c48cfc84c12839630fcefe7df29d3a3075eb23bdada0ff5d04abb7269",
+      "image_manifest_sha256": "3e520c9434baae78d8ccc9211b6a387f4ebfe243e6b50c7f06d9721b244ddabe",
+      "row_ids_sha256": "68a6e443741d3f763d93683e6648417399c51cf6b24389301c3ffa657ed385b6"
+    }
+  },
+  "extraction_lock_sha256": "d9a816a20390dd53a480c3d5e12904f5d279e47f5bc1ae57b525283b97765250",
+  "features": {
+    "dino/train2014": {
+      "caption_annotation_ids_sha256": "de62f2714bc69b354ec2bb19b674e63df7a0353cd99a557f9698ac0bd1d7d244",
+      "complete_sha256": "50c8c56dd45c2e5ca9cae76b69043ef7caca4c387d31240a1ffb8bbf8ebe7c67",
+      "dtype": "float32",
+      "kind": "extracted",
+      "metadata_sha256": "b88367856bac51d2889a18d064444997a39c297ca11e16032c3eb7328714a0f0",
+      "model": "dino",
+      "row_ids_sha256": "7a840fc5ef39e4dbedf1daa2dff1f169d5ee3583b11331d88b0ba14918da56ca",
+      "sha256": "3ea3b83abfb37b59eef08d4ae5c9f9cbd71efc0ea55bc395bc8a10e2db88863b",
+      "shape": [
+        82783,
+        768
+      ],
+      "size_bytes": 254310953,
+      "split": "train2014"
+    },
+    "dino/val2014": {
+      "caption_annotation_ids_sha256": "0190480c48cfc84c12839630fcefe7df29d3a3075eb23bdada0ff5d04abb7269",
+      "complete_sha256": "0cf55573cc255684ea5a5946cb4b3d799c5abbe1caa1645c34cd3ef04febaee5",
+      "dtype": "float32",
+      "kind": "extracted",
+      "metadata_sha256": "56b8e0f2a68f46a78ad174772fcde44f613ebe1b1b01d89ac494f362c8086880",
+      "model": "dino",
+      "row_ids_sha256": "68a6e443741d3f763d93683e6648417399c51cf6b24389301c3ffa657ed385b6",
+      "sha256": "3ae2f99e1058dfdc60228d8b65d42d7e9f64f5446b8e4bb37f0731cf4a6f9c24",
+      "shape": [
+        40504,
+        768
+      ],
+      "size_bytes": 124429865,
+      "split": "val2014"
+    },
+    "dinov2/train2014": {
+      "caption_annotation_ids_sha256": "de62f2714bc69b354ec2bb19b674e63df7a0353cd99a557f9698ac0bd1d7d244",
+      "dtype": "bfloat16",
+      "kind": "released",
+      "model": "dinov2",
+      "publisher_path": "embeddings/coco_train2014/vision/dinov2_vit-b14@224_mean.pt",
+      "row_id_provenance": "authors_sorted_coco_image_ids",
+      "row_ids_sha256": "7a840fc5ef39e4dbedf1daa2dff1f169d5ee3583b11331d88b0ba14918da56ca",
+      "sha256": "431d0caf275e71837ced1d519d5a3464a8b6896744529188e1bae95b10cd013c",
+      "shape": [
+        82783,
+        768
+      ],
+      "size_bytes": 127156441,
+      "split": "train2014"
+    },
+    "dinov2/val2014": {
+      "caption_annotation_ids_sha256": "0190480c48cfc84c12839630fcefe7df29d3a3075eb23bdada0ff5d04abb7269",
+      "dtype": "bfloat16",
+      "kind": "released",
+      "model": "dinov2",
+      "publisher_path": "embeddings/coco_val2014/vision/dinov2_vit-b14@224_mean.pt",
+      "row_id_provenance": "authors_sorted_coco_image_ids",
+      "row_ids_sha256": "68a6e443741d3f763d93683e6648417399c51cf6b24389301c3ffa657ed385b6",
+      "sha256": "13bc24b7ed9164f605d0892fe2bbc17feb30d8fcc66bb2e94d2a0ad77e9f8e3a",
+      "shape": [
+        40504,
+        768
+      ],
+      "size_bytes": 62215897,
+      "split": "val2014"
+    },
+    "elmo/train2014": {
+      "caption_annotation_ids_sha256": "de62f2714bc69b354ec2bb19b674e63df7a0353cd99a557f9698ac0bd1d7d244",
+      "complete_sha256": "ce76b19d0e1e32ebd5515b8380e40f674a62d3ddd0db4664eb224dd3bbd5a91b",
+      "dtype": "float32",
+      "kind": "extracted",
+      "metadata_sha256": "565ad93f12ca8c0b734057552ecfd3fc128d228d901bb46112d8a1db98f9f778",
+      "model": "elmo",
+      "row_ids_sha256": "7a840fc5ef39e4dbedf1daa2dff1f169d5ee3583b11331d88b0ba14918da56ca",
+      "sha256": "b90c52c4abb9dade964e3e8fcd68500b2a6fe0e3fc5307ce1947a8a2de01879c",
+      "shape": [
+        82783,
+        7,
+        1024
+      ],
+      "size_bytes": 2373554923,
+      "split": "train2014"
+    },
+    "elmo/val2014": {
+      "caption_annotation_ids_sha256": "0190480c48cfc84c12839630fcefe7df29d3a3075eb23bdada0ff5d04abb7269",
+      "complete_sha256": "aa544c9bfbf8b1ce7c87d0c3654b8f9fbb7ec6b324554c29999871178144d602",
+      "dtype": "float32",
+      "kind": "extracted",
+      "metadata_sha256": "01f2002353c22d9d9718b138a747b60bc1a6ea13c23b3a9e9a6b235b4fe17281",
+      "model": "elmo",
+      "row_ids_sha256": "68a6e443741d3f763d93683e6648417399c51cf6b24389301c3ffa657ed385b6",
+      "sha256": "99758d09a618f5bd2968d90b550981dd35a8258cb888c2dd5596555afec183bf",
+      "shape": [
+        40504,
+        7,
+        1024
+      ],
+      "size_bytes": 1161331435,
+      "split": "val2014"
+    },
+    "glove/train2014": {
+      "caption_annotation_ids_sha256": "de62f2714bc69b354ec2bb19b674e63df7a0353cd99a557f9698ac0bd1d7d244",
+      "complete_sha256": "0c5dbaaa6b3c4090f92a635bd0cbd45a7f21a52c65423af212375424ab052224",
+      "dtype": "float32",
+      "kind": "extracted",
+      "metadata_sha256": "b216338d1fa56ca753662acd78e6677f2994cbbbe55d0d13f1465de83425c150",
+      "model": "glove",
+      "row_ids_sha256": "7a840fc5ef39e4dbedf1daa2dff1f169d5ee3583b11331d88b0ba14918da56ca",
+      "sha256": "324e5350da2aec6b7422c36e40e71de6cbedadbf950e804b7f0847423e846b83",
+      "shape": [
+        82783,
+        7,
+        300
+      ],
+      "size_bytes": 695378729,
+      "split": "train2014"
+    },
+    "glove/val2014": {
+      "caption_annotation_ids_sha256": "0190480c48cfc84c12839630fcefe7df29d3a3075eb23bdada0ff5d04abb7269",
+      "complete_sha256": "21c34d7209783467ba7b31250b0e23cb363ea94ec035ba6ec8e997ee0a452b66",
+      "dtype": "float32",
+      "kind": "extracted",
+      "metadata_sha256": "590f72a956b4dc5a1721e14a317a2c04208354d0756ec521ec0f636d61e4edb7",
+      "model": "glove",
+      "row_ids_sha256": "68a6e443741d3f763d93683e6648417399c51cf6b24389301c3ffa657ed385b6",
+      "sha256": "366e7f88210f655081c66aa80f5d230b2120130129c221a655109f3bff1262a0",
+      "shape": [
+        40504,
+        7,
+        300
+      ],
+      "size_bytes": 340235177,
+      "split": "val2014"
+    },
+    "mae/train2014": {
+      "caption_annotation_ids_sha256": "de62f2714bc69b354ec2bb19b674e63df7a0353cd99a557f9698ac0bd1d7d244",
+      "complete_sha256": "0d7f5b1593ebfa004a2a2228808c4564896912454ba72ea4b60c7c955697d332",
+      "dtype": "float32",
+      "kind": "extracted",
+      "metadata_sha256": "dd6658aa3bed35bf11b6de277c8aab130063a5b82ba772a8c08f0febd05f9be9",
+      "model": "mae",
+      "row_ids_sha256": "7a840fc5ef39e4dbedf1daa2dff1f169d5ee3583b11331d88b0ba14918da56ca",
+      "sha256": "ab08e38a7c014aecd75e5c7e5c089275de8c5849021810e1a1c45ae439b7653d",
+      "shape": [
+        82783,
+        768
+      ],
+      "size_bytes": 254310953,
+      "split": "train2014"
+    },
+    "mae/val2014": {
+      "caption_annotation_ids_sha256": "0190480c48cfc84c12839630fcefe7df29d3a3075eb23bdada0ff5d04abb7269",
+      "complete_sha256": "27f2c71499cb629e4fef2729aebb3055d0696ca75fc89dde6e946fa45554858d",
+      "dtype": "float32",
+      "kind": "extracted",
+      "metadata_sha256": "6d31a6b446a5f5aac10fc8a381ba7d8b55b332c03892d1ffce03ac4df5c4e5ec",
+      "model": "mae",
+      "row_ids_sha256": "68a6e443741d3f763d93683e6648417399c51cf6b24389301c3ffa657ed385b6",
+      "sha256": "ca3741e047bbed46836ab879a5fe82d4b91de85245aed517f80e81dcf9b3b32d",
+      "shape": [
+        40504,
+        768
+      ],
+      "size_bytes": 124429865,
+      "split": "val2014"
+    },
+    "moco/train2014": {
+      "caption_annotation_ids_sha256": "de62f2714bc69b354ec2bb19b674e63df7a0353cd99a557f9698ac0bd1d7d244",
+      "complete_sha256": "df735cf07060af3e9d09232201823fd931c727d6547eda018fdd589a1a05fd32",
+      "dtype": "float32",
+      "kind": "extracted",
+      "metadata_sha256": "a82100fa5e5ee973b9aa851668405eb052e5f65785dbefd86ab6311dc080d17b",
+      "model": "moco",
+      "row_ids_sha256": "7a840fc5ef39e4dbedf1daa2dff1f169d5ee3583b11331d88b0ba14918da56ca",
+      "sha256": "a397f3826588d67f0bd4cf78c9099c4b3dbd86014436aa8f8bf43372229b2e30",
+      "shape": [
+        82783,
+        2048
+      ],
+      "size_bytes": 678159913,
+      "split": "train2014"
+    },
+    "moco/val2014": {
+      "caption_annotation_ids_sha256": "0190480c48cfc84c12839630fcefe7df29d3a3075eb23bdada0ff5d04abb7269",
+      "complete_sha256": "b636b8509d3b849509c00e861a37149b57c745b04f2590905646311649d0ba9d",
+      "dtype": "float32",
+      "kind": "extracted",
+      "metadata_sha256": "27c103a015dcd77aef3c10c72a6706d7c59d3035ff4d722cd6a24d6d8c369eaf",
+      "model": "moco",
+      "row_ids_sha256": "68a6e443741d3f763d93683e6648417399c51cf6b24389301c3ffa657ed385b6",
+      "sha256": "05c0363b0a9778bfa122de9033168a78e331738d758389241edca1bc684c3417",
+      "shape": [
+        40504,
+        2048
+      ],
+      "size_bytes": 331810345,
+      "split": "val2014"
+    },
+    "mpnet/train2014": {
+      "caption_annotation_ids_sha256": "de62f2714bc69b354ec2bb19b674e63df7a0353cd99a557f9698ac0bd1d7d244",
+      "dtype": "bfloat16",
+      "kind": "released",
+      "model": "mpnet",
+      "publisher_path": "embeddings/coco_train2014/language/mpnet.pt",
+      "row_id_provenance": "authors_sorted_coco_image_ids",
+      "row_ids_sha256": "7a840fc5ef39e4dbedf1daa2dff1f169d5ee3583b11331d88b0ba14918da56ca",
+      "sha256": "dae4a0ab368c0d63235ce38cdb24ad205f7d9f689da7dfc57a20ac54f1fdb38f",
+      "shape": [
+        82783,
+        7,
+        768
+      ],
+      "size_bytes": 890084315,
+      "split": "train2014"
+    },
+    "mpnet/val2014": {
+      "caption_annotation_ids_sha256": "0190480c48cfc84c12839630fcefe7df29d3a3075eb23bdada0ff5d04abb7269",
+      "dtype": "bfloat16",
+      "kind": "released",
+      "model": "mpnet",
+      "publisher_path": "embeddings/coco_val2014/language/mpnet.pt",
+      "row_id_provenance": "authors_sorted_coco_image_ids",
+      "row_ids_sha256": "68a6e443741d3f763d93683e6648417399c51cf6b24389301c3ffa657ed385b6",
+      "sha256": "dc960f4d1fda472f3ddfbd9e5e618e1ef43072261ec19e291c5cb8089006fb1a",
+      "shape": [
+        40504,
+        7,
+        768
+      ],
+      "size_bytes": 435500507,
+      "split": "val2014"
+    }
+  },
+  "protocol_id": "rosetta-model-controls-v2",
+  "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
+  "recorded_at_utc": "2026-10-12T00:22:00.797586+00:00",
+  "schema_version": 1,
+  "scope": "Byte and identity inventory of the prespecified four publisher caches and ten completed extractions; no new model/data choice, feature inference, fitting or evaluation.",
+  "status": "frozen_before_model_control_fits"
+}

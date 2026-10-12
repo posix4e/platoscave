@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "protocol_id": "rosetta-model-controls-v2",
-  "status": "feature_audit_started",
-  "observed_at_utc": "2026-10-12T00:27:06.824915+00:00",
+  "status": "feature_audit_passed",
+  "observed_at_utc": "2026-10-12T00:37:53.850986+00:00",
   "release_commit": "c14771afc455c588ad9a19854161b9bc2c60b63e",
   "outer_release_sha256": "caf5dbb25b1b769526dd3b36c4e9afffb735ca451a8cc447afc03788f56da674",
   "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
@@ -14,9 +14,8 @@
   "method_results_complete": 0,
   "required_model_cells": 60,
   "required_method_results": 300,
-  "scope": "All ten added training and validation extractions for DINO, MoCo, MAE, GloVe and ELMo are complete and accepted. The mandatory numerical and identity audit across all fourteen feature entries started and was observed running at admission. Audit completion has not yet been verified. No model-comparison fit or result is available. This is a dated account of retained evidence, not a live counter.",
+  "scope": "All ten added training and validation extractions for DINO, MoCo, MAE, GloVe and ELMo are complete and accepted. All fourteen feature entries passed the mandatory numerical and identity audit and frozen full runner preflight. The combined execution release and five reference replays against our preserved baseline remain required before expanded model fitting. No model-comparison fit or result is available. This is a dated account of verified evidence, not a live counter.",
   "next_steps": [
-    "Complete and verify the mandatory numerical and identity audit across all fourteen feature entries.",
     "Bind the complete execution release and run all five reference replay cells.",
     "Require agreement with our preserved baseline before expanded model fitting.",
     "Finish the separate 23-set source-removal study and prospective fresh-data study."
@@ -223,7 +222,7 @@
   "count_definitions": {
     "added_extractions_generated": "Extraction completion marker and successful service exit observed.",
     "added_extractions_complete": "Accepted extractions only; retained meaning of the earlier snapshots.",
-    "added_extractions_accepted": "Acceptance receipt recorded; the complete fourteen-feature numerical audit is still required before fitting."
+    "added_extractions_accepted": "Acceptance receipt recorded; extraction acceptance alone does not establish completion of the required fourteen-feature numerical audit."
   },
   "private_generation_and_blocked_admission_observation_sha256": "50cd7382f22c9ff24d434dc219dc1caf0980cf39c7999c525e4c345cf367dbc4",
   "scheduling_block_cleared": true,
@@ -239,18 +238,28 @@
       "sha256": "af08634ac0b667796c89f50d213c48a2ca7298ad5d077b978fd368432d35cd4d"
     }
   ],
-  "observation_scope": "Retained final extraction acceptance and feature-audit admission records; running state was observed at admission, not freshly checked at collection time.",
+  "observation_scope": "Successful quiescent feature-audit completion observed, output hashes and all ten extraction acceptance links checked, and audit accepted for execution-release assembly at the stated time.",
   "private_final_acceptance_and_audit_admission_observation_sha256": "d0e34d47c3042afcda6715c155c158920ac27bda4dd375f177d0dfcca276f31f",
   "feature_audit": {
-    "status": "started",
+    "status": "passed",
     "required_feature_entries": 14,
     "admitted_at_utc": "2026-10-12T00:21:52.802496+00:00",
     "dispatched_at_utc": "2026-10-12T00:21:52.806065+00:00",
     "running_observed_at_admission": true,
-    "completion_verified": false,
+    "completion_verified": true,
     "builder_sha256": "fe3bd25481900afda61e6d7d0f087ddaa70a2c7958d4bca87526eb3fb6e1b077",
     "admission_record_sha256": "e812f693e55d22e92e5910631a1ac03fcc699602bc64132b024eee467e78d8d9",
     "dispatch_record_sha256": "f95dd7e38f35a2fa676fa6d983af211573c0ad492b56a47ffbbcb060cfbe2f9b",
-    "scope": "Mandatory tensor and identity validation and feature-evidence binding only; no encoding, fitting or evaluation. The retained admission state does not establish current running state or audit completion."
+    "scope": "All fourteen feature entries passed the frozen full runner preflight. Successful writer quiescence, output hashes and all ten extraction acceptance links were verified. No feature inference, fitting or evaluation was performed. Earlier per-extraction verification descriptions retain their acceptance-time scope; this audit records the later full validation.",
+    "verified_feature_entries": 14,
+    "completion_observed_at_utc": "2026-10-12T00:37:17.392478+00:00",
+    "accepted_at_utc": "2026-10-12T00:37:53.850986+00:00",
+    "successful_quiescence_verified": true,
+    "full_runner_preflight_passed": true,
+    "all_ten_acceptance_links_checked": true,
+    "feature_lock_sha256": "bb0ee134e0ba8e9d72b6c2f13a7bb1f0660f74b2da7af9cd09454185b3ef94d2",
+    "private_bindings_sha256": "a3420c40d72361f799c40658d8bda71b822f124decd1b19c9e44dfdceadfb2ed",
+    "private_terminal_observation_sha256": "007859a2316a2de0a2cc23893e159500c07428e000b57ceb8108fcd3601a0965",
+    "acceptance_receipt_sha256": "69ef77131861ea79d31df891459b03135688dc21a848b563ac79f18bc9717aa9"
   }
 }
