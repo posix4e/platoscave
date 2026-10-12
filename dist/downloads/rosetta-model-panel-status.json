@@ -2,7 +2,7 @@
   "schema_version": 1,
   "protocol_id": "rosetta-model-controls-v2",
   "status": "model_comparisons_running",
-  "observed_at_utc": "2026-10-12T09:14:48.594882+00:00",
+  "observed_at_utc": "2026-10-12T19:12:46.674119+00:00",
   "release_commit": "c14771afc455c588ad9a19854161b9bc2c60b63e",
   "outer_release_sha256": "caf5dbb25b1b769526dd3b36c4e9afffb735ca451a8cc447afc03788f56da674",
   "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
@@ -10,13 +10,13 @@
   "added_extractions_required": 10,
   "added_extractions_complete": 10,
   "running": null,
-  "alignment_cells_complete": 12,
-  "method_results_complete": 60,
+  "alignment_cells_complete": 26,
+  "method_results_complete": 130,
   "required_model_cells": 60,
   "required_method_results": 300,
-  "scope": "All five reference replay cells passed their check against our preserved retrieval scores. All five DINOv2 x GloVe seed cells and the first two DINOv2 x ELMo seed cells are accepted, with all five methods available in each. This gives twelve accepted model cells and sixty method results. The third DINOv2 x ELMo seed was observed running. Saved progress records twelve completed jobs, one running and 162 pending across the 60 model runs and 115 source runs. The original comparison with the authors and its numerical differences remain unchanged. The full model panel and its independent numerical review and interpretation remain pending; source fitting has not begun. This is a dated observation, not a live counter.",
+  "scope": "All five reference replay cells passed their check against our preserved retrieval scores. All five seeds are accepted for DINOv2 x GloVe, DINOv2 x ELMo, DINO x MPNet and DINO x GloVe; the first DINO x ELMo seed is also accepted. All five methods are available in each accepted cell, giving twenty-six model cells and 130 method results. The second DINO x ELMo seed was observed running. Saved progress records twenty-six completed jobs, one running and 148 pending across the 60 model runs and 115 source runs. The original comparison with the authors and its numerical differences remain unchanged. The full model panel and its independent numerical review and interpretation remain pending; source fitting has not begun in this dated observation. This is not a live counter.",
   "next_steps": [
-    "Finish the remaining forty-eight model cells and their required full-reader checks.",
+    "Finish the remaining thirty-four model cells and their required full-reader checks.",
     "Complete independent numerical reconstruction and interpretation of the full model panel.",
     "Finish the separate 23-set source-removal study and prospective fresh-data study."
   ],
@@ -240,7 +240,7 @@
       "sha256": "af08634ac0b667796c89f50d213c48a2ca7298ad5d077b978fd368432d35cd4d"
     }
   ],
-  "observation_scope": "All five DINOv2 x GloVe cells and the first two DINOv2 x ELMo cells have successful quiescent service records and accepted full-reader checks. The five reference replays and their saved gate remain accepted. The controller and third DINOv2 x ELMo service were observed running at the stated time. Counts describe saved progress at 09:13 UTC. Accepted evidence was inspected afterward; retained terminal observations keep their own timestamps. The full panel and its independent numerical review and interpretation remain incomplete.",
+  "observation_scope": "Twenty-six model cells have successful quiescent service records and accepted full-reader checks, including the five reference replays and their unchanged gate. The controller and second DINO x ELMo service were observed running at 19:12 UTC. Counts describe saved progress at 18:24 UTC. Accepted evidence was inspected afterward; retained terminal observations keep their own timestamps. The full panel and its independent numerical review and interpretation remain incomplete.",
   "private_final_acceptance_and_audit_admission_observation_sha256": "d0e34d47c3042afcda6715c155c158920ac27bda4dd375f177d0dfcca276f31f",
   "feature_audit": {
     "status": "passed",
@@ -271,12 +271,12 @@
     "accepted_feature_lock_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/feature-lock.json",
     "controller_dispatched_at_utc": "2026-10-12T00:55:09.318423+00:00",
     "controller_observed_state": "running",
-    "controller_observed_at_utc": "2026-10-12T09:14:48.594882+00:00",
+    "controller_observed_at_utc": "2026-10-12T19:12:46.674119+00:00",
     "latest_saved_phase": "in_progress",
-    "latest_saved_progress_at_utc": "2026-10-12T09:13:28.213118+00:00",
+    "latest_saved_progress_at_utc": "2026-10-12T18:24:13.754595+00:00",
     "latest_saved_job_counts": {
-      "complete": 12,
-      "pending": 162,
+      "complete": 26,
+      "pending": 148,
       "running": 1
     },
     "scheduled_jobs": {
@@ -286,12 +286,12 @@
       "reference_gate": 5
     },
     "private_initial_observation_sha256": "d8e5f4eb4a29359fae71e02c4aa1d0d15153a0c0e998d5f6adc829049d82be1d",
-    "saved_progress_sha256": "8afd77bcf619bfbf70ff17a4b00178f45df6c79f336c587e8bb28ee141ceb9ee",
+    "saved_progress_sha256": "cf3843188fe595c0fb2bf8fedca22787f16a3d8aad2fb964bf8f0047de2d423f",
     "prior_failure_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/operational-failure.json",
     "recovery_review_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/recovery-review.json",
     "prior_failure_scope": "The v1 controller failed before its first reader or any fit because its outer environment omitted a service-manager connection setting. The separately reviewed v2 recovery preserves scientific code, child numerical settings, all fourteen features and the complete schedule.",
-    "scope": "Twelve model cells are accepted: five reference replays, all five DINOv2 x GloVe cells and the first two DINOv2 x ELMo cells. The third DINOv2 x ELMo cell was observed running. Across the 60 model runs and 115 source runs, saved progress records twelve completed jobs, one running and 162 pending. The five replay cells are included in the sixty model jobs. This is a dated observation, not a live count.",
-    "private_latest_observation_sha256": "e574f1d98f7525c966b1e25dd0a8a203b61ca8b7aeef737acda0930c161b1607",
+    "scope": "Twenty-six model cells are accepted: five reference replays, all five seeds for each of DINOv2 x GloVe, DINOv2 x ELMo, DINO x MPNet and DINO x GloVe, and the first DINO x ELMo seed. The second DINO x ELMo cell was observed running. Across the 60 model runs and 115 source runs, saved progress records twenty-six completed jobs, one running and 148 pending. The five replay cells are included in the sixty model jobs. This is a dated observation, not a live count.",
+    "private_latest_observation_sha256": "bf09abd6b48169adb96067fd49d92efb190ca759a59ebb4be54fe7f3dda9f2cb",
     "input_check_receipts": {
       "preflight-model": {
         "receipt_sha256": "679d89355d0c9047b6bc8dd09be49347e7c3a66cfe751d133448bbaa9a8c10da",
@@ -425,11 +425,11 @@
     },
     "model_comparisons": {
       "observed_running": 1,
-      "accepted_complete_excluding_reference_cells": 7,
-      "accepted_method_results_excluding_reference_cells": 35,
-      "observed_pair": "dinov2/elmo",
+      "accepted_complete_excluding_reference_cells": 21,
+      "accepted_method_results_excluding_reference_cells": 105,
+      "observed_pair": "dino/elmo",
       "observed_seeds": [
-        2197670066
+        576165995
       ],
       "accepted_cells": [
         {
@@ -683,24 +683,528 @@
           "retained_terminal_observation_at_utc": "2026-10-12T09:15:00.474283+00:00",
           "accepted_reader_summary_sha256": "e9d4d4181697ae2de4a44e7d8ccf280a3697d73b9b3e4036f7e67c7d5326de2a",
           "accepted_reader_receipt_sha256": "65c8636bd1d1c0a67f89f3659cbc2f2a7d3b746f5f88ca8fc2b6f208a9f3b74f"
+        },
+        {
+          "vision": "dinov2",
+          "text": "elmo",
+          "seed": 2197670066,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "3d8d3a6a4e725fdd2faecf6d01f533f8bb103840e0cc8372e673e742b4ecdd4e",
+          "complete_sha256": "26242106533866bdff9c5072f2f92b0689a90563daa819ef6012ba2e9519e22f",
+          "cell_sha256": "735865f8dbb9ff03aa6fa795b38bff707f8b0670468e369ac55b3f5185361475",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "47705935085a40dfbf9c0dc1f7a5558174fa750cdd2a2ead39c7c41967d59527",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "6aa539a3d301d1acaa8fba7569f4fbb7b076eeb80ca7680d5d1c5d879379c462",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "9f170805314132a5876ddff967df0433336d00b7ba238e9ae33c0a3158513763",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "b75238052b97620626113542ed252b4f6094fc94aa07739b807455ee9d2b7365",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "230a865c1289569dd8d24f46e2c67c2cf5629aae1d41493de091f0ff4cd22867",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:53.699613+00:00",
+          "accepted_reader_summary_sha256": "8967fd132ddce35b280460099e4f1783392167b02555c000acc8bd61a0163c0f",
+          "accepted_reader_receipt_sha256": "7987a17931a807f903a2738c0f624285290c44333ee96614bba0ced8a7a81134"
+        },
+        {
+          "vision": "dinov2",
+          "text": "elmo",
+          "seed": 839703249,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "efbe3d61dd432030a5540b9b920a0ef3670aeabe425104e17e34df38b1847717",
+          "complete_sha256": "167f8f021754c3d248b2312e24e0a270a9ce325fd153e27c80d2708a15a577a6",
+          "cell_sha256": "35811ff3f756d71964d678765cc4d9abbdae0a6959a3e279c5ab3a3f91befebd",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "5f5ea21d627183ea3e4aa510d181349c6f38321d6c15993304c3719d02f43f45",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "36c3f5da005ec447b739fb1df994d88fe445b325cb84135f2c68486010c42065",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "ba6067af082152431cf657e52b7d513e8e7c93297974e10b1f85b6fd55ac135b",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "9cb749648889558250403202cd9f8973edc08601b4ae38ba4c22e3478e4e3110",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "910290d78c6064d96896b01e9b08ec21e3b7a06331e92e3fea1e6a6a6a7f91b3",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:53.761982+00:00",
+          "accepted_reader_summary_sha256": "3f88ea1380228c742b8741fc86ead769e1a94b39bc6cf3cf0ce985d416d31743",
+          "accepted_reader_receipt_sha256": "b3d97781eeed2eb4e56d3ebcc8a80f4beb1ad3e4d2efa6e5cb1a428210dbd98d"
+        },
+        {
+          "vision": "dinov2",
+          "text": "elmo",
+          "seed": 2584932063,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "496f1e73aa407072973111b6c58fba1cbbbd8cf6be3aa29a6eb4d5bd25410d3b",
+          "complete_sha256": "40a95769a48d5b35000597b62388cb48a79d473c5f4fc1a736554cdf1340ff39",
+          "cell_sha256": "ee66dc3d543f2d4db89630863f52934b918cfdbfe07b9c7aa8be4ca5c673e816",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "f49178cd22c7430235d99629500ff1a39234b4382b66602adf85dee92a1d7e37",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "453703ab652501bbefd76596870856a67e16acc1d2fc7cd154bb2e39d956ea97",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "775a03ea53a92b08c80d17326a6b8572efd42038162230a6eea42be2e9e8d378",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "ef9e34ac5f44712a5e2a4fbc85cff019b07e6be62b241b9696edfc74dc51cd60",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "8ad4170d7bee1d594194dd1ae941a7d2cf3b9d7d4d37ccc7f1924662f9056f97",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:53.821649+00:00",
+          "accepted_reader_summary_sha256": "590203613ded2e26f500334cccf65da089559be184c8d1e1010e8ee9544abacf",
+          "accepted_reader_receipt_sha256": "e62bbfce39351ad7613c5624fe8c3374185c251d67c139292874f0067713a3b4"
+        },
+        {
+          "vision": "dino",
+          "text": "mpnet",
+          "seed": 734796314,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "dcb49131f5e48a66edc868393f3c1f19c826547abfbe7e434320f817d12fbafa",
+          "complete_sha256": "509b26f84b356f8cb3d6b490c7bff029deb10a59e2779f64e42aec796cb1a099",
+          "cell_sha256": "724cfa981155731874d4de3eb76481868f6e8a4e50e4d0ba2659d313b1c7300f",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "d8796c55fefb79df3bfece5c1067f4e59f96b1952650732f7b2b1fe13a64209b",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "2e2cfc2a0bb1cffe734c46cf0050fc76478327ca56dd9d7f9bfd9a2d82d48199",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "f6a893ebf98b5e3b6e134e8a5cfb11975f41da0cf39211a67f7444d8a4c688c5",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "b9dda76583df2463ae86c5289543e8f6605bb196f0e6db9d5d935f717f7ed2f1",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "2c6165b7bd94a8f9726a047a8af707656262bf3f40b89d98fad77b038c075f16",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:53.882287+00:00",
+          "accepted_reader_summary_sha256": "38ae0755d2a88e02585f415cce494c9c73065a5af62570acc105239a363e1047",
+          "accepted_reader_receipt_sha256": "c2607eac3ff87c84ee27e4eafeee877638e2cd352b3aceb52db33937f12d38f0"
+        },
+        {
+          "vision": "dino",
+          "text": "mpnet",
+          "seed": 576165995,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "e9a55793f13ef61207fa3980a6bc54743337a90afbf774c6a0dbf6b6211b0427",
+          "complete_sha256": "2bf88ef15cc7946738d4ae8a2d62a8a45c81d0c5e984d1340c2e9b6d37a93893",
+          "cell_sha256": "b1e2ea0d72db16efb580ab150b3dcf25bc8d9fa24c507f9b35634d47058d38f7",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "dec4f41dc427778e656e2d5ebd37570b336d90a91f4a5b62293670349801ab25",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "4eead165b48d6e0f6fcaed04545f06f6aa92ed48d7c695924ae1398ddba57a24",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "57e364cb43bf48e035b621c4a3f660126c830b60601d222dd0523ce5fdf74526",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "78533b7231dc5b82b631ff62cfb30f88981d88637a21f1dc0dde80c0430fa2db",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "3412bbe9748e6d8e5fd9ab13b30917480f9fd485ad1822fa669f1ff264226745",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:53.932770+00:00",
+          "accepted_reader_summary_sha256": "38ae0755d2a88e02585f415cce494c9c73065a5af62570acc105239a363e1047",
+          "accepted_reader_receipt_sha256": "c2607eac3ff87c84ee27e4eafeee877638e2cd352b3aceb52db33937f12d38f0"
+        },
+        {
+          "vision": "dino",
+          "text": "mpnet",
+          "seed": 2197670066,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "4d42eb35ca7051bdc4de233d325a650f4274cf54d65f23a2070712dad88b0d1b",
+          "complete_sha256": "b59247a95958152429c3e800366fc1e2a09e01dba4b4b9c459f28a5ad51075d1",
+          "cell_sha256": "c977a15d6762b65aeb64b8da82f2ce756c2a36fa78e6463bc92b12d685514b3e",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "5c3e375ad1aeedf9b3f53e0f66e769b44d2a3d2bf0c2d994bd13ce8f702204b5",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "186b2c9e10816872366d2018bb9ffd2ac50f32cfb99afd62aff200d4c259d7dc",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "136e37441f66afd88c20be049539554e6da30209168e9038a3d4d425e7adc651",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "2914e5d937b19d21002cbb9d312949b0a0c58440baead6ace9baef9e5cd4a9ca",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "abcb6ff59a57993419cc713042e5bc01100edd15dda7163da0d275a609e18417",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:53.988658+00:00",
+          "accepted_reader_summary_sha256": "72354b1fd34237651615016fd5514467de6321aa38f3420452a1d09d3654233a",
+          "accepted_reader_receipt_sha256": "b16bd648e0abaf4af8f5248831a7d3bfb0ccd4383d29c2a0de38356f9aeaa9ce"
+        },
+        {
+          "vision": "dino",
+          "text": "mpnet",
+          "seed": 839703249,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "c53f5e9d99d55adbad07b780f2338df2b132a1280daca7a62bae3880ab6a81ce",
+          "complete_sha256": "8a27eddb18bb4f95c80e2c67c86a2c9effec8d27e32001a9443f9ea4c1d0b95e",
+          "cell_sha256": "b72a99f6cf47e8c96372a622d320a3c54556bbf9ec5323822fa10cf85ea58794",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "56b82ec009276a788d22082a8ef45274cddddff9a691eadfc285786e1ce106a9",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "524c63b5092043947f10cbcfa1ae47f1187fb9eada902a9df0a4529dbb2522f0",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "28931f41bbadcdb2f0c4a4a57f489e420fb43d15445b2ce29386b3e12c410650",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "8861d75d6e49b62e7692e881f2d2bbd7dd8f3eadb4dc918e36829c5098f15a5a",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "72b7bed4e6f17510b94407d392218609b16814bfd3f613d55eda56b3fa2a0f53",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:54.050615+00:00",
+          "accepted_reader_summary_sha256": "72354b1fd34237651615016fd5514467de6321aa38f3420452a1d09d3654233a",
+          "accepted_reader_receipt_sha256": "b16bd648e0abaf4af8f5248831a7d3bfb0ccd4383d29c2a0de38356f9aeaa9ce"
+        },
+        {
+          "vision": "dino",
+          "text": "mpnet",
+          "seed": 2584932063,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "602dc4943ef116f111848ae8254778f6d05811a57ac005d57b7dfa18db0e13a2",
+          "complete_sha256": "c78cc637a66f2e7a505a797e9f5a44fa2b3bc39d8b4def3bc807435d3c87289f",
+          "cell_sha256": "a2b8f66d30566383b2647c0fe22594b67348b05ddb488e182693fc4ce85552b1",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "0889e2f336dc556b3ae0838cbd8b8a4a6a308b54fc24c34010ff40f35a9bc58d",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "7b30e67f23c1ac9b62a4b6af02bc5f1b2d7bece4bbeebcab64295bb9a45507ea",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "af0958fdbd1ecd73073c7c9471302a2e85cf1169e365fc19be6ca1ab9890eba2",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "e6a96454b9bb28cf121795bfdbaddc954b8934c6b20a88e3ccba95c144d0ee50",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "3a4075aea3d20dbb7b8ce846b5d26f3cfbd661efdda03635501c62fcff0bcdd1",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:54.112268+00:00",
+          "accepted_reader_summary_sha256": "9a54ee9a9f870b8ddf5c19d63e9dc6bdab495096aaf71793b751924d5f8f024d",
+          "accepted_reader_receipt_sha256": "8ad1c78b6f204b8df52e1abe9a33aba2ad64710956f48ba4563468e4ca7e4c6f"
+        },
+        {
+          "vision": "dino",
+          "text": "glove",
+          "seed": 734796314,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "7ae0544b41c35fc3597fb8cd449af66eac7c9c94f8603a0c901bebd3013435a5",
+          "complete_sha256": "dea778c62529e85d36006211b3321a23dab460c8bc229b603532cfd051d6e7c9",
+          "cell_sha256": "e22cfa42cff7f9e89050206dfce79c57803044a727f39316b585ad392ea94473",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "d2a6262648a6acee6b3852671fad2a4bcc51ed6bb6c941b219f04cd12bb6ffb5",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "859f396604b25d33838ea464aa9ad671e83a0f66078a4c584f51942e65f846cf",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "fceb9b25794338c3c526f9c86e073a01ee9b330ac2c06efea48e033d88f19d12",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "ab5da56926fa2948b0ffa89bb4f5b91c545c4db219f4c226aa8240821426ad91",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "8ee26eae309f103379d8094e2accbd2eeffee2cec0606783704d672d6ee1b706",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:54.172536+00:00",
+          "accepted_reader_summary_sha256": "9a54ee9a9f870b8ddf5c19d63e9dc6bdab495096aaf71793b751924d5f8f024d",
+          "accepted_reader_receipt_sha256": "8ad1c78b6f204b8df52e1abe9a33aba2ad64710956f48ba4563468e4ca7e4c6f"
+        },
+        {
+          "vision": "dino",
+          "text": "glove",
+          "seed": 576165995,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "78cc2e1503bcbd6816658946d049fe4fe90802d9997d30218b07698c2b513cf8",
+          "complete_sha256": "d4760bb32a404ca883397eb3cbda47fecaf8f96e06015d2d6f8c81b9979a4420",
+          "cell_sha256": "f4af3f6f0b850fbaab4f899f17649fd10f78fe4ffd402383710d23c9b3e49666",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "4f5fc820447246a7ce86b7d322eec5ae1b2a3525332dec61945798139175f909",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "4a1b3a5e2309ad72b982776575057c2c62b62d090aecf55166d0d48b6c212052",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "894b6e6ee195d835f4d1b50229c25e9ce525f56786317cbe0c459d72cb99c921",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "9655ef753613367dbcbb1d472b0cac00ff3d87c2f119690421b6a822e6caf30b",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "623c0b8dc74205fe2c5b70353ba07c929b01f9abd8e78bd8352da5b0a0d79f42",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:54.233844+00:00",
+          "accepted_reader_summary_sha256": "33cfdbaf5642bc08942165bd713d59398094ab5809f06be8dbb84a010aab5fc0",
+          "accepted_reader_receipt_sha256": "0f9b56bfc053f7160588c431ea035ad5025ec75b67dfc7b95600ebafbd8bee25"
+        },
+        {
+          "vision": "dino",
+          "text": "glove",
+          "seed": 2197670066,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "d6dcde9d4b1846638a242314d5d818711cf07164dd8c54f07b44119163791bf9",
+          "complete_sha256": "37c88ec05776d7a77119f4d3e0a2e2a84b07a3c89f461bf644578b44d6184db5",
+          "cell_sha256": "d9884d1e8c0605931ef2c99008e04e48d35635dba928e21cbadf2225486c49cb",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "3bc06808394584d8b1e21839c4aade6b81ce36db1e1a0148269ff8de1d85d886",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "73db845b223c0eb61d79d424368228e1a3b18813c9e9bcc13691b086004dd7bc",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "08a3bf94ff61b9a17691fb52d3db34fc24cffe267305e19ad4e3fcf1cf9dc404",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "a4b906339dfff9478dc8f72c8480882fafa94c89270b58c2f521fd4941324729",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "1f899e8d9f152e2cb877023fd7c2fd6cefd6fc6271e84f2f295cc7526f83ea51",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:54.296500+00:00",
+          "accepted_reader_summary_sha256": "33cfdbaf5642bc08942165bd713d59398094ab5809f06be8dbb84a010aab5fc0",
+          "accepted_reader_receipt_sha256": "0f9b56bfc053f7160588c431ea035ad5025ec75b67dfc7b95600ebafbd8bee25"
+        },
+        {
+          "vision": "dino",
+          "text": "glove",
+          "seed": 839703249,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "6da491a7240702d43acaaf7841edd50a045b5229b12bc2efa85600246f4555a4",
+          "complete_sha256": "b466f9eafe224a793cd974469b6e8f341332df9add6123bab1a64fdf32bf7646",
+          "cell_sha256": "17eb89c1e135462111f6348f9e022022c02ba88198b0e204163d656322fa24e7",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "ee8a2edd14827682b4ef9ba20037095301b0b72b00ffa804a6865d6e5903cf49",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "e6edc09bb6ebbb39ef06a256a6633b3d97c51cc8e040e93f6351b935ecc2fd69",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "66c63d5f375c6d9b5373f4915484be062e045bd7b6453aa7a11eb8d7506fe3c7",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "44f8893382c828c37ed8169ac9d4a8385b7f2928ee2e5ffdb94aca0f2a043d22",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "fdfe9dbe57df6532bfbb3a685084311c6cfbbddcbcf6f3832df25b34fd4c39d0",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:54.357925+00:00",
+          "accepted_reader_summary_sha256": "521a31e975ff3e555af80d0ed3ed97cd742725c8627c4a5daac4203657829ef8",
+          "accepted_reader_receipt_sha256": "acf9187c40831439f5f3fe181b1996ebbfc4743096fc5826bc6274cf0edbe9db"
+        },
+        {
+          "vision": "dino",
+          "text": "glove",
+          "seed": 2584932063,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "8a1ba09bac89b739a4c1e832e9d841614c891533e65299dad2be97b9f7fd0d10",
+          "complete_sha256": "5fe2948a68ea902062c58ddd9e4913fb7e5fd6dcbe003ca8adb63123847c78f5",
+          "cell_sha256": "ad38c2b8f4062afd7094dc23afcca8db75883e59dd5757c59838dc53fbe2958b",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "1615d59b9bcee38fa693d0f063eaad1031d24fd18dbc1e0e30bba3bb9b3f2dc5",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "e5dde84a5f263e1d11ad998672c5a20dc32dd21e2be9edc8c2f9786d82606afb",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "dbec3f2199e931739ec67f1884afb53d5bfb4a970c1ac47668a25c31bc9e2fd2",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "f1577715819a28e2e6ea48180bce0b15e1752a405f85a1d0c7a8abab560895cc",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "94948609c26122de1719bea5bcad0c3fef5a41433f67e7201c92015cbe4e89d2",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:54.419746+00:00",
+          "accepted_reader_summary_sha256": "521a31e975ff3e555af80d0ed3ed97cd742725c8627c4a5daac4203657829ef8",
+          "accepted_reader_receipt_sha256": "acf9187c40831439f5f3fe181b1996ebbfc4743096fc5826bc6274cf0edbe9db"
+        },
+        {
+          "vision": "dino",
+          "text": "elmo",
+          "seed": 734796314,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "30ba4dce9a40f7a1d74b98d76fe8be7d4b9c101bd506ab356dd46b108931e49e",
+          "complete_sha256": "c8b464246ab689fabef91f0627ad1d03cbb4f8267aeb69a65abfd57ce0068527",
+          "cell_sha256": "7f376086d6b0f6529511222c389f8a8e961e3e836fde9179e559ad342983115a",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "48b4d721d1d0208adb7f529ef4f85a429b11fa96fbde8dcf4964f0003b1d05db",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "40c5870f5624b18251ac162cf2b8ce9f179c9170ff3a3adb9e50a11aa8766041",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "0edc29223d32c462ba2e6642958bf6b40dd950aa86f13acda4ff473cface45b2",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "b8e37cff2ccf6b1df6ffb54c00abb6ebdf4ade13eabe0f6e19b21f4e24f2263d",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "7a15b8cbb8d4124c927687b6efc8f4cfdc4ea6b7799c0f78bfd781a91dfa70d6",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T20:42:54.478219+00:00",
+          "accepted_reader_summary_sha256": "84d9e6d7bab033cf9decfb24377136ce8d71619c6974de6fd9d5ebc85f75c1d0",
+          "accepted_reader_receipt_sha256": "9960af3b0cd5a26d03382d7e2e098a141d55b6aced9fc42720bc27aa433482f4"
         }
       ],
       "accepted_reader": {
-        "summary_sha256": "e9d4d4181697ae2de4a44e7d8ccf280a3697d73b9b3e4036f7e67c7d5326de2a",
-        "acceptance_sha256": "65c8636bd1d1c0a67f89f3659cbc2f2a7d3b746f5f88ca8fc2b6f208a9f3b74f",
-        "ticket_sha256": "792a1e0d639db8f857e8659d2663c59c407d299db129e2ecf2b697fc84bb57cd",
-        "recorded_at_utc": "2026-10-12T09:13:12.126725+00:00",
+        "summary_sha256": "84d9e6d7bab033cf9decfb24377136ce8d71619c6974de6fd9d5ebc85f75c1d0",
+        "acceptance_sha256": "9960af3b0cd5a26d03382d7e2e098a141d55b6aced9fc42720bc27aa433482f4",
+        "ticket_sha256": "6c82b0acb43adda9e38c88b3134d130456482a91e0861d6e985be2443189e964",
+        "recorded_at_utc": "2026-10-12T18:23:55.615212+00:00",
         "full_panel_status": "incomplete",
-        "available_method_results": 60,
-        "unavailable_method_results": 240,
+        "available_method_results": 130,
+        "unavailable_method_results": 170,
         "inventory_findings": 0,
         "independent_final_numerical_audit_complete": false,
-        "retained_terminal_observation_at_utc": "2026-10-12T09:13:26.955434+00:00",
+        "retained_terminal_observation_at_utc": "2026-10-12T21:12:09.724249+00:00",
         "service_record_scope": "The reader was first recorded after successful exit. No separate running cgroup observation was retained."
       },
-      "scope": "All five DINOv2 x GloVe seed cells and the first two DINOv2 x ELMo seed cells are accepted. The full model panel and its independent numerical review and interpretation remain incomplete. No model-choice, contamination or significance conclusion is claimed.",
-      "acceptance_evidence_reviewed_at_utc": "2026-10-12T09:16:51.798480+00:00",
-      "private_fetched_evidence_index_sha256": "d47cdcb22eab4b10aecab776acc72580f3e6011e7ead06d3ac061409247b0af9"
+      "scope": "All five seeds are accepted for DINOv2 x GloVe, DINOv2 x ELMo, DINO x MPNet and DINO x GloVe; the first DINO x ELMo seed is also accepted. The full model panel and its independent numerical review and interpretation remain incomplete. No model-choice, contamination or significance conclusion is claimed.",
+      "acceptance_evidence_reviewed_at_utc": "2026-10-12T21:33:46.943930+00:00",
+      "private_fetched_evidence_index_sha256": "e2ff762654c4cb3ccac6a35a5f51197dda9a3f294b5c0107a84670172818fbe2"
     }
   }
 }
