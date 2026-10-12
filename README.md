@@ -137,19 +137,19 @@ was published before added corpus inference. As recorded in the [dated status sn
 all ten added extractions are complete and accepted, and all fourteen entries
 in the [accepted feature lock](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/feature-lock.json)
 passed the required audit. The [published v2 execution controller](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/execution-lock.json)
-accepted its initial model and source input checks. Four of five reference replay
+accepted its initial model and source input checks. All five reference replay
 cells are accepted, with all five methods available in each cell. Their Rosetta
-retrieval scores equal our preserved scores. On 12 October 2026 at 03:01 UTC,
-the fifth reference replay was observed running. Saved progress at 02:56 UTC
-records four completed jobs, one running and 170 pending.
-The five-seed replay gate remains pending. These replays check the new runner
-against our own preserved retrieval results;
+retrieval scores equal our preserved scores, and the [five-seed replay check passed](dist/downloads/rosetta-reference-replay-gate.json).
+On 12 October 2026 at 04:04 UTC, the first two DINOv2 × GloVe cells were observed
+running. Saved progress at 03:56 UTC records five completed jobs, two running
+and 168 pending. These replays check the new runner against our own preserved
+retrieval results; classification was not rerun, and
 the original comparison with the authors and its differences remain unchanged. An [earlier controller attempt failed before any fitting](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/operational-failure.json)
 because of a service-connection setting; the [reviewed recovery](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/recovery-review.json)
 preserves scientific code, child numerical settings, features and schedule.
-All five reference replays must agree with our preserved baseline before
-expanded model fitting. Expanded-model comparisons, final panel interpretation
-and the source study remain pending in this dated snapshot.
+Passing the replay check allowed expanded model fitting to begin. Expanded-model
+results, final panel interpretation and the source study remain pending in this
+dated snapshot.
 
 The paired controls need extra training counterparts because the
 unpaired banks are disjoint; their advantage cannot be attributed solely to

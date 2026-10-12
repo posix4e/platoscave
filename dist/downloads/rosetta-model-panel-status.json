@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "protocol_id": "rosetta-model-controls-v2",
-  "status": "reference_replays_running",
-  "observed_at_utc": "2026-10-12T03:01:54.350607+00:00",
+  "status": "model_comparisons_running",
+  "observed_at_utc": "2026-10-12T04:04:47.954824+00:00",
   "release_commit": "c14771afc455c588ad9a19854161b9bc2c60b63e",
   "outer_release_sha256": "caf5dbb25b1b769526dd3b36c4e9afffb735ca451a8cc447afc03788f56da674",
   "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
@@ -10,14 +10,14 @@
   "added_extractions_required": 10,
   "added_extractions_complete": 10,
   "running": null,
-  "alignment_cells_complete": 4,
-  "method_results_complete": 20,
+  "alignment_cells_complete": 5,
+  "method_results_complete": 25,
   "required_model_cells": 60,
   "required_method_results": 300,
-  "scope": "All ten added extractions are accepted and all fourteen feature entries passed the required audit. Four of five reference replay cells are accepted, with twenty available method results across those four cells. Their Rosetta retrieval scores equal our preserved scores. The fifth reference replay was observed running. Saved progress records four completed jobs, one running and 170 pending. The five-seed replay gate is still pending. The original comparison with the authors and its numerical differences remain unchanged. Expanded-model comparisons and final panel interpretation remain pending; source fitting has not begun. This is a dated observation, not a live counter.",
+  "scope": "All five reference replay cells are accepted, with twenty-five available method results. Every Rosetta retrieval replay matches our preserved scores exactly, and the five-seed gate passed. The first two DINOv2 x GloVe cells were observed running. Saved progress records five completed jobs, two running and 168 pending. The original comparison with the authors and its numerical differences remain unchanged. Expanded-model comparisons and final panel interpretation remain pending; source fitting has not begun. This is a dated observation, not a live counter.",
   "next_steps": [
-    "Finish the fifth reference replay and its required full-reader check.",
-    "Require agreement with our preserved baseline before expanded model fitting.",
+    "Finish the remaining fifty-five model cells and their required full-reader checks.",
+    "Complete independent numerical reconstruction and interpretation of the full model panel.",
     "Finish the separate 23-set source-removal study and prospective fresh-data study."
   ],
   "completed_extractions": [
@@ -240,7 +240,7 @@
       "sha256": "af08634ac0b667796c89f50d213c48a2ca7298ad5d077b978fd368432d35cd4d"
     }
   ],
-  "observation_scope": "Four completed reference cells have successful quiescent service records and accepted full-reader checks. The controller and fifth reference replay service were observed running at the stated time. Counts describe the saved progress at 02:56 UTC; acceptance does not establish the full five-seed replay gate or a final independent numerical audit. Accepted evidence was inspected afterward; retained terminal observations keep their own timestamps below.",
+  "observation_scope": "All five reference cells have successful quiescent service records, accepted full-reader checks and a saved replay gate. The controller and first two DINOv2 x GloVe services were observed running at the stated time. Counts describe saved progress at 03:56 UTC. Accepted evidence was inspected afterward; retained terminal observations keep their own timestamps below. Gate acceptance is not a final independent numerical audit or completion of the full panel.",
   "private_final_acceptance_and_audit_admission_observation_sha256": "d0e34d47c3042afcda6715c155c158920ac27bda4dd375f177d0dfcca276f31f",
   "feature_audit": {
     "status": "passed",
@@ -271,13 +271,13 @@
     "accepted_feature_lock_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/feature-lock.json",
     "controller_dispatched_at_utc": "2026-10-12T00:55:09.318423+00:00",
     "controller_observed_state": "running",
-    "controller_observed_at_utc": "2026-10-12T03:01:54.350607+00:00",
+    "controller_observed_at_utc": "2026-10-12T04:04:47.954824+00:00",
     "latest_saved_phase": "in_progress",
-    "latest_saved_progress_at_utc": "2026-10-12T02:56:54.794779+00:00",
+    "latest_saved_progress_at_utc": "2026-10-12T03:56:35.035951+00:00",
     "latest_saved_job_counts": {
-      "complete": 4,
-      "running": 1,
-      "pending": 170
+      "complete": 5,
+      "running": 2,
+      "pending": 168
     },
     "scheduled_jobs": {
       "total": 175,
@@ -286,12 +286,12 @@
       "reference_gate": 5
     },
     "private_initial_observation_sha256": "d8e5f4eb4a29359fae71e02c4aa1d0d15153a0c0e998d5f6adc829049d82be1d",
-    "saved_progress_sha256": "0fed96d27af3598c9a42fe2264c21186fe5cbdeec15e97778f500ade8f0a0c8e",
+    "saved_progress_sha256": "f4ab8d60401e72b526a10628d04e482f2862f73b7e5cef77129f1201e169bfbe",
     "prior_failure_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/operational-failure.json",
     "recovery_review_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/recovery-review.json",
     "prior_failure_scope": "The v1 controller failed before its first reader or any fit because its outer environment omitted a service-manager connection setting. The separately reviewed v2 recovery preserves scientific code, child numerical settings, all fourteen features and the complete schedule.",
-    "scope": "Four reference replay cells are accepted. The fifth was observed running. Saved progress records four completed jobs, one running and 170 pending. The five replay jobs are included in the sixty model jobs. This is a dated observation, not a live count.",
-    "private_latest_observation_sha256": "15fae231c1edf5a1ed167933d19d35d8e1e39f9ab466dc62e8b3546db24353f9",
+    "scope": "The five reference replay cells are accepted and their replay gate passed. The first two expanded-model cells, DINOv2 x GloVe, were observed running. Saved progress records five completed jobs, two running and 168 pending. The five replay cells are included in the sixty model jobs. This is a dated observation, not a live count.",
+    "private_latest_observation_sha256": "40da4c1c3f61f9bd8ce7146784f95f76ee34930d70dfbb6c974148a7871698db",
     "input_check_receipts": {
       "preflight-model": {
         "receipt_sha256": "679d89355d0c9047b6bc8dd09be49347e7c3a66cfe751d133448bbaa9a8c10da",
@@ -306,9 +306,9 @@
     },
     "reference_replays": {
       "required": 5,
-      "observed_running": 1,
-      "accepted_complete": 4,
-      "gate_observed": false,
+      "observed_running": 0,
+      "accepted_complete": 5,
+      "gate_observed": true,
       "scope": "Retrieval replay against our own preserved five-seed baseline; classification is not rerun. Passing this gate would not resolve the original differences from the authors.",
       "pending": 0,
       "accepted_cells": [
@@ -327,7 +327,7 @@
             "mean_rank": 0.0
           },
           "classification_rerun": false,
-          "retained_terminal_observation_at_utc": "2026-10-12T02:00:26.826172+00:00",
+          "retained_terminal_observation_at_utc": "2026-10-12T04:05:11.197214+00:00",
           "accepted_reader_summary_sha256": "edcd5d9707d7bbd3afcc4f800192e02dcf36e077793a87127eb0e4b89fb7478e",
           "accepted_reader_receipt_sha256": "93ec343012b1e352e18db5aad3b141d98b06214ea8cd4ac56a49f8f4660eebd6"
         },
@@ -346,7 +346,7 @@
             "mean_rank": 0.0
           },
           "classification_rerun": false,
-          "retained_terminal_observation_at_utc": "2026-10-12T02:00:26.894037+00:00",
+          "retained_terminal_observation_at_utc": "2026-10-12T04:05:11.256214+00:00",
           "accepted_reader_summary_sha256": "edcd5d9707d7bbd3afcc4f800192e02dcf36e077793a87127eb0e4b89fb7478e",
           "accepted_reader_receipt_sha256": "93ec343012b1e352e18db5aad3b141d98b06214ea8cd4ac56a49f8f4660eebd6"
         },
@@ -365,7 +365,7 @@
             "mean_rank": 0.0
           },
           "classification_rerun": false,
-          "retained_terminal_observation_at_utc": "2026-10-12T03:02:28.130956+00:00",
+          "retained_terminal_observation_at_utc": "2026-10-12T04:05:11.315592+00:00",
           "accepted_reader_summary_sha256": "824f9ac254d0352fa11250fe692062ea8a5ec1406027dc912aba1ee1db4882f5",
           "accepted_reader_receipt_sha256": "47646cf215196aa79609934ebab797ecac98679e0ccadec3eca9eac6593e6eb7"
         },
@@ -384,21 +384,54 @@
             "mean_rank": 0.0
           },
           "classification_rerun": false,
-          "retained_terminal_observation_at_utc": "2026-10-12T03:02:28.184886+00:00",
+          "retained_terminal_observation_at_utc": "2026-10-12T04:05:11.375839+00:00",
           "accepted_reader_summary_sha256": "824f9ac254d0352fa11250fe692062ea8a5ec1406027dc912aba1ee1db4882f5",
           "accepted_reader_receipt_sha256": "47646cf215196aa79609934ebab797ecac98679e0ccadec3eca9eac6593e6eb7"
+        },
+        {
+          "seed": 2584932063,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "79053afa170a772fd0baa67e8a44611c7ea93a6a10bddda105e205820085bba4",
+          "complete_sha256": "ec65042b85a5357a974121d77737fa20c4ed8bdda7853e4316b5f92389a1d8a4",
+          "cell_sha256": "05cc159cf08131452c0d822542883af9eefdbcbb9df0f5af59e23864162ffd92",
+          "rosetta_result_sha256": "a5c9d8bb3923dc9f399fcd054c51d25c9582c5f61c881e22d3c9b85cad78d8d8",
+          "original_result_sha256": "9ec14e128ccf8258abdfe79a1523322903163fcc587aca2aa82188f9c58e9431",
+          "rosetta_retrieval_metrics_agree_with_preserved_baseline": true,
+          "rosetta_retrieval_absolute_errors": {
+            "foscttm": 0.0,
+            "mean_rank": 0.0
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T04:05:11.431395+00:00",
+          "accepted_reader_summary_sha256": "038c735002eaae665205a422a3a8dc72050ff990e8ea1768f1f13dc17d4c4e3f",
+          "accepted_reader_receipt_sha256": "97cd9c77cfbdcf0af8bac8cbdf74d190fe061a55ec340d0485b3d8d8a907225a"
         }
       ],
       "accepted_reader": {
-        "summary_sha256": "824f9ac254d0352fa11250fe692062ea8a5ec1406027dc912aba1ee1db4882f5",
-        "acceptance_sha256": "47646cf215196aa79609934ebab797ecac98679e0ccadec3eca9eac6593e6eb7",
-        "ticket_sha256": "5fd7e9f3a349637983e84d626e0b8ea664eccb30a1ee5cc82be537b97a9b3246",
+        "summary_sha256": "038c735002eaae665205a422a3a8dc72050ff990e8ea1768f1f13dc17d4c4e3f",
+        "acceptance_sha256": "97cd9c77cfbdcf0af8bac8cbdf74d190fe061a55ec340d0485b3d8d8a907225a",
+        "ticket_sha256": "0d1900c184d62e04417070d4d7054248d03c0fc75b136590298ac69ed4a4858d",
         "full_panel_status": "incomplete",
         "inventory_findings": 0,
         "independent_final_numerical_audit_complete": false,
-        "retained_terminal_observation_at_utc": "2026-10-12T02:56:54.009561+00:00"
+        "retained_terminal_observation_at_utc": "2026-10-12T03:56:34.030881+00:00"
       },
-      "acceptance_evidence_reviewed_at_utc": "2026-10-12T03:04:18.314616+00:00"
+      "acceptance_evidence_reviewed_at_utc": "2026-10-12T04:08:07.455358+00:00",
+      "gate_status": "passed",
+      "gate_public_url": "https://platoscave.si/downloads/rosetta-reference-replay-gate.json",
+      "gate_public_sha256": "75da97ae51331c6d1502cd4d80ea9588dfd892799270dacacc2ccdfde31769a0",
+      "private_gate_receipt_sha256": "5e43ff09129acfa4b47d76e53e54797f3cdb3f6ebfb2f4da3a9d8f432bd14cfd"
+    },
+    "model_comparisons": {
+      "observed_running": 2,
+      "accepted_complete_excluding_reference_cells": 0,
+      "observed_pair": "dinov2/glove",
+      "observed_seeds": [
+        734796314,
+        576165995
+      ],
+      "scope": "Service activity only; no accepted expanded-model result is claimed."
     }
   }
 }
