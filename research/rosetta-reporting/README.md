@@ -9,6 +9,12 @@ accepted model stage, independent comparison and rank manifest. It has only
 synthetic validation; preparing a projection does not approve its interpretation
 or publication.
 
+For the source study, see [Compact source-overlap summary](SOURCE_SUMMARY.md).
+It retains all 115 fits, every declared score and contrast, and the mask
+composition and intersection counts. It requires the complete accepted source
+stage and matching independent comparison. It has only synthetic validation;
+real numerical differences and interpretation still require review.
+
 `export_rank_tables.py` is a local, presentation-only helper outside the frozen
 scientific releases. It has not been used on real run outputs. It requires an
 accepted **complete** model-reader summary, its controller `accepted.json`
