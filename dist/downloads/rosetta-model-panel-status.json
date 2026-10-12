@@ -1,30 +1,22 @@
 {
   "schema_version": 1,
   "protocol_id": "rosetta-model-controls-v2",
-  "status": "feature_extraction_running",
-  "observed_at_utc": "2026-10-11T19:53:33.192241+00:00",
+  "status": "feature_audit_started",
+  "observed_at_utc": "2026-10-12T00:27:06.824915+00:00",
   "release_commit": "c14771afc455c588ad9a19854161b9bc2c60b63e",
   "outer_release_sha256": "caf5dbb25b1b769526dd3b36c4e9afffb735ca451a8cc447afc03788f56da674",
   "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
   "extraction_lock_sha256": "d9a816a20390dd53a480c3d5e12904f5d279e47f5bc1ae57b525283b97765250",
   "added_extractions_required": 10,
-  "added_extractions_complete": 9,
-  "running": {
-    "model": "elmo",
-    "split": "val2014",
-    "attempt": 1,
-    "started_at_utc": "2026-10-11T19:52:59.393248+00:00",
-    "durable_rows_observed": 79,
-    "expected_rows": 40504,
-    "completion_marker_observed": false
-  },
+  "added_extractions_complete": 10,
+  "running": null,
   "alignment_cells_complete": 0,
   "method_results_complete": 0,
   "required_model_cells": 60,
   "required_method_results": 300,
-  "scope": "Both training and validation extractions for DINO, MoCo, MAE and GloVe, plus ELMo training extraction, are complete and accepted: nine of ten added extractions. ELMo validation-caption extraction is running; it is the final added extraction needed. No model-comparison fit or result is available. This is a dated observation, not a live counter.",
+  "scope": "All ten added training and validation extractions for DINO, MoCo, MAE, GloVe and ELMo are complete and accepted. The mandatory numerical and identity audit across all fourteen feature entries started and was observed running at admission. Audit completion has not yet been verified. No model-comparison fit or result is available. This is a dated account of retained evidence, not a live counter.",
   "next_steps": [
-    "Finish and accept all ten sequential extractions, then verify all fourteen feature entries.",
+    "Complete and verify the mandatory numerical and identity audit across all fourteen feature entries.",
     "Bind the complete execution release and run all five reference replay cells.",
     "Require agreement with our preserved baseline before expanded model fitting.",
     "Finish the separate 23-set source-removal study and prospective fresh-data study."
@@ -203,11 +195,31 @@
       "successful_service_exit_and_quiescence_verified": true,
       "acceptance_receipt_sha256": "3af0261c6ac1fad6c46337bc723acea57cb9a0a2dbe12b970e4597aa5d00f03d",
       "verification": "Full artifact hashes, metadata, canonical row and caption order, contiguous row journal, and actual tensor shape/dtype. The required all14-feature builder will later check valid caption vectors and expected NaN padding across every text tensor."
+    },
+    {
+      "model": "elmo",
+      "split": "val2014",
+      "attempt": 1,
+      "row_count": 40504,
+      "shape": [
+        40504,
+        7,
+        1024
+      ],
+      "dtype": "float32",
+      "tensor_bytes": 1161331435,
+      "feature_sha256": "99758d09a618f5bd2968d90b550981dd35a8258cb888c2dd5596555afec183bf",
+      "metadata_sha256": "01f2002353c22d9d9718b138a747b60bc1a6ea13c23b3a9e9a6b235b4fe17281",
+      "complete_sha256": "aa544c9bfbf8b1ce7c87d0c3654b8f9fbb7ec6b324554c29999871178144d602",
+      "completed_at_utc": "2026-10-12T00:07:23.730173+00:00",
+      "successful_service_exit_and_quiescence_verified": true,
+      "acceptance_receipt_sha256": "552a276e6706f02881131f54c7cdaa6053c1703b6fbb2e39db2f34f72e3d1ec9",
+      "verification": "Full artifact hashes, metadata, canonical row and caption order, contiguous row journal, and actual tensor shape/dtype. The required all14-feature builder will later check valid caption vectors and expected NaN padding across every text tensor."
     }
   ],
   "private_acceptance_and_next_admission_observation_sha256": "b5dcbecb740b78f6a25a5acafe5ca9b9222b473169ace34526cb2f1efa293e29",
-  "added_extractions_generated": 9,
-  "added_extractions_accepted": 9,
+  "added_extractions_generated": 10,
+  "added_extractions_accepted": 10,
   "count_definitions": {
     "added_extractions_generated": "Extraction completion marker and successful service exit observed.",
     "added_extractions_complete": "Accepted extractions only; retained meaning of the earlier snapshots.",
@@ -226,5 +238,19 @@
       "split": "val2014",
       "sha256": "af08634ac0b667796c89f50d213c48a2ca7298ad5d077b978fd368432d35cd4d"
     }
-  ]
+  ],
+  "observation_scope": "Retained final extraction acceptance and feature-audit admission records; running state was observed at admission, not freshly checked at collection time.",
+  "private_final_acceptance_and_audit_admission_observation_sha256": "d0e34d47c3042afcda6715c155c158920ac27bda4dd375f177d0dfcca276f31f",
+  "feature_audit": {
+    "status": "started",
+    "required_feature_entries": 14,
+    "admitted_at_utc": "2026-10-12T00:21:52.802496+00:00",
+    "dispatched_at_utc": "2026-10-12T00:21:52.806065+00:00",
+    "running_observed_at_admission": true,
+    "completion_verified": false,
+    "builder_sha256": "fe3bd25481900afda61e6d7d0f087ddaa70a2c7958d4bca87526eb3fb6e1b077",
+    "admission_record_sha256": "e812f693e55d22e92e5910631a1ac03fcc699602bc64132b024eee467e78d8d9",
+    "dispatch_record_sha256": "f95dd7e38f35a2fa676fa6d983af211573c0ad492b56a47ffbbcb060cfbe2f9b",
+    "scope": "Mandatory tensor and identity validation and feature-evidence binding only; no encoding, fitting or evaluation. The retained admission state does not establish current running state or audit completion."
+  }
 }
