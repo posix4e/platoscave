@@ -2,7 +2,7 @@
   "schema_version": 1,
   "protocol_id": "rosetta-model-controls-v2",
   "status": "model_comparisons_running",
-  "observed_at_utc": "2026-10-12T05:07:44.089261+00:00",
+  "observed_at_utc": "2026-10-12T06:09:57.746019+00:00",
   "release_commit": "c14771afc455c588ad9a19854161b9bc2c60b63e",
   "outer_release_sha256": "caf5dbb25b1b769526dd3b36c4e9afffb735ca451a8cc447afc03788f56da674",
   "protocol_sha256": "c9f9d1444e457d919ab7861fddc142290f06be76d2d5959c7ed5d9dfa2724a5a",
@@ -10,13 +10,13 @@
   "added_extractions_required": 10,
   "added_extractions_complete": 10,
   "running": null,
-  "alignment_cells_complete": 7,
-  "method_results_complete": 35,
+  "alignment_cells_complete": 9,
+  "method_results_complete": 45,
   "required_model_cells": 60,
   "required_method_results": 300,
-  "scope": "All five reference replay cells passed their check against our preserved retrieval scores. The first two expanded-model cells, DINOv2 x GloVe, are accepted with all five methods available in each. This gives seven accepted model cells and thirty-five method results. The next two DINOv2 x GloVe seeds were observed running. Saved progress records seven completed jobs, two running and 166 pending. The original comparison with the authors and its numerical differences remain unchanged. Complete five-seed expanded-model comparisons and final panel interpretation remain pending; source fitting has not begun. This is a dated observation, not a live counter.",
+  "scope": "All five reference replay cells passed their check against our preserved retrieval scores. Four expanded-model cells, DINOv2 x GloVe, are accepted with all five methods available in each. This gives nine accepted model cells and forty-five method results. The fifth DINOv2 x GloVe seed was observed running. Saved progress records nine completed jobs, one running and 165 pending. The original comparison with the authors and its numerical differences remain unchanged. Complete five-seed expanded-model comparisons and final panel interpretation remain pending; source fitting has not begun. This is a dated observation, not a live counter.",
   "next_steps": [
-    "Finish the remaining fifty-three model cells and their required full-reader checks.",
+    "Finish the remaining fifty-one model cells and their required full-reader checks.",
     "Complete independent numerical reconstruction and interpretation of the full model panel.",
     "Finish the separate 23-set source-removal study and prospective fresh-data study."
   ],
@@ -240,7 +240,7 @@
       "sha256": "af08634ac0b667796c89f50d213c48a2ca7298ad5d077b978fd368432d35cd4d"
     }
   ],
-  "observation_scope": "The first two expanded-model cells have successful quiescent service records and an accepted full-reader check. The five reference replays and their saved gate remain accepted. The controller and next two DINOv2 x GloVe services were observed running at the stated time. Counts describe saved progress at 04:59 UTC. Accepted evidence was inspected afterward; retained terminal observations keep their own timestamps. This does not complete a five-seed expanded-model comparison, the full panel or its final independent numerical audit.",
+  "observation_scope": "The four expanded-model cells have successful quiescent service records and accepted full-reader checks. The five reference replays and their saved gate remain accepted. The controller and fifth DINOv2 x GloVe service were observed running at the stated time. Counts describe saved progress at 06:05 UTC. Accepted evidence was inspected afterward; retained terminal observations keep their own timestamps. This does not complete a five-seed expanded-model comparison, the full panel or its final independent numerical audit.",
   "private_final_acceptance_and_audit_admission_observation_sha256": "d0e34d47c3042afcda6715c155c158920ac27bda4dd375f177d0dfcca276f31f",
   "feature_audit": {
     "status": "passed",
@@ -271,13 +271,13 @@
     "accepted_feature_lock_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/feature-lock.json",
     "controller_dispatched_at_utc": "2026-10-12T00:55:09.318423+00:00",
     "controller_observed_state": "running",
-    "controller_observed_at_utc": "2026-10-12T05:07:44.089261+00:00",
+    "controller_observed_at_utc": "2026-10-12T06:09:57.746019+00:00",
     "latest_saved_phase": "in_progress",
-    "latest_saved_progress_at_utc": "2026-10-12T04:59:27.903551+00:00",
+    "latest_saved_progress_at_utc": "2026-10-12T06:05:39.237070+00:00",
     "latest_saved_job_counts": {
-      "complete": 7,
-      "pending": 166,
-      "running": 2
+      "complete": 9,
+      "pending": 165,
+      "running": 1
     },
     "scheduled_jobs": {
       "total": 175,
@@ -286,12 +286,12 @@
       "reference_gate": 5
     },
     "private_initial_observation_sha256": "d8e5f4eb4a29359fae71e02c4aa1d0d15153a0c0e998d5f6adc829049d82be1d",
-    "saved_progress_sha256": "2d04ee78d785f1d91ceaa1bb1a6e7ffc1f2c1dd937b2b588923f6d16d5c656db",
+    "saved_progress_sha256": "fef45f057847fc5a699ff5982fcd406d0e7e1032702bc3a50830b4063aeb9fd1",
     "prior_failure_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/operational-failure.json",
     "recovery_review_url": "https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/recovery-review.json",
     "prior_failure_scope": "The v1 controller failed before its first reader or any fit because its outer environment omitted a service-manager connection setting. The separately reviewed v2 recovery preserves scientific code, child numerical settings, all fourteen features and the complete schedule.",
-    "scope": "Seven model cells are accepted: five reference replays and two DINOv2 x GloVe cells. The next two DINOv2 x GloVe cells were observed running. Saved progress records seven completed jobs, two running and 166 pending. The five replay cells are included in the sixty model jobs. This is a dated observation, not a live count.",
-    "private_latest_observation_sha256": "245e52903436af8a51a41cf766c537bdbb8d3c911cfb19c13b14a4cebaaa8d0f",
+    "scope": "Nine model cells are accepted: five reference replays and four DINOv2 x GloVe cells. The fifth DINOv2 x GloVe cell was observed running. Saved progress records nine completed jobs, one running and 165 pending. The five replay cells are included in the sixty model jobs. This is a dated observation, not a live count.",
+    "private_latest_observation_sha256": "e44dce2e077b2b231fc1158e8a09fbb95ac18ec5ce72f8508cc698cb15100541",
     "input_check_receipts": {
       "preflight-model": {
         "receipt_sha256": "679d89355d0c9047b6bc8dd09be49347e7c3a66cfe751d133448bbaa9a8c10da",
@@ -424,13 +424,12 @@
       "private_gate_receipt_sha256": "5e43ff09129acfa4b47d76e53e54797f3cdb3f6ebfb2f4da3a9d8f432bd14cfd"
     },
     "model_comparisons": {
-      "observed_running": 2,
-      "accepted_complete_excluding_reference_cells": 2,
-      "accepted_method_results_excluding_reference_cells": 10,
+      "observed_running": 1,
+      "accepted_complete_excluding_reference_cells": 4,
+      "accepted_method_results_excluding_reference_cells": 20,
       "observed_pair": "dinov2/glove",
       "observed_seeds": [
-        2197670066,
-        839703249
+        2584932063
       ],
       "accepted_cells": [
         {
@@ -504,24 +503,96 @@
           "retained_terminal_observation_at_utc": "2026-10-12T05:10:08.221721+00:00",
           "accepted_reader_summary_sha256": "d3dc86370461aa25b4519da83e3dcfa4c921abd03115c4cf326b53ef952bf0f3",
           "accepted_reader_receipt_sha256": "6c322f76b444be09da5e367833d523cd4edb3c198f889b0f1cf36338ddcd10a2"
+        },
+        {
+          "vision": "dinov2",
+          "text": "glove",
+          "seed": 2197670066,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "d0bc3df0bd7b01354684efe90bd02038fec343dd4d178d84ff905edf12c95179",
+          "complete_sha256": "4c73db9206b8b298c5cea5f91683db6950a18c7159b3ca62f968ae23888e79d9",
+          "cell_sha256": "61e303faca138f25ddb42c62746e27842574b1c2c196379d0c80a64fa998142d",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "4d91ddd6c702980a534b79bd9dc5856832f0bdbc9fc570f129fca8568ea05488",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "997432d4abf1dafd7b15cabd6883f9698da0bd341396fb8af781efdc30eeb3f7",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "9ae06eb250ab839737b51c0ebcc44710aca7871e51072c55937a7a1b15510bee",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "d5c8c5e96acfdc701974dd4eb50cdf780818a4d5ceb18e657eadcfcd4acbb268",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "52a6e927fa89341658ceaef12a42299441729b1b09e40e877c8d7a9d3335f658",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T06:11:45.982493+00:00",
+          "accepted_reader_summary_sha256": "cf5ede823f9cba3faf2dfc3da4e7539d147fdca219f6e36e5fb5712c22a25b56",
+          "accepted_reader_receipt_sha256": "b486befcf2bae428e7a54f2edbf36f8b98b4d0e5013fd704235991f9a097215e"
+        },
+        {
+          "vision": "dinov2",
+          "text": "glove",
+          "seed": 839703249,
+          "accepted_complete": true,
+          "available_method_results": 5,
+          "verification_receipt_sha256": "0494d872e70932441171b0b87945b277c55e9e628ce2965229a7fe0376d1063d",
+          "complete_sha256": "4b66389db8f8d55b2f69e3a10e287e045096f33294aa022ce5e4e1f49d10161d",
+          "cell_sha256": "cd94c7762ac3369611906a0fd38a4c821a134d4764169a72c3ccd2bac4090d10",
+          "methods": {
+            "rosetta": {
+              "result_sha256": "4e8782a5d7a0ef59a00676bbf564271bbffffa29d30246220e718bb79a8441e8",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_paired": {
+              "result_sha256": "72cf252b55a735ee85d98fbbef523df3fc2dbc29d9a102b15113fb991410380e",
+              "available_in_accepted_reader": true
+            },
+            "orthogonal_shuffled": {
+              "result_sha256": "7bcedcee97dff4a5ddfa85699f33da750e02467244d0d5d063532adbeac65008",
+              "available_in_accepted_reader": true
+            },
+            "linear_paired": {
+              "result_sha256": "fef9bd418ed3e7cb5e0ec1527a6ff6a701105973858f6e5105469926e7b972cf",
+              "available_in_accepted_reader": true
+            },
+            "linear_shuffled": {
+              "result_sha256": "38738b3a16e318763a31068d7d8e53a05fa5ffee5f3ac698c3a450e7729c24dd",
+              "available_in_accepted_reader": true
+            }
+          },
+          "classification_rerun": false,
+          "retained_terminal_observation_at_utc": "2026-10-12T06:11:46.044470+00:00",
+          "accepted_reader_summary_sha256": "cf5ede823f9cba3faf2dfc3da4e7539d147fdca219f6e36e5fb5712c22a25b56",
+          "accepted_reader_receipt_sha256": "b486befcf2bae428e7a54f2edbf36f8b98b4d0e5013fd704235991f9a097215e"
         }
       ],
       "accepted_reader": {
-        "summary_sha256": "d3dc86370461aa25b4519da83e3dcfa4c921abd03115c4cf326b53ef952bf0f3",
-        "acceptance_sha256": "6c322f76b444be09da5e367833d523cd4edb3c198f889b0f1cf36338ddcd10a2",
-        "ticket_sha256": "f188cf29159f398ca4bccc8a4379d1fffbd56cef9dfb257f8b9ad9a6b8e4f783",
-        "recorded_at_utc": "2026-10-12T04:59:10.672373+00:00",
+        "summary_sha256": "cf5ede823f9cba3faf2dfc3da4e7539d147fdca219f6e36e5fb5712c22a25b56",
+        "acceptance_sha256": "b486befcf2bae428e7a54f2edbf36f8b98b4d0e5013fd704235991f9a097215e",
+        "ticket_sha256": "a2c16814f8b5344d0d4821e021ce3da6aebfaff6dec757ab796caed0381b16b3",
+        "recorded_at_utc": "2026-10-12T06:05:22.499177+00:00",
         "full_panel_status": "incomplete",
-        "available_method_results": 35,
-        "unavailable_method_results": 265,
+        "available_method_results": 45,
+        "unavailable_method_results": 255,
         "inventory_findings": 0,
         "independent_final_numerical_audit_complete": false,
-        "retained_terminal_observation_at_utc": "2026-10-12T04:59:26.807109+00:00",
+        "retained_terminal_observation_at_utc": "2026-10-12T06:05:38.139013+00:00",
         "service_record_scope": "The reader was first recorded after successful exit. No separate running cgroup observation was retained."
       },
-      "scope": "Two expanded-model seed cells are accepted. The five-seed comparison and full panel remain incomplete. No model-choice, contamination or significance conclusion is claimed.",
-      "acceptance_evidence_reviewed_at_utc": "2026-10-12T05:13:46.863565+00:00",
-      "private_fetched_evidence_index_sha256": "2e76c40d41ad8995eb0e35f4717262de1b45b17431c5ae9274a5ed8de8b143e9"
+      "scope": "Four expanded-model seed cells are accepted. The five-seed comparison and full panel remain incomplete. No model-choice, contamination or significance conclusion is claimed.",
+      "acceptance_evidence_reviewed_at_utc": "2026-10-12T06:14:54.015171+00:00",
+      "private_fetched_evidence_index_sha256": "62d3c4cce6583d45775cc2d5a7b83a8e64b05243120d43bd1747348f036fc5d3"
     }
   }
 }

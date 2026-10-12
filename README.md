@@ -140,10 +140,10 @@ passed the required audit. The [published v2 execution controller](https://githu
 accepted its initial model and source input checks. All five reference replay
 cells are accepted, with all five methods available in each cell. Their Rosetta
 retrieval scores equal our preserved scores, and the [five-seed replay check passed](dist/downloads/rosetta-reference-replay-gate.json).
-The first two DINOv2 × GloVe seed runs are accepted, with all five methods
-available in each. On 12 October 2026 at 05:07 UTC, the next two seeds were observed
-running. Saved progress at 04:59 UTC records seven completed jobs, two running
-and 166 pending. The five reference replays check the new runner against our own preserved
+Four DINOv2 × GloVe seed runs are accepted, with all five methods
+available in each. On 12 October 2026 at 06:09 UTC, the fifth seed was observed
+running. Saved progress at 06:05 UTC records nine completed jobs, one running
+and 165 pending. The five reference replays check the new runner against our own preserved
 retrieval results; classification was not rerun, and
 the original comparison with the authors and its differences remain unchanged. An [earlier controller attempt failed before any fitting](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v1/operational-failure.json)
 because of a service-connection setting; the [reviewed recovery](https://github.com/posix4e/platoscave/blob/77dae1a5833d9c5ddd0c73138f53e2fce34b0235/research/rosetta-execution-releases/control-execution-v2/recovery-review.json)
